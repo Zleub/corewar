@@ -74,3 +74,15 @@ typedef struct		header_s
   unsigned int		prog_size;
   char				comment[COMMENT_LENGTH + 1];
 }					header_t;
+
+typedef struct	s_op {
+	char		*name;
+	int			unknown0;
+	int			*args;
+	int			opcode;
+	int			cycles;
+	char		*description;
+	int			coding_octet;
+	int			unknown1;
+}				t_op;
+
