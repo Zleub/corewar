@@ -6,7 +6,7 @@
 #    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/10/02 03:26:29 by adebray           #+#    #+#              #
-#    Updated: 2015/01/20 00:00:47 by adebray          ###   ########.fr        #
+#    Updated: 2015/01/20 06:56:20 by adebray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ HEADDIR			=	inc
 HEADFLAG		=	-I ./$(HEADDIR)
 
 SRCDIR			=	src
-SRC				=	
+SRC				=
 OBJ				=	$(subst .c,.o,$(SRC))
 
 CC				=	gcc
@@ -23,7 +23,8 @@ CCFLAGS			=	-Werror -Wall -Wextra -Wuninitialized -O3
 
 LIBLIBFT		=	-L$(SRCDIR)/libft -lft
 LIBPRINTF		=	-L$(SRCDIR)/ft_printf -lftprintf
-LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF)
+LIBENV			=	-L$(SRCDIR)/env -lenv
+LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF) $(LIBENV)
 
 LIBCOREWAR		=	$(LIBESSENTIAL) -L$(SRCDIR)/corewar -lcorewar
 LIBASM			=	$(LIBESSENTIAL) -L$(SRCDIR)/asm -lasm
@@ -35,7 +36,7 @@ LIBGRAPHIC		=	-lncurses
 
 all: $(NAME) asm
 
-makelib: _libft _printf
+makelib: _libft _printf _env
 
 $(NAME): makelib _vm $(OBJ)
 	@$(CC) $(CCFLAGS) $(HEADFLAG) $(LIBCOREWAR) -o $(NAME) $(OBJ) $(SRCDIR)/main_vm.c
@@ -52,6 +53,9 @@ _libft: $(HEADDIR)/libft.h
 
 _printf: $(HEADDIR)/ft_printf.h
 	@make -C $(SRCDIR)/ft_printf
+
+_env: $(HEADDIR)/env.h
+	@make -C $(SRCDIR)/env
 
 _curse: $(HEADDIR)/curse.h
 	@make -C $(SRCDIR)/curse
@@ -70,15 +74,17 @@ clean:
 	@make -C $(SRCDIR)/libft clean
 	@ #make -C $(SRCDIR)/curse clean
 	@make -C $(SRCDIR)/ft_printf clean
+	@make -C $(SRCDIR)/env clean
 	@make -C $(SRCDIR)/corewar clean
 	@make -C $(SRCDIR)/asm clean
 	@rm -f $(OBJ)
 	@echo "\033[31m•\033[0m $(NAME) clean.\033[0m"
 
-fclean: clean
+fclean:
 	@make -C $(SRCDIR)/libft fclean
 	@ #make -C $(SRCDIR)/curse fclean
 	@make -C $(SRCDIR)/ft_printf fclean
+	@make -C $(SRCDIR)/env fclean
 	@make -C $(SRCDIR)/corewar fclean
 	@make -C $(SRCDIR)/asm fclean
 	@rm -f $(OBJ)

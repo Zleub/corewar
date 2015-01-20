@@ -1,6 +1,8 @@
 #include <libft.h>
 #include <ft_printf.h>
+#include <env.h>
 #include <op.h>
+#include <corewar.h>
 
 void		ft_dump(void)
 {
@@ -20,8 +22,36 @@ void		ft_dump(void)
 	ft_printf("CHAMP_MAX_SIZE: %d\n", CHAMP_MAX_SIZE);
 }
 
-int			main(void)
+int			main(int argc, char **argv)
 {
+	t_env	*env;
+
+	env = manage_env(GET);
+	env->argc = argc;
+	env->argv = argv;
+	env->format = "-dump:-n:-n:-n:-n:";
+
+	manage_env(PRINT);
+
+	ft_printf("\n");
+
+	manage_env(NEXT);
+	while (env->opt[0] != '\0' && env->opt[0] != '?')
+	{
+		ft_printf("opt: %s, arg: %s\n", env->opt, env->arg);
+		manage_env(NEXT);
+	}
+
+	ft_printf("\n");
 	ft_dump();
+	manage_memory(INIT);
+	manage_memory(NEW);
+
+	t_memory *memory = manage_memory(GET);
+	memory->memory[0] = 11;
+	memory->memory[3] = 1;
+	memory->memory[1024] = 12;
+
+	// manage_memory(PRINT);
 	return (0);
 }

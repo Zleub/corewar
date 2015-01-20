@@ -10,16 +10,17 @@
 #                                                                              #
 #******************************************************************************#
 
-NAME		=	libcorewar.a
-LIB			=	corewar
-HEADDIR		=	 ../../inc
+NAME		=	libenv.a
+LIB			=	env
+HEADDIR		=	../../inc
 
-SRC			=	manage_memory.c
+SRC			=	manageenv.c\
+				managefile.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 
 CC			= gcc
-CCFLAGS		= -Werror -Wall -Wextra -Wuninitialized -O3 -g
+CCFLAGS		= -Werror -Wall -Wextra -Wuninitialized -O3 -g3
 
 all: $(NAME)
 
@@ -41,6 +42,6 @@ fclean:		clean
 			@rm -f $(NAME)
 			@echo "\033[31m•\033[0m fclean: \033[31m$(NAME)\033[0m"
 
-re:			fclean all
+re:			all
 
 .PHONY: all clean fclean re

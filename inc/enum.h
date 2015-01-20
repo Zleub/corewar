@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.h                                          :+:      :+:    :+:   */
+/*   enum.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 04:18:51 by adebray          ###   ########.fr       */
+/*   Created: 2014/12/27 08:19:18 by adebray           #+#    #+#             */
+/*   Updated: 2015/01/20 06:24:56 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COREWAR_H
-# define COREWAR_H
+#ifndef ENUM_H
+# define ENUM_H
 
-# include <enum.h>
-/*
-** MANAGE_MEMORY
-*/
-
-typedef struct s_memory	t_memory;
-
-struct					s_memory
+enum	e_macros
 {
-	void				(*memory_callbacks[3]) (t_memory *);
-	char				*memory;
-	int					size;
+	INIT,
+	NEW,
+	GET,
+	PRINT,
+	SET,
+	DEL,
+	ADD,
+	NEXT
 };
 
-t_memory				*manage_memory(int macro);
 
 #endif
