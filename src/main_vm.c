@@ -3,6 +3,7 @@
 #include <env.h>
 #include <op.h>
 #include <corewar.h>
+#include <fcntl.h>
 
 void		ft_dump(void)
 {
@@ -22,6 +23,29 @@ void		ft_dump(void)
 	ft_printf("CHAMP_MAX_SIZE: %d\n", CHAMP_MAX_SIZE);
 }
 
+void		ft_getfile(int fd)
+{
+	manage_file(NEW);
+	while (get_next_line(fd, (char**)manage_file(SET)) > 0)
+		manage_file(ADD);
+}
+
+void		ft_isfile(t_env *env)
+{
+	int fd;
+
+	if (!ft_strcmp(env->opt, "n"))
+	{
+		if ((fd = open(env->arg, O_RDONLY)) == -1)
+		{
+			ft_printf("Open error\n");
+			return ;
+		}
+		else
+			ft_getfile(fd);
+	}
+}
+
 int			main(int argc, char **argv)
 {
 	t_env	*env;
@@ -29,29 +53,16 @@ int			main(int argc, char **argv)
 	env = manage_env(GET);
 	env->argc = argc;
 	env->argv = argv;
-	env->format = "-dump:-n:-n:-n:-n:";
-
+	env->format = "-n:-n:-n:-n:";
 	manage_env(PRINT);
-
 	ft_printf("\n");
-
 	manage_env(NEXT);
 	while (env->opt[0] != '\0' && env->opt[0] != '?')
 	{
 		ft_printf("opt: %s, arg: %s\n", env->opt, env->arg);
+		ft_isfile(env);
+		manage_file(PRINTBINARY);
 		manage_env(NEXT);
 	}
-
-	ft_printf("\n");
-	ft_dump();
-	manage_memory(INIT);
-	manage_memory(NEW);
-
-	t_memory *memory = manage_memory(GET);
-	memory->memory[0] = 11;
-	memory->memory[3] = 1;
-	memory->memory[1024] = 12;
-
-	// manage_memory(PRINT);
 	return (0);
 }

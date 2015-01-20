@@ -6,13 +6,13 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 08:15:56 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 07:44:55 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/20 08:06:54 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <env.h>
 
-char		is_separator(char in)
+char				is_separator(char in)
 {
 	int		i;
 	char	*separators;
@@ -28,7 +28,7 @@ char		is_separator(char in)
 	return (0);
 }
 
-char	manage_envgetoptend(char *format)
+char				manage_envgetoptend(char *format)
 {
 	int j = 1;
 	while (format[j] && is_separator(format[j]) == 0)
@@ -39,7 +39,7 @@ char	manage_envgetoptend(char *format)
 		return (0);
 }
 
-int		manage_envnextindex(char *format)
+int					manage_envnextindex(char *format)
 {
 	int k = 1;
 	while (format[k] && format[k] != '-')
@@ -47,7 +47,7 @@ int		manage_envnextindex(char *format)
 	return (k);
 }
 
-char	*manage_envgetopt(char *format)
+char				*manage_envgetopt(char *format)
 {
 	int				i;
 	static char		opt[80];
@@ -62,7 +62,7 @@ char	*manage_envgetopt(char *format)
 	opt[i] = '\0';
 	return (opt);
 }
-void	manage_envget(t_env *env)
+void				manage_envget(t_env *env)
 {
 	static int		argcount;
 	static int		index;
@@ -89,7 +89,7 @@ void	manage_envget(t_env *env)
 	index += manage_envnextindex(&env->format[index]);
 }
 
-t_env	*manage_env(int macro)
+t_env				*manage_env(int macro)
 {
 	static t_env	env;
 

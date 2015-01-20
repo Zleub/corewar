@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:46:21 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 04:38:24 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/20 08:03:57 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 static void		new_memory(t_memory *memory)
 {
 	memory->size = MEM_SIZE;
-	// memory->lign_size =
 	memory->memory = (char*)malloc(sizeof(char) * memory->size);
 	ft_bzero(memory->memory, MEM_SIZE);
 }

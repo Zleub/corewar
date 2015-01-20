@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 16:57:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 04:16:58 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/20 11:29:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,23 @@ void	fileprint(t_file *head)
 	{
 		ft_printf("%p\n", head);
 		ft_printf("%s\n", head->str);
+		ft_printf("%p\n", head->next);
+		fileprint(head->next);
+	}
+}
+
+void	filebinaryprint(t_file *head)
+{
+	if (head)
+	{
+		ft_printf("%p\n", head);
+		int i;
+		i = 0;
+		while (head->str[i] != '\0')
+		{
+			ft_printf("%c", head->str[i]);
+			i += 1;
+		}
 		ft_printf("%p\n", head->next);
 		fileprint(head->next);
 	}
@@ -60,5 +77,7 @@ void	*manage_file(int macro)
 	}
 	else if (macro == PRINT)
 		fileprint(head);
+	else if (macro == PRINTBINARY)
+		filebinaryprint(head);
 	return (NULL);
 }

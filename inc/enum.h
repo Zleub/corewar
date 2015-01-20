@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 08:19:18 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 06:24:56 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/20 08:13:24 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ enum	e_macros
 	SET,
 	DEL,
 	ADD,
-	NEXT
+	NEXT,
+	PRINTBINARY
 };
 
 
