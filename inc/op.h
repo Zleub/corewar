@@ -77,7 +77,7 @@ typedef struct		header_s
 
 typedef struct	s_op {
 	char		*name;
-	int			unknown0;
+	int			arg_number;
 	int			*args;
 	int			opcode;
 	int			cycles;
