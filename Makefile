@@ -15,34 +15,37 @@ HEADDIR			=	inc
 HEADFLAG		=	-I ./$(HEADDIR)
 
 SRCDIR			=	src
-SRC				=	$(SRCDIR)/main.c
+SRC				=	
 OBJ				=	$(subst .c,.o,$(SRC))
 
 CC				=	gcc
-CCFLAGS			=	-Werror -Wall -Wextra -Wuninitialized -O3 -g3
+CCFLAGS			=	-Werror -Wall -Wextra -Wuninitialized -O3
 
 LIBLIBFT		=	-L$(SRCDIR)/libft -lft
 LIBPRINTF		=	-L$(SRCDIR)/ft_printf -lftprintf
 LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF)
 
-LIBCOREWAR		=	-L$(SRCDIR)/corewar -lcorewar
+LIBCOREWAR		=	$(LIBESSENTIAL) -L$(SRCDIR)/corewar -lcorewar
+LIBASM			=	$(LIBESSENTIAL) -L$(SRCDIR)/asm -lasm
 
 LIBNCURSES		=	-L$(SRCDIR)/curse -lcurse
 LIBGRAPHIC		=	-lncurses
 
-LIBFLAG			=	$(LIBESSENTIAL) $(LIBCOREWAR) # $(LIBNCURSES) $(LIBGRAPHIC)
+.PHONY: all clean fclean re $(NAME) asm
 
-.PHONY: all clean fclean re $(NAME)
+all: $(NAME) asm
 
-all:
-	@echo "plz, specify corewar or asm"
+makelib: _libft _printf
 
-makelib: _libft _printf _corewar # _curse
-
-$(NAME): makelib $(OBJ)
-	@$(CC) $(CCFLAGS) $(HEADFLAG) $(LIBFLAG) -o $(NAME) $(OBJ)
+$(NAME): makelib _vm $(OBJ)
+	@$(CC) $(CCFLAGS) $(HEADFLAG) $(LIBCOREWAR) -o $(NAME) $(OBJ) $(SRCDIR)/main_vm.c
 	@echo '!'
 	@echo "\033[32m•\033[0m $(NAME) compil: \033[32m$(NAME)\033[0m"
+
+asm: makelib _asm $(OBJ)
+	@$(CC) $(CCFLAGS) $(HEADFLAG) $(LIBASM) -o $@ $(OBJ) $(SRCDIR)/main_asm.c
+	@echo '!'
+	@echo "\033[32m•\033[0m $@ compil: \033[32m$@\033[0m"
 
 _libft: $(HEADDIR)/libft.h
 	@make -C $(SRCDIR)/libft
@@ -53,8 +56,11 @@ _printf: $(HEADDIR)/ft_printf.h
 _curse: $(HEADDIR)/curse.h
 	@make -C $(SRCDIR)/curse
 
-_corewar: $(HEADDIR)/corewar.h
+_vm: $(HEADDIR)/corewar.h
 	@make -C $(SRCDIR)/corewar
+
+_asm: $(HEADDIR)/asm.h
+	@make -C $(SRCDIR)/asm
 
 %.o: %.c
 	@echo '.''\c'
@@ -65,6 +71,7 @@ clean:
 	@ #make -C $(SRCDIR)/curse clean
 	@make -C $(SRCDIR)/ft_printf clean
 	@make -C $(SRCDIR)/corewar clean
+	@make -C $(SRCDIR)/asm clean
 	@rm -f $(OBJ)
 	@echo "\033[31m•\033[0m $(NAME) clean.\033[0m"
 
@@ -73,9 +80,11 @@ fclean: clean
 	@ #make -C $(SRCDIR)/curse fclean
 	@make -C $(SRCDIR)/ft_printf fclean
 	@make -C $(SRCDIR)/corewar fclean
+	@make -C $(SRCDIR)/asm fclean
 	@rm -f $(OBJ)
 	@rm -f $(LIBNAME)
 	@rm -f $(NAME)
+	@rm -f asm
 	@echo "\033[31m•\033[0m $(NAME) fclean: \033[31m$(NAME)\033[0m"
 
 re: fclean all
