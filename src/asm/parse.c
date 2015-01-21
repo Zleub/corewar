@@ -15,14 +15,14 @@
 #include "asm.h"
 #include "get_next_line.h"
 
-int		parse_line(char const *line, uint lineNumber)
+int		parse_line(char const *line, uint row)
 {
 	char const	*current;
 
 	if (line && *line == COMMENT_CHAR)
-		return parse_comment(line);
+		return parse_comment(line, row);
 	else if (ft_strstr(line, NAME_CMD_STRING))
-		return parse_name(line);
+		return parse_name(line, row);
 
 	current = line;
 
@@ -31,9 +31,9 @@ int		parse_line(char const *line, uint lineNumber)
 		if (ft_strchr(LABEL_CHARS, *current))
 			continue;
 		else if (current != line && *current == LABEL_CHAR)
-			parse_label(line);
+			parse_label(line, row);
 		else
-			invalid_char_die(lineNumber, (int)(current - line) + 1);
+			syntax_error(row, (int)(current - line) + 1);
 
 		current++;
 	}

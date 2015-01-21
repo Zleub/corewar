@@ -10,8 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		parse_name(char const *line)
+#include "asm.h"
+
+int		parse_name(char const *line, uint row)
 {
-	(void) line;
+	char	*occ;
+
+	occ = ft_strchr(line, ' ');
+
+	if (occ == NULL)
+		syntax_error("You must specify a name.", row, ft_strlen(NAME_CMD_STRING));
+
+	
 	return 0;
 }

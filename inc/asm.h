@@ -14,6 +14,8 @@
 # define ASM_H
 
 # include "op.h"
+# include <ft_libft.h>
+# include <ft_printf.h>
 
 typedef unsigned int	uint;
 
@@ -23,16 +25,22 @@ typedef struct			s_instruction
 	struct instruction	*next;
 }						t_instruction;
 
+typedef struct			s_champion
+{
+	char				*name;
+	char				*description;
+}						t_champion;
+
 void	init(int argc, char const **argv);
 void	usage(void);
 int		open_file(char const *pathname);
 
 void	parse_file(int fd);
-int		parse_comment(char const *line);
-int		parse_label(char const *line);
-int		parse_name(char const *line);
+int		parse_comment(char const *line, uint row);
+int		parse_label(char const *line, uint row);
+int		parse_name(char const *line, uint row);
 
 void	die(char const *message);
-void	invalid_char_die(uint line, uint col);
+void	syntax_error(uint line, uint col);
 
 #endif

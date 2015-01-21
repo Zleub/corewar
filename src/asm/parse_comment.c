@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-int		parse_comment(char const *line)
+int		parse_comment(char const *line, uint row)
 {
 	uint	i;
 
@@ -22,7 +22,7 @@ int		parse_comment(char const *line)
 	while (line[i])
 	{
 		if (i > COMMENT_LENGTH)
-			die("Comment too long.");
+			syntax_error("Comment too long.", row, i);
 
 		i++;
 	}

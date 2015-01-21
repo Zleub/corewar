@@ -12,9 +12,8 @@
 
 #include "asm.h"
 
-int		parse_label(char const *line)
+int		parse_label(char const *line, uint row)
 {
-	(void)line;
 
 	return 0;
 }
