@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/19 23:51:41 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/21 14:28:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ASM_H
 
 # include "op.h"
-# include <ft_libft.h>
+# include <libft.h>
 # include <ft_printf.h>
 
 typedef unsigned int	uint;

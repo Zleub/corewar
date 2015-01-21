@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 16:57:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 11:29:34 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/21 16:45:44 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ void	filebinaryprint(t_file *head)
 {
 	if (head)
 	{
-		ft_printf("%p\n", head);
+		// ft_printf("%p\n", head);
 		int i;
 		i = 0;
-		while (head->str[i] != '\0')
+		while (i < 80)
 		{
-			ft_printf("%c", head->str[i]);
+			ft_printf(" %d", (char)head->str[i]);
 			i += 1;
 		}
-		ft_printf("%p\n", head->next);
-		fileprint(head->next);
+		ft_printf("\n");
+		filebinaryprint(head->next);
 	}
 }
 
@@ -46,14 +46,22 @@ t_file	*initfile(char *str)
 
 	if (!(new = (t_file*)malloc(sizeof(t_file))))
 		return (NULL);
-	new->str = str;
+	if (!(new->str = (char*)malloc(sizeof(char) * 80)))
+		return (NULL);
+	ft_memcpy(new->str, str, 80);
+	new->str[80] = '\0';
 	new->next = NULL;
 	return (new);
 }
 
+void	print_champion(t_file *head)
+{
+	(void)head;
+}
+
 void	*manage_file(int macro)
 {
-	static char		*this_str;
+	static char		this_str[80];
 	static t_file	*head;
 	static t_file	*current;
 
@@ -64,7 +72,7 @@ void	*manage_file(int macro)
 		return (head);
 	}
 	else if (macro == GET)
-		return (head);
+		return (&head);
 	else if (macro == SET)
 		return (&this_str);
 	else if (macro == ADD)
@@ -79,5 +87,7 @@ void	*manage_file(int macro)
 		fileprint(head);
 	else if (macro == PRINTBINARY)
 		filebinaryprint(head);
+	else if (macro == 66)
+		print_champion(head);
 	return (NULL);
 }
