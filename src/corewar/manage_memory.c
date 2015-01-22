@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:46:21 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/22 12:12:20 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/22 15:48:53 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int			ft_printx(unsigned int decimal)
 	return (cmp);
 }
 
-static void		print_clean_hexa(char c)
+static void		print_clean_hexa(unsigned char c)
 {
 	int				cmp;
 
@@ -79,9 +79,12 @@ static void		print_clean_hexa(char c)
 	if (c < 16)
 	{
 		if (c >= 10)
+		{
+			ft_printf("0");
 			cmp += ft_printx(c);
+		}
 		else
-			cmp += ft_printf("%d", c);
+			cmp += ft_printf("0%d", c);
 	}
 	else
 	{

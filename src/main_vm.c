@@ -28,18 +28,6 @@ void		ft_dump(void)
 	ft_printf("CHAMP_MAX_SIZE: %d\n", CHAMP_MAX_SIZE);
 }
 
-void		ft_getfile(int fd)
-{
-	ft_printf("fd: %d\n", fd);
-
-	ft_bzero(manage_file(SET), 80);
-	while (read(fd, (char**)manage_file(SET), 80) > 0)
-	{
-		manage_file(ADD);
-		ft_bzero(manage_file(SET), 80);
-	}
-}
-
 int		ft_isfile(t_env *env)
 {
 	int fd;
@@ -57,15 +45,6 @@ int		ft_isfile(t_env *env)
 	return (-1);
 }
 
-void showbits(unsigned int x)
-	{
-		int i;
-        for(i=(sizeof(int)*8)-1; i>=0; i--) {
-			(x&(1<<i))?ft_putchar('1'):ft_putchar('0');
-        }
-		ft_printf("\n");
-	}
-
 int		invertbits(unsigned int x)
 {
 	unsigned int test = 0;
@@ -79,9 +58,12 @@ int		invertbits(unsigned int x)
 
 int			main(int argc, char **argv)
 {
-	t_env	*env;
-	header_t	plaiz;
+	t_env		*env;
+	t_heros		heros[4];
 
+	// header_t	plaiz;
+
+	ft_dump();
 	manage_memory(INIT);
 	manage_memory(NEW);
 	t_memory *memory = manage_memory(GET);
@@ -96,8 +78,8 @@ int			main(int argc, char **argv)
 	while (env->opt[0] != '\0' && env->opt[0] != '?')
 	{
 		ft_printf("opt: %s, arg: %s\n", env->opt, env->arg);
+
 		int fd = ft_isfile(env);
-		// char str[4 + PROG_NAME_LENGTH + 1 + 4 + COMMENT_LENGTH + 1];
 		read(fd, &plaiz, sizeof(header_t));
 
 		plaiz.magic = invertbits(plaiz.magic);
@@ -106,14 +88,6 @@ int			main(int argc, char **argv)
 		plaiz.prog_size = invertbits(plaiz.prog_size);
 		ft_printf("%d\n", plaiz.prog_size);
 		ft_printf("%s\n", plaiz.comment);
-		// write(1, str, 4 + PROG_NAME_LENGTH + 1 + 4 + COMMENT_LENGTH + 1);
-
-		// manage_file(PRINTBINARY);
-		// manage_file(66);
-		// (*(t_file**)manage_file(GET)) = NULL;
-
-
-
 
 		char str[plaiz.prog_size];
 		read(fd, &str, plaiz.prog_size);
@@ -121,7 +95,8 @@ int			main(int argc, char **argv)
 		unsigned int k;
 		for(k = 0; k < plaiz.prog_size;k++)
 		{
-			memory->memory[k] = str[k];
+			// ft_printf("%s\n", str);
+			memory->memory[k] = (unsigned char)str[k];
 			ft_printf("%x ", str[k]);
 		}
 		ft_printf("\n");
