@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/22 08:23:31 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/22 08:24:19 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ t_champion	*get_champion(int new)
 	if (new)
 	{
 		free(champion);
+		// TODO: Free all stuff
 		champion = NULL;
 	}
-	// TODO: Free all stuff
 
 	if (champion == NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/22 08:23:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/22 09:03:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ int		parse_command(char const *line, uint row)
 	char const	**splits;
 
 	splits = split_command(line);
+
+	ft_putendl(splits[0]);
+	ft_printf("%n", command_exists(splits[0]));
+
+	exit(0);
+
 
 	(void) row;
 
