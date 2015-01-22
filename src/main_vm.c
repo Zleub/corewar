@@ -85,7 +85,6 @@ int			main(int argc, char **argv)
 	manage_memory(INIT);
 	manage_memory(NEW);
 	t_memory *memory = manage_memory(GET);
-	(void)memory;
 
 	env = manage_env(GET);
 	env->argc = argc;
@@ -121,7 +120,10 @@ int			main(int argc, char **argv)
 
 		unsigned int k;
 		for(k = 0; k < plaiz.prog_size;k++)
+		{
+			memory->memory[k] = str[k];
 			ft_printf("%x ", str[k]);
+		}
 		ft_printf("\n");
 
 
