@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
+#    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/05 10:50:05 by adebray           #+#    #+#              #
-#    Updated: 2015/01/18 14:42:01 by adebray          ###   ########.fr        #
+#    Updated: 2015/01/22 06:54:18 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ HEADDIR		=	 ../../inc
 
 SRC			=	op.c					init.c						parse.c    \
 				get_next_line.c			parse_comment.c				util.c     \
-				parse_label.c			parse_name.c
+				parse_label.c			parse_name.c				label.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 

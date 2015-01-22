@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_label.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/20 01:54:47 by amaurer          ###   ########.fr       */
+/*   Created: 2015/01/21 21:11:58 by amaurer           #+#    #+#             */
+/*   Updated: 2015/01/22 07:00:47 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 
 int		parse_label(char const *line, uint row)
 {
+	char		*occ;
+
+	occ = ft_strchr(line, LABEL_CHAR);
+
+	add_label(ft_strndup((char*)line, occ - line));
+
+	occ++;
+
+	while (*occ)
+	{
+		if (!ft_isspace(*occ))
+			die2("Unexpected character", row, occ - line);
+
+		occ++;
+	}
 
 	return 0;
 }

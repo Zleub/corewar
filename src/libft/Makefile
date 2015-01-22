@@ -72,6 +72,7 @@ SRC			=	ft_memset.c \
 				ft_strclen.c \
 				ft_print_array.c \
 				ft_abs.c \
+				ft_strcdup.c \
 				gnl.c
 
 OBJ			= $(subst .c,.o,$(SRC))

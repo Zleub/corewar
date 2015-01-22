@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/20 01:54:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/22 08:24:19 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,28 @@ int		parse_line(char const *line, uint row)
 	char const	*current;
 
 	if (line && *line == COMMENT_CHAR)
-		return parse_comment(line, row);
+		return 0;
 	else if (ft_strstr(line, NAME_CMD_STRING))
 		return parse_name(line, row);
+	else if (ft_strstr(line, COMMENT_CMD_STRING))
+		return parse_comment(line, row);
 
 	current = line;
 
 	while (*current)
 	{
-		if (ft_strchr(LABEL_CHARS, *current))
-			continue;
-		else if (current != line && *current == LABEL_CHAR)
-			parse_label(line, row);
-		else
-			syntax_error(row, (int)(current - line) + 1);
+		if (!ft_strchr(LABEL_CHARS, *current))
+		{
+			if (current != line && *current == LABEL_CHAR)
+				return parse_label(line, row);
+			else
+				die2("Unknown command", row, (int)(current - line) + 1);
+		}
 
 		current++;
 	}
+
+	die2("Unknown command", row, 0);
 
 	return 0;
 }
@@ -50,10 +55,46 @@ void		parse_file(int fd)
 
 	while (get_next_line(fd, &line) > 0)
 	{
+		get_current_line(line);
+
 		if (ft_strlen(line))
 			parse_line(line, i);
 
 		i++;
 		free(line);
 	}
+}
+
+char		*get_current_line(char *line)
+{
+	static char	*l;
+
+	if (line)
+		l = line;
+
+	return l;
+}
+
+t_champion	*get_champion(int new)
+{
+	static t_champion	*champion;
+
+	if (new)
+	{
+		free(champion);
+		// TODO: Free all stuff
+		champion = NULL;
+	}
+
+	if (champion == NULL)
+	{
+		champion = (t_champion*)malloc(sizeof(t_champion));
+
+		champion->name = NULL;
+		champion->comment = NULL;
+		champion->commands = NULL;
+		champion->labels = NULL;
+	}
+
+	return champion;
 }
