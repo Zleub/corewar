@@ -14,7 +14,11 @@ NAME		=	libcorewar.a
 LIB			=	corewar
 HEADDIR		=	 ../../inc
 
-SRC			=	manage_memory.c
+SRC			=	corewar.c\
+				read_stdin.c\
+				manage_memory.c\
+				print_memory.c\
+				utilities.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 
