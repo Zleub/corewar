@@ -6,15 +6,18 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/22 09:03:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/23 05:47:19 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-t_op	op_tab[1];
+t_op	op_tab[2] = {
+	{"sti", 3, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0}
+};
 
-static int	command_exists(char const *command)
+static t_op	*get_command(char const *command)
 {
 	uint	i;
 
@@ -22,72 +25,50 @@ static int	command_exists(char const *command)
 
 	while (op_tab[i].name)
 	{
+		ft_printf("|%s| |%s|\n", op_tab[i].name, command);
 		if (ft_strequ(op_tab[i].name, command))
-			return (1);
+			return (&(op_tab[i]));
 		i++;
 	}
 
-	return (0);
+	return (NULL);
 }
 
-static char const	**split_command(char const *line)
+static char	*get_command_name(char const *line)
 {
-	char const	**splits;
 	char const	*save;
-	uint		split_count;
-	uint		i;
 
-	line = skip_white_spaces(line);
-
-	split_count = 0;
 	save = line;
 
-	while (*line)
-	{
-		if (ft_isdigit(*line))
-		{
-			line = skip_white_spaces(line);
-			split_count++;
-		}
-
+	while (ft_strchr(LABEL_CHARS, *line))
 		line++;
-	}
 
-	if (split_count == 0)
-		return (NULL);
-
-	splits = malloc(sizeof(char*) * (split_count + 1));
-	line = save;
-	i = 0;
-
-	while (*line)
-	{
-		if (ft_isdigit(*line))
-		{
-			splits[i++] = save;
-			line = skip_white_spaces(line);
-			save = line;
-		}
-		else
-			line++;
-	}
-
-	return splits;
+	return ft_strndup((char *)save, line - save);
 }
+
 
 int		parse_command(char const *line, uint row)
 {
-	char const	**splits;
+	char		*name;
+	char		**args;
+	uint		argc;
+	t_op		*op;
 
-	splits = split_command(line);
+	name = get_command_name(line);
+	op = get_command(name);
 
-	ft_putendl(splits[0]);
-	ft_printf("%n", command_exists(splits[0]));
+	if (op == NULL)
+		die2("Unknown command", row, skip_white_spaces(line) - line);
 
-	exit(0);
+	args = ft_strsplit(line + ft_strlen(name), SEPARATOR_CHAR);
 
+	argc = 0;
 
-	(void) row;
+	while (args[argc])
+		argc++;
+
+	if (op->arg_number != argc)
+		die2("Bad argument count", row, skip_white_spaces(line) - line);
 
 	return (0);
 }

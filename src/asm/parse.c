@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/22 08:24:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/23 05:38:51 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		parse_line(char const *line, uint row)
 			if (current != line && *current == LABEL_CHAR)
 				return parse_label(line, row);
 			else
-				die2("Unknown command", row, (int)(current - line) + 1);
+				return parse_command(line, row);
 		}
 
 		current++;
@@ -49,19 +49,23 @@ int		parse_line(char const *line, uint row)
 void		parse_file(int fd)
 {
 	char	*line;
+	char	*trimmed;
 	uint	i;
 
 	i = 1;
 
 	while (get_next_line(fd, &line) > 0)
 	{
-		get_current_line(line);
+		trimmed = ft_strtrim(line);
+		free(line);
 
-		if (ft_strlen(line))
-			parse_line(line, i);
+		get_current_line(trimmed);
+
+		if (ft_strlen(trimmed))
+			parse_line(trimmed, i);
 
 		i++;
-		free(line);
+		free(trimmed);
 	}
 }
 

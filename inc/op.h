@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zaz <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2013/11/06 14:21:46 by zaz              ###   ########.fr       */
+/*   Updated: 2015/01/23 03:40:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,14 @@ typedef struct		header_s
   char				comment[COMMENT_LENGTH + 1];
 }					header_t;
 
-typedef struct	s_op {
-	char		*name;
-	int			arg_number;
-	int			*args;
-	int			opcode;
-	int			cycles;
-	char		*description;
-	int			coding_octet;
-	int			unknown1;
-}				t_op;
+typedef struct		s_op {
+	char			*name;
+	unsigned int	arg_number;
+	int				*args;
+	int				opcode;
+	int				cycles;
+	char			*description;
+	int				coding_octet;
+	int				unknown1;
+}					t_op;
 

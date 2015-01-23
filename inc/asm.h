@@ -59,4 +59,6 @@ void		die(char const *message);
 void		die2(char *message, uint line, uint col);
 char		*skip_white_spaces(char const *line);
 
+char		**split_command(char const *s, uint *word);
+
 #endif

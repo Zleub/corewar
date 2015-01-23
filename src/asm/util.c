@@ -49,7 +49,7 @@ void	die2(char *message, uint line, uint col)
 
 char	*skip_white_spaces(char const *str)
 {
-	while (*str && ft_isspace(*(str + 1)))
+	while (*str && ft_isspace(*str))
 		str++;
 
 	return ((char*)str);
