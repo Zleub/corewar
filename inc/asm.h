@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   asm.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/21 14:28:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/24 01:59:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ typedef unsigned int	uint;
 
 typedef struct			s_command
 {
-	int					opcode;
+	t_op				*op;
+	char				**raw_args;
 	struct s_command	*next;
 }						t_command;
 

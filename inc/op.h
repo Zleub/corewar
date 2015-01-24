@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/01/23 03:40:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/24 00:48:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct		header_s
 typedef struct		s_op {
 	char			*name;
 	unsigned int	arg_number;
-	int				*args;
+	unsigned int	*args;
 	int				opcode;
 	int				cycles;
 	char			*description;
