@@ -14,7 +14,8 @@ NAME		=	libcorewar.a
 LIB			=	corewar
 HEADDIR		=	 ../../inc
 
-SRC			=	corewar.c\
+SRC			=	op.c\
+				corewar.c\
 				read_stdin.c\
 				manage_memory.c\
 				print_memory.c\

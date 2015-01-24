@@ -6,7 +6,7 @@
 #    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/10/02 03:26:29 by adebray           #+#    #+#              #
-#    Updated: 2015/01/20 06:56:20 by adebray          ###   ########.fr        #
+#    Updated: 2015/01/24 00:23:20 by adebray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,10 @@ LIBPRINTF		=	-L$(SRCDIR)/ft_printf -lftprintf
 LIBENV			=	-L$(SRCDIR)/env -lenv
 LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF) $(LIBENV)
 
-LIBCOREWAR		=	$(LIBESSENTIAL) -L$(SRCDIR)/corewar -lcorewar
-LIBASM			=	$(LIBESSENTIAL) -L$(SRCDIR)/asm -lasm
+LIBNCURSES		=	-lncurses
 
-LIBNCURSES		=	-L$(SRCDIR)/curse -lcurse
-LIBGRAPHIC		=	-lncurses
+LIBCOREWAR		=	$(LIBESSENTIAL) $(LIBNCURSES) -L$(SRCDIR)/corewar -lcorewar
+LIBASM			=	$(LIBESSENTIAL) -L$(SRCDIR)/asm -lasm
 
 .PHONY: all clean fclean re $(NAME) asm
 
