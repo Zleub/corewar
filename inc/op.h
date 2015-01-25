@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/01/24 00:48:59 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/25 12:40:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 ** Toutes les tailles sont en octets.
 ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
 */
+
+#ifndef OP_H
+# define OP_H
 
 #define IND_SIZE				2
 #define REG_SIZE				4
@@ -78,11 +81,13 @@ typedef struct		header_s
 typedef struct		s_op {
 	char			*name;
 	unsigned int	arg_number;
-	unsigned int	*args;
+	unsigned int	args[4];
 	int				opcode;
 	int				cycles;
 	char			*description;
 	int				coding_octet;
 	int				unknown1;
 }					t_op;
+
+#endif
 

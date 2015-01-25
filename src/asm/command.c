@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   label.c                                            :+:      :+:    :+:   */
+/*   command.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 04:40:40 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:17:32 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/25 16:13:44 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-t_label		*get_last_label(void)
+t_command		*get_last_command(void)
 {
-	t_label	*label;
+	t_command	*command;
 
-	label = get_champion(0)->labels;
-	while (label && label->next)
+	command = get_champion(0)->commands;
+	while (command && command->next)
 	{
-		if (label->next == NULL)
+		if (command->next == NULL)
 			break ;
-		label = label->next;
+		command = command->next;
 	}
-	return (label);
+	return (command);
 }
 
-t_label		*add_label(char *name)
+t_command		*add_command(t_command *new)
 {
-	t_label	*label;
-	t_label	*new;
+	t_command	*command;
 
-	new = malloc(sizeof(t_label));
-	new->name = ft_strdup(name);
-	new->target = NULL;
-	new->next = NULL;
-	label = get_last_label();
-	if (label)
-		label->next = new;
+	command = get_last_command();
+	if (command)
+		command->next = new;
 	else
-		get_champion(0)->labels = new;
+		get_champion(0)->commands = new;
 	return (new);
 }

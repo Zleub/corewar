@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/24 01:59:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/25 15:09:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct			s_command
 {
 	t_op				*op;
 	char				**raw_args;
+	int					opcode;
 	struct s_command	*next;
 }						t_command;
 
@@ -56,9 +57,12 @@ void		usage(void);
 t_label		*add_label(char *name);
 t_label		*get_last_label(void);
 
+t_command	*add_command(t_command *new);
+
 void		die(char const *message);
 void		die2(char *message, uint line, uint col);
 char		*skip_white_spaces(char const *line);
+int			is_number(char const *str);
 
 char		**split_command(char const *s, uint *word);
 
