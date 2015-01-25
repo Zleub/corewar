@@ -6,13 +6,15 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/24 02:05:14 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/25 16:00:02 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <corewar.h>
 
-void		write_herostomemory(int offset, t_heros *heros)
+t_op		g_op_tab[17];
+
+void		write_heros(int offset, t_heros *heros)
 {
 	unsigned int m;
 	t_memory *memory;
@@ -25,6 +27,52 @@ void		write_herostomemory(int offset, t_heros *heros)
 		memory->memory[offset + m].op = (unsigned char)heros->c[m];
 		m += 1;
 	}
+	manage_process(NEW);
+	manage_process(GET)->index = offset;
+	memory->memory[offset].proc = 1;
+	manage_process_list(ADD);
+}
+
+void		foreach_heros(int player_nbr, t_heros *heros)
+{
+	int			offset;
+	int			i;
+
+	i = 0;
+	offset = MEM_SIZE / player_nbr;
+	while (i < player_nbr)
+	{
+		write_heros(offset * i, &heros[i]);
+		i += 1;
+	}
+}
+
+void		increment_process(void)
+{
+	t_process_list	*head;
+	t_memory		*memory;
+
+	head = manage_process_list(GET);
+	memory = manage_memory(GET);
+	while (head)
+	{
+		t_op test = g_op_tab[(int)memory->memory[head->p->index].op - 1];
+
+		int i = 0;
+
+		dprintf(2, "%s: arg_number: %d\n", test.name, test.arg_number);
+		while (i < test.arg_number)
+		{
+			dprintf(2, "\t-> arg: %d\n", test.args[i]);
+			i += 1;
+		}
+
+		memory->memory[head->p->index].proc = 0;
+		head->p->index += 1;
+		memory->memory[head->p->index].proc = 1;
+
+		head = head->next;
+	}
 }
 
 int			main(int argc, char **argv)
@@ -34,19 +82,21 @@ int			main(int argc, char **argv)
 
 	corewar_init(argc, argv);
 	player_nbr = corewar_getopt(heros);
+	foreach_heros(player_nbr, heros);
 
-	int offset = MEM_SIZE / player_nbr;
-	int i = 0;
-	while (i < player_nbr)
+	while (player_nbr)
 	{
-		write_herostomemory(offset * i, &heros[i]);
-		i += 1;
+		wclear(stdscr);
+		manage_memory(PRINT);
+		// manage_process_list(PRINT);
+		wrefresh(stdscr);
+
+		increment_process();
+
+		usleep(800 * 3000);
+		dprintf(2, "usleep end\n");
 	}
 
-	manage_memory(PRINT);
-	wrefresh(stdscr);
-
-	sleep(60);
 	endwin();
 	return (0);
 }

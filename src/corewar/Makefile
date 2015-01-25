@@ -15,10 +15,12 @@ LIB			=	corewar
 HEADDIR		=	 ../../inc
 
 SRC			=	op.c\
-				corewar.c\
+				corewar_init.c\
 				read_stdin.c\
 				manage_memory.c\
 				print_memory.c\
+				manage_process.c\
+				manage_process_list.c\
 				utilities.c
 
 OBJ			= $(subst .c,.o,$(SRC))

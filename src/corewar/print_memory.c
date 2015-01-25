@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:02:45 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/24 01:53:54 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/25 14:40:52 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static void		print_clean_hexa(unsigned char c)
 	}
 	else
 		wprintw(stdscr, "%x", c);
-	wprintw(stdscr, " ");
 }
 
 void		print_memory(t_memory *memory)
@@ -59,9 +58,13 @@ void		print_memory(t_memory *memory)
 	while (index < memory->size)
 	{
 		wattrset(stdscr, COLOR_PAIR(memory->memory[index].colorp));
+		if (memory->memory[index].proc == 1)
+			wattrset(stdscr, A_STANDOUT | COLOR_PAIR(memory->memory[index].colorp));
 		print_clean_hexa((unsigned char)memory->memory[index].op);
 		wattroff(stdscr, COLOR_PAIR(memory->memory[index].colorp));
-
+		if (memory->memory[index].proc == 1)
+			wattroff(stdscr, A_STANDOUT | COLOR_PAIR(memory->memory[index].colorp));
+		wprintw(stdscr, " ");
 		if (index % (IDX_MOD / 8) == (IDX_MOD / 8) - 1)
 			wprintw(stdscr, "\n");
 		index += 1;
