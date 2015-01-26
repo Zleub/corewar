@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_vm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Arno <Arno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/25 16:00:02 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/26 14:14:38 by Arno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,37 @@ void		foreach_heros(int player_nbr, t_heros *heros)
 	}
 }
 
+void		get_op(t_process *p)
+{
+	t_memory		*memory;
+	t_op			tmp;
+
+	memory = manage_memory(GET);
+	tmp = g_op_tab[(int)memory->memory[p->index].op - 1];
+
+	// int i = 0;
+	dprintf(2, "index: %d\n", p->index);
+	// dprintf(2, "%s: arg_number: %d\n", tmp.name, tmp.arg_number);
+	// while (i < tmp.arg_number)
+	// {
+	// 	dprintf(2, "\t-> arg: %d\n", tmp.args[i]);
+	// 	i += 1;
+	// }
+
+	memory->memory[p->index].proc = 0;
+	p->index += 1;
+	memory->memory[p->index].proc = 1;
+}
+
 void		increment_process(void)
 {
 	t_process_list	*head;
-	t_memory		*memory;
 
 	head = manage_process_list(GET);
-	memory = manage_memory(GET);
 	while (head)
 	{
-		t_op test = g_op_tab[(int)memory->memory[head->p->index].op - 1];
-
-		int i = 0;
-
-		dprintf(2, "%s: arg_number: %d\n", test.name, test.arg_number);
-		while (i < test.arg_number)
-		{
-			dprintf(2, "\t-> arg: %d\n", test.args[i]);
-			i += 1;
-		}
-
-		memory->memory[head->p->index].proc = 0;
-		head->p->index += 1;
-		memory->memory[head->p->index].proc = 1;
-
+		get_op(head->p);
+		// sleep(60);
 		head = head->next;
 	}
 }
