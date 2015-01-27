@@ -1,32 +1,53 @@
 index: 0
-index: 2048
-usleep end
-index: 1
-index: 2049
-usleep end
-index: 2
-index: 2050
-usleep end
-index: 3
-index: 2051
-usleep end
-index: 4
-index: 2052
-usleep end
-index: 5
-index: 2053
-usleep end
-index: 6
-index: 2054
+__sti__: arg_number: 3
+args[0]: 1
+args[1]: 7
+args[2]: 3
+size: 7
 usleep end
 index: 7
-index: 2055
+__sti__: arg_number: 3
+args[0]: 1
+args[1]: 7
+args[2]: 3
+size: 7
 usleep end
-index: 8
-index: 2056
+index: 14
+__ld__: arg_number: 2
+args[0]: 6
+args[1]: 1
+size: 7
 usleep end
-index: 9
-index: 2057
+index: 21
+__ld__: arg_number: 2
+args[0]: 6
+args[1]: 1
+size: 7
 usleep end
-index: 10
-index: 2058
+index: 28
+__add__: arg_number: 3
+args[0]: 1
+args[1]: 1
+args[2]: 1
+size: 5
+usleep end
+index: 33
+__xor__: arg_number: 3
+args[0]: 7
+args[1]: 7
+args[2]: 1
+size: 7
+usleep end
+index: 40
+__add__: arg_number: 3
+args[0]: 1
+args[1]: 1
+args[2]: 1
+size: 5
+usleep end
+index: 45
+__add__: arg_number: 3
+args[0]: 1
+args[1]: 1
+args[2]: 1
+size: 5

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_vm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Arno <Arno@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/26 14:14:38 by Arno             ###   ########.fr       */
+/*   Updated: 2015/01/26 17:13:39 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,46 @@ void		get_op(t_process *p)
 	memory = manage_memory(GET);
 	tmp = g_op_tab[(int)memory->memory[p->index].op - 1];
 
-	// int i = 0;
+
+	int size = 1;
+	if (tmp.coding_octet == 0)
+	{
+		dprintf(2, "index: %d\n", p->index);
+		dprintf(2, "__%s__: arg_number: %d\n", tmp.name, tmp.arg_number);
+
+		if (tmp.args[0] == 1)
+			size += 1;
+		else
+			size += 2;
+
+		memory->memory[p->index].proc = 0;
+		p->index += size;
+		memory->memory[p->index].proc = 1;
+		return ;
+	}
+	else
+		size += 1;
+
 	dprintf(2, "index: %d\n", p->index);
-	// dprintf(2, "%s: arg_number: %d\n", tmp.name, tmp.arg_number);
-	// while (i < tmp.arg_number)
-	// {
-	// 	dprintf(2, "\t-> arg: %d\n", tmp.args[i]);
-	// 	i += 1;
-	// }
+	dprintf(2, "__%s__: arg_number: %d\n", tmp.name, tmp.arg_number);
+
+	int i = 0;
+	while (i < tmp.arg_number)
+	{
+		dprintf(2, "args[%d]: %d\n", i, tmp.args[i]);
+		if (tmp.args[i] == 1)
+			size += 1;
+		else if (tmp.args[i] == 6)
+			size += 4;
+		else
+			size += 2;
+		i += 1;
+	}
+
+	dprintf(2, "size: %d\n", size);
 
 	memory->memory[p->index].proc = 0;
-	p->index += 1;
+	p->index += size;
 	memory->memory[p->index].proc = 1;
 }
 
@@ -100,7 +129,8 @@ int			main(int argc, char **argv)
 
 		increment_process();
 
-		usleep(800 * 3000);
+		// usleep(800 * 3000);
+		sleep(60);
 		dprintf(2, "usleep end\n");
 	}
 
