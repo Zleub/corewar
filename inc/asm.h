@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/28 03:00:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:10:10 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char		*get_current_line(char *line);
 
 void		parse_file(int fd);
 int			parse_comment(char const *line, uint row);
-int			parse_label(char const *line, uint row);
+char const	*parse_label(char const *line, uint row);
 int			parse_name(char const *line, uint row);
 int			parse_command(char const *line, uint row);
 void		usage(void);

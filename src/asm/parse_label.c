@@ -6,13 +6,13 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 21:11:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:17:43 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:10:27 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-int		parse_label(char const *line, uint row)
+char const	*parse_label(char const *line, uint row)
 {
 	char		*occ;
 
@@ -22,8 +22,10 @@ int		parse_label(char const *line, uint row)
 	while (*occ)
 	{
 		if (!ft_isspace(*occ))
-			die2("Unexpected character", row, occ - line);
+			return (occ);
+			// die2("Unexpected character", row, occ - line);
 		occ++;
 	}
-	return (0);
+	return (NULL);
+	(void)row;
 }

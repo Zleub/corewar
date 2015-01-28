@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:19:16 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:42:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ int		parse_line(char const *line, uint row)
 		if (!ft_strchr(LABEL_CHARS, *current))
 		{
 			if (current != line && *current == LABEL_CHAR)
-				return (parse_label(line, row));
+			{
+				current = parse_label(line, row);
+				if (current)
+				{
+					return parse_line(current, row);
+				}
+				return (0);
+			}
 			else
 				return (parse_command(line, row));
 		}
