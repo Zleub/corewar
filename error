@@ -4,50 +4,16 @@ args[0]: 1
 args[1]: 7
 args[2]: 3
 size: 7
-usleep end
-index: 7
+index: 1024
+__ld__: arg_number: 2
+args[0]: 6
+args[1]: 1
+size: 7
+index: 2048
 __sti__: arg_number: 3
 args[0]: 1
 args[1]: 7
 args[2]: 3
 size: 7
-usleep end
-index: 14
-__ld__: arg_number: 2
-args[0]: 6
-args[1]: 1
-size: 7
-usleep end
-index: 21
-__ld__: arg_number: 2
-args[0]: 6
-args[1]: 1
-size: 7
-usleep end
-index: 28
-__add__: arg_number: 3
-args[0]: 1
-args[1]: 1
-args[2]: 1
-size: 5
-usleep end
-index: 33
-__xor__: arg_number: 3
-args[0]: 7
-args[1]: 7
-args[2]: 1
-size: 7
-usleep end
-index: 40
-__add__: arg_number: 3
-args[0]: 1
-args[1]: 1
-args[2]: 1
-size: 5
-usleep end
-index: 45
-__add__: arg_number: 3
-args[0]: 1
-args[1]: 1
-args[2]: 1
-size: 5
+index: 3072
+__fork__: arg_number: 1

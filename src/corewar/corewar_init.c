@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   corewar.c                                          :+:      :+:    :+:   */
+/*   corewar_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:07:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/25 14:31:26 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/28 19:07:41 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ void			corewar_init(int argc, char **argv)
 	env->argc = argc;
 	env->argv = argv;
 	env->format = "-n:-n:-n:-n:";
-
-	stdscr = initscr();
-	cbreak();
-	noecho();
-	keypad(stdscr, TRUE);
-	start_color();
-	assume_default_colors(235, COLOR_BLACK);
 }
 
 int			ft_isfile(t_env *env)

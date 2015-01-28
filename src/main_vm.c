@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/26 17:13:39 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/28 19:08:24 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void		write_heros(int offset, t_heros *heros)
 	manage_process(GET)->index = offset;
 	memory->memory[offset].proc = 1;
 	manage_process_list(ADD);
+	init_pair(heros->color, ft_hashich(heros->h.prog_name), COLOR_BLACK);
 }
 
 void		foreach_heros(int player_nbr, t_heros *heros)
@@ -118,6 +119,14 @@ int			main(int argc, char **argv)
 
 	corewar_init(argc, argv);
 	player_nbr = corewar_getopt(heros);
+
+	stdscr = initscr();
+	cbreak();
+	noecho();
+	keypad(stdscr, TRUE);
+	start_color();
+	assume_default_colors(235, COLOR_BLACK);
+
 	foreach_heros(player_nbr, heros);
 
 	while (player_nbr)
