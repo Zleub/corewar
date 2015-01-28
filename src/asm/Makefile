@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/05 10:50:05 by adebray           #+#    #+#              #
-#    Updated: 2015/01/25 15:49:20 by amaurer          ###   ########.fr        #
+#    Updated: 2015/01/27 21:14:53 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ HEADDIR		=	 ../../inc
 SRC			=	op.c					init.c						parse.c    \
 				get_next_line.c			parse_comment.c				util.c     \
 				parse_label.c			parse_name.c				label.c    \
-				parse_command.c			command.c					champion.c
+				parse_command.c			command.c					champion.c \
+				compiler.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 

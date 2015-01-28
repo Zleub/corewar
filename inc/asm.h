@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/25 15:09:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/27 23:35:29 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ char		*skip_white_spaces(char const *line);
 int			is_number(char const *str);
 
 char		**split_command(char const *s, uint *word);
+
+void		compile(const t_champion *champion);
 
 #endif
