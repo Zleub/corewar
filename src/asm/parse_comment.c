@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 21:11:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:17:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:05:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		parse_comment(char const *line, uint row)
 			die2("The comment is too long", row, line - save);
 		line++;
 	}
-	get_champion(0)->comment = ft_strdup(save);
+	occ++;
+	get_champion(0)->comment = ft_strndup(occ, ft_strchr(occ, '"') - occ);
 	return (0);
 }

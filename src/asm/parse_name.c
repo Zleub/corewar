@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:17:45 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:04:27 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		parse_name(char const *line, uint row)
 			die2("The name is too long", row, line - save);
 		line++;
 	}
-	get_champion(0)->name = ft_strdup(save);
+	occ++;
+	get_champion(0)->name = ft_strndup(occ, ft_strchr(occ, '"') - occ);
 	return (0);
 }
