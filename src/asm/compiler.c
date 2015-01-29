@@ -6,7 +6,7 @@
 /*   By: nsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/27 21:10:16 by nsierra-          #+#    #+#             */
-/*   Updated: 2015/01/28 03:00:59 by nsierra-         ###   ########.fr       */
+/*   Updated: 2015/01/29 20:25:43 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ static int		invertoctets(int src)
 		((src << 8) & 0xff0000) |
 		((src >> 8) & 0xff00) |
 		((src << 24) & 0xff000000);
-}
-
-static void		init_header(header_t *champ_header, const t_champion *champion)
-{
-
 }
 
 static void		write_header(int fd, const t_champion *champion)
