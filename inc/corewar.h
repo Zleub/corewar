@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/25 11:49:44 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/29 18:14:10 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ struct						s_heros
 	header_t				h;
 	char					*c;
 	char					color;
+	int						number;
 };
 
 typedef struct s_process	t_process;
@@ -80,6 +81,8 @@ void						ft_exit(int i);
 
 void						corewar_init(int argc, char **argv);
 int							corewar_getopt(t_heros *heros);
+void						write_heros(int offset, t_heros *heros);
+void						foreach_heros(int player_nbr, t_heros *heros);
 
 void						read_header(int fd, t_heros *heros);
 void						read_heros(int fd, t_heros *heros);
@@ -87,5 +90,8 @@ void						read_heros(int fd, t_heros *heros);
 unsigned int				ft_hashich(char *line);
 void						ft_dump(void);
 int							invertbits(unsigned int x);
+
+void						increment_process(void);
+void						ncurse_init(void);
 
 #endif

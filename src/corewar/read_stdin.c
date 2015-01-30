@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:07:06 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/28 19:07:58 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/29 18:12:15 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		read_header(int fd, t_heros *heros)
 	heros->h.magic = invertbits(heros->h.magic);
 	heros->h.prog_size = invertbits(heros->h.prog_size);
 	heros->color = hnbr;
+
 	hnbr += 1;
 }
 
