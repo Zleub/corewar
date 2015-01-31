@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/27 08:15:56 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/20 08:06:54 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/31 14:12:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void				manage_envget(t_env *env)
 
 	if (manage_envgetoptend(&env->format[index]) == 0)
 		env->arg = "";
-	else {
+	else
+	{
 		argcount += 1;
 		env->arg = env->argv[argcount];
 	}

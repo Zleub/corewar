@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:05:48 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/24 02:00:08 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/30 23:23:22 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,13 @@ int		invertbits(unsigned int x)
 	return (test);
 }
 
-void	ft_exit(int i)
+void	die(int i)
 {
+	char	*error;
+
 	endwin();
+	error = strerror(i);
+	write(2, error, ft_strlen(error));
+	write(2, "\n", 1);
 	exit(i);
 }

@@ -21,6 +21,7 @@ SRC			=	op.c\
 				print_memory.c\
 				manage_process.c\
 				manage_process_list.c\
+				corewar.c\
 				utilities.c
 
 OBJ			= $(subst .c,.o,$(SRC))

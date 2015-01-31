@@ -4,16 +4,16 @@ args[0]: 1
 args[1]: 7
 args[2]: 3
 size: 7
-index: 1024
-__ld__: arg_number: 2
-args[0]: 6
-args[1]: 1
-size: 7
-index: 2048
+usleep end
+index: 7
 __sti__: arg_number: 3
 args[0]: 1
 args[1]: 7
 args[2]: 3
 size: 7
-index: 3072
-__fork__: arg_number: 1
+usleep end
+index: 14
+__ld__: arg_number: 2
+args[0]: 6
+args[1]: 1
+size: 7

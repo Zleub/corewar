@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:07:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/28 19:07:41 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/31 14:13:26 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,20 @@ void			corewar_init(int argc, char **argv)
 	env = manage_env(GET);
 	env->argc = argc;
 	env->argv = argv;
-	env->format = "-n:-n:-n:-n:";
+	env->format = "-ncurse-n:-n:-n:-n:";
 }
 
 int			ft_isfile(t_env *env)
 {
-	char	*error;
 	int		fd;
 
 	if (!ft_strcmp(env->opt, "n"))
 	{
 		if ((fd = open(env->arg, O_RDONLY)) == -1)
 		{
-			error = strerror(errno);
-			write(2, error, ft_strlen(error));
-			write(2, "\n", 1);
-			ft_exit(errno);
+			write(2, env->arg, ft_strlen(env->arg));
+			write(2, ": ", 2);
+			die(errno);
 		}
 		else
 			return (fd);
@@ -44,7 +42,7 @@ int			ft_isfile(t_env *env)
 	return (-1);
 }
 
-int		corewar_getopt(t_heros *heros)
+int		corewar_getopt(t_heros *heros, int *ncurse)
 {
 	int			fd;
 	int			i;
@@ -63,7 +61,46 @@ int		corewar_getopt(t_heros *heros)
 			read_heros(fd, &heros[i]);
 			i += 1;
 		}
+		if (!ft_strcmp(env->opt, "ncurse"))
+		{
+			ft_printf("tet\n");
+			*ncurse = 1;
+		}
 		manage_env(NEXT);
 	}
 	return (i);
+}
+
+void		write_heros(int offset, t_heros *heros)
+{
+	unsigned int m;
+	t_memory *memory;
+
+	m = 0;
+	memory = manage_memory(GET);
+	while (m < heros->h.prog_size)
+	{
+		memory->memory[offset + m].colorp = heros->color;
+		memory->memory[offset + m].op = (unsigned char)heros->c[m];
+		m += 1;
+	}
+	manage_process(NEW);
+	manage_process(GET)->index = offset;
+	memory->memory[offset].proc = 1;
+	manage_process_list(ADD);
+	init_pair(heros->color, ft_hashich(heros->h.prog_name), COLOR_BLACK);
+}
+
+void		foreach_heros(int player_nbr, t_heros *heros)
+{
+	int			offset;
+	int			i;
+
+	i = 0;
+	offset = MEM_SIZE / player_nbr;
+	while (i < player_nbr)
+	{
+		write_heros(offset * i, &heros[i]);
+		i += 1;
+	}
 }
