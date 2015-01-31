@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/31 03:42:27 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/31 14:39:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void						*manage_process_list(int macro);
 void						die(int i);
 
 void						corewar_init(int argc, char **argv);
+
 int							corewar_getopt(t_heros *heros, int *ncurse);
 void						write_heros(int offset, t_heros *heros);
 void						foreach_heros(int player_nbr, t_heros *heros);

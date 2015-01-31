@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/29 17:58:38 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/30 23:27:23 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/31 14:39:39 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void		get_op(t_process *p)
 	int size = 1;
 	if (tmp.coding_octet == 0)
 	{
-
 		if (tmp.args[0] == 1)
 			size += 1;
 		else

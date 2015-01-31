@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/31 03:59:30 by adebray          ###   ########.fr       */
+/*   Updated: 2015/01/31 14:40:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int			main(int argc, char **argv)
 	corewar_init(argc, argv);
 	ncurse = 0;
 	player_nbr = corewar_getopt(heros, &ncurse);
-
 
 	if (ncurse)
 		ncurse_init();
