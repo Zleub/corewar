@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:07:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/31 14:38:48 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/02 05:55:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void			corewar_init(int argc, char **argv)
 	env = manage_env(GET);
 	env->argc = argc;
 	env->argv = argv;
-	env->format = "-ncurse-n:-n:-n:-n:";
+	env->format = "-n:-n:-n:-n:";
 }
 
 int			ft_isfile(t_env *env)
