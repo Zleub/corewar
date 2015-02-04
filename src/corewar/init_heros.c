@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/04 03:49:47 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/04 03:50:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 21:09:07 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		write_heros(int offset, t_heros *heros)
 	}
 	manage_process(NEW);
 	manage_process(GET)->index = offset;
+	manage_process(GET)->registers[0][REG_SIZE - 1] = heros->number;
 	memory->memory[offset].proc = 1;
 	manage_process_list(ADD);
 	init_pair(heros->color, ft_hashich(heros->h.prog_name), COLOR_BLACK);
@@ -41,6 +42,8 @@ void		foreach_heros(int player_nbr, t_heros *heros)
 	offset = MEM_SIZE / player_nbr;
 	while (i < player_nbr)
 	{
+		ft_printf("Introducing %s, n: %d, %db of code\n", heros[i].h.prog_name, heros[i].number, heros[i].h.prog_size * 8);
+		ft_printf("\t\"%s\"\n", heros[i].h.comment);
 		write_heros(offset * i, &heros[i]);
 		i += 1;
 	}

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/04 05:51:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 20:48:07 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int			main(int argc, char **argv)
 	int			ncurse;
 	t_heros		heros[4];
 
+	corewar_check();
 	corewar_init(argc, argv);
 	ncurse = 0;
 	player_nbr = corewar_getopt(heros, &ncurse);
@@ -42,12 +43,12 @@ int			main(int argc, char **argv)
 		ncurse_init();
 	if (player_nbr)
 		foreach_heros(player_nbr, heros);
-	ft_printf("%d..%d\n", player_nbr, ncurse);
+	ft_printf("%d champions in da plaza\n", player_nbr, ncurse);
 	while (player_nbr)
 	{
 		update(0);
 		draw(ncurse);
-		usleep(800 * 3000);
+		// usleep(800 * 3000);
 		// sleep(60);
 	}
 

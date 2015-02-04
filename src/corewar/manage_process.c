@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/25 10:02:59 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/03 19:36:40 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 21:36:27 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ t_process		*new_process(void)
 
 	if (!(new = (t_process *)malloc(sizeof(t_process))))
 		return (NULL);
+	ft_bzero(new, sizeof(t_process));
 	number += 1;
-	new->index = 0;
-	new->carry = 0;
 	new->number = number;
 	tmp = 0;
 	while (tmp < REG_NUMBER)
 	{
-		if (!(new->registers[tmp] = (char *)malloc(sizeof(REG_SIZE))))
+		if (!(new->registers[tmp] = (unsigned char *)malloc(sizeof(REG_SIZE))))
 			die(errno);
 		ft_bzero(new->registers[tmp], REG_SIZE);
 		tmp += 1;
