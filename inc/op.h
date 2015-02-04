@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/01/26 16:16:01 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 04:59:53 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@
 #ifndef OP_H
 # define OP_H
 
+# define REG_SIZE				1
 # define IND_SIZE				2
-# define REG_SIZE				4
-# define DIR_SIZE				REG_SIZE
+# define DIR_SIZE				4
 
-
-# define REG_CODE				1
-# define DIR_CODE				2
-# define IND_CODE				3
-
+# define REG_CODE				1 // 01
+# define DIR_CODE				2 // 10
+# define IND_CODE				3 // 11
 
 # define MAX_ARGS_NUMBER		4
 # define MAX_PLAYERS			4
