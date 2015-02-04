@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/31 14:40:34 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 05:51:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int			main(int argc, char **argv)
 		draw(ncurse);
 		usleep(800 * 3000);
 		// sleep(60);
-		dprintf(2, "usleep end\n");
 	}
 
 	endwin();

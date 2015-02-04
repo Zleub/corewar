@@ -6,11 +6,21 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 23:07:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/02 05:55:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/04 05:52:50 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <corewar.h>
+
+void		ncurse_init(void)
+{
+	stdscr = initscr();
+	cbreak();
+	noecho();
+	keypad(stdscr, TRUE);
+	start_color();
+	assume_default_colors(235, COLOR_BLACK);
+}
 
 void			corewar_init(int argc, char **argv)
 {
@@ -69,38 +79,4 @@ int		corewar_getopt(t_heros *heros, int *ncurse)
 		manage_env(NEXT);
 	}
 	return (i);
-}
-
-void		write_heros(int offset, t_heros *heros)
-{
-	unsigned int m;
-	t_memory *memory;
-
-	m = 0;
-	memory = manage_memory(GET);
-	while (m < heros->h.prog_size)
-	{
-		memory->memory[offset + m].colorp = heros->color;
-		memory->memory[offset + m].op = (unsigned char)heros->c[m];
-		m += 1;
-	}
-	manage_process(NEW);
-	manage_process(GET)->index = offset;
-	memory->memory[offset].proc = 1;
-	manage_process_list(ADD);
-	init_pair(heros->color, ft_hashich(heros->h.prog_name), COLOR_BLACK);
-}
-
-void		foreach_heros(int player_nbr, t_heros *heros)
-{
-	int			offset;
-	int			i;
-
-	i = 0;
-	offset = MEM_SIZE / player_nbr;
-	while (i < player_nbr)
-	{
-		write_heros(offset * i, &heros[i]);
-		i += 1;
-	}
 }

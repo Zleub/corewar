@@ -17,6 +17,7 @@ HEADDIR		=	 ../../inc
 SRC			=	op.c\
 				corewar_init.c\
 				read_stdin.c\
+				init_heros.c\
 				manage_memory.c\
 				print_memory.c\
 				manage_process.c\

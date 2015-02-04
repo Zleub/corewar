@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/25 10:02:59 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/30 23:22:10 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/03 19:36:40 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ t_process		*new_process(void)
 {
 	t_process	*new;
 	int			tmp;
+	static int	number;
 
 	if (!(new = (t_process *)malloc(sizeof(t_process))))
 		return (NULL);
+	number += 1;
 	new->index = 0;
 	new->carry = 0;
+	new->number = number;
 	tmp = 0;
 	while (tmp < REG_NUMBER)
 	{
