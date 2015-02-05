@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/29 17:58:38 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/04 21:37:05 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:10:19 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ void		fill_arguments(int count, int tmpsize, t_arguments *t, t_process *p)
 	dprintf(1, " -> fill_arguments %d by %d\n", count, tmpsize);
 	memory = manage_memory(GET);
 	if (count == 1)
+	{
+		dprintf(1, "Assining %d\n", (int)memory->memory[p->index + 2].op);
 		t->first = (int)memory->memory[p->index + 2].op;
+	}
 	// else if (count == 2)
 }
 

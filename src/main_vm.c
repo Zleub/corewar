@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/04 20:48:07 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:02:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void		update(int dt)
 {
+	static int		count;
 	(void)dt;
+	count += 1;
+	dprintf(1, "cycle: %d\n", count);
 	increment_process();
 }
 
@@ -48,7 +51,7 @@ int			main(int argc, char **argv)
 	{
 		update(0);
 		draw(ncurse);
-		// usleep(800 * 3000);
+		usleep(800 * 3000);
 		// sleep(60);
 	}
 
