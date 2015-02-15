@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/04 21:35:49 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/15 18:15:04 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,15 @@ typedef struct s_arguments	t_arguments;
 
 struct						s_arguments
 {
-	int						first;
-	int						second;
-	int						third;
+	int						coding_octet;
+	int						magic;
+	int						count;
+	int						index;
+	int						size;
+	int						type;
 };
 
-t_arguments					*manage_arguments(int macro);
+void						*manage_arguments(int macro);
 
 void						die(int i);
 
