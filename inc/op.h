@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/02/04 23:30:40 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/17 11:47:21 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 # define DIR_CODE				2
 # define IND_CODE				3
 
-# define REG_ENCODING_SIZE		1
-# define IND_ENCODING_SIZE		2
-# define DIR_ENCODING_SIZE		4
+// # define REG_ENCODING_SIZE		1
+// # define IND_ENCODING_SIZE		2
+// # define DIR_ENCODING_SIZE		4
 
 # define MAX_ARGS_NUMBER		4
 # define MAX_PLAYERS			4

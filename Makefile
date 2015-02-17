@@ -6,7 +6,7 @@
 #    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/10/02 03:26:29 by adebray           #+#    #+#              #
-#    Updated: 2015/01/24 00:23:20 by adebray          ###   ########.fr        #
+#    Updated: 2015/02/17 12:18:09 by adebray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ CCFLAGS			=	-Werror -Wall -Wextra -Wuninitialized -O3
 
 LIBLIBFT		=	-L$(SRCDIR)/libft -lft
 LIBPRINTF		=	-L$(SRCDIR)/ft_printf -lftprintf
-LIBENV			=	-L$(SRCDIR)/env -lenv
-LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF) $(LIBENV)
+LIBESSENTIAL	=	$(LIBLIBFT) $(LIBPRINTF)
 
 LIBNCURSES		=	-lncurses
 
@@ -35,7 +34,7 @@ LIBASM			=	$(LIBESSENTIAL) -L$(SRCDIR)/asm -lasm
 
 all: $(NAME) asm
 
-makelib: _libft _printf _env
+makelib: _libft _printf
 
 $(NAME): makelib _vm $(OBJ)
 	@$(CC) $(CCFLAGS) $(HEADFLAG) $(LIBCOREWAR) -o $(NAME) $(OBJ) $(SRCDIR)/main_vm.c
@@ -52,9 +51,6 @@ _libft: $(HEADDIR)/libft.h
 
 _printf: $(HEADDIR)/ft_printf.h
 	@make -C $(SRCDIR)/ft_printf
-
-_env: $(HEADDIR)/env.h
-	@make -C $(SRCDIR)/env
 
 _curse: $(HEADDIR)/curse.h
 	@make -C $(SRCDIR)/curse
@@ -73,7 +69,6 @@ clean:
 	@make -C $(SRCDIR)/libft clean
 	@ #make -C $(SRCDIR)/curse clean
 	@make -C $(SRCDIR)/ft_printf clean
-	@make -C $(SRCDIR)/env clean
 	@make -C $(SRCDIR)/corewar clean
 	@make -C $(SRCDIR)/asm clean
 	@rm -f $(OBJ)
@@ -83,7 +78,6 @@ fclean:
 	@make -C $(SRCDIR)/libft fclean
 	@ #make -C $(SRCDIR)/curse fclean
 	@make -C $(SRCDIR)/ft_printf fclean
-	@make -C $(SRCDIR)/env fclean
 	@make -C $(SRCDIR)/corewar fclean
 	@make -C $(SRCDIR)/asm fclean
 	@rm -f $(OBJ)
