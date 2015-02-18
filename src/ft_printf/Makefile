@@ -6,25 +6,25 @@
 #    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/23 04:54:36 by adebray           #+#    #+#              #
-#    Updated: 2015/01/20 06:52:22 by adebray          ###   ########.fr        #
+#    Updated: 2015/02/18 16:25:04 by adebray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 HEADDIR = ../../inc
 
-SRC = ./ft_atoi.c \
-		./ft_isdigit.c \
-		./ft_itoa.c \
-		./ft_printf.c \
-		./ft_putchar.c \
-		./ft_putnbr.c \
-		./ft_putstr.c \
-		./ft_strlen.c \
-		./ft_octal.c \
-		./ft_hexa.c \
-		./ft_sheum_hexa.c \
-		./tools.c
+SRC =	ft_atoi.c \
+		ft_isdigit.c \
+		ft_itoa.c \
+		ft_printf.c \
+		ft_putchar.c \
+		ft_putnbr.c \
+		ft_putstr.c \
+		ft_strlen.c \
+		ft_octal.c \
+		ft_hexa.c \
+		ft_sheum_hexa.c \
+		tools.c
 
 OBJ = $(subst .c,.o,$(SRC))
 

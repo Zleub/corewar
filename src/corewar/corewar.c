@@ -1,47 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_vm.c                                          :+:      :+:    :+:   */
+/*   corewar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 18:38:20 by adebray          ###   ########.fr       */
+/*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
+/*   Updated: 2015/02/18 18:38:37 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define OUT 1
-
 #include <corewar.h>
 
-void	die(int end)
+void	draw(void)
 {
-	exit(end);
+
 }
 
-int		get_opt(int argc, char **argv)
+void	update(int dt)
 {
-	int		player_nbr;
-	int		i;
-
-	i = 1;
-	player_nbr = 0;
-	while (i < argc - 1)
-	{
-		if (!ft_strcmp(argv[i], "-n") && argv[i + 1])
-		{
-			get_heros(argv[i + 1]);
-			player_nbr += 1;
-		}
-		i += 1;
-	}
-	return (player_nbr);
+	(void)dt;
 }
 
-int		main(int argc, char **argv)
+void	init_corewar(int player_nbr)
 {
-	init_corewar(get_opt(argc, argv));
-	dump_memory();
-	print_process(g_process);
-	return (0);
+	g_process = NULL;
+	init_memory(player_nbr);
 }

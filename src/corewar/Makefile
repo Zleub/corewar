@@ -10,11 +10,11 @@
 #                                                                              #
 #******************************************************************************#
 
-NAME		=	libcorewar.a
-LIB			=	corewar
-HEADDIR		=	 ../../inc
+NAME		= libcorewar.a
+LIB			= corewar
+HEADDIR		= ../../inc
 
-SRC			=	op.c print.c
+SRC			= op.c heros.c memory.c process.c corewar.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 
