@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/02/17 11:47:21 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/19 02:55:48 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 # define IND_SIZE				2
 # define DIR_SIZE				REG_SIZE
 
-# define REG_CODE				1
-# define DIR_CODE				2
-# define IND_CODE				3
+# define REG_CODE				1 // 01
+# define DIR_CODE				2 // 10
+# define IND_CODE				3 // 11
 
 // # define REG_ENCODING_SIZE		1
 // # define IND_ENCODING_SIZE		2
@@ -76,7 +76,7 @@ typedef struct					s_op
 {
 	char						*name;
 	int							arg_number;
-	int							args[4];
+	int							args[MAX_ARGS_NUMBER];
 	int							opcode;
 	int							cycles;
 	char						*description;

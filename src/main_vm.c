@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 18:38:20 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/19 11:20:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int		main(int argc, char **argv)
 {
 	init_corewar(get_opt(argc, argv));
 	dump_memory();
-	print_process(g_process);
+	while (42)
+	{
+		update(0);
+		draw();
+	}
 	return (0);
 }

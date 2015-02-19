@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 18:31:54 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/19 12:48:51 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void		write_heros(int offset, t_heros *heros)
 {
-	unsigned int m;
+	unsigned int	m;
+	t_process		*p;
 
 	m = 0;
 	while (m < heros->head.prog_size)
@@ -23,12 +24,15 @@ void		write_heros(int offset, t_heros *heros)
 		g_memory[offset + m].op = (unsigned char)heros->content[m];
 		m += 1;
 	}
-	add_process(new_process(NULL));
-	// manage_process(NEW);
-	// manage_process(GET)->index = offset;
-	// manage_process(GET)->registers[0][REG_SIZE - 1] = heros->number;
-	// g_memory[offset].p = 1;
-	// manage_process_list(ADD);
+	g_memory[offset].p = 1;
+
+	p = new_process(NULL);
+	p->index = offset;
+	p->delay = get_op(p).cycles;
+	// p->registers[0][REG_SIZE - 1] = heros->number;
+	add_process(p);
+
+	g_memory[p->index].p = 1;
 	// init_pair(heros->color, ft_hashich(heros->head.prog_name), COLOR_BLACK);
 }
 
@@ -65,7 +69,7 @@ static void			ft_printx(unsigned int decimal)
 		ft_putchar_fd('f', OUT);
 }
 
-static void		print_clean_hexa(unsigned char c)
+void		print_clean_hexa(unsigned char c)
 {
 	if (c < 16)
 	{

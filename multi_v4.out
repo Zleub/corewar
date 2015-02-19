@@ -1,0 +1,80 @@
+Introducing contestants...
+* Player 1, weighing 617 bytes, "helltrain" ("choo-choo, motherf*****s !") !
+* Player 2, weighing 80 bytes, "stayin' alive" ("Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive") !
+P    2 | sti r1 72 1
+       | -> store to 72 + 1 = 73 (with pc and mod 2121)
+P    1 | sti r1 391 1
+       | -> store to 391 + 1 = 392 (with pc and mod 392)
+P    2 | sti r1 37 1
+       | -> store to 37 + 1 = 38 (with pc and mod 2093)
+P    1 | sti r1 399 1
+       | -> store to 399 + 1 = 400 (with pc and mod 407)
+P    2 | ld 1 r3
+P    2 | ld 33 r6
+P    2 | add r2 r3 r2
+P    1 | sti r1 400 1
+       | -> store to 400 + 1 = 401 (with pc and mod 415)
+P    2 | xor 15 15 r4
+P    2 | live -2
+P    1 | sti r1 87 1
+       | -> store to 87 + 1 = 88 (with pc and mod 109)
+P    2 | zjmp 16 OK
+P    2 | ld 0 r4
+P    2 | live -2
+P    1 | sti r1 397 1
+       | -> store to 397 + 1 = 398 (with pc and mod 426)
+P    2 | zjmp -5 OK
+P    1 | sti r1 390 9
+       | -> store to 390 + 9 = 399 (with pc and mod 434)
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    1 | sti r1 383 17
+       | -> store to 383 + 17 = 400 (with pc and mod 442)
+P    2 | live -2
+P    1 | sti r1 421 1
+       | -> store to 421 + 1 = 422 (with pc and mod 471)
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    1 | sti r1 393 2
+       | -> store to 393 + 2 = 395 (with pc and mod 451)
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    1 | sti r1 461 1
+       | -> store to 461 + 1 = 462 (with pc and mod 525)
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    1 | sti r1 454 9
+       | -> store to 454 + 9 = 463 (with pc and mod 533)
+P    2 | zjmp -5 OK
+P    1 | sti r1 408 1
+       | -> store to 408 + 1 = 409 (with pc and mod 486)
+P    2 | live -2
+P    1 | ld 0 r16
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2
+P    2 | zjmp -5 OK
+P    2 | live -2

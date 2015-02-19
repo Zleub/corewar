@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 18:39:39 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/19 12:49:40 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ typedef struct s_corewar	t_corewar;
 
 struct						s_corewar
 {
-
+	int						cycle_counter;
 };
+
+t_corewar					g_corewar;
 
 void						die(int end);
 void						draw(void);
@@ -37,6 +39,8 @@ void						init_corewar(int player_nbr);
 # include <stdio.h>
 
 # define OUT 1
+
+void		print_clean_hexa(unsigned char c);
 
 /*
 ** Memory
@@ -81,10 +85,10 @@ typedef struct s_process	t_process;
 
 struct						s_process
 {
- 	int						delay;
+	int						delay;
 	int						index;
 	int						pc;
-	unsigned char			*registers[REG_NUMBER];
+	char					registers[REG_NUMBER][REG_SIZE];
 	int						carry;
 	int						number;
 	t_process				*next;
@@ -95,10 +99,28 @@ t_process					*g_process;
 void						add_process(t_process *elem);
 t_process					*new_process(t_process *elem);
 void						print_process(t_process *head);
+void						update_process(t_process *head);
 
 /*
 ** Intruction
 */
 
+typedef struct s_instruct	t_instruction;
+
+struct						s_instruct
+{
+	int						type;
+	int						size;
+	char					*args;
+};
+
+t_instruction				g_instruction[MAX_ARGS_NUMBER];
+
+t_op						get_op(t_process *p);
+void						print_op(t_op op);
+void						init_instruction(int max);
+int							fill_instruction(t_process *p);
+void						print_instruction();
+void						print_instruction_decimal();
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 18:35:33 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/19 12:56:36 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,54 @@ t_process		*new_process(t_process *elem)
 
 	if (!(new = malloc(sizeof(t_process))))
 		die(-1);
+	nbr += 1;
 	if (elem)
 		ft_memcpy(new, elem, sizeof(t_process));
 	else
 		ft_bzero(new, sizeof(t_process));
 	new->number = nbr;
-	nbr += 1;
 	return (new);
 }
 
-void			print_process(t_process *head)
+void		move_process(t_process *p, int size)
 {
-	if (head)
+	g_memory[p->index].p = 0;
+	p->index += size;
+	g_memory[p->index].p = 1;
+}
+// void			print_process(t_process *head)
+// {
+// 	t_op op;
+
+// 	op = get_op(head);
+// 	if (head)
+// 	{
+// 		dprintf(OUT, "P\t%d | %s", head->number, op->name);
+// 		// print_instruction_decimal();
+// 		print_process(head->next);
+// 	}
+// }
+
+void			update_process(t_process *head)
+{
+	t_op		op;
+
+	if (!head)
+		return ;
+	op = get_op(head);
+	(void)op;
+	if (head->delay == 0)
 	{
-		dprintf(OUT, "process: %p n%d\n", head, head->number);
-		print_process(head->next);
+		int size = fill_instruction(head);
+		dprintf(OUT, "P\t%d | %s ", head->number, op.name);
+		print_instruction_decimal();
+		move_process(head, size);
+		op = get_op(head);
+		head->delay = op.cycles;
 	}
+	else
+	{
+		head->delay -= 1;
+	}
+	update_process(head->next);
 }
