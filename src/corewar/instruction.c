@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/19 13:38:09 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/20 20:15:05 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,34 @@ void		print_instruction()
 	}
 }
 
+int			get_int(int index)
+{
+	char	*str;
+	int		ret;
+	int		tmp;
+	int		len;
+
+	ret = 0;
+	len = g_instruction[index].size ;
+	str = g_instruction[index].args;
+
+	int i;
+	i = 0;
+
+	dprintf(OUT, "\nlen: %d ... \n", len);
+	while (len - i)
+	{
+		tmp = str[len - i];
+		if (i != 0)
+			tmp = tmp << i;
+		dprintf(OUT, "\t[%d] %d | %d\n", i, ret, tmp);
+		ret = ret | tmp;
+		i += 1;
+	}
+
+	return (ret);
+}
+
 void		print_instruction_decimal()
 {
 	int		i = 0;
@@ -169,6 +197,8 @@ void		print_instruction_decimal()
 			dprintf(OUT, "r%x", g_instruction[i].args[0]);
 		else
 		{
+			if (i < MAX_ARGS_NUMBER && g_instruction[i].args)
+				dprintf(OUT, "%d -> ", get_int(i));
 			while (j < g_instruction[i].size)
 			{
 				print_clean_hexa(g_instruction[i].args[j]);
