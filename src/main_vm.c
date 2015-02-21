@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/19 11:20:01 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/21 19:14:11 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ int		get_opt(int argc, char **argv)
 int		main(int argc, char **argv)
 {
 	init_corewar(get_opt(argc, argv));
-	dump_memory();
 	while (42)
 	{
 		update(0);
 		draw();
+		dump_memory();
+		dprintf(OUT, "\n");
 	}
 	return (0);
 }

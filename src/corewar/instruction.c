@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/20 20:15:05 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/21 19:10:39 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,32 +158,23 @@ void		print_instruction()
 	}
 }
 
-int			get_int(int index)
+int			get_int_from_index(int index)
 {
 	char	*str;
-	int		ret;
-	int		tmp;
-	int		len;
+	int		array[4];
 
-	ret = 0;
-	len = g_instruction[index].size ;
+	array[3] = 0;
+	array[0] = 0;
+	array[2] = g_instruction[index].size - 1;
 	str = g_instruction[index].args;
-
-	int i;
-	i = 0;
-
-	dprintf(OUT, "\nlen: %d ... \n", len);
-	while (len - i)
+	while (array[2] - array[3] >= 0)
 	{
-		tmp = str[len - i];
-		if (i != 0)
-			tmp = tmp << i;
-		dprintf(OUT, "\t[%d] %d | %d\n", i, ret, tmp);
-		ret = ret | tmp;
-		i += 1;
+		array[1] = (unsigned char)str[array[2] - array[3]];
+		array[1] = array[1] << array[3] * 8;
+		array[0] = array[0] | array[1];
+		array[3] += 1;
 	}
-
-	return (ret);
+	return (array[0]);
 }
 
 void		print_instruction_decimal()
@@ -192,18 +183,12 @@ void		print_instruction_decimal()
 
 	while (i < MAX_ARGS_NUMBER)
 	{
-		int j = 0;
 		if (g_instruction[i].type == REG_CODE)
-			dprintf(OUT, "r%x", g_instruction[i].args[0]);
+			dprintf(OUT, "r%d", g_instruction[i].args[0]);
 		else
 		{
 			if (i < MAX_ARGS_NUMBER && g_instruction[i].args)
-				dprintf(OUT, "%d -> ", get_int(i));
-			while (j < g_instruction[i].size)
-			{
-				print_clean_hexa(g_instruction[i].args[j]);
-				j += 1;
-			}
+				dprintf(OUT, "%d", get_int_from_index(i));
 		}
 		i += 1;
 		if (i < MAX_ARGS_NUMBER && g_instruction[i].args)

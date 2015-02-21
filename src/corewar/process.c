@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/19 12:56:36 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/21 18:51:55 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void		move_process(t_process *p, int size)
 // 	}
 // }
 
+void (*t[16])(t_process *);
+
 void			update_process(t_process *head)
 {
 	t_op		op;
@@ -69,8 +71,12 @@ void			update_process(t_process *head)
 	if (head->delay == 0)
 	{
 		int size = fill_instruction(head);
-		dprintf(OUT, "P\t%d | %s ", head->number, op.name);
+
+		dprintf(OUT, "P\t%d | %s", head->number, op.name);
 		print_instruction_decimal();
+
+		t[op.opcode - 1](head);
+
 		move_process(head, size);
 		op = get_op(head);
 		head->delay = op.cycles;
