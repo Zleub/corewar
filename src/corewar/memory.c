@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   memory.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Arno <Arno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/21 19:19:09 by adebray          ###   ########.fr       */
+/*   Updated: 2015/02/22 15:23:06 by Arno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		write_heros(int offset, t_heros *heros)
 	p = new_process(NULL);
 	p->index = offset;
 	p->delay = get_op(p).cycles;
-	p->registers[0][0] = 'a';
+	p->registers[0][REG_SIZE - 1] = heros->number;
 	add_process(p);
 
 	g_memory[p->index].p = 1;
