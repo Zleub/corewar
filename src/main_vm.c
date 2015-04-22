@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/22 23:42:22 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/22 23:56:03 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		main(int argc, char **argv)
 		update(0);
 		draw();
 		// dump_memory();
-		dprintf(OUT, "\n");
+		// dprintf(OUT, "\n");
 	}
 	return (0);
 }

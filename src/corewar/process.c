@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/21 18:51:55 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/22 23:52:28 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void			update_process(t_process *head)
 	{
 		int size = fill_instruction(head);
 
-		dprintf(OUT, "P\t%d | %s", head->number, op.name);
+		dprintf(OUT, "P\t%d | %s : ", head->number, op.name);
 		print_instruction_decimal();
 
 		t[op.opcode - 1](head);
