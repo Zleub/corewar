@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/19 11:20:49 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/22 23:48:07 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	draw(void)
 {
-	// dprintf(OUT, "cycle_counter: %d\n", g_corewar.cycle_counter);
+	dprintf(OUT, "cycle_counter: %d\n", g_corewar.cycle_counter);
 	// print_process(g_process);
 }
 
