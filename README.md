@@ -4,7 +4,9 @@ Usage:
 
 Explanations :
     -d X : Stop VM after X cycles and dump memory.
-
+    -v 0 : No verbosity
+    -v 1 : Verbosity on execution
+    -v 2 : Verbosity on cycle
 Todo:
 
 - crash on not .cor files

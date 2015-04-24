@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 16:33:04 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 18:15:20 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_process		*new_process(t_process *elem)
 	else
 		ft_bzero(new, sizeof(t_process));
 	new->number = nbr;
+	new->carry = 0;
 	return (new);
 }
 
@@ -53,7 +54,29 @@ void			print_process(t_process *head)
 	if (head)
 	{
 		op = get_op(head);
-		dprintf(OUT, " \t%d @ %d | %s \n", head->number, head->index ,op.name);
+		if (g_corewar.verb >= 2)
+		{
+			dprintf(OUT, "\t%d @ %d | %s \n", head->number, head->index ,op.name);
+			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
+		}
+		int i = 0;
+		int j = 0;
+		while (i < REG_NUMBER)
+		{
+			j = 0;
+			if (g_corewar.verb >= 3)
+				ft_printf("\t\tr[%d]:\t", i);
+			while (j < REG_SIZE && g_corewar.verb >= 3)
+			{
+				write(1, "[", 1);
+				print_clean_hexa(head->registers[i][j]);
+				write(1, "]", 1);
+				j += 1;
+			}
+			if (g_corewar.verb >= 3)
+				write(1, "\n", 1);
+			i += 1;
+		}
 		// print_instruction_decimal();
 		print_process(head->next);
 	}
@@ -74,8 +97,11 @@ void			update_process(t_process *head)
 	{
 		int size = fill_instruction(head);
 
-		dprintf(OUT, " \t%d @ %d | %s : ", head->number, head->index ,op.name);
-		print_instruction_decimal();
+		if (g_corewar.verb >= 2)
+		{
+			dprintf(OUT, " \t%d @ %d | %s : ", head->number, head->index ,op.name);
+			print_instruction_decimal();
+		}
 
 		t[op.opcode - 1](head);
 

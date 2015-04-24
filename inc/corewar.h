@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 16:05:54 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 18:02:20 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_corewar	t_corewar;
 struct						s_corewar
 {
 	int						dump;
+	int						verb;
 	int						cycle_counter;
 };
 
@@ -94,8 +95,8 @@ struct						s_process
 	int						delay;
 	int						index;
 	int						pc;
-	char					registers[REG_NUMBER][REG_SIZE];
 	int						carry;
+	char					registers[REG_NUMBER][REG_SIZE];
 	int						number;
 	t_process				*next;
 };
