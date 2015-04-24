@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 18:03:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 19:57:55 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		main(int argc, char **argv)
 	g_corewar.cycle_counter = 0;
 	if (argc < 2)
 	{
-		write(1, "USAGE PUTE\n", 11);
+		write(1, "Usage : ./corewar [-d X -v X -ncurse] -n champion -n champion ...\n", 66);
 		return (-1);
 	}
 	init_corewar(get_opt(argc, argv));

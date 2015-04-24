@@ -1,6 +1,6 @@
 Usage:
 
-./corewar [-d -v -ncurse] -n champion -n champion ...
+./corewar [-d X -v X -ncurse] -n champion -n champion ...
 
 Explanations :</br>
 	-d X : Stop VM after X cycles and dump memory.</br>
