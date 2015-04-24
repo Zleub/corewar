@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/22 23:48:07 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 15:57:29 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	draw(void)
 {
 	dprintf(OUT, "cycle_counter: %d\n", g_corewar.cycle_counter);
-	// print_process(g_process);
+	print_process(g_process);
 }
 
 void	update(int dt)
@@ -24,6 +24,11 @@ void	update(int dt)
 	usleep(800 * 100);
 	g_corewar.cycle_counter += 1;
 	update_process(g_process);
+	if (g_corewar.cycle_counter == g_corewar.dump)
+	{
+		dump_memory();
+		die(0);
+	}
 }
 
 int		max_size()

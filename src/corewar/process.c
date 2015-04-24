@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/22 23:52:28 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 15:59:23 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,19 @@ void		move_process(t_process *p, int size)
 	p->index += size;
 	g_memory[p->index].p = 1;
 }
-// void			print_process(t_process *head)
-// {
-// 	t_op op;
 
-// 	op = get_op(head);
-// 	if (head)
-// 	{
-// 		dprintf(OUT, "P\t%d | %s", head->number, op->name);
-// 		// print_instruction_decimal();
-// 		print_process(head->next);
-// 	}
-// }
+void			print_process(t_process *head)
+{
+	t_op	op;
+
+	if (head)
+	{
+		op = get_op(head);
+		dprintf(OUT, "P\t%d | %s\n", head->number, op.name);
+		// print_instruction_decimal();
+		print_process(head->next);
+	}
+}
 
 void (*t[16])(t_process *);
 
@@ -72,14 +73,14 @@ void			update_process(t_process *head)
 	{
 		int size = fill_instruction(head);
 
-		dprintf(OUT, "P\t%d | %s : ", head->number, op.name);
+		dprintf(OUT, " \t%d | %s : ", head->number, op.name);
 		print_instruction_decimal();
 
 		t[op.opcode - 1](head);
 
 		move_process(head, size);
 		op = get_op(head);
-		head->delay = op.cycles;
+		head->delay = op.cycles - 1;
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/21 19:10:55 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 15:55:21 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_corewar	t_corewar;
 
 struct						s_corewar
 {
+	int						dump;
 	int						cycle_counter;
 };
 
@@ -80,6 +81,11 @@ int							invertbits(unsigned int i);
 void						read_header(int, t_heros *);
 void						read_heros(int fd, t_heros *heros);
 void						get_heros(char *file);
+
+/*
+** Processus
+*/
+
 
 typedef struct s_process	t_process;
 
