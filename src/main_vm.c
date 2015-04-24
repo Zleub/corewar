@@ -47,6 +47,11 @@ int		main(int argc, char **argv)
 	g_corewar.dump = 0;
 	g_corewar.verb = 0;
 	g_corewar.cycle_counter = 0;
+	if (argc < 2)
+	{
+		write(1, "USAGE PUTE\n", 11);
+		return (-1);
+	}
 	init_corewar(get_opt(argc, argv));
 	while (42)
 	{
