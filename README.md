@@ -2,11 +2,11 @@ Usage:
 
 ./corewar [-d -ncurse] -n champion -n champion ...
 
-Explanations :
-    -d X : Stop VM after X cycles and dump memory.
-    -v 0 : No verbosity
-    -v 1 : Verbosity on execution
-    -v 2 : Verbosity on cycle
+Explanations :</br>
+    -d X : Stop VM after X cycles and dump memory.</br>
+    -v 0 : No verbosity</br>
+    -v 1 : Verbosity on execution</br>
+    -v 2 : Verbosity on cycle</br>
 Todo:
 
 - crash on not .cor files
