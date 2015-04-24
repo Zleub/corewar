@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 15:57:29 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 16:27:29 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	draw(void)
 void	update(int dt)
 {
 	(void)dt;
-	usleep(800 * 100);
+	// usleep(800 * 100);
 	g_corewar.cycle_counter += 1;
 	update_process(g_process);
 	if (g_corewar.cycle_counter == g_corewar.dump)
