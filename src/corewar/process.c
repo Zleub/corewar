@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 15:59:23 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 16:05:17 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void			update_process(t_process *head)
 		return ;
 	op = get_op(head);
 	(void)op;
+	head->delay -= 1;
 	if (head->delay == 0)
 	{
 		int size = fill_instruction(head);
@@ -80,11 +81,7 @@ void			update_process(t_process *head)
 
 		move_process(head, size);
 		op = get_op(head);
-		head->delay = op.cycles - 1;
-	}
-	else
-	{
-		head->delay -= 1;
+		head->delay = op.cycles;
 	}
 	update_process(head->next);
 }

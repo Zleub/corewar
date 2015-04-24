@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 15:55:21 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/24 16:05:54 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,6 @@ void						init_instruction(int max);
 int							fill_instruction(t_process *p);
 void						print_instruction();
 void						print_instruction_decimal();
-int			get_int_from_index(int index);
+int							get_int_from_index(int index);
 
 #endif
