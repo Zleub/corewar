@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 18:07:49 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/25 13:06:35 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,11 +202,14 @@ t_op		get_op(t_process *p)
 	int				op_index;
 
 	op_index = (int)g_memory[p->index].op;
+	dprintf(OUT, "%d\n", op_index);
 	if (op_index > 15 || op_index < 0)
 	{
-		dprintf(1, "error op_index: %d\n", op_index);
+		dprintf(2, "error op_index: %d\n", op_index);
 		exit(0);
 	}
+	else if (op_index == 0)
+		return (g_op_tab[16]);
 	return (g_op_tab[op_index - 1]);
 }
 
