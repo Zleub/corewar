@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/25 13:12:42 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/26 13:27:26 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,13 @@ t_process		*new_process(t_process *elem)
 
 void		move_process(t_process *p, int size)
 {
+	dprintf(OUT, "from %d to ", p->index);
 	g_memory[p->index].p = 0;
 	p->index += size;
+	if (p->index >= MEM_SIZE)
+		p->index = 0;
 	g_memory[p->index].p = 1;
+	dprintf(OUT, "%d\n", p->index);
 }
 
 void			print_registers(t_process * p)
