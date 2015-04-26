@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/26 13:27:26 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/26 13:32:08 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_process		*new_process(t_process *elem)
 {
 	static int	nbr;
 	t_process	*new;
+	int			i;
+	int			j;
 
 	if (!(new = malloc(sizeof(t_process))))
 		die(-1);
@@ -35,6 +37,17 @@ t_process		*new_process(t_process *elem)
 		ft_memcpy(new, elem, sizeof(t_process));
 	else
 		ft_bzero(new, sizeof(t_process));
+	i = 0;
+	while (i < REG_NUMBER)
+	{
+		j = 0;
+		while (j > REG_SIZE)
+		{
+			new->registers[i][j] = 0;
+			j += 1;
+		}
+		i += 1;
+	}
 	new->number = nbr;
 	new->carry = 0;
 	return (new);
