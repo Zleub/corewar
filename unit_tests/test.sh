@@ -8,11 +8,12 @@ re='^[0-9]+$'
 
 function usage()
 {
-	echo "Usage: 	$0 --champions <n> --limit <cycles> --test <test number> [--all-cycles]"
+	echo "Usage: 	$0 --champions <n> --limit <cycles> --test <test number> [--all-cycles] [--no-recompile]"
 	echo "	--champions : number of champions to test."
 	echo "	--limit : limit in cycles."
 	echo "	--test : 1=normal ; 2=double diff ; 3=valgrind"
 	echo "	--all-cylces : test all cycles range (increment -d by CYCLE_DELTA until --limit)"
+	echo "	--no-recompile : Compile only if necessary."
 	exit 1
 }
 
@@ -20,7 +21,7 @@ champions=""
 limit=""
 numtest=""
 allcycles=""
-recompile=""
+norecompile="0"
 
 
 while [ "$#" != "0" ]
@@ -40,9 +41,9 @@ do
 	elif [ "$1" == "--all-cycles" ]
 	then
 		allcycles=1
-	elif [ "$1" == "--recompile" ]
+	elif [ "$1" == "--no-recompile" ]
 	then
-		recompile=1
+		norecompile=1
 	else
 		echo $RED"Error: Bad Argument $1"$RESET
 		usage
@@ -71,7 +72,7 @@ else
 	usage
 fi
 
-if ! [ -f corewar ] || [ "$recompile" == "1" ] ; then
+if ! [ -f corewar ] || [ "$norecompile" == "0" ] ; then
 	echo Compilation...
 	make re -C .. 2> /dev/null > /dev/null || { echo $RED [ERROR] $RESET; exit 1; } && echo "$GREEN" [OK] "$RESET"
 	cp ../corewar .
