@@ -75,6 +75,7 @@ if ! [ -f corewar ] || [ "$recompile" == "1" ] ; then
 	echo Compilation...
 	make re -C .. 2> /dev/null > /dev/null || { echo $RED [ERROR] $RESET; exit 1; } && echo "$GREEN" [OK] "$RESET"
 	cp ../corewar .
+	make fclean -C .. 2> /dev/null > /dev/null
 fi
 
 lol=`ruby combination.rb $champions`
@@ -88,7 +89,7 @@ do
 	then
 		i=0
 
-		./ut.sh $numtest -d $limit $cmd
+		./ut.sh $numtest -d $limit $cmd -v 3
 		echo
 
 		cmd=""
