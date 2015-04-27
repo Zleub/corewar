@@ -4,13 +4,6 @@ RED="\033[31m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
-function step_zero()
-{
-	make re -C .. || return 1
-	cp ../corewar . || return 1
-	return 0
-}
-
 if [ "$1" == "--normal" ]
 then
 	level="1"
