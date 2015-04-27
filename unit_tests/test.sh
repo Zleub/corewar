@@ -9,6 +9,7 @@ re='^[0-9]+$'
 function usage()
 {
 	echo "Usage: 	$0 --champions <n> --limit <cycles> --test <test number> [--all-cycles] [--no-recompile]"
+	echo
 	echo "	--champions : number of champions to test."
 	echo "	--limit : limit in cycles."
 	echo "	--test : 1=normal ; 2=double diff ; 3=valgrind"
@@ -17,8 +18,8 @@ function usage()
 	exit 1
 }
 
-champions=1
-limit=""
+champions=""
+limit=1
 numtest=2
 allcycles=0
 norecompile=0
@@ -26,7 +27,10 @@ norecompile=0
 
 while [ "$#" != "0" ]
 do
-	if [ "$1" == "--champions" ]
+	if [ "$1" == "--help" ] || [ "$1" == "-h" ]
+	then
+		usage
+	elif [ "$1" == "--champions" ]
 	then
 		shift
 		champions=$1
@@ -34,6 +38,10 @@ do
 	then
 		shift
 		limit=$1
+		if [ "$limit" == "0" ]
+		then
+			limit=1
+		fi
 	elif [ "$1" == "--test" ]
 	then
 		shift

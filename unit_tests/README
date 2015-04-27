@@ -1,0 +1,7 @@
+Usage: 	./test.sh --champions <n> --limit <cycles> --test <test number> [--all-cycles] [--no-recompile]
+
+	--champions : number of champions to test.
+	--limit : limit in cycles.
+	--test : 1=normal ; 2=double diff ; 3=valgrind
+	--all-cylces : test all cycles range (increment -d by CYCLE_DELTA until --limit)
+	--no-recompile : Compile only if necessary.

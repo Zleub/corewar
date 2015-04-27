@@ -1,72 +1,72 @@
-==10994== Memcheck, a memory error detector
-==10994== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==10994== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
-==10994== Command: ./corewar -d 84 -n champions/bigzork.cor -n champions/helltrain.cor -n champions/protu.cor -n champions/zork.cor -v 3
-==10994== 
---10994-- ./corewar:
---10994-- dSYM directory is missing; consider using --dsymutil=yes
-==10994== Invalid read of size 4
-==10994==    at 0x100001F48: ft_printf (in ./corewar)
-==10994==    by 0x1000028C2: init_memory (in ./corewar)
-==10994==    by 0x100002386: init_corewar (in ./corewar)
-==10994==    by 0x1000039FF: main (in ./corewar)
-==10994==  Address 0x1000106f8 is 8 bytes inside a block of size 12 free'd
-==10994==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==10994==    by 0x100001F47: ft_printf (in ./corewar)
-==10994==    by 0x1000028C2: init_memory (in ./corewar)
-==10994==    by 0x100002386: init_corewar (in ./corewar)
-==10994==    by 0x1000039FF: main (in ./corewar)
-==10994== 
-==10994== Invalid read of size 4
-==10994==    at 0x100001F48: ft_printf (in ./corewar)
-==10994==    by 0x1000028D3: init_memory (in ./corewar)
-==10994==    by 0x100002386: init_corewar (in ./corewar)
-==10994==    by 0x1000039FF: main (in ./corewar)
-==10994==  Address 0x100010888 is 8 bytes inside a block of size 12 free'd
-==10994==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==10994==    by 0x100001F47: ft_printf (in ./corewar)
-==10994==    by 0x1000028D3: init_memory (in ./corewar)
-==10994==    by 0x100002386: init_corewar (in ./corewar)
-==10994==    by 0x1000039FF: main (in ./corewar)
-==10994== 
-==10994== Invalid read of size 4
-==10994==    at 0x100001F48: ft_printf (in ./corewar)
-==10994==    by 0x100002BD3: print_registers (in ./corewar)
-==10994==    by 0x100002CEF: print_process (in ./corewar)
-==10994==    by 0x100003A0B: main (in ./corewar)
-==10994==  Address 0x100011238 is 8 bytes inside a block of size 12 free'd
-==10994==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==10994==    by 0x100001F47: ft_printf (in ./corewar)
-==10994==    by 0x100002BD3: print_registers (in ./corewar)
-==10994==    by 0x100002CEF: print_process (in ./corewar)
-==10994==    by 0x100003A0B: main (in ./corewar)
-==10994== 
-==10994== Invalid read of size 4
-==10994==    at 0x100001F48: ft_printf (in ./corewar)
-==10994==    by 0x100002BD3: print_registers (in ./corewar)
-==10994==    by 0x100002CEF: print_process (in ./corewar)
-==10994==    by 0x100002CF8: print_process (in ./corewar)
-==10994==    by 0x100003A0B: main (in ./corewar)
-==10994==  Address 0x100012138 is 8 bytes inside a block of size 12 free'd
-==10994==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==10994==    by 0x100001F47: ft_printf (in ./corewar)
-==10994==    by 0x100002BD3: print_registers (in ./corewar)
-==10994==    by 0x100002CEF: print_process (in ./corewar)
-==10994==    by 0x100002CF8: print_process (in ./corewar)
-==10994==    by 0x100003A0B: main (in ./corewar)
-==10994== 
-==10994== 
-==10994== HEAP SUMMARY:
-==10994==     in use at exit: 3,675 bytes in 42 blocks
-==10994==   total heap usage: 10,737 allocs, 10,695 frees, 578,339 bytes allocated
-==10994== 
-==10994== LEAK SUMMARY:
-==10994==    definitely lost: 0 bytes in 0 blocks
-==10994==    indirectly lost: 0 bytes in 0 blocks
-==10994==      possibly lost: 0 bytes in 0 blocks
-==10994==    still reachable: 3,675 bytes in 42 blocks
-==10994==         suppressed: 0 bytes in 0 blocks
-==10994== Rerun with --leak-check=full to see details of leaked memory
-==10994== 
-==10994== For counts of detected and suppressed errors, rerun with: -v
-==10994== ERROR SUMMARY: 5320 errors from 4 contexts (suppressed: 0 from 0)
+==19252== Memcheck, a memory error detector
+==19252== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==19252== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==19252== Command: ./corewar -d 42 -n champions/bigzork.cor -n champions/helltrain.cor -n champions/protu.cor -n champions/zork.cor -v 3
+==19252== 
+--19252-- ./corewar:
+--19252-- dSYM directory is missing; consider using --dsymutil=yes
+==19252== Invalid read of size 4
+==19252==    at 0x100001F48: ft_printf (in ./corewar)
+==19252==    by 0x1000028C2: init_memory (in ./corewar)
+==19252==    by 0x100002386: init_corewar (in ./corewar)
+==19252==    by 0x1000039FF: main (in ./corewar)
+==19252==  Address 0x1000106f8 is 8 bytes inside a block of size 12 free'd
+==19252==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==19252==    by 0x100001F47: ft_printf (in ./corewar)
+==19252==    by 0x1000028C2: init_memory (in ./corewar)
+==19252==    by 0x100002386: init_corewar (in ./corewar)
+==19252==    by 0x1000039FF: main (in ./corewar)
+==19252== 
+==19252== Invalid read of size 4
+==19252==    at 0x100001F48: ft_printf (in ./corewar)
+==19252==    by 0x1000028D3: init_memory (in ./corewar)
+==19252==    by 0x100002386: init_corewar (in ./corewar)
+==19252==    by 0x1000039FF: main (in ./corewar)
+==19252==  Address 0x100010888 is 8 bytes inside a block of size 12 free'd
+==19252==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==19252==    by 0x100001F47: ft_printf (in ./corewar)
+==19252==    by 0x1000028D3: init_memory (in ./corewar)
+==19252==    by 0x100002386: init_corewar (in ./corewar)
+==19252==    by 0x1000039FF: main (in ./corewar)
+==19252== 
+==19252== Invalid read of size 4
+==19252==    at 0x100001F48: ft_printf (in ./corewar)
+==19252==    by 0x100002BD3: print_registers (in ./corewar)
+==19252==    by 0x100002CEF: print_process (in ./corewar)
+==19252==    by 0x100003A0B: main (in ./corewar)
+==19252==  Address 0x100011238 is 8 bytes inside a block of size 12 free'd
+==19252==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==19252==    by 0x100001F47: ft_printf (in ./corewar)
+==19252==    by 0x100002BD3: print_registers (in ./corewar)
+==19252==    by 0x100002CEF: print_process (in ./corewar)
+==19252==    by 0x100003A0B: main (in ./corewar)
+==19252== 
+==19252== Invalid read of size 4
+==19252==    at 0x100001F48: ft_printf (in ./corewar)
+==19252==    by 0x100002BD3: print_registers (in ./corewar)
+==19252==    by 0x100002CEF: print_process (in ./corewar)
+==19252==    by 0x100002CF8: print_process (in ./corewar)
+==19252==    by 0x100003A0B: main (in ./corewar)
+==19252==  Address 0x100012138 is 8 bytes inside a block of size 12 free'd
+==19252==    at 0x723F: free (in /usr/local/Cellar/valgrind/3.10.1/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==19252==    by 0x100001F47: ft_printf (in ./corewar)
+==19252==    by 0x100002BD3: print_registers (in ./corewar)
+==19252==    by 0x100002CEF: print_process (in ./corewar)
+==19252==    by 0x100002CF8: print_process (in ./corewar)
+==19252==    by 0x100003A0B: main (in ./corewar)
+==19252== 
+==19252== 
+==19252== HEAP SUMMARY:
+==19252==     in use at exit: 3,676 bytes in 41 blocks
+==19252==   total heap usage: 5,338 allocs, 5,297 frees, 287,999 bytes allocated
+==19252== 
+==19252== LEAK SUMMARY:
+==19252==    definitely lost: 0 bytes in 0 blocks
+==19252==    indirectly lost: 0 bytes in 0 blocks
+==19252==      possibly lost: 0 bytes in 0 blocks
+==19252==    still reachable: 3,676 bytes in 41 blocks
+==19252==         suppressed: 0 bytes in 0 blocks
+==19252== Rerun with --leak-check=full to see details of leaked memory
+==19252== 
+==19252== For counts of detected and suppressed errors, rerun with: -v
+==19252== ERROR SUMMARY: 2632 errors from 4 contexts (suppressed: 0 from 0)
