@@ -4,6 +4,8 @@ RED="\033[31m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
+level=""
+
 if [ "$1" == "--normal" ]
 then
 	level="1"
@@ -14,7 +16,8 @@ elif [ "$1" == "--valgrind" ]
 then
 	level="3"
 else
-	echo -e $RED"ERROR : Missing argument.$RESET"
+	echo -e $RED"ERROR : Missing argument."$RESET
+	echo -e $GREEN"TIP : use test.sh file."$RESET
 	exit 1
 fi
 
