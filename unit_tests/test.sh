@@ -52,12 +52,12 @@ done
 
 if ! [[ $champions =~ $re ]] ; then
 	echo $RED"Error: Unable --champions value."$RESET
-	exit 1
+	usage
 fi
 
 if ! [[ $limit =~ $re ]] ; then
 	echo $RED"Error: Unable --limit value."$RESET
-	exit 1
+	usage
 fi
 
 if [ "$numtest" == "1" ] ; then
@@ -77,5 +77,23 @@ if ! [ -f corewar ] || [ "$recompile" == "1" ] ; then
 	cp ../corewar .
 fi
 
+lol=`ruby combination.rb $champions`
+i=0
 
+cmd=""
+
+for elem in $lol
+do
+	if [ $i == $(($champions * 2)) ]
+	then
+		i=0
+
+		./ut.sh $numtest -d $limit $cmd
+		echo
+
+		cmd=""
+	fi
+	cmd="$cmd $elem"
+	let i++
+done
 
