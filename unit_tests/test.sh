@@ -17,11 +17,11 @@ function usage()
 	exit 1
 }
 
-champions=""
+champions=1
 limit=""
-numtest=""
-allcycles=""
-norecompile="0"
+numtest=2
+allcycles=0
+norecompile=0
 
 
 while [ "$#" != "0" ]
