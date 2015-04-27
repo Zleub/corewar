@@ -25,6 +25,6 @@ array = array.combination(ARGV[0].to_i).to_a
 
 array.each do |x|
 	mystring = "";
-	x.each { |y| mystring += "-n " + y + " " }
+	x.each { |y| mystring += "-n champions/" + y + " " }
 	puts mystring
 end
