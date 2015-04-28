@@ -89,9 +89,11 @@ fi
 
 if ! [ -f corewar ] || [ "$norecompile" == "0" ] ; then
 	echo Compilation...
-	make re -C .. 2> /dev/null > /dev/null || { echo $RED [ERROR] $RESET; exit 1; } && echo "$GREEN" [OK] "$RESET"
+	make fclean -C .. 2> /dev/null > /dev/null
+	make -C .. || { echo $RED [ERROR] $RESET; exit 1; } && echo "$GREEN" [OK] "$RESET"
 	cp ../corewar .
 	make fclean -C .. 2> /dev/null > /dev/null
+	echo
 fi
 
 lol=`ruby combination.rb $champions`
