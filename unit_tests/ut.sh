@@ -23,14 +23,14 @@ fi
 
 shift
 
-ls corewar 2> /dev/null > /dev/null || { echo -e $RED [ERROR] Unable to find corewar binary file $RESET; exit 1; }
+ls corewar 2> /dev/null > /dev/null || { echo -e $RED [KO] Unable to find corewar binary file $RESET; exit 1; }
 
 
 if [ "$level" == "1" ]
 then
 	rm vm_tests/out 2> /dev/null > /dev/null
 	echo -n "- Execute : ./corewar" $*
-	./corewar $* > vm_tests/out || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	./corewar $* > vm_tests/out || { echo -e $RED [KO] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	rm vm_tests/out 2> /dev/null
 fi
 
@@ -39,11 +39,11 @@ then
 	rm vm_tests/out 2> /dev/null > /dev/null
 	rm vm_tests/out 2> /dev/null > /dev/null
 	echo -n "- Execute : ./corewar" $*
-	./corewar $* > vm_tests/out || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	./corewar $* > vm_tests/out || { echo -e $RED [KO] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	echo -n "- Second Execute : ./corewar" $*
-	./corewar $* > vm_tests/out2 || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	./corewar $* > vm_tests/out2 || { echo -e $RED [KO] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	echo -n "- Diff"
-	diff vm_tests/out vm_tests/out2 >/dev/null 2> /dev/null || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	diff vm_tests/out vm_tests/out2 >/dev/null 2> /dev/null || { echo -e $RED [KO] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	rm vm_tests/out 2> /dev/null
 	rm vm_tests/out2 2> /dev/null
 fi
@@ -53,11 +53,11 @@ then
 	rm vm_tests/out 2> /dev/null > /dev/null
 	rm vm_tests/valgrind_dump 2> /dev/null > /dev/null
 	echo -n "- Valgrind Execute : valgrind ./corewar" $*
-	valgrind ./corewar $* > vm_tests/out 2> vm_tests/valgrind_dump || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	valgrind ./corewar $* > vm_tests/out 2> vm_tests/valgrind_dump || { echo -e $RED [KO] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	ERRORS=`cat vm_tests/valgrind_dump | tail -n 1 | cut -d ":" -f 2 | cut -d " " -f 2`
 	if [ $ERRORS != "0" ]
 	then
-		echo -e $RED $ERRORS [VALGRIND ERRORS] $RESET
+		echo -e $RED $ERRORS [KOs] $RESET
 		exit 1
 	fi
 	rm vm_tests/out 2> /dev/null
