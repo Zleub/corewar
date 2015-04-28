@@ -24,6 +24,8 @@ numtest=2
 allcycles=0
 norecompile=0
 errors=0
+cycle_delta=`grep CYCLE_DELTA ../inc/op.h | cut -f4`
+current_cycle=1
 
 while [ "$#" != "0" ]
 do
@@ -59,6 +61,11 @@ do
 	shift
 done
 
+if [ "$allcycles" == "0" ]
+then
+	current_cycle=$limit
+fi
+
 if ! [[ $champions =~ $re ]] ; then
 	echo $RED"Error: Unable --champions value."$RESET
 	usage
@@ -92,19 +99,23 @@ i=0
 
 cmd=""
 
-for elem in $lol
+while [ $((current_cycle)) -le $((limit)) ]
 do
-	if [ $i == $(($champions * 2)) ]
-	then
-		i=0
+	for elem in $lol
+	do
+		if [ $i == $(($champions * 2)) ]
+		then
+			i=0
 
-		./ut.sh $numtest -d $limit $cmd -v 3 || $((errors++)) 2> /dev/null
-		echo
+			./ut.sh $numtest -d $current_cycle $cmd -v 3 || $((errors++)) 2> /dev/null
+			echo
 
-		cmd=""
-	fi
-	cmd="$cmd $elem"
-	let i++
+			cmd=""
+		fi
+		cmd="$cmd $elem"
+		let i++
+	done
+	current_cycle=$((current_cycle + cycle_delta))
 done
 
 if [ "$errors" == "0" ]
