@@ -67,12 +67,12 @@ then
 fi
 
 if ! [[ $champions =~ $re ]] ; then
-	echo $RED"Error: Unable --champions value."$RESET
+	echo $RED"Error: Invalid --champions value."$RESET
 	usage
 fi
 
 if ! [[ $limit =~ $re ]] ; then
-	echo $RED"Error: Unable --limit value."$RESET
+	echo $RED"Error: Invalid --limit value."$RESET
 	usage
 fi
 
@@ -83,8 +83,15 @@ elif [ "$numtest" == "2" ] ; then
 elif [ "$numtest" == "3" ] ; then
 	numtest="--valgrind"
 else
-	echo $RED"Error: Unable --test value."$RESET
+	echo $RED"Error: Invalid --test value."$RESET
 	usage
+fi
+
+lol=`ruby combination.rb $champions`
+if [ "$lol" == "" ]
+then
+	echo $RED"[KO] --champions is too high"$RESET
+	exit
 fi
 
 if ! [ -f corewar ] || [ "$norecompile" == "0" ] ; then
@@ -96,9 +103,7 @@ if ! [ -f corewar ] || [ "$norecompile" == "0" ] ; then
 	echo
 fi
 
-lol=`ruby combination.rb $champions`
 i=0
-
 cmd=""
 
 while [ $((current_cycle)) -le $((limit + 1)) ]
