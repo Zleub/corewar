@@ -120,6 +120,11 @@ do
 	current_cycle=$((current_cycle + cycle_delta))
 done
 
+if [ "$norecompile" == "0" ]
+then
+	rm corewar 2> /dev/null
+fi
+
 if [ "$errors" == "0" ]
 then
 	echo $GREEN"All is fine."$RESET
