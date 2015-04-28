@@ -1,33 +1,24 @@
-.name "poutr"
-.comment "jfsoeisfjd"
+.name "stayin' alive"
+.comment "Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive"
 
-sti r1, %:test, %1
+sti	r1, %:live, %440		;change live by the right value
+sti	r1, %:live2, %1			;change live by the right value
+ld	%1, r3
+ld	%33, r6
+#While (r2 < 10)
+forks:
+add	r2, r3, r2		;increment r2
+xor	%15, %15, r4		;if (r4) {carry = 0}
+live2:
+	live 	%4
+zjmp	%:endwhile		;if (carry)
+fork	%:forks
+ld	%0, r4			;carry = 1
+zjmp	%:forks
+#EndWhile
+endwhile:
+ld	%0, r4			;carry = 1
 
-test:
-	live	%666
-# 0
-#live	%:test
-# 0
-#ld		%15, r3
-#ld		%:test, r1
-#ld		15, r2
-# 0
-#xor		r1, r1, r1
-#xor		15, r1, r1
-#xor		%15, 15, r1
-#xor		%15, %15, r1
-#xor		15, 15, r1
-#xor		r1, %15, r1
-# 1
-#zjmp	%15
-#zjmp	%:test
-# 1
-#ldi		r1, r1, r1
-#ldi		15, r1, r1
-#ldi		%15, %15, r1
-#ldi		15, %15, r1
-# 1
-#sti		r1, %15, %15
-#sti		r1, %15, r1
-#sti		r1, 15, %15
-#sti		r1, 15, r1
+live:
+live %4
+zjmp %:live
