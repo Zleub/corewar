@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 18:16:33 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/28 14:34:58 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static void		sti(t_process *p)
 
 	address = get_int_from_index(1) + get_int_from_index(2);
 	if (g_corewar.verb == 1)
-		dprintf(OUT, "\tsti: store r%d to %d + %d: %d\n", get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address);
+		dprintf(2, "\tsti: store r%d to %d + %d: %d\n", get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address);
 	// g_memory[address + p->index].op = p->registers[get_int_from_index(0)];
 	i = 0;
 	while (i < REG_SIZE)
