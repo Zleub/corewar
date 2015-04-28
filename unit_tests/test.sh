@@ -101,7 +101,7 @@ i=0
 
 cmd=""
 
-while [ $((current_cycle)) -le $((limit)) ]
+while [ $((current_cycle)) -le $((limit + 1)) ]
 do
 	for elem in $lol
 	do
