@@ -23,8 +23,7 @@ fi
 
 shift
 
-echo -n "- Check presence corewar binary file."
-ls corewar 2> /dev/null > /dev/null || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+ls corewar 2> /dev/null > /dev/null || { echo -e $RED [ERROR] Unable to find corewar binary file $RESET; exit 1; }
 
 
 if [ "$level" == "1" ]
