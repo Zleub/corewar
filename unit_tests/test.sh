@@ -23,7 +23,7 @@ limit=1
 numtest=2
 allcycles=0
 norecompile=0
-
+errors=0
 
 while [ "$#" != "0" ]
 do
@@ -98,7 +98,7 @@ do
 	then
 		i=0
 
-		./ut.sh $numtest -d $limit $cmd -v 3
+		./ut.sh $numtest -d $limit $cmd -v 3 || $((errors++)) 2> /dev/null
 		echo
 
 		cmd=""
@@ -107,3 +107,11 @@ do
 	let i++
 done
 
+if [ "$errors" == "0" ]
+then
+	echo $GREEN"All is fine."$RESET
+	exit 0
+else
+	echo $RED"$errors errors."$RESET
+	exit 1
+fi
