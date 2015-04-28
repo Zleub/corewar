@@ -32,6 +32,7 @@ then
 	rm vm_tests/out 2> /dev/null > /dev/null
 	echo -n "- Execute : ./corewar" $*
 	./corewar $* > vm_tests/out || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	rm vm_tests/out 2> /dev/null
 fi
 
 if [ "$level" == "2" ]
@@ -44,6 +45,8 @@ then
 	./corewar $* > vm_tests/out2 || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
 	echo -n "- Diff"
 	diff vm_tests/out vm_tests/out2 >/dev/null 2> /dev/null || { echo -e $RED [ERROR] $RESET; exit 1; } && echo -e "$GREEN" [OK] "$RESET"
+	rm vm_tests/out 2> /dev/null
+	rm vm_tests/out2 2> /dev/null
 fi
 
 if [ "$level" == "3" ]
@@ -58,5 +61,6 @@ then
 		echo -e $RED $ERRORS [VALGRIND ERRORS] $RESET
 		exit 1
 	fi
+	rm vm_tests/valgrind_dump 2> /dev/null
 fi
 
