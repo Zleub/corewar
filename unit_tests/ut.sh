@@ -60,6 +60,7 @@ then
 		echo -e $RED $ERRORS [VALGRIND ERRORS] $RESET
 		exit 1
 	fi
+	rm vm_tests/out 2> /dev/null
 	rm vm_tests/valgrind_dump 2> /dev/null
 fi
 
