@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 09:17:41 by adebray           #+#    #+#             */
-/*   Updated: 2013/12/25 01:34:12 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/28 13:35:54 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ t_flags					*parse(char *str, t_flags *flags, va_list ap)
 
 int						ft_printf(const char *format, ...)
 {
+	int					ret;
 	va_list				ap;
 	t_flags				*flags;
 
@@ -131,6 +132,7 @@ int						ft_printf(const char *format, ...)
 		format++;
 	}
 	va_end(ap);
+	ret = flags->cmp;
 	free(flags);
-	return (flags->cmp);
+	return (ret);
 }

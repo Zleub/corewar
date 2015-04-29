@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/26 13:32:08 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/28 19:43:19 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,15 @@ t_process		*new_process(t_process *elem)
 
 void		move_process(t_process *p, int size)
 {
-	dprintf(OUT, "from %d to ", p->index);
+	if (g_corewar.verb >= 2)
+		dprintf(OUT, "from %d to ", p->index);
 	g_memory[p->index].p = 0;
 	p->index += size;
 	if (p->index >= MEM_SIZE)
 		p->index = 0;
 	g_memory[p->index].p = 1;
-	dprintf(OUT, "%d\n", p->index);
+	if (g_corewar.verb >= 2)
+		dprintf(OUT, "%d\n", p->index);
 }
 
 void			print_registers(t_process * p)
@@ -107,22 +109,21 @@ void			execute_process(t_process *head, t_op *op)
 	extern void	(*t[16])(t_process *);
 	int size;
 
+	size = fill_instruction(head);
 	if (g_corewar.verb >= 2)
 	{
 		dprintf(OUT, " \t%d @ %d | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
-
-	size = fill_instruction(head);
 	t[op->opcode - 1](head);
 
 	move_process(head, size);
-	*op = get_op(head);
-	head->delay = op->cycles;
+	head->delay = get_op(head).cycles;
 }
 
 void			update_process(t_process *head)
 {
+	// dprintf(OUT, "/!\\ update_process\n");
 	t_op		op;
 
 	if (!head)
@@ -131,11 +132,13 @@ void			update_process(t_process *head)
 	if (op.name == 0)
 	{
 		move_process(head, 1);
+		head->delay = get_op(head).cycles;
 		update_process(head->next);
 		return ;
 	}
 	head->delay -= 1;
-	if (head->delay == 0)
+	if (head->delay <= 0) {
 		execute_process(head, &op);
+	}
 	update_process(head->next);
 }
