@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/28 03:43:37 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/04/30 00:31:19 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	parse_args_type(t_command *command)
 	i = 0;
 	ac = command->op->arg_number;
 	args = command->raw_args;
-	command->opcode = 0;
+	command->coding_octet = 0;
 	while (i < ac)
 	{
 		args[ac] = args[i];
@@ -79,10 +79,48 @@ static int	parse_args_type(t_command *command)
 		args[ac] = NULL;
 		if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
 			return (0);
-		command->opcode |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
+		command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
 		i++;
 	}
 	return (1);
+}
+
+#include <stdio.h>
+
+static void	set_size(t_command *command)
+{
+	uint	i;
+	uint	ac;
+	int		type;
+
+	command->size = 1;
+
+	if (command->op->coding_octet)
+		command->size += 1;
+
+	ac = command->op->arg_number;
+	i = 0;
+	while (i < ac)
+	{
+		type = command->coding_octet >> (ac - i - 1);
+		type &= 3;
+
+		printf("%i\n", type);
+
+		if (type == REG_CODE)
+			command->size += REG_SIZE;
+		else if (type == IND_CODE)
+			command->size += IND_SIZE;
+		else if (type == DIR_CODE)
+		{
+			if (command->op->unknown1)
+				command->size += DIR_SIZE / 2;
+			else
+				command->size += DIR_SIZE;
+		}
+
+		i++;
+	}
 }
 
 int			parse_command(char const *line, uint row)
@@ -106,5 +144,6 @@ int			parse_command(char const *line, uint row)
 	label = get_last_label();
 	if (label && !label->target)
 		label->target = command;
+	set_size(command);
 	return (0);
 }

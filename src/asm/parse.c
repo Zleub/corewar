@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/28 03:42:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/04/29 20:56:02 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	parse_file(int fd)
 		i++;
 		free(trimmed);
 	}
-	get_champion(1);
 }
 
 char	*get_current_line(char *line)

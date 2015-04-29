@@ -6,13 +6,14 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:14:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/04/30 00:03:42 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 #include <libft.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 void	usage(void)
 {
@@ -30,6 +31,32 @@ int		open_file(char const *pathname)
 	return (fd);
 }
 
+static void	print_champion(t_champion *c)
+{
+	t_command	*command;
+	uint		i;
+
+	printf("\nName: %s\n", c->name);
+	printf("Comment: %s\n\n", c->comment);
+	printf("Commandes:\n");
+
+	command = c->commands;
+	while (command)
+	{
+		printf("   %s (args: %u, size: %i)\n", command->op->name, command->op->arg_number, command->size);
+
+		i = 0;
+		while (command->raw_args[i])
+		{
+			printf("      %s\n", command->raw_args[i]);
+			i++;
+		}
+
+		printf("\n");
+		command = command->next;
+	}
+}
+
 void	init(int argc, char const **argv)
 {
 	int	fd;
@@ -38,5 +65,6 @@ void	init(int argc, char const **argv)
 		usage();
 	fd = open_file(argv[1]);
 	parse_file(fd);
+	print_champion(get_champion(0));
 	close(fd);
 }

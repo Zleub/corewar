@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/01/28 03:10:10 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/04/29 22:15:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef struct			s_command
 {
 	t_op				*op;
 	char				**raw_args;
-	int					opcode; // TODO: rename to coding_octet
+	int					coding_octet;
+	uint				size;
 	struct s_command	*next;
 }						t_command;
 
