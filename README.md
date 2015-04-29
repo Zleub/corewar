@@ -1,8 +1,9 @@
 Usage:
 
-./corewar [-d X -v X -ncurse] -n champion -n champion ...
+./corewar [-t X -d X -v X -ncurse] -n champion -n champion ...
 
 Explanations :</br>
+    -t X : Enable tic_rate control such as usleep(800 * X). Normal: 100.</br>
 	-d X : Stop VM after X cycles and dump memory.</br>
 	-v 0 : No verbosity except errors</br>
 	-v 1 : Verbosity on live only</br>
