@@ -4,9 +4,11 @@ Usage:
 
 Explanations :</br>
 	-d X : Stop VM after X cycles and dump memory.</br>
-	-v 0 : No verbosity</br>
-	-v 1 : Verbosity on execution</br>
-	-v 2 : Verbosity on cycle</br>
+	-v 0 : No verbosity except errors</br>
+	-v 1 : Verbosity on live only</br>
+    -v 2 : Verbosity on instruction execution && process movements</br>
+    -v 3 : Verbosity on update</br>
+	-v 4 : Full verbosity on update</br>
 Todo:
 
 - crash on not .cor files

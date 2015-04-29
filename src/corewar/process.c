@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/28 19:43:19 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:32:41 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void			print_registers(t_process * p)
 	{
 		j = 0;
 		ft_printf("\t\tr[%d]:\t", i);
-		while (j < REG_SIZE && g_corewar.verb >= 3)
+		while (j < REG_SIZE)
 		{
 			write(1, "[", 1);
 			print_clean_hexa(p->registers[i][j]);
@@ -93,12 +93,12 @@ void			print_process(t_process *head)
 	if (head)
 	{
 		op = get_op(head);
-		if (g_corewar.verb >= 2)
+		if (g_corewar.verb > 2)
 		{
 			dprintf(OUT, "\t%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
 			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
 		}
-		if (g_corewar.verb >= 3)
+		if (g_corewar.verb > 3)
 			print_registers(head);
 		print_process(head->next);
 	}
@@ -129,6 +129,11 @@ void			update_process(t_process *head)
 	if (!head)
 		return ;
 	op = get_op(head);
+	if (g_corewar.verb > 2)
+	{
+		dprintf(OUT, "\t%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
+		dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
+	}
 	if (op.name == 0)
 	{
 		move_process(head, 1);

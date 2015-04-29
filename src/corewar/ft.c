@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:13:14 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:25:07 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void		live(t_process *p)
 {
 	(void)p;
-	if (g_corewar.verb > 1)
+	if (g_corewar.verb > 0)
 		dprintf(OUT, "instr: %s\n", "live");
 }
 
@@ -23,20 +23,20 @@ int		max_size();
 
 static void		ld(t_process *p)
 {
-	int		value;
-	int		reg;
+// 	int		value;
+// 	int		reg;
 
-	value = get_int_from_index(0);
-	reg = get_int_from_index(1);
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
+// 	value = get_int_from_index(0);
+// 	reg = get_int_from_index(1);
+// 	if (g_corewar.verb > 1)
+// 		dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
 
-	int i = 0;
-	while (i < max_size())
-	{
-		dprintf(OUT, "%x\n", g_instruction[0].args[i]);
-		i += 1;
-	}
+// 	int i = 0;
+// 	while (i < max_size())
+// 	{
+// 		dprintf(OUT, "%x\n", g_instruction[0].args[i]);
+// 		i += 1;
+// 	}
 	(void)p;
 }
 
