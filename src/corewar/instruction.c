@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:14:59 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 19:06:08 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,8 +207,8 @@ t_op		get_op(t_process *p)
 	if (op_index > 15 || op_index < 0)
 	{
 		dprintf(2, "error op_index: %d\n", op_index);
-		// exit(0);
 		return (g_op_tab[16]);
+		// exit(0);
 	}
 	else if (op_index == 0)
 		return (g_op_tab[16]);

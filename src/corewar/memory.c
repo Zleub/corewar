@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 16:13:56 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 22:38:57 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void		write_heros(int offset, t_heros *heros)
 	p = new_process(NULL);
 	p->index = offset;
 	p->delay = get_op(p).cycles;
-	p->registers[0][REG_SIZE - 4] = UCHAR_MAX;
-	p->registers[0][REG_SIZE - 3] = UCHAR_MAX;
-	p->registers[0][REG_SIZE - 2] = UCHAR_MAX;
-	p->registers[0][REG_SIZE - 1] = -heros->number;
+	p->registers[0][REG_SIZE - 4] = 0;
+	p->registers[0][REG_SIZE - 3] = 0;
+	p->registers[0][REG_SIZE - 2] = 0;
+	p->registers[0][REG_SIZE - 1] = heros->number;
 	add_process(p);
 
 	g_memory[p->index].p = 1;

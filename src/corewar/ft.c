@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:57:09 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 22:39:29 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 static void		live(t_process *p)
 {
-	(void)p;
+	int		nbr;
+
+	nbr = get_int_from_index(0);
 	if (g_corewar.verb > 0)
-		dprintf(OUT, "instr: %s\n", "live");
+		dprintf(OUT, "\tlive: live from %d for player : %d\n", p->number, nbr);
+
+	g_corewar.scores[nbr - 1] += 1;
+	(void)p;
 }
 
 int		max_size();
@@ -32,10 +37,8 @@ static void		ld(t_process *p)
 		dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
 
 	int i = 0;
-	// dprintf(OUT, "s:%d\n", g_instruction[0].size);
 	while (i < g_instruction[0].size)
 	{
-		// dprintf(OUT, "%x\n", (unsigned char)g_instruction[0].args[i]);
 		p->registers[reg - 1][i] = g_instruction[0].args[i];
 		i += 1;
 	}
