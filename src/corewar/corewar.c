@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:58:04 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 21:20:20 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 void	draw(void)
 {
-	if (g_corewar.verb > 3)
+	if (g_corewar.verb > 2)
 	{
 		dprintf(OUT, "cycle_counter: %d\n", g_corewar.cycle_counter);
-		print_process(g_process);
+		dprintf(OUT, "cycle_counter %% CYCLE_TO_DIE: %d\n", g_corewar.cycle_counter % g_corewar.cycles_todie);
+		dprintf(OUT, "CYCLE_TO_DIE: %d\n", g_corewar.cycles_todie);
+		int i = 0;
+		while (i < MAX_PLAYERS)
+		{
+			dprintf(OUT, "n%d : %d\n", i, g_corewar.scores[i]);
+			i += 1;
+		}
+		// print_process(g_process);
 	}
 }
 
@@ -28,6 +36,10 @@ void	update(int dt)
 		usleep(800 * g_corewar.tic_rate);
 	g_corewar.cycle_counter += 1;
 	update_process(g_process);
+	if (g_corewar.cycle_counter % g_corewar.cycles_todie == 0)
+	{
+		;
+	}
 	if (g_corewar.cycle_counter == g_corewar.dump)
 	{
 		dump_memory();

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:56:45 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 21:07:10 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,24 @@ int		get_opt(int argc, char **argv)
 
 int		main(int argc, char **argv)
 {
+	// ft_bzero(&g_corewar, sizeof(t_corewar));
 	g_corewar.dump = 0;
 	g_corewar.verb = 0;
 	g_corewar.cycle_counter = 0;
 	g_corewar.tic_rate = 0;
+
+	int i = 0;
+	while (i < MAX_PLAYERS)
+	{
+		g_corewar.scores[i] = 0;
+		i += 1;
+	}
+
+	if (CYCLE_TO_DIE != 0)
+		g_corewar.cycles_todie = CYCLE_TO_DIE;
+	else
+		exit(-1); // ERRROR
+
 	if (argc < 2)
 	{
 		write(1, "Usage : ./corewar [-d X -v X -ncurse] -n champion -n champion ...\n", 66);

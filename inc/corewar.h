@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:56:36 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 21:01:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ struct						s_corewar
 	int						verb;
 	int						cycle_counter;
 	int						tic_rate;
+	int						cycles_todie;
+	unsigned int			scores[MAX_PLAYERS];
 };
 
 t_corewar					g_corewar;

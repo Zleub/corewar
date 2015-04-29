@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:54:35 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 20:59:45 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_process		*new_process(t_process *elem)
 		}
 		i += 1;
 	}
+	new->next = NULL;
 	new->number = nbr;
 	new->carry = 0;
 	return (new);
@@ -95,7 +96,7 @@ void			print_process(t_process *head)
 		op = get_op(head);
 		if (g_corewar.verb > 2)
 		{
-			dprintf(OUT, "\t%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
+			dprintf(OUT, "%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
 			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
 		}
 		if (g_corewar.verb > 3)
@@ -112,7 +113,7 @@ void			execute_process(t_process *head, t_op *op)
 	size = fill_instruction(head);
 	if (g_corewar.verb >= 2)
 	{
-		dprintf(OUT, " \t%d @ %d | %s : ", head->number, head->index, op->name);
+		dprintf(OUT, " %d @ %d | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
 	t[op->opcode - 1](head);
@@ -123,7 +124,6 @@ void			execute_process(t_process *head, t_op *op)
 
 void			update_process(t_process *head)
 {
-	// dprintf(OUT, "/!\\ update_process\n");
 	t_op		op;
 
 	if (!head)
@@ -131,7 +131,7 @@ void			update_process(t_process *head)
 	op = get_op(head);
 	if (g_corewar.verb > 2)
 	{
-		dprintf(OUT, "\t%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
+		dprintf(OUT, "%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
 		dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
 	}
 	if (op.name == 0)
