@@ -5,7 +5,7 @@ sti	r1, %:live, %1		;change live by the right value
 sti	r1, %:live2, %1			;change live by the right value
 ld	%280267669825, r3
 ld	%:live, r6
-sti	r3, %:live, %400
+sti	r3, %42, %400
 
 #While (r2 < 10)
 forks:

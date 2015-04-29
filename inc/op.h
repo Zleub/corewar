@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2015/04/28 22:16:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:13:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #ifndef OP_H
 # define OP_H
 
-# define REG_SIZE				4
+# define REG_SIZE				6
 # define IND_SIZE				2
 # define DIR_SIZE				REG_SIZE
 
