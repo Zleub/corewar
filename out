@@ -1,0 +1,2278 @@
+Introducing stayin' alive, n: 1, 696b of code
+	"Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive"
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [25] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [24] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [23] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [22] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [21] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [20] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [19] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [18] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [17] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [16] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [15] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [14] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [13] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [12] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [11] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 0 to 0 | sti 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 0 | sti : r1, 20224, 68456
+	sti: store r1 to 20224 + 68456: 104 (88680)
+from 0 to 9
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 9 to 0 | live 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 9 | live : 66236
+instr: live
+from 9 to 16
+	1 @ 16 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 16 to 17
+	1 @ 17 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 17 to 18
+	1 @ 18 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 18 to 19
+	1 @ 19 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 19 to 20
+	1 @ 20 to 0 | st 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 20 to 0 | st 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 20 to 0 | st 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 20 to 0 | st 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 20 to 0 | st 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 20 | st : 
+instr: st
+from 20 to 22
+	1 @ 22 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 22 to 23
+	1 @ 23 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 23 to 24
+	1 @ 24 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 24 to 25
+	1 @ 25 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 25 to 26
+	1 @ 26 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 26 to 27
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 27 to 0 | and 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 27 | and : 
+instr: and
+from 27 to 29
+	1 @ 29 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 29 to 30
+	1 @ 30 to 0 | st 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 30 to 0 | st 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 30 to 0 | st 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 30 to 0 | st 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 30 to 0 | st 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 30 | st : 
+instr: st
+from 30 to 32
+	1 @ 32 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 32 to 33
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 33 to 0 | live 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 33 | live : 1409454854
+instr: live
+from 33 to 40
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 40 to 0 | xor 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 40 | xor : 983040, 67174415, r0
+instr: xor
+from 40 to 55
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 55 to 0 | add 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 55 | add : 
+instr: add
+from 55 to 57
+	1 @ 57 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 57 to 58
+	1 @ 58 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 58 to 59
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [800] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [799] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [798] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [797] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [796] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [795] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [794] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [793] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [792] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [791] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [790] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [789] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [788] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [787] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [786] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [785] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [784] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [783] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [782] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [781] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [780] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [779] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [778] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [777] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [776] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [775] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [774] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [773] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [772] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [771] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [770] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [769] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [768] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [767] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [766] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [765] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [764] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [763] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [762] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [761] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [760] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [759] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [758] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [757] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [756] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [755] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [754] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [753] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [752] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [751] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [750] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [749] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [748] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [747] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [746] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [745] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [744] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [743] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [742] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [741] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [740] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [739] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [738] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [737] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [736] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [735] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [734] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [733] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [732] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [731] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [730] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [729] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [728] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [727] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [726] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [725] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [724] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [723] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [722] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [721] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [720] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [719] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [718] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [717] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [716] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [715] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [714] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [713] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [712] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [711] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [710] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [709] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [708] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [707] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [706] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [705] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [704] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [703] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [702] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [701] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [700] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [699] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [698] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [697] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [696] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [695] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [694] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [693] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [692] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [691] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [690] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [689] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [688] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [687] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [686] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [685] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [684] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [683] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [682] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [681] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [680] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [679] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [678] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [677] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [676] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [675] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [674] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [673] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [672] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [671] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [670] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [669] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [668] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [667] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [666] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [665] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [664] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [663] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [662] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [661] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [660] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [659] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [658] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [657] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [656] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [655] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [654] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [653] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [652] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [651] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [650] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [649] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [648] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [647] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [646] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [645] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [644] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [643] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [642] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [641] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [640] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [639] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [638] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [637] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [636] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [635] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [634] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [633] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [632] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [631] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [630] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [629] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [628] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [627] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [626] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [625] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [624] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [623] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [622] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [621] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [620] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [619] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [618] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [617] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [616] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [615] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [614] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [613] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [612] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [611] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [610] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [609] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [608] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [607] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [606] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [605] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [604] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [603] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [602] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [601] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [600] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [599] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [598] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [597] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [596] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [595] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [594] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [593] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [592] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [591] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [590] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [589] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [588] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [587] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [586] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [585] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [584] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [583] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [582] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [581] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [580] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [579] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [578] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [577] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [576] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [575] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [574] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [573] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [572] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [571] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [570] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [569] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [568] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [567] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [566] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [565] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [564] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [563] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [562] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [561] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [560] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [559] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [558] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [557] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [556] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [555] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [554] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [553] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [552] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [551] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [550] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [549] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [548] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [547] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [546] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [545] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [544] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [543] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [542] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [541] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [540] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [539] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [538] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [537] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [536] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [535] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [534] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [533] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [532] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [531] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [530] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [529] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [528] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [527] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [526] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [525] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [524] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [523] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [522] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [521] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [520] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [519] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [518] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [517] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [516] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [515] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [514] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [513] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [512] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [511] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [510] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [509] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [508] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [507] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [506] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [505] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [504] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [503] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [502] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [501] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [500] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [499] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [498] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [497] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [496] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [495] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [494] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [493] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [492] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [491] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [490] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [489] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [488] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [487] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [486] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [485] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [484] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [483] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [482] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [481] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [480] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [479] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [478] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [477] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [476] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [475] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [474] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [473] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [472] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [471] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [470] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [469] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [468] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [467] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [466] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [465] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [464] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [463] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [462] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [461] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [460] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [459] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [458] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [457] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [456] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [455] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [454] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [453] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [452] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [451] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [450] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [449] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [448] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [447] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [446] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [445] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [444] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [443] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [442] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [441] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [440] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [439] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [438] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [437] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [436] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [435] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [434] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [433] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [432] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [431] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [430] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [429] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [428] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [427] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [426] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [425] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [424] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [423] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [422] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [421] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [420] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [419] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [418] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [417] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [416] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [415] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [414] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [413] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [412] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [411] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [410] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [409] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [408] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [407] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [406] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [405] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [404] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [403] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [402] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [401] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [400] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [399] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [398] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [397] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [396] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [395] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [394] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [393] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [392] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [391] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [390] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [389] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [388] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [387] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [386] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [385] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [384] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [383] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [382] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [381] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [380] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [379] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [378] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [377] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [376] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [375] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [374] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [373] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [372] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [371] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [370] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [369] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [368] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [367] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [366] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [365] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [364] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [363] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [362] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [361] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [360] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [359] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [358] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [357] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [356] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [355] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [354] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [353] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [352] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [351] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [350] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [349] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [348] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [347] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [346] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [345] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [344] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [343] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [342] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [341] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [340] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [339] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [338] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [337] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [336] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [335] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [334] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [333] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [332] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [331] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [330] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [329] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [328] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [327] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [326] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [325] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [324] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [323] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [322] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [321] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [320] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [319] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [318] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [317] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [316] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [315] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [314] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [313] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [312] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [311] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [310] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [309] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [308] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [307] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [306] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [305] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [304] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [303] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [302] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [301] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [300] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [299] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [298] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [297] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [296] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [295] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [294] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [293] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [292] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [291] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [290] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [289] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [288] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [287] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [286] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [285] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [284] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [283] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [282] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [281] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [280] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [279] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [278] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [277] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [276] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [275] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [274] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [273] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [272] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [271] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [270] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [269] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [268] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [267] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [266] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [265] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [264] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [263] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [262] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [261] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [260] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [259] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [258] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [257] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [256] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [255] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [254] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [253] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [252] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [251] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [250] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [249] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [248] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [247] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [246] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [245] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [244] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [243] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [242] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [241] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [240] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [239] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [238] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [237] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [236] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [235] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [234] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [233] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [232] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [231] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [230] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [229] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [228] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [227] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [226] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [225] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [224] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [223] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [222] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [221] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [220] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [219] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [218] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [217] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [216] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [215] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [214] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [213] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [212] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [211] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [210] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [209] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [208] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [207] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [206] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [205] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [204] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [203] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [202] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [201] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [200] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [199] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [198] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [197] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [196] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [195] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [194] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [193] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [192] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [191] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [190] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [189] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [188] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [187] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [186] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [185] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [184] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [183] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [182] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [181] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [180] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [179] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [178] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [177] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [176] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [175] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [174] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [173] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [172] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [171] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [170] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [169] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [168] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [167] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [166] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [165] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [164] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [163] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [162] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [161] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [160] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [159] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [158] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [157] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [156] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [155] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [154] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [153] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [152] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [151] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [150] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [149] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [148] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [147] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [146] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [145] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [144] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [143] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [142] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [141] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [140] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [139] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [138] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [137] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [136] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [135] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [134] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [133] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [132] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [131] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [130] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [129] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [128] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [127] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [126] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [125] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [124] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [123] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [122] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [121] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [120] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [119] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [118] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [117] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [116] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [115] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [114] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [113] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [112] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [111] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [110] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [109] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [108] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [107] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [106] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [105] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [104] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [103] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [102] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [101] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [100] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [99] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [98] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [97] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [96] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [95] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [94] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [93] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [92] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [91] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [90] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [89] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [88] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [87] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [86] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [85] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [84] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [83] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [82] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [81] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [80] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [79] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [78] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [77] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [76] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [75] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [74] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [73] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [72] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [71] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [70] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [69] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [68] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [67] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [66] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [65] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [64] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [63] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [62] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [61] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [60] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [59] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [58] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [57] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [56] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [55] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [54] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [53] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [52] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [51] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [50] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [49] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [48] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [47] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [46] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [45] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [44] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [43] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [42] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [41] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [40] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [39] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [38] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [37] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [36] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [35] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [34] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [33] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [32] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [31] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [30] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [29] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [28] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [27] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [26] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [25] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [24] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [23] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [22] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [21] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [20] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [19] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [18] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [17] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [16] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [15] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [14] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [13] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [12] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [11] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 59 to 0 | fork 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 59 | fork : 16771074
+instr: _mfork
+from 59 to 63
+	1 @ 63 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 63 to 64
+	1 @ 64 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 64 to 65
+	1 @ 65 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 65 to 66
+	1 @ 66 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 66 to 67
+	1 @ 67 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 67 to 68
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 68 to 0 | add 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 68 | add : 
+instr: add
+from 68 to 70
+	1 @ 70 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 70 to 71
+	1 @ 71 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 71 to 72
+	1 @ 72 to 0 | ld 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 72 to 0 | ld 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 72 to 0 | ld 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 72 to 0 | ld 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 72 to 0 | ld 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 72 | ld : 1025, r0
+	ld: load 1025 -> r0
+0
+0
+0
+0
+4
+1
+from 72 to 81
+	1 @ 81 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 81 to 82
+	1 @ 82 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 82 to 83
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [10] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [9] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [8] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [7] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [6] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [5] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [4] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [3] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [2] 
+	1 @ 83 to 0 | add 
+		pc: [0], carry: [0], delay: [1] 
+ 	1 @ 83 | add : 
+instr: add
+from 83 to 85
+	1 @ 85 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 85 to 86
+	1 @ 86 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 86 to 87
+	1 @ 87 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 87 to 88
+	1 @ 88 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 88 to 89
+	1 @ 89 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 89 to 90
+	1 @ 90 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 90 to 91
+	1 @ 91 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 91 to 92
+	1 @ 92 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 92 to 93
+	1 @ 93 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 93 to 94
+	1 @ 94 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 94 to 95
+	1 @ 95 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 95 to 96
+	1 @ 96 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 96 to 97
+	1 @ 97 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 97 to 98
+	1 @ 98 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 98 to 99
+	1 @ 99 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 99 to 100
+	1 @ 100 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 100 to 101
+	1 @ 101 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 101 to 102
+	1 @ 102 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 102 to 103
+	1 @ 103 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 103 to 104
+	1 @ 104 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 104 to 105
+	1 @ 105 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 105 to 106
+	1 @ 106 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 106 to 107
+	1 @ 107 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 107 to 108
+	1 @ 108 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 108 to 109
+	1 @ 109 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 109 to 110
+	1 @ 110 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 110 to 111
+	1 @ 111 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 111 to 112
+	1 @ 112 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 112 to 113
+	1 @ 113 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 113 to 114
+	1 @ 114 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 114 to 115
+	1 @ 115 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 115 to 116
+	1 @ 116 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 116 to 117
+	1 @ 117 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 117 to 118
+	1 @ 118 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 118 to 119
+	1 @ 119 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 119 to 120
+	1 @ 120 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 120 to 121
+	1 @ 121 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 121 to 122
+	1 @ 122 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 122 to 123
+	1 @ 123 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 123 to 124
+	1 @ 124 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 124 to 125
+	1 @ 125 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 125 to 126
+	1 @ 126 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 126 to 127
+	1 @ 127 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 127 to 128
+	1 @ 128 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 128 to 129
+	1 @ 129 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 129 to 130
+	1 @ 130 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 130 to 131
+	1 @ 131 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 131 to 132
+	1 @ 132 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 132 to 133
+	1 @ 133 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 133 to 134
+	1 @ 134 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 134 to 135
+	1 @ 135 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 135 to 136
+	1 @ 136 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 136 to 137
+	1 @ 137 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 137 to 138
+	1 @ 138 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 138 to 139
+	1 @ 139 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 139 to 140
+	1 @ 140 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 140 to 141
+	1 @ 141 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 141 to 142
+	1 @ 142 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 142 to 143
+	1 @ 143 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 143 to 144
+	1 @ 144 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 144 to 145
+	1 @ 145 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 145 to 146
+	1 @ 146 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 146 to 147
+	1 @ 147 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 147 to 148
+	1 @ 148 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 148 to 149
+	1 @ 149 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 149 to 150
+	1 @ 150 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 150 to 151
+	1 @ 151 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 151 to 152
+	1 @ 152 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 152 to 153
+	1 @ 153 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 153 to 154
+	1 @ 154 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 154 to 155
+	1 @ 155 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 155 to 156
+	1 @ 156 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 156 to 157
+	1 @ 157 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 157 to 158
+	1 @ 158 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 158 to 159
+	1 @ 159 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 159 to 160
+	1 @ 160 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 160 to 161
+	1 @ 161 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 161 to 162
+	1 @ 162 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 162 to 163
+	1 @ 163 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 163 to 164
+	1 @ 164 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 164 to 165
+	1 @ 165 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 165 to 166
+	1 @ 166 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 166 to 167
+	1 @ 167 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 167 to 168
+	1 @ 168 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 168 to 169
+	1 @ 169 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 169 to 170
+	1 @ 170 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 170 to 171
+	1 @ 171 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 171 to 172
+	1 @ 172 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 172 to 173
+	1 @ 173 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 173 to 174
+	1 @ 174 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 174 to 175
+	1 @ 175 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 175 to 176
+	1 @ 176 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 176 to 177
+	1 @ 177 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 177 to 178
+	1 @ 178 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 178 to 179
+	1 @ 179 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 179 to 180
+	1 @ 180 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 180 to 181
+	1 @ 181 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 181 to 182
+	1 @ 182 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 182 to 183
+	1 @ 183 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 183 to 184
+	1 @ 184 to 0 | (null) 
+		pc: [0], carry: [0], delay: [0] 
+from 184 to 185
+0b 68 01 00 4f 00 01 0b 68 01 00 2c 00 01 02 90 41 41 41 41 03 02 90 00 00 00 3a 06 0b 68 03 00 2a 01 90 04 54 02 03 02 08 a4 00 00 00 0f 00 00 00 0f 04 01 00 00 00 04 09 00 10 0c ff e8 02 90 
+00 00 00 00 04 09 ff de 02 90 00 00 00 00 04 01 00 00 00 04 09 ff fb 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
