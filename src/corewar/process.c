@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 18:32:41 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:54:35 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ t_process		*new_process(t_process *elem)
 
 void		move_process(t_process *p, int size)
 {
-	if (g_corewar.verb >= 2)
+	if (g_corewar.verb > 2)
 		dprintf(OUT, "from %d to ", p->index);
 	g_memory[p->index].p = 0;
 	p->index += size;
 	if (p->index >= MEM_SIZE)
 		p->index = 0;
 	g_memory[p->index].p = 1;
-	if (g_corewar.verb >= 2)
+	if (g_corewar.verb > 2)
 		dprintf(OUT, "%d\n", p->index);
 }
 
