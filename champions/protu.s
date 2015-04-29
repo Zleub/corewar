@@ -1,9 +1,9 @@
 .name "stayin' alive"
 .comment "Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive"
 
+ld	%529403, r3
 sti	r1, %:live, %1		;change live by the right value
 sti	r1, %:live2, %1			;change live by the right value
-ld	%280267669825, r3
 ld	%:live, r6
 sti	r3, %42, %400
 

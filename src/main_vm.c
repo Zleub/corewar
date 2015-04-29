@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/24 19:57:55 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:56:45 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int		get_opt(int argc, char **argv)
 			g_corewar.dump = ft_atoi(argv[i + 1]);
 		else if (!ft_strcmp(argv[i], "-v") && argv[i + 1])
 			g_corewar.verb = ft_atoi(argv[i + 1]);
+		else if (!ft_strcmp(argv[i], "-t") && argv[i + 1])
+			g_corewar.tic_rate = ft_atoi(argv[i + 1]);
 		i += 1;
 	}
 	return (player_nbr);
@@ -47,6 +49,7 @@ int		main(int argc, char **argv)
 	g_corewar.dump = 0;
 	g_corewar.verb = 0;
 	g_corewar.cycle_counter = 0;
+	g_corewar.tic_rate = 0;
 	if (argc < 2)
 	{
 		write(1, "Usage : ./corewar [-d X -v X -ncurse] -n champion -n champion ...\n", 66);

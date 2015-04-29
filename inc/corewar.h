@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/27 16:46:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/04/29 18:56:36 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ struct						s_corewar
 	int						dump;
 	int						verb;
 	int						cycle_counter;
+	int						tic_rate;
 };
 
 t_corewar					g_corewar;
