@@ -134,6 +134,10 @@ if [ "$errors" == "0" ]
 then
 	>&2 echo $GREEN"All is fine."$RESET
 	exit 0
+elif [ "$errors" == "1" ]
+then
+	>&2 echo $RED"$errors error."$RESET
+	exit 1
 else
 	>&2 echo $RED"$errors errors."$RESET
 	exit 1
