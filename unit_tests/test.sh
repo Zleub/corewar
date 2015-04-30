@@ -19,7 +19,7 @@ function usage()
 }
 
 champions=""
-limit=1
+limit=4200
 numtest=2
 allcycles=0
 norecompile=0
