@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 20:59:45 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/01 02:20:04 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void			execute_process(t_process *head, t_op *op)
 	size = fill_instruction(head);
 	if (g_corewar.verb >= 2)
 	{
-		dprintf(OUT, " %d @ %d | %s : ", head->number, head->index, op->name);
+		dprintf(OUT, " %d @ %d to %d | %s : ", head->number, head->index, head->pc, op->name);
 		print_instruction_decimal();
 	}
 	t[op->opcode - 1](head);
