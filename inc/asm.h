@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 22:15:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/01 19:02:40 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct			s_command
 	char				**raw_args;
 	int					coding_octet;
 	uint				size;
+	uint				offset;
 	struct s_command	*next;
 }						t_command;
 

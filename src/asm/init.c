@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/04/30 00:03:42 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/01 19:03:00 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	print_champion(t_champion *c)
 	command = c->commands;
 	while (command)
 	{
-		printf("   %s (args: %u, size: %i)\n", command->op->name, command->op->arg_number, command->size);
+		printf("   %s (args: %u, size: %u, offset: %u)\n", command->op->name, command->op->arg_number, command->size, command->offset);
 
 		i = 0;
 		while (command->raw_args[i])

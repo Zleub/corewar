@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/04/30 00:31:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/01 19:02:22 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,6 @@ static int	parse_args_type(t_command *command)
 	return (1);
 }
 
-#include <stdio.h>
-
 static void	set_size(t_command *command)
 {
 	uint	i;
@@ -104,9 +102,6 @@ static void	set_size(t_command *command)
 	{
 		type = command->coding_octet >> (ac - i - 1);
 		type &= 3;
-
-		printf("%i\n", type);
-
 		if (type == REG_CODE)
 			command->size += REG_SIZE;
 		else if (type == IND_CODE)
@@ -125,6 +120,7 @@ static void	set_size(t_command *command)
 
 int			parse_command(char const *line, uint row)
 {
+	static uint	offset;
 	t_command	*command;
 	char		*name;
 	t_label		*label;
@@ -145,5 +141,7 @@ int			parse_command(char const *line, uint row)
 	if (label && !label->target)
 		label->target = command;
 	set_size(command);
+	command->offset = offset;
+	offset += command->size;
 	return (0);
 }
