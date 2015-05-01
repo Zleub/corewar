@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 21:07:10 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/01 01:05:21 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,6 @@ int		main(int argc, char **argv)
 	g_corewar.cycle_counter = 0;
 	g_corewar.tic_rate = 0;
 
-	int i = 0;
-	while (i < MAX_PLAYERS)
-	{
-		g_corewar.scores[i] = 0;
-		i += 1;
-	}
-
 	if (CYCLE_TO_DIE != 0)
 		g_corewar.cycles_todie = CYCLE_TO_DIE;
 	else
@@ -69,7 +62,10 @@ int		main(int argc, char **argv)
 		write(1, "Usage : ./corewar [-d X -v X -ncurse] -n champion -n champion ...\n", 66);
 		return (-1);
 	}
-	init_corewar(get_opt(argc, argv));
+	g_corewar.player_nbr = init_corewar(get_opt(argc, argv));
+	dprintf(OUT, "player_nbr = %d\n", g_corewar.player_nbr);
+	g_corewar.scores = (unsigned int *)malloc(sizeof(unsigned int) * g_corewar.player_nbr);
+	ft_bzero(g_corewar.scores, sizeof(unsigned int) * g_corewar.player_nbr);
 	while (42)
 	{
 		update(0);

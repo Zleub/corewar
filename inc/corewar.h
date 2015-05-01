@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 21:01:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/01 01:04:02 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ struct						s_corewar
 	int						cycle_counter;
 	int						tic_rate;
 	int						cycles_todie;
-	unsigned int			scores[MAX_PLAYERS];
+	unsigned int			*scores;
+	int						player_nbr;
 };
 
 t_corewar					g_corewar;
@@ -37,7 +38,7 @@ t_corewar					g_corewar;
 void						die(int end);
 void						draw(void);
 void						update(int dt);
-void						init_corewar(int player_nbr);
+int							init_corewar(int player_nbr);
 
 /*
 ** Debug
@@ -70,6 +71,7 @@ void						dump_memory(void);
 ** Player
 */
 
+
 typedef struct s_heros		t_heros;
 
 struct						s_heros
@@ -95,12 +97,14 @@ typedef struct s_process	t_process;
 
 struct						s_process
 {
+	int						lives;
 	int						delay;
 	int						index;
 	int						pc;
 	int						carry;
 	char					registers[REG_NUMBER][REG_SIZE];
 	int						number;
+	int						p_number;
 	t_process				*next;
 };
 
