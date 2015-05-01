@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 21:20:20 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/01 01:58:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,53 @@ void	draw(void)
 	if (g_corewar.verb > 2)
 	{
 		dprintf(OUT, "cycle_counter: %d\n", g_corewar.cycle_counter);
-		dprintf(OUT, "cycle_counter %% CYCLE_TO_DIE: %d\n", g_corewar.cycle_counter % g_corewar.cycles_todie);
-		dprintf(OUT, "CYCLE_TO_DIE: %d\n", g_corewar.cycles_todie);
+		dprintf(OUT, "cycle_counter %% cycle_to_die: %d\n", g_corewar.cycle_counter % g_corewar.cycles_todie);
+		dprintf(OUT, "cycle_to_die: %d\n", g_corewar.cycles_todie);
 		int i = 0;
-		while (i < MAX_PLAYERS)
+		while (i < g_corewar.player_nbr)
 		{
 			dprintf(OUT, "n%d : %d\n", i, g_corewar.scores[i]);
 			i += 1;
 		}
 		// print_process(g_process);
+	}
+}
+
+void	inspect(void)
+{
+	t_process *p;
+	t_process *tmp;
+
+	dprintf(OUT, "inspect : %d\n", g_process->lives);
+	p = g_process;
+	while (p && p->lives == 0)
+	{
+		tmp = p;
+		p = p->next;
+		free(tmp);
+	}
+	g_process = p;
+
+	if (g_process == NULL)
+	{
+		dprintf(OUT, "no more process alive, exit\n");
+		exit(-1);
+	}
+
+	while (p != NULL)
+	{
+		if (!p->next)
+			return ;
+		tmp = p->next;
+		dprintf(OUT, "tmp: %d\n", tmp->lives);
+		if (tmp->lives == 0)
+		{
+			p->next = tmp->next;
+			dprintf(OUT, "removing N_%d\n", tmp->number);
+			free(tmp);
+		}
+		p->lives = 0;
+		p = p->next;
 	}
 }
 
@@ -38,7 +76,18 @@ void	update(int dt)
 	update_process(g_process);
 	if (g_corewar.cycle_counter % g_corewar.cycles_todie == 0)
 	{
-		;
+		int i = 0;
+		int j = 0;
+		while (i < g_corewar.player_nbr)
+		{
+			if (g_corewar.scores[i] > NBR_LIVE)
+				j = 1;
+			g_corewar.scores[i] = 0;
+			i += 1;
+		}
+		if (j == 1)
+			g_corewar.cycles_todie -= CYCLE_DELTA;
+		inspect();
 	}
 	if (g_corewar.cycle_counter == g_corewar.dump)
 	{
@@ -62,9 +111,10 @@ int		max_size()
 	return (max);
 }
 
-void	init_corewar(int player_nbr)
+int		init_corewar(int player_nbr)
 {
 	g_process = NULL;
 	init_memory(player_nbr);
 	init_instruction(max_size());
+	return (player_nbr);
 }
