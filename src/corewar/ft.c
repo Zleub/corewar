@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 17:58:58 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 20:29:16 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,47 @@ static void		st(t_process *p)
 		dprintf(OUT, "instr: %s\n", "st");
 }
 
+void print_registers(t_process *p);
+
 static void		add(t_process *p)
 {
+	int		reg0;
+	int		reg1;
+	int		reg2;
+
 	(void)p;
+	reg0 = get_int_from_index(0);
+	reg1 = get_int_from_index(1);
+	reg2 = get_int_from_index(2);
+
+	int *test = (int*)p->registers[reg0];
+
+	int caca = 16777216;
+
+	char str[4];
+
+	dprintf(OUT, "%x.%x.%x.%x\n",
+		(unsigned char)*((char*)(&caca) + 0),
+		(unsigned char)*((char*)(&caca) + 1),
+		(unsigned char)*((char*)(&caca) + 2),
+		(unsigned char)*((char*)(&caca) + 3)
+);
+
+	str[0] = (unsigned char)*(&caca + 0);
+	str[1] = (unsigned char)*(&caca + 1);
+	str[2] = (unsigned char)*(&caca + 2);
+	str[3] = (unsigned char)*(&caca + 3);
+
+	p->registers[15][0] = str[0];
+	p->registers[15][1] = str[1];
+	p->registers[15][2] = str[2];
+	p->registers[15][3] = str[3];
+
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "add");
+		dprintf(OUT, "\tadd: %d && %d = %d\n", *test, (int)*(p->registers[reg1]),
+			(int)*(p->registers[reg2]));
+	print_registers(p);
+	// p->registers
 }
 
 static void		sub(t_process *p)
@@ -106,9 +142,11 @@ static void		sti(t_process *p)
 	int			i;
 	int			address;
 
+	print_instruction();
 	address = (get_int_from_index(1) + get_int_from_index(2));
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n", get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address % IDX_MOD, address);
+		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n",
+			get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address, address % IDX_MOD + p->index);
 	// g_memory[address + p->index].op = p->registers[get_int_from_index(0)];
 	i = 0;
 	while (i < REG_SIZE)

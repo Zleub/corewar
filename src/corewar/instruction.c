@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/04/29 19:06:08 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 19:28:22 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,34 @@ char		*get_string_for_memory(int size, int offset)
 	return (tmp);
 }
 
+void		reset_instruction(void)
+{
+	int		i;
+
+	i = 0;
+	while (i < MAX_ARGS_NUMBER)
+	{
+		g_instruction[i].type = 0;
+		g_instruction[i].size = 0;
+		if (g_instruction[i].args)
+		{
+			free(g_instruction[i].args);
+			g_instruction[i].args = NULL;
+		}
+		i += 1;
+	}
+}
+
+void		print_instruction_type(int type)
+{
+	if (type == REG_CODE)
+		dprintf(OUT, "REG\t");
+	if (type == DIR_CODE)
+		dprintf(OUT, "DIR\t");
+	if (type == IND_CODE)
+		dprintf(OUT, "IND\t");
+}
+
 int			get_multisize(t_process *p, t_op *op)
 {
 	int				tmpsize;
@@ -97,24 +125,6 @@ int			get_multisize(t_process *p, t_op *op)
 	return (size);
 }
 
-void		reset_instruction()
-{
-	int		i;
-
-	i = 0;
-	while (i < MAX_ARGS_NUMBER)
-	{
-		g_instruction[i].type = 0;
-		g_instruction[i].size = 0;
-		if (g_instruction[i].args)
-		{
-			free(g_instruction[i].args);
-			g_instruction[i].args = NULL;
-		}
-		i += 1;
-	}
-}
-
 int			fill_instruction(t_process *p)
 {
 	t_op	op;
@@ -138,13 +148,14 @@ int			fill_instruction(t_process *p)
 	return (size);
 }
 
-void		print_instruction()
+void		print_instruction(void)
 {
 	int		i = 0;
 
 	while (i < MAX_ARGS_NUMBER)
 	{
 		int j = 0;
+		print_instruction_type(g_instruction[i].type);
 		dprintf(OUT, "[%d]: ", i);
 		while (j < g_instruction[i].size)
 		{

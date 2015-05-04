@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 02:20:04 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 19:25:09 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ void			print_process(t_process *head)
 		op = get_op(head);
 		if (g_corewar.verb > 2)
 		{
-			dprintf(OUT, "%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
-			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
+			dprintf(OUT, "%d @ %x | %s \n", head->number, head->index, op.name);
+			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->index, head->carry , head->delay);
 		}
 		if (g_corewar.verb > 3)
 			print_registers(head);
@@ -113,7 +113,7 @@ void			execute_process(t_process *head, t_op *op)
 	size = fill_instruction(head);
 	if (g_corewar.verb >= 2)
 	{
-		dprintf(OUT, " %d @ %d to %d | %s : ", head->number, head->index, head->pc, op->name);
+		dprintf(OUT, " %d @ %x | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
 	t[op->opcode - 1](head);
@@ -131,8 +131,8 @@ void			update_process(t_process *head)
 	op = get_op(head);
 	if (g_corewar.verb > 2)
 	{
-		dprintf(OUT, "%d @ %d to %d | %s \n", head->number, head->index, head->pc, op.name);
-		dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->pc, head->carry , head->delay);
+		dprintf(OUT, "%d @ %x | %s \n", head->number, head->index, op.name);
+		dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->index, head->carry , head->delay);
 	}
 	if (op.name == 0)
 	{

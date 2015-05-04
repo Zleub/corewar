@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 17:54:13 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 19:23:23 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ struct						s_process
 	int						lives;
 	int						delay;
 	int						index;
-	int						pc;
 	int						carry;
 	char					registers[REG_NUMBER][REG_SIZE];
 	int						number;
@@ -138,5 +137,6 @@ int							fill_instruction(t_process *p);
 void						print_instruction();
 void						print_instruction_decimal();
 int							get_int_from_index(int index);
+void						reset_instruction(void);
 
 #endif
