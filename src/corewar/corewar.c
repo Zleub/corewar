@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 18:04:18 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 18:12:06 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,18 @@ void	draw(void)
 	}
 }
 
-void	removedead(t_process *tmp)
+int		removedead(t_process *tmp)
 {
-	t_process *p;
+	int			live_nbr;
+	t_process	*p;
 
 	p = tmp;
+	live_nbr = p->lives;
 	p->lives = 0;
 	while (p != NULL)
 	{
 		if (!p->next)
-			return ;
+			return (live_nbr);
 		tmp = p->next;
 		dprintf(OUT, "tmp: %d\n", tmp->lives);
 		if (tmp->lives == 0)
@@ -60,12 +62,14 @@ void	removedead(t_process *tmp)
 			dprintf(OUT, "removing N_%d\n", tmp->number);
 			free(tmp);
 		}
+		live_nbr += p->lives;
 		p->lives = 0;
 		p = p->next;
 	}
+	return (live_nbr);
 }
 
-void	inspect(void)
+int		inspect(void)
 {
 	t_process *p;
 	t_process *tmp;
@@ -81,18 +85,27 @@ void	inspect(void)
 	g_process = p;
 	if (g_process == NULL)
 		end();
-	removedead(p);
+	return (removedead(p));
 }
 
 void	update(int dt)
 {
+	static int		check_nbr;
 	(void)dt;
 	if (g_corewar.tic_rate != 0)
 		usleep(800 * g_corewar.tic_rate);
 	g_corewar.cycle_counter += 1;
 	update_process(g_process);
 	if (g_corewar.cycle_counter % g_corewar.cycles_todie == 0)
-		inspect();
+	{
+		if (inspect() >= NBR_LIVE || check_nbr >= MAX_CHECKS)
+		{
+			g_corewar.cycles_todie -= CYCLE_DELTA;
+			dprintf(OUT, "g_corewar.cycles_todie: %d\n", g_corewar.cycles_todie);
+			check_nbr = 0;
+		}
+		check_nbr += 1;
+	}
 	if (g_corewar.cycle_counter == g_corewar.dump)
 	{
 		dump_memory();
