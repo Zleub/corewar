@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 01:58:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/01 02:30:42 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	inspect(void)
 	{
 		tmp = p;
 		p = p->next;
+		dprintf(OUT, "removing N_%d\n", tmp->number);
 		free(tmp);
 	}
 	g_process = p;
@@ -50,6 +51,7 @@ void	inspect(void)
 		exit(-1);
 	}
 
+	p->lives = 0;
 	while (p != NULL)
 	{
 		if (!p->next)
