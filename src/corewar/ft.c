@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 01:37:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/04 17:58:58 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void		live(t_process *p)
 	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive: live from %d for player : %d\n", p->number, nbr);
 	p->lives += 1;
-	g_corewar.scores[nbr] += 1;
+	g_corewar.scores[nbr - 1] += 1;
+	g_corewar.last_alive = nbr;
 }
 
 int		max_size();
