@@ -66,5 +66,6 @@ void	init(int argc, char const **argv)
 	fd = open_file(argv[1]);
 	parse_file(fd);
 	print_champion(get_champion(0));
+	compile(argv[1]);
 	close(fd);
 }

@@ -17,7 +17,8 @@ HEADDIR		=	 ../../inc
 SRC			=	op.c					init.c						parse.c    \
 				get_next_line.c			parse_comment.c				util.c     \
 				parse_label.c			parse_name.c				label.c    \
-				parse_command.c			command.c					champion.c
+				parse_command.c			command.c					champion.c \
+				compile.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 

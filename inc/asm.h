@@ -17,6 +17,8 @@
 # include <libft.h>
 # include <ft_printf.h>
 
+# define ASM_FILE_EXTENSION ".cor"
+
 typedef unsigned int	uint;
 
 typedef struct			s_command
@@ -60,6 +62,8 @@ t_label		*add_label(char *name);
 t_label		*get_last_label(void);
 
 t_command	*add_command(t_command *new);
+
+void		compile(const char *filename);
 
 void		die(char const *message);
 void		die2(char *message, uint line, uint col);
