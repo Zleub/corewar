@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 20:29:16 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/05 17:12:48 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void		add(t_process *p)
 
 	char str[4];
 
-	dprintf(OUT, "%x.%x.%x.%x\n",
+	dprintf(OUT, "caca %d: %x.%x.%x.%x\n", caca,
 		(unsigned char)*((char*)(&caca) + 0),
 		(unsigned char)*((char*)(&caca) + 1),
 		(unsigned char)*((char*)(&caca) + 2),
