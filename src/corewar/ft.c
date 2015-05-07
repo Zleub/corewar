@@ -6,13 +6,13 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 01:37:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/07 15:38:41 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <corewar.h>
 
-static void		live(t_process *p)
+static int		live(t_process *p)
 {
 	int		nbr;
 
@@ -20,12 +20,14 @@ static void		live(t_process *p)
 	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive: live from %d for player : %d\n", p->number, nbr);
 	p->lives += 1;
-	g_corewar.scores[nbr] += 1;
+	g_corewar.scores[nbr - 1] += 1;
+	g_corewar.last_alive = nbr;
+	return (1);
 }
 
 int		max_size();
 
-static void		ld(t_process *p)
+static int		ld(t_process *p)
 {
 	int		value;
 	int		reg;
@@ -42,72 +44,127 @@ static void		ld(t_process *p)
 		i += 1;
 	}
 	(void)p;
+	return (1);
 }
 
-static void		st(t_process *p)
+static int		st(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "st");
+	return (1);
 }
 
-static void		add(t_process *p)
+void print_registers(t_process *p);
+
+static int		add(t_process *p)
 {
-	(void)p;
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "add");
+	char	carry;
+	int		reg[3];
+	int		i;
+
+	i = 0;
+	carry = 0;
+	reg[0] = get_int_from_index(0);
+	reg[1] = get_int_from_index(1);
+	reg[2] = get_int_from_index(2);
+	while (i < REG_SIZE)
+	{
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] | p->registers[reg[1] - 1][i];
+		carry = carry & p->registers[reg[2] - 1][i];
+		i += 1;
+	}
+	if (!carry)
+		return (carry);
+	return (1);
 }
 
-static void		sub(t_process *p)
+static int		sub(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "sub");
+	return (1);
 }
 
-static void		and(t_process *p)
+static int		and(t_process *p)
 {
-	(void)p;
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "and");
+	char	carry;
+	int		reg[3];
+	int		i;
+
+	i = 0;
+	carry = 0;
+	reg[0] = get_int_from_index(0);
+	reg[1] = get_int_from_index(1);
+	reg[2] = get_int_from_index(2);
+	while (i < REG_SIZE)
+	{
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] & p->registers[reg[1] - 1][i];
+		carry = carry & p->registers[reg[2] - 1][i];
+		i += 1;
+	}
+	if (!carry)
+		return (carry);
+	return (1);
 }
 
-static void		or(t_process *p)
+static int		or(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "or");
+	return (1);
 }
 
-static void		xor(t_process *p)
+static int		xor(t_process *p)
 {
-	(void)p;
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "xor");
+	char	carry;
+	int		reg[3];
+	int		i;
+
+	i = 0;
+	carry = 0;
+	reg[0] = get_int_from_index(0);
+	reg[1] = get_int_from_index(1);
+	reg[2] = get_int_from_index(2);
+	while (i < REG_SIZE)
+	{
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] ^ p->registers[reg[1] - 1][i];
+		carry = carry & p->registers[reg[2] - 1][i];
+		i += 1;
+	}
+	if (!carry)
+		return (carry);
+	return (1);
 }
 
-static void		zjmp(t_process *p)
+static int		zjmp(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "zjmp");
+	return (1);
 }
 
-static void		ldi(t_process *p)
+static int		ldi(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "ldi");
+	return (1);
 }
 
-static void		sti(t_process *p)
+static int		sti(t_process *p)
 {
 	int			i;
 	int			address;
 
+	print_instruction();
 	address = (get_int_from_index(1) + get_int_from_index(2));
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n", get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address % IDX_MOD, address);
+		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n",
+			get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address, address % IDX_MOD + p->index);
 	// g_memory[address + p->index].op = p->registers[get_int_from_index(0)];
 	i = 0;
 	while (i < REG_SIZE)
@@ -115,44 +172,50 @@ static void		sti(t_process *p)
 		g_memory[address % IDX_MOD + p->index + i].op = p->registers[get_int_from_index(0) - 1][i];
 		i += 1;
 	}
+	return (1);
 }
 
-static void		_mfork(t_process *p)
+static int		_mfork(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "_mfork");
+	return (1);
 }
 
-static void		lld(t_process *p)
+static int		lld(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "lld");
+	return (1);
 }
 
-static void		lldi(t_process *p)
+static int		lldi(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "lldi");
+	return (1);
 }
 
-static void		lfork(t_process *p)
+static int		lfork(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "lfork");
+	return (1);
 }
 
-static void		aff(t_process *p)
+static int		aff(t_process *p)
 {
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "aff");
+	return (1);
 }
 
-void (*t[16])(t_process *) = {
+int (*t[16])(t_process *) = {
 	live,
 	ld,
 	st,
