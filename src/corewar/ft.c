@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/05 17:12:48 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/07 01:41:36 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,38 +59,21 @@ static void		add(t_process *p)
 	int		reg0;
 	int		reg1;
 	int		reg2;
+	int		i;
 
 	(void)p;
 	reg0 = get_int_from_index(0);
 	reg1 = get_int_from_index(1);
 	reg2 = get_int_from_index(2);
 
-	int *test = (int*)p->registers[reg0];
+	i = 0;
+	dprintf(OUT, "%d, %d, %d\n", reg0, reg1, reg2);
+	while (i < REG_SIZE)
+	{
+		p->registers[reg2 - 1][i] = p->registers[reg0 - 1][i] | p->registers[reg1 - 1][i];
+		i += 1;
+	}
 
-	int caca = 16777216;
-
-	char str[4];
-
-	dprintf(OUT, "caca %d: %x.%x.%x.%x\n", caca,
-		(unsigned char)*((char*)(&caca) + 0),
-		(unsigned char)*((char*)(&caca) + 1),
-		(unsigned char)*((char*)(&caca) + 2),
-		(unsigned char)*((char*)(&caca) + 3)
-);
-
-	str[0] = (unsigned char)*(&caca + 0);
-	str[1] = (unsigned char)*(&caca + 1);
-	str[2] = (unsigned char)*(&caca + 2);
-	str[3] = (unsigned char)*(&caca + 3);
-
-	p->registers[15][0] = str[0];
-	p->registers[15][1] = str[1];
-	p->registers[15][2] = str[2];
-	p->registers[15][3] = str[3];
-
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tadd: %d && %d = %d\n", *test, (int)*(p->registers[reg1]),
-			(int)*(p->registers[reg2]));
 	print_registers(p);
 	// p->registers
 }
