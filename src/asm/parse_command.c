@@ -71,15 +71,20 @@ static int	parse_args_type(t_command *command)
 	ac = command->op->arg_number;
 	args = command->raw_args;
 	command->coding_octet = 0;
-	while (i < ac)
+	while (i < MAX_ARGS_NUMBER)
 	{
-		args[ac] = args[i];
-		args[i] = ft_strtrim(args[i]);
-		free(args[ac]);
-		args[ac] = NULL;
-		if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
-			return (0);
-		command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
+		if (i < ac)
+		{
+			args[ac] = args[i];
+			args[i] = ft_strtrim(args[i]);
+			free(args[ac]);
+			args[ac] = NULL;
+			if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
+				return (0);
+			command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
+		}
+		else
+			command->coding_octet = command->coding_octet << 2;
 		i++;
 	}
 	return (1);

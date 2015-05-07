@@ -14,17 +14,11 @@ int		invertoctets(int src)
 void			write_header(int fd, const t_champion *champion)
 {
 	header_t	champ_header;
-	char		*tmp;
 
 	ft_bzero(&champ_header, sizeof(header_t));
-	tmp = ft_strsub(champion->name, 7, ft_strlen(champion->name) - 8);
-	ft_strcat(champ_header.prog_name, tmp);
-	free(tmp);
-	tmp = ft_strsub(champion->comment, 10, ft_strlen(champion->comment) - 11);
-	ft_strcat(champ_header.comment, tmp);
-	free(tmp);
+	ft_strcat(champ_header.prog_name, champion->name);
+	ft_strcat(champ_header.comment, champion->comment);
 	champ_header.magic = invertoctets(COREWAR_EXEC_MAGIC);
-	champ_header.prog_size = invertoctets(430);
 	write(fd, &champ_header, sizeof(header_t));
 }
 
@@ -58,11 +52,79 @@ static int		open_output_file(const char *original_filename)
 
 	fd = 0;
 	if (!(filename = determine_new_filename(original_filename)))
-		die("Malloc error.");
-	else if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC)) <= 0)
-		die("Unable to open output file.");
+		die("Malloc error. Abording.");
+	if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0666)) <= 0)
+		die("Unable to open output file. Abording.");
 	ft_strdel(&filename);
 	return (fd);
+}
+
+static void		write_opcode(int fd, t_command *command)
+{
+	write(fd, &command->op->opcode, sizeof(char));
+}
+
+static void		write_coding_octet(int fd, t_command *command)
+{
+	if (command->op->coding_octet)
+		write(fd, &command->coding_octet, sizeof(char));
+}
+
+static t_arg_type	get_arg_type(unsigned int pos, char coding_octet)
+{
+	if (pos == 0)
+		return (coding_octet & (char)3);
+	else if (pos == 1)
+		return (coding_octet & (char)12);
+	else if (pos == 2)
+		return (coding_octet & (char)48);
+	else if (pos == 3)
+		return (coding_octet & (char)192);
+	return (0);
+}
+
+static size_t	get_arg_size(t_arg_type type, int mysterious_attribute)
+{
+	if (type == T_DIR && mysterious_attribute)
+		return (DIR_SIZE / 2);
+	else if (type == T_DIR)
+		return (DIR_SIZE);
+	else if (type == T_REG)
+		return (REG_SIZE);
+	else if (type == T_IND)
+		return (IND_SIZE);
+}
+
+static void		write_parameters(int fd, t_command *command)
+{
+	unsigned int	i;
+	t_arg_type		arg_type;
+	size_t			arg_size;
+	int				arg;
+
+	i = 0;
+	while (i < command->op->arg_number)
+	{
+		arg_type = get_arg_type(i, (char)command->coding_octet);
+		arg_size = get_arg_size(arg_type, command->op->unknown1);
+		arg = get_arg(type, command->raw_args[i]);
+		write(fd, &command->op->args[i], sizeof(char));
+		++i;
+	}
+}
+
+void			write_commands(int fd, t_champion *champion)
+{
+	t_command	*command;
+
+	command = champion->commands;
+	while (command)
+	{
+		write_opcode(fd, command);
+		write_coding_octet(fd, command);
+		write_parameters(fd, command);
+		command = command->next;
+	}
 }
 
 void			compile(const char *filename)
@@ -71,4 +133,6 @@ void			compile(const char *filename)
 
 	file = open_output_file(filename);
 	write_header(file, get_champion(0));
+	write_commands(file, get_champion(0));
+	close(file);
 }

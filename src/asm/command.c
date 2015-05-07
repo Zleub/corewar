@@ -37,3 +37,17 @@ t_command		*add_command(t_command *new)
 		get_champion(0)->commands = new;
 	return (new);
 }
+
+t_command		*get_command_from_label(const char *label)
+{
+	t_label		*cursor;
+
+	cursor = get_champion(0)->labels;
+	while (cursor)
+	{
+		if (!ft_strcmp(cursor->name, label))
+			return (cursor->target);
+		cursor = cursor->next;
+	}
+	return (NULL);
+}

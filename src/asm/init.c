@@ -51,7 +51,6 @@ static void	print_champion(t_champion *c)
 			printf("      %s\n", command->raw_args[i]);
 			i++;
 		}
-
 		printf("\n");
 		command = command->next;
 	}
