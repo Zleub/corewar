@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 19:28:22 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/07 15:56:32 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,6 +184,7 @@ int			get_int_from_index(int index)
 		array[0] = array[0] | array[1];
 		array[3] += 1;
 	}
+	// printf("'%d'", array[0]);
 	return (array[0]);
 }
 

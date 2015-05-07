@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/07 15:38:41 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/07 15:56:18 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int		live(t_process *p)
 	nbr = get_int_from_index(0);
 	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive: live from %d for player : %d\n", p->number, nbr);
+	if (nbr < 0 || nbr > g_corewar.player_nbr)
+		return (0);
 	p->lives += 1;
 	g_corewar.scores[nbr - 1] += 1;
 	g_corewar.last_alive = nbr;
@@ -68,6 +70,9 @@ static int		add(t_process *p)
 	reg[0] = get_int_from_index(0);
 	reg[1] = get_int_from_index(1);
 	reg[2] = get_int_from_index(2);
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tadd r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+
 	while (i < REG_SIZE)
 	{
 		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] | p->registers[reg[1] - 1][i];
@@ -98,6 +103,9 @@ static int		and(t_process *p)
 	reg[0] = get_int_from_index(0);
 	reg[1] = get_int_from_index(1);
 	reg[2] = get_int_from_index(2);
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tand r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+
 	while (i < REG_SIZE)
 	{
 		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] & p->registers[reg[1] - 1][i];
@@ -111,9 +119,26 @@ static int		and(t_process *p)
 
 static int		or(t_process *p)
 {
-	(void)p;
+	char	carry;
+	int		reg[3];
+	int		i;
+
+	i = 0;
+	carry = 0;
+	reg[0] = get_int_from_index(0);
+	reg[1] = get_int_from_index(1);
+	reg[2] = get_int_from_index(2);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "or");
+		dprintf(OUT, "\tor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+
+	while (i < REG_SIZE)
+	{
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] | p->registers[reg[1] - 1][i];
+		carry = carry & p->registers[reg[2] - 1][i];
+		i += 1;
+	}
+	if (!carry)
+		return (carry);
 	return (1);
 }
 
@@ -128,6 +153,9 @@ static int		xor(t_process *p)
 	reg[0] = get_int_from_index(0);
 	reg[1] = get_int_from_index(1);
 	reg[2] = get_int_from_index(2);
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\txor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+
 	while (i < REG_SIZE)
 	{
 		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] ^ p->registers[reg[1] - 1][i];
@@ -142,8 +170,13 @@ static int		xor(t_process *p)
 static int		zjmp(t_process *p)
 {
 	(void)p;
+	int	dest;
+
+	dest = get_int_from_index(0);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "zjmp");
+		dprintf(OUT, "zjmp: %d @ %d\n", p->number, dest);
+	if (p->carry == 1)
+		p->index = dest;
 	return (1);
 }
 
