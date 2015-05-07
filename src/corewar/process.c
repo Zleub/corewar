@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 19:25:09 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/07 15:30:40 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,23 @@ t_process		*new_process(t_process *elem)
 	if (elem)
 		ft_memcpy(new, elem, sizeof(t_process));
 	else
-		ft_bzero(new, sizeof(t_process));
-	i = 0;
-	while (i < REG_NUMBER)
 	{
-		j = 0;
-		while (j > REG_SIZE)
+		ft_bzero(new, sizeof(t_process));
+		i = 0;
+		while (i < REG_NUMBER)
 		{
-			new->registers[i][j] = 0;
-			j += 1;
+			j = 0;
+			while (j > REG_SIZE)
+			{
+				new->registers[i][j] = 0;
+				j += 1;
+			}
+			i += 1;
+		new->carry = 0;
 		}
-		i += 1;
 	}
 	new->next = NULL;
 	new->number = nbr;
-	new->carry = 0;
 	return (new);
 }
 
@@ -107,7 +109,7 @@ void			print_process(t_process *head)
 
 void			execute_process(t_process *head, t_op *op)
 {
-	extern void	(*t[16])(t_process *);
+	extern int	(*t[16])(t_process *);
 	int size;
 
 	size = fill_instruction(head);
@@ -116,7 +118,7 @@ void			execute_process(t_process *head, t_op *op)
 		dprintf(OUT, " %d @ %x | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
-	t[op->opcode - 1](head);
+	head->carry = t[op->opcode - 1](head);
 
 	move_process(head, size);
 	head->delay = get_op(head).cycles;
