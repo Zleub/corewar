@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 14:52:57 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 16:04:58 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int		removedead(t_process *tmp)
 		if (!p->next)
 			return (live_nbr);
 		tmp = p->next;
-		dprintf(OUT, "tmp: %d\n", tmp->lives);
 		if (tmp->lives == 0)
 		{
 			p->next = tmp->next;
