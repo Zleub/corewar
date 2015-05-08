@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 13:39:44 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:15:59 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static void		add(t_process *p)
 
 	while (i < REG_SIZE)
 	{
-		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] | p->registers[reg[1] - 1][i];
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] + p->registers[reg[1] - 1][i];
 		carry = carry | p->registers[reg[2] - 1][i];
 		i += 1;
 	}
@@ -112,9 +112,28 @@ static void		add(t_process *p)
 
 static void		sub(t_process *p)
 {
-	(void)p;
+	char	carry;
+	int		reg[3];
+	int		i;
+
+	i = 0;
+	carry = 0;
+	reg[0] = get_int_from_index(0);
+	reg[1] = get_int_from_index(1);
+	reg[2] = get_int_from_index(2);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "sub");
+		dprintf(OUT, "\tsub r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+
+	while (i < REG_SIZE)
+	{
+		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] - p->registers[reg[1] - 1][i];
+		carry = carry | p->registers[reg[2] - 1][i];
+		i += 1;
+	}
+	if (!carry)
+		p->carry = 1;
+	else
+		p->carry = 0;
 }
 
 static void		and(t_process *p)
