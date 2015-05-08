@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:41:03 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 20:10:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,36 @@ int		max_size();
 
 static void		ld(t_process *p)
 {
-	char	carry;
-	int		value;
-	int		reg;
+	// char	carry;
+	t_type	u;
 
-	carry = 0;
-	value = get_int(&g_instruction[0]);
-	reg = get_int(&g_instruction[1]);
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
+	// carry = 0;
+	// if (g_corewar.verb > 1)
+		// dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
 
-	int i = 0;
-	while (i < g_instruction[0].size)
-	{
-		p->registers[reg - 1][i] = g_instruction[0].args[i];
-		carry = carry | g_instruction[0].args[i];
-		i += 1;
-	}
-	if (!carry)
-		p->carry = 1;
-	else
-		p->carry = 0;
+	if (g_instruction[0].size == 1)
+		u.c = GET_(char)(&g_instruction[0]);
+	else if (g_instruction[0].size == 2)
+		u.s = GET_(short)(&g_instruction[0]);
+	else if (g_instruction[0].size == 4)
+		u.i = GET_(int)(&g_instruction[0]);
+
+	int reg = GET_(int)(&g_instruction[1]);
+
+	dprintf(OUT, "-> %d\n", g_instruction[0].size);
+	write_registers(reg, p, (char *)&(u), g_instruction[0].size);
+
+	// // int i = 0;
+	// // while (i < g_instruction[0].size)
+	// // {
+	// // 	p->registers[reg - 1][i] = g_instruction[0].args[i];
+	// // 	carry = carry | g_instruction[0].args[i];
+	// // 	i += 1;
+	// // }
+	// if (!carry)
+	// 	p->carry = 1;
+	// else
+	// 	p->carry = 0;
 }
 
 static void		st(t_process *p)

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 14:53:48 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 19:58:40 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void		write_heros(int offset, t_heros *heros)
 	p = new_process(NULL);
 	p->index = offset;
 	p->delay = get_op(p).cycles;
+	// WHAT IS REG_SIZE > 4
 	p->registers[0][REG_SIZE - 4] = 0;
 	p->registers[0][REG_SIZE - 3] = 0;
 	p->registers[0][REG_SIZE - 2] = 0;
@@ -110,6 +111,20 @@ void		dump_memory(void)
 		ft_putchar_fd(' ', OUT);
 		if (i % (IDX_MOD / 8) == (IDX_MOD / 8) - 1)
 			ft_putchar_fd('\n', OUT);
+		i += 1;
+	}
+}
+
+void		write_memory(int index, char *str, int len)
+{
+	int		address;
+	int		i;
+
+	i = 0;
+	while (i < len)
+	{
+		address = (index + i) % MEM_SIZE;
+		g_memory[address].op = str[i];
 		i += 1;
 	}
 }

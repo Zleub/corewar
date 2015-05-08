@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:47:30 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 20:15:42 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,4 +145,24 @@ void			update_process(t_process *head)
 		execute_process(head, &op);
 	}
 	update_process(head->next);
+}
+
+int			write_registers(int index, t_process *p, char *str, int len)
+{
+	char	carry;
+	int		tmp;
+
+	tmp = 0;
+	carry = 0;
+	while (tmp < len)
+	{
+		dprintf(OUT, "[%d][%d] %d", REG_SIZE - 1 - tmp, len - tmp, str[len - tmp]);
+		p->registers[index][REG_SIZE - 1 - tmp] = str[len - tmp];
+		carry = carry | p->registers[index][REG_SIZE - tmp];
+		tmp += 1;
+	}
+	if (!carry)
+		return (1);
+	else
+		return (0);
 }
