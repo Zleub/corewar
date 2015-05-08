@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 03:30:47 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 13:29:52 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void			print_process(t_process *head)
 		op = get_op(head);
 		if (g_corewar.verb > 2)
 		{
-			dprintf(OUT, "%d @ %x | %s \n", head->number, head->index, op.name);
+			dprintf(OUT, "\tN_%d @ %d | %s \n", head->number, head->index, op.name);
 			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->index, head->carry , head->delay);
 		}
 		if (g_corewar.verb > 3)
@@ -113,9 +113,9 @@ void			execute_process(t_process *head, t_op *op)
 	int size;
 
 	size = fill_instruction(head);
-	if (g_corewar.verb >= 2)
+	if (g_corewar.verb > 1)
 	{
-		dprintf(OUT, "EXEC %d @ %x | %s : ", head->number, head->index, op->name);
+		dprintf(OUT, "N_%d @ %d | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
 	t[op->opcode - 1](head);

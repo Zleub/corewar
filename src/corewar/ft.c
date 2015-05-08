@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 04:30:08 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 13:39:44 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,33 @@ static void		ld(t_process *p)
 
 static void		st(t_process *p)
 {
+	int		reg0;
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "st");
+
+	reg0 = get_int_from_index(0);
+	if (g_instruction[1].type == REG_CODE)
+	{
+		int reg1 = get_int_from_index(1);
+		int i = 0;
+		while (i < REG_SIZE)
+		{
+			p->registers[reg1 - 1][i] = p->registers[reg0 - 1][i];
+			i += 1;
+		}
+	}
+	else
+	{
+		int address = get_int_from_index(1);
+		int i = 0;
+		while (i < REG_SIZE)
+		{
+		g_memory[address % IDX_MOD + p->index + i].op =  p->registers[reg0 - 1][i];
+			i += 1;
+		}
+	}
+
 }
 
 static void		add(t_process *p)
@@ -165,7 +189,6 @@ static void		xor(t_process *p)
 		carry = carry | p->registers[reg[2] - 1][i];
 		i += 1;
 	}
-	dprintf(OUT, "xor carry : %d\n", carry);
 	if (!carry)
 		p->carry = 1;
 	else
@@ -175,15 +198,16 @@ static void		xor(t_process *p)
 static void		zjmp(t_process *p)
 {
 	(void)p;
-	int	dest;
+	short	dest;
 
 	dest = get_int_from_index(0);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "--------     \tzjmp: %d @ %d -> ", p->number, (signed short)dest);
+		dprintf(OUT, "\tzjmp: %d @ %d -> ", p->number, dest);
 	if (p->carry == 1)
 	{
 		dprintf(OUT, "SUCCESS\n");
-		p->index = dest;
+		p->index += dest - 3;
+		dprintf(OUT, "new index: %d\n", p->index);
 	}
 	else
 		dprintf(OUT, "FAILED\n");
@@ -201,12 +225,10 @@ static void		sti(t_process *p)
 	int			i;
 	int			address;
 
-	print_instruction();
 	address = (get_int_from_index(1) + get_int_from_index(2));
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n",
 			get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address, address % IDX_MOD + p->index);
-	// g_memory[address + p->index].op = p->registers[get_int_from_index(0)];
 	i = 0;
 	while (i < REG_SIZE)
 	{
