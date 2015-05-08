@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 16:04:58 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 18:00:44 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_scores(void)
 	int i = 0;
 	while (i < g_corewar.player_nbr)
 	{
-		dprintf(OUT, "n%d : %d\n", i, g_corewar.scores[i]);
+		dprintf(OUT, "n%d [%s] : %d\n", i, g_heros[i].head.prog_name, g_corewar.scores[i]);
 		i += 1;
 	}
 }

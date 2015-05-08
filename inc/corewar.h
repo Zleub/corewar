@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:33:35 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 17:40:16 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,9 +136,9 @@ void						init_instruction(int max);
 int							fill_instruction(t_process *p);
 void						print_instruction();
 void						print_instruction_decimal();
-int							get_int_from_index(t_instruction *i);
+int							get_int(t_instruction *i);
 void						reset_instruction(void);
 
-// # define #define GET_(X) (X)get_double
+# define GET_(X) (X)get_int
 
 #endif

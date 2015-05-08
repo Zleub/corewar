@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:35:10 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 17:44:14 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,7 +168,7 @@ void		print_instruction(void)
 	}
 }
 
-int			get_int_from_index(t_instruction *i)
+int			get_int(t_instruction *i)
 {
 	char	*str;
 	int		array[4];
@@ -185,7 +185,6 @@ int			get_int_from_index(t_instruction *i)
 		array[0] = array[0] | array[1];
 		array[3] += 1;
 	}
-	// printf("'%d'", array[0]);
 	return (array[0]);
 }
 
@@ -200,7 +199,7 @@ void		print_instruction_decimal()
 		else
 		{
 			if (i < MAX_ARGS_NUMBER && g_instruction[i].args)
-				dprintf(OUT, "%d", get_int_from_index(&g_instruction[i]));
+				dprintf(OUT, "%d", get_int(&g_instruction[i]));
 		}
 		i += 1;
 		if (i < MAX_ARGS_NUMBER && g_instruction[i].args)
