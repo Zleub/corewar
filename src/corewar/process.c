@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/07 15:30:40 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 03:30:47 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,16 +109,16 @@ void			print_process(t_process *head)
 
 void			execute_process(t_process *head, t_op *op)
 {
-	extern int	(*t[16])(t_process *);
+	extern void	(*t[16])(t_process *);
 	int size;
 
 	size = fill_instruction(head);
 	if (g_corewar.verb >= 2)
 	{
-		dprintf(OUT, " %d @ %x | %s : ", head->number, head->index, op->name);
+		dprintf(OUT, "EXEC %d @ %x | %s : ", head->number, head->index, op->name);
 		print_instruction_decimal();
 	}
-	head->carry = t[op->opcode - 1](head);
+	t[op->opcode - 1](head);
 
 	move_process(head, size);
 	head->delay = get_op(head).cycles;
@@ -131,11 +131,6 @@ void			update_process(t_process *head)
 	if (!head)
 		return ;
 	op = get_op(head);
-	if (g_corewar.verb > 2)
-	{
-		dprintf(OUT, "%d @ %x | %s \n", head->number, head->index, op.name);
-		dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->index, head->carry , head->delay);
-	}
 	if (op.name == 0)
 	{
 		move_process(head, 1);
