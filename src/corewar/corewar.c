@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 18:12:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 03:17:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	draw(void)
 		dprintf(OUT, "cycle_counter %% cycle_to_die: %d\n", g_corewar.cycle_counter % g_corewar.cycles_todie);
 		dprintf(OUT, "cycle_to_die: %d\n", g_corewar.cycles_todie);
 		print_scores();
-		// print_process(g_process);
+		print_process(g_process);
 	}
 }
 
