@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 15:14:37 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 17:41:03 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,14 @@ static void		live(t_process *p)
 {
 	int		nbr;
 
-	nbr = get_int_from_index(0);
+	nbr = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive for player : %d\n", nbr);
-	if (nbr < 0 || nbr > g_corewar.player_nbr)
+	if (nbr <= 0 || nbr > g_corewar.player_nbr)
 		return ;
 	p->lives += 1;
-	if (nbr > 0 && nbr < player_nbr - 1)
-	{
-		g_corewar.scores[nbr - 1] += 1;
-		g_corewar.last_alive = nbr;
-	}
+	g_corewar.scores[nbr - 1] += 1;
+	g_corewar.last_alive = nbr;
 }
 
 int		max_size();
@@ -38,8 +35,8 @@ static void		ld(t_process *p)
 	int		reg;
 
 	carry = 0;
-	value = get_int_from_index(0);
-	reg = get_int_from_index(1);
+	value = get_int(&g_instruction[0]);
+	reg = get_int(&g_instruction[1]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
 
@@ -63,10 +60,10 @@ static void		st(t_process *p)
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "st");
 
-	reg0 = get_int_from_index(0);
+	reg0 = get_int(&g_instruction[0]);
 	if (g_instruction[1].type == REG_CODE)
 	{
-		int reg1 = get_int_from_index(1);
+		int reg1 = get_int(&g_instruction[1]);
 		int i = 0;
 		while (i < REG_SIZE)
 		{
@@ -76,11 +73,11 @@ static void		st(t_process *p)
 	}
 	else
 	{
-		int address = get_int_from_index(1);
+		int address = get_int(&g_instruction[1]);
 		int i = 0;
 		while (i < REG_SIZE)
 		{
-		g_memory[address % IDX_MOD + p->index + i].op =  p->registers[reg0 - 1][i];
+			g_memory[address % IDX_MOD + p->index + i].op =  p->registers[reg0 - 1][i];
 			i += 1;
 		}
 	}
@@ -95,9 +92,9 @@ static void		add(t_process *p)
 
 	i = 0;
 	carry = 0;
-	reg[0] = get_int_from_index(0);
-	reg[1] = get_int_from_index(1);
-	reg[2] = get_int_from_index(2);
+	reg[0] = get_int(&g_instruction[0]);
+	reg[1] = get_int(&g_instruction[1]);
+	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tadd r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
 
@@ -121,9 +118,9 @@ static void		sub(t_process *p)
 
 	i = 0;
 	carry = 0;
-	reg[0] = get_int_from_index(0);
-	reg[1] = get_int_from_index(1);
-	reg[2] = get_int_from_index(2);
+	reg[0] = get_int(&g_instruction[0]);
+	reg[1] = get_int(&g_instruction[1]);
+	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tsub r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
 
@@ -147,9 +144,9 @@ static void		and(t_process *p)
 
 	i = 0;
 	carry = 0;
-	reg[0] = get_int_from_index(0);
-	reg[1] = get_int_from_index(1);
-	reg[2] = get_int_from_index(2);
+	reg[0] = get_int(&g_instruction[0]);
+	reg[1] = get_int(&g_instruction[1]);
+	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tand r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
 
@@ -173,9 +170,9 @@ static void		or(t_process *p)
 
 	i = 0;
 	carry = 0;
-	reg[0] = get_int_from_index(0);
-	reg[1] = get_int_from_index(1);
-	reg[2] = get_int_from_index(2);
+	reg[0] = get_int(&g_instruction[0]);
+	reg[1] = get_int(&g_instruction[1]);
+	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
 
@@ -199,9 +196,9 @@ static void		xor(t_process *p)
 
 	i = 0;
 	carry = 0;
-	reg[0] = get_int_from_index(0);
-	reg[1] = get_int_from_index(1);
-	reg[2] = get_int_from_index(2);
+	reg[0] = get_int(&g_instruction[0]);
+	reg[1] = get_int(&g_instruction[1]);
+	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\txor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
 
@@ -222,17 +219,22 @@ static void		zjmp(t_process *p)
 	(void)p;
 	short	dest;
 
-	dest = get_int_from_index(0);
+	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tzjmp: %d @ %d -> ", p->number, dest);
 	if (p->carry == 1)
 	{
-		dprintf(OUT, "SUCCESS\n");
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "SUCCESS\n");
 		p->index += dest - 3;
-		dprintf(OUT, "new index: %d\n", p->index);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "new index: %d\n", p->index);
 	}
 	else
-		dprintf(OUT, "FAILED\n");
+	{
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "FAILED\n");
+	}
 }
 
 static void		ldi(t_process *p)
@@ -241,6 +243,10 @@ static void		ldi(t_process *p)
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "ldi");
 	print_instruction();
+	// int i;
+	// short s;
+
+	// if (g_instruction[0].type == T_REG && g_instruction[1].type == T_REG)
 }
 
 static void		sti(t_process *p)
@@ -248,14 +254,14 @@ static void		sti(t_process *p)
 	int			i;
 	int			address;
 
-	address = (get_int_from_index(1) + get_int_from_index(2));
+	address = (get_int(&g_instruction[1]) + get_int(&g_instruction[2]));
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n",
-			get_int_from_index(0), get_int_from_index(1), get_int_from_index(2), address, address % IDX_MOD + p->index);
+			get_int(&g_instruction[0]), get_int(&g_instruction[1]), get_int(&g_instruction[2]), address, address % IDX_MOD + p->index);
 	i = 0;
 	while (i < REG_SIZE)
 	{
-		g_memory[address % IDX_MOD + p->index + i].op = p->registers[get_int_from_index(0) - 1][i];
+		g_memory[address % IDX_MOD + p->index + i].op = p->registers[get_int(&g_instruction[0]) - 1][i];
 		i += 1;
 	}
 }
@@ -265,7 +271,7 @@ static void		_mfork(t_process *p)
 	t_process	*new;
 	short		dest;
 
-	dest = get_int_from_index(0);
+	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "\tfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
 	new = new_process(p);
