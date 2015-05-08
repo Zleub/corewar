@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:40:16 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 20:04:17 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,8 @@ void						add_process(t_process *elem);
 t_process					*new_process(t_process *elem);
 void						print_process(t_process *head);
 void						update_process(t_process *head);
+int							write_registers(int index, t_process *p, char *str, int len);
+
 
 /*
 ** Intruction
@@ -129,6 +131,15 @@ struct						s_instruct
 };
 
 t_instruction				g_instruction[MAX_ARGS_NUMBER];
+
+typedef union u_type		t_type;
+
+union						u_type
+{
+	char					c;
+	short					s;
+	int						i;
+};
 
 t_op						get_op(t_process *p);
 void						print_op(t_op op);
