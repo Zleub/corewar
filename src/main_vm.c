@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 14:50:43 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 15:14:23 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int		main(int argc, char **argv)
 	}
 	g_corewar.player_nbr = init_corewar(get_opt(argc, argv));
 	dprintf(OUT, "player_nbr = %d\n", g_corewar.player_nbr);
-	g_corewar.scores = (unsigned int *)malloc(sizeof(unsigned int) * g_corewar.player_nbr);
+	if (!(g_corewar.scores = (unsigned int *)malloc(sizeof(unsigned int) * g_corewar.player_nbr)))
+		return (EXIT_FAILURE);
 	ft_bzero(g_corewar.scores, sizeof(unsigned int) * g_corewar.player_nbr);
 	while (42)
 	{
