@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 14:15:59 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:31:26 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		live(t_process *p)
 
 	nbr = get_int_from_index(0);
 	if (g_corewar.verb > 0)
-		dprintf(OUT, "\tlive: live from %d for player : %d\n", p->number, nbr);
+		dprintf(OUT, "\tlive for player : %d\n", nbr);
 	if (nbr < 0 || nbr > g_corewar.player_nbr)
 		return ;
 	p->lives += 1;
@@ -237,6 +237,7 @@ static void		ldi(t_process *p)
 	(void)p;
 	if (g_corewar.verb > 1)
 		dprintf(OUT, "instr: %s\n", "ldi");
+	print_instruction();
 }
 
 static void		sti(t_process *p)
@@ -258,9 +259,16 @@ static void		sti(t_process *p)
 
 static void		_mfork(t_process *p)
 {
-	(void)p;
+	t_process	*new;
+	short		dest;
+
+	dest = get_int_from_index(0);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "_mfork");
+		dprintf(OUT, "\tfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
+	new = new_process(p);
+	add_process(new);
+	new->index = p->index + dest % IDX_MOD;
+	new->delay = get_op(new).cycles;
 }
 
 static void		lld(t_process *p)

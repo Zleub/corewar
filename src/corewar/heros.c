@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:01:37 by adebray           #+#    #+#             */
-/*   Updated: 2015/02/18 16:46:01 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:53:27 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		read_header(int fd, t_heros *heros)
 void		read_heros(int fd, t_heros *heros)
 {
 	if (!(heros->content = (char *)malloc(sizeof(char) * heros->head.prog_size)))
-		die(-1);
+		exit(EXIT_FAILURE);
 	read(fd, heros->content, heros->head.prog_size);
 }
 
@@ -54,7 +54,7 @@ void		get_heros(char *file)
 	{
 		write(2, file, ft_strlen(file));
 		write(2, ": ", 2);
-		die(errno);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{

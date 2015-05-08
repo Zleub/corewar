@@ -6,18 +6,13 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 01:05:21 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:50:43 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define OUT 1
 
 #include <corewar.h>
-
-void	die(int end)
-{
-	exit(end);
-}
 
 int		get_opt(int argc, char **argv)
 {
@@ -55,12 +50,12 @@ int		main(int argc, char **argv)
 	if (CYCLE_TO_DIE != 0)
 		g_corewar.cycles_todie = CYCLE_TO_DIE;
 	else
-		exit(-1); // ERRROR
+		exit(EXIT_FAILURE); // ERRROR
 
 	if (argc < 2)
 	{
 		write(1, "Usage : ./corewar [-d X -v X -ncurse] -n champion -n champion ...\n", 66);
-		return (-1);
+		return (EXIT_FAILURE);
 	}
 	g_corewar.player_nbr = init_corewar(get_opt(argc, argv));
 	dprintf(OUT, "player_nbr = %d\n", g_corewar.player_nbr);
@@ -71,5 +66,5 @@ int		main(int argc, char **argv)
 		update(0);
 		draw();
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }

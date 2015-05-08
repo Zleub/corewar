@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/04 19:23:29 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:53:48 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		write_heros(int offset, t_heros *heros)
 		if (m >= CHAMP_MAX_SIZE)
 		{
 			dprintf(2, "Champ too large, plz, check with your compiler\n");
-			die(-1);
+			exit(EXIT_FAILURE);
 		}
 		g_memory[offset + m].c = heros->color;
 		g_memory[offset + m].op = (unsigned char)heros->content[m];

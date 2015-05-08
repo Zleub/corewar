@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/07 15:56:32 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:54:38 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		init_instruction(int max_size)
 	while (i < MAX_ARGS_NUMBER)
 	{
 		if (!(g_instruction[i].args = (char *)malloc(sizeof(char) * max_size)))
-			die(-1);
+			exit(EXIT_FAILURE);
 		i += 1;
 	}
 }
