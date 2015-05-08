@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 03:17:34 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/08 14:52:57 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	end(void)
 	dprintf(OUT, "no more process alive, exit\n");
 	dprintf(OUT, "Winner is %d, %s\n", g_corewar.last_alive, g_heros[g_corewar.last_alive - 1].head.prog_name);
 	print_scores();
-	exit(-1);
+	exit(EXIT_SUCCESS);
 }
 
 void	draw(void)
@@ -91,6 +91,7 @@ int		inspect(void)
 void	update(int dt)
 {
 	static int		check_nbr;
+
 	(void)dt;
 	if (g_corewar.tic_rate != 0)
 		usleep(800 * g_corewar.tic_rate);
@@ -109,7 +110,7 @@ void	update(int dt)
 	if (g_corewar.cycle_counter == g_corewar.dump)
 	{
 		dump_memory();
-		die(0);
+		exit(EXIT_SUCCESS);
 	}
 }
 
