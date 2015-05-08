@@ -72,15 +72,16 @@ static void		write_coding_octet(int fd, t_command *command)
 
 static t_arg_type	get_arg_type(unsigned int pos, char coding_octet)
 {
-	if (pos == 0)
+	if (pos == 3)
 		return (coding_octet & (char)3);
-	else if (pos == 1)
-		return (coding_octet & (char)12);
 	else if (pos == 2)
+		return (coding_octet & (char)12);
+	else if (pos == 1)
 		return (coding_octet & (char)48);
-	else if (pos == 3)
+	else if (pos == 0)
 		return (coding_octet & (char)192);
-	return (0);
+	else
+		return (T_DIR);
 }
 
 static size_t	get_arg_size(t_arg_type type, int mysterious_attribute)
@@ -93,6 +94,58 @@ static size_t	get_arg_size(t_arg_type type, int mysterious_attribute)
 		return (REG_SIZE);
 	else if (type == T_IND)
 		return (IND_SIZE);
+	return (0);
+}
+
+static int		extract_reg(const char *arg)
+{
+	return (ft_atoi(ft_strsub(arg, 1, ft_strlen(arg) - 1)));
+}
+
+static int		extract_lab(uint cmd_offset, char *lab)
+{
+	t_label		*lab_cur;
+	t_command	*target_cmd;
+
+	lab_cur = get_champion(0)->labels;
+	while (lab_cur)
+	{
+		if (!ft_strcmp(lab_cur->name, lab))
+		{
+			target_cmd = lab_cur->target;
+			return (target_cmd->offset - cmd_offset);
+		}
+		lab_cur = lab_cur->next;
+	}
+	ft_putstr(lab);
+	die(" : label not found. Abording.");
+	return (0);
+}
+
+static int		extract_dir(const char *arg, uint offset)
+{
+	char		*lab;
+
+	if ((lab = ft_strchr(arg, LABEL_CHAR)))
+		return (extract_lab(offset, lab));
+	else
+		return (ft_atoi(ft_strsub(arg, 1, ft_strlen(arg) - 1)));
+}
+
+static int		extract_ind(const char *arg)
+{
+	return (ft_atoi(arg));
+}
+
+static int		get_arg(t_arg_type type, const char *arg, uint offset)
+{
+	if (type == T_REG)
+		return (extract_reg(arg));
+	else if (type == T_DIR)
+		return (extract_dir(arg, offset));
+	else if (type == T_IND)
+		return (extract_ind(arg));
+	return (0);
 }
 
 static void		write_parameters(int fd, t_command *command)
@@ -103,12 +156,13 @@ static void		write_parameters(int fd, t_command *command)
 	int				arg;
 
 	i = 0;
+	arg = 0;
 	while (i < command->op->arg_number)
 	{
 		arg_type = get_arg_type(i, (char)command->coding_octet);
 		arg_size = get_arg_size(arg_type, command->op->unknown1);
-		arg = get_arg(type, command->raw_args[i]);
-		write(fd, &command->op->args[i], sizeof(char));
+		arg = get_arg(arg_type, command->raw_args[i], command->offset);
+		write(fd, &arg, arg_size);
 		++i;
 	}
 }
@@ -123,6 +177,7 @@ void			write_commands(int fd, t_champion *champion)
 		write_opcode(fd, command);
 		write_coding_octet(fd, command);
 		write_parameters(fd, command);
+		ft_putendl("LELELLELELELELELELE");
 		command = command->next;
 	}
 }
