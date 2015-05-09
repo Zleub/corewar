@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/09 19:28:11 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/09 21:35:10 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static void		st(t_process *p)
 	else if (g_instruction[1].size == 4)
 		u.i = GET_(int)(&g_instruction[1]);
 	write_memory(u.i + p->index, p->registers[reg - 1], REG_SIZE);
-
 }
 
 static void		add(t_process *p)
@@ -118,31 +117,50 @@ static void		sub(t_process *p)
 		p->carry = 0;
 }
 
+char			*get_reg(t_process *p, t_instruction *i)
+{
+	int			reg;
+
+	reg = GET_(char)(i);
+	return (p->registers[reg - 1]);
+}
+
 static void		and(t_process *p)
 {
-	(void)p;
-	char	carry;
-	int		reg[3];
 	int		i;
+	int		reg;
 
-	i = 0;
-	carry = 0;
-	reg[0] = get_int(&g_instruction[0]);
-	reg[1] = get_int(&g_instruction[1]);
-	reg[2] = get_int(&g_instruction[2]);
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tand r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+	char *ptr1;
+	short *ptr4;
+	if (g_instruction[0].size == 1)
+		ptr1 = get_reg(p, &g_instruction[0]);
+	else if (g_instruction[0].size == 2)
+		ptr4 = (short *)(&(get_int(&g_instruction[0])));
+	else if (g_instruction[0].size == 4)
+		ptr1 = GET_(int)(&g_instruction[0]);
 
-	while (i < REG_SIZE)
-	{
-		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] & p->registers[reg[1] - 1][i];
-		carry = carry | p->registers[reg[2] - 1][i];
-		i += 1;
-	}
-	if (!carry)
-		p->carry = 1;
-	else
-		p->carry = 0;
+	char *ptr2;
+	if (g_instruction[1].size == 1)
+		ptr2 = get_reg(p, &g_instruction[1]);
+
+
+	// else if (g_instruction[1].size == 2)
+	// 	u2.s = GET_(short)(&g_instruction[1]);
+	// else if (g_instruction[1].size == 4)
+	// 	u2.i = GET_(int)(&g_instruction[1]);
+
+	// reg = GET_(int)(&g_instruction[2]);
+	// i = 0;
+	// while (i < g_instruction[0].size && i < g_instruction[1].size)
+	// {
+	// 	p->registers[reg - 1][i] = (char*)(&(u1))[i] & (char*)(&(u2))[i];
+	// 	carry = carry | p->registers[reg[2] - 1][i];
+	// 	i += 1;
+	// }
+	// if (!carry)
+	// 	p->carry = 1;
+	// else
+	// 	p->carry = 0;
 }
 
 static void		or(t_process *p)

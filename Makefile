@@ -6,7 +6,7 @@
 #    By: adebray <adebray@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/10/02 03:26:29 by adebray           #+#    #+#              #
-#    Updated: 2015/05/09 19:15:52 by adebray          ###   ########.fr        #
+#    Updated: 2015/05/09 19:32:03 by adebray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC				=
 OBJ				=	$(subst .c,.o,$(SRC))
 
 CC				=	gcc
-CCFLAGS			=	-g3 -Werror -Wall -Wextra -Wuninitialized -O3
+CCFLAGS			=	-Werror -Wall -Wextra -Wuninitialized -O3 -g
 
 LIBLIBFT		=	-L$(SRCDIR)/libft -lft
 LIBPRINTF		=	-L$(SRCDIR)/ft_printf -lftprintf

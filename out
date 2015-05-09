@@ -1,4 +1,4 @@
-Introducing stayin' alive, n: 1, 336b of code
+Introducing stayin' alive, n: 1, 272b of code
 	"Ha, Ha, Ha, stayiiiiin' aliiiiiiiiiive"
 player_nbr = 1
 cycle_counter: 1
@@ -343,21 +343,22 @@ n0 [stayin' alive] : 0
 		r[13]:	[00][00][00][00]
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
-N_1 @ 11 | and : -19, r3, r3
-DIR	[0]: ff ff ff ed 
+N_1 @ 11 | and : r2, r3, r3
+REG	[0]: 02 
 REG	[1]: 03 
 REG	[2]: 03 
 [3]: 
-from 11 to 19
+	and r2 + r3 -> r3
+from 11 to 16
 cycle_counter: 16
 cycle_counter % cycle_to_die: 16
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [6] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [6] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -375,11 +376,11 @@ cycle_counter: 17
 cycle_counter % cycle_to_die: 17
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [5] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [5] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -397,11 +398,11 @@ cycle_counter: 18
 cycle_counter % cycle_to_die: 18
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [4] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [4] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -419,11 +420,11 @@ cycle_counter: 19
 cycle_counter % cycle_to_die: 19
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [3] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [3] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -441,11 +442,11 @@ cycle_counter: 20
 cycle_counter % cycle_to_die: 20
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [2] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [2] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -463,11 +464,11 @@ cycle_counter: 21
 cycle_counter % cycle_to_die: 21
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 19 | and 
-		pc: [19], carry: [1], delay: [1] 
+	N_1 @ 16 | or 
+		pc: [16], carry: [0], delay: [1] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -481,21 +482,22 @@ n0 [stayin' alive] : 0
 		r[13]:	[00][00][00][00]
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
-N_1 @ 19 | and : r2, r3, r3
-REG	[0]: 02 
+N_1 @ 16 | or : 3, r3, r3
+DIR	[0]: 00 00 00 03 
 REG	[1]: 03 
 REG	[2]: 03 
 [3]: 
-from 19 to 24
+	or r3 + r3 -> r3
+from 16 to 24
 cycle_counter: 22
 cycle_counter % cycle_to_die: 22
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [6] 
+		pc: [24], carry: [0], delay: [6] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -514,10 +516,10 @@ cycle_counter % cycle_to_die: 23
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [5] 
+		pc: [24], carry: [0], delay: [5] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -536,10 +538,10 @@ cycle_counter % cycle_to_die: 24
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [4] 
+		pc: [24], carry: [0], delay: [4] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -558,10 +560,10 @@ cycle_counter % cycle_to_die: 25
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [3] 
+		pc: [24], carry: [0], delay: [3] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -580,10 +582,10 @@ cycle_counter % cycle_to_die: 26
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [2] 
+		pc: [24], carry: [0], delay: [2] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -602,10 +604,10 @@ cycle_counter % cycle_to_die: 27
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
 	N_1 @ 24 | or 
-		pc: [24], carry: [1], delay: [1] 
+		pc: [24], carry: [0], delay: [1] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -619,22 +621,22 @@ n0 [stayin' alive] : 0
 		r[13]:	[00][00][00][00]
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
-N_1 @ 24 | or : 3, r3, r3
-DIR	[0]: 00 00 00 03 
+N_1 @ 24 | or : r2, r3, r3
+REG	[0]: 02 
 REG	[1]: 03 
 REG	[2]: 03 
 [3]: 
-	or r3 + r3 -> r3
-from 24 to 32
+	or r2 + r3 -> r3
+from 24 to 29
 cycle_counter: 28
 cycle_counter % cycle_to_die: 28
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [6] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [10] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -652,11 +654,11 @@ cycle_counter: 29
 cycle_counter % cycle_to_die: 29
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [5] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [9] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -674,11 +676,11 @@ cycle_counter: 30
 cycle_counter % cycle_to_die: 30
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [4] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [8] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -696,11 +698,11 @@ cycle_counter: 31
 cycle_counter % cycle_to_die: 31
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [3] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [7] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -718,11 +720,11 @@ cycle_counter: 32
 cycle_counter % cycle_to_die: 32
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [2] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [6] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -740,11 +742,11 @@ cycle_counter: 33
 cycle_counter % cycle_to_die: 33
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 32 | or 
-		pc: [32], carry: [1], delay: [1] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [5] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
-		r[2]:	[00][00][00][00]
+		r[2]:	[01][87][5d][d4]
 		r[3]:	[00][00][00][00]
 		r[4]:	[00][00][00][00]
 		r[5]:	[00][00][00][00]
@@ -758,19 +760,12 @@ n0 [stayin' alive] : 0
 		r[13]:	[00][00][00][00]
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
-N_1 @ 32 | or : r2, r3, r3
-REG	[0]: 02 
-REG	[1]: 03 
-REG	[2]: 03 
-[3]: 
-	or r2 + r3 -> r3
-from 32 to 37
 cycle_counter: 34
 cycle_counter % cycle_to_die: 34
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [10] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [4] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
 		r[2]:	[01][87][5d][d4]
@@ -791,8 +786,8 @@ cycle_counter: 35
 cycle_counter % cycle_to_die: 35
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [9] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [3] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
 		r[2]:	[01][87][5d][d4]
@@ -813,8 +808,8 @@ cycle_counter: 36
 cycle_counter % cycle_to_die: 36
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [8] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [2] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
 		r[2]:	[01][87][5d][d4]
@@ -835,8 +830,8 @@ cycle_counter: 37
 cycle_counter % cycle_to_die: 37
 cycle_to_die: 1536
 n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [7] 
+	N_1 @ 29 | live 
+		pc: [29], carry: [0], delay: [1] 
 		r[0]:	[00][00][00][01]
 		r[1]:	[01][87][5d][d4]
 		r[2]:	[01][87][5d][d4]
@@ -853,147 +848,199 @@ n0 [stayin' alive] : 0
 		r[13]:	[00][00][00][00]
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
-cycle_counter: 38
-cycle_counter % cycle_to_die: 38
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [6] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-cycle_counter: 39
-cycle_counter % cycle_to_die: 39
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [5] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-cycle_counter: 40
-cycle_counter % cycle_to_die: 40
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [4] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-cycle_counter: 41
-cycle_counter % cycle_to_die: 41
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [3] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-cycle_counter: 42
-cycle_counter % cycle_to_die: 42
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [2] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-cycle_counter: 43
-cycle_counter % cycle_to_die: 43
-cycle_to_die: 1536
-n0 [stayin' alive] : 0
-	N_1 @ 37 | live 
-		pc: [37], carry: [0], delay: [1] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-N_1 @ 37 | live : 1
+N_1 @ 29 | live : 1
 DIR	[0]: 00 00 00 01 
 [1]: 
 [2]: 
 [3]: 
 	live for player : 1
-from 37 to 42
+from 29 to 34
+cycle_counter: 38
+cycle_counter % cycle_to_die: 38
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 34 | (null) 
+		pc: [34], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 34 to 35
+cycle_counter: 39
+cycle_counter % cycle_to_die: 39
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 35 | (null) 
+		pc: [35], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 35 to 36
+cycle_counter: 40
+cycle_counter % cycle_to_die: 40
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 36 | (null) 
+		pc: [36], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 36 to 37
+cycle_counter: 41
+cycle_counter % cycle_to_die: 41
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 37 | (null) 
+		pc: [37], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 37 to 38
+cycle_counter: 42
+cycle_counter % cycle_to_die: 42
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 38 | (null) 
+		pc: [38], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 38 to 39
+cycle_counter: 43
+cycle_counter % cycle_to_die: 43
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 39 | (null) 
+		pc: [39], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 39 to 40
 cycle_counter: 44
 cycle_counter % cycle_to_die: 44
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 40 | (null) 
+		pc: [40], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 40 to 41
+cycle_counter: 45
+cycle_counter % cycle_to_die: 45
+cycle_to_die: 1536
+n0 [stayin' alive] : 1
+	N_1 @ 41 | (null) 
+		pc: [41], carry: [0], delay: [0] 
+		r[0]:	[00][00][00][01]
+		r[1]:	[01][87][5d][d4]
+		r[2]:	[01][87][5d][d4]
+		r[3]:	[00][00][00][00]
+		r[4]:	[00][00][00][00]
+		r[5]:	[00][00][00][00]
+		r[6]:	[00][00][00][00]
+		r[7]:	[00][00][00][00]
+		r[8]:	[00][00][00][00]
+		r[9]:	[00][00][00][00]
+		r[10]:	[00][00][00][00]
+		r[11]:	[00][00][00][00]
+		r[12]:	[00][00][00][00]
+		r[13]:	[00][00][00][00]
+		r[14]:	[00][00][00][00]
+		r[15]:	[00][00][00][00]
+from 41 to 42
+cycle_counter: 46
+cycle_counter % cycle_to_die: 46
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 42 | (null) 
@@ -1015,8 +1062,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 42 to 43
-cycle_counter: 45
-cycle_counter % cycle_to_die: 45
+cycle_counter: 47
+cycle_counter % cycle_to_die: 47
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 43 | (null) 
@@ -1038,8 +1085,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 43 to 44
-cycle_counter: 46
-cycle_counter % cycle_to_die: 46
+cycle_counter: 48
+cycle_counter % cycle_to_die: 48
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 44 | (null) 
@@ -1061,8 +1108,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 44 to 45
-cycle_counter: 47
-cycle_counter % cycle_to_die: 47
+cycle_counter: 49
+cycle_counter % cycle_to_die: 49
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 45 | (null) 
@@ -1084,8 +1131,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 45 to 46
-cycle_counter: 48
-cycle_counter % cycle_to_die: 48
+cycle_counter: 50
+cycle_counter % cycle_to_die: 50
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 46 | (null) 
@@ -1107,8 +1154,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 46 to 47
-cycle_counter: 49
-cycle_counter % cycle_to_die: 49
+cycle_counter: 51
+cycle_counter % cycle_to_die: 51
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 47 | (null) 
@@ -1130,8 +1177,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 47 to 48
-cycle_counter: 50
-cycle_counter % cycle_to_die: 50
+cycle_counter: 52
+cycle_counter % cycle_to_die: 52
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 48 | (null) 
@@ -1153,8 +1200,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 48 to 49
-cycle_counter: 51
-cycle_counter % cycle_to_die: 51
+cycle_counter: 53
+cycle_counter % cycle_to_die: 53
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 49 | (null) 
@@ -1176,8 +1223,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 49 to 50
-cycle_counter: 52
-cycle_counter % cycle_to_die: 52
+cycle_counter: 54
+cycle_counter % cycle_to_die: 54
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 50 | (null) 
@@ -1199,8 +1246,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 50 to 51
-cycle_counter: 53
-cycle_counter % cycle_to_die: 53
+cycle_counter: 55
+cycle_counter % cycle_to_die: 55
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 51 | (null) 
@@ -1222,8 +1269,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 51 to 52
-cycle_counter: 54
-cycle_counter % cycle_to_die: 54
+cycle_counter: 56
+cycle_counter % cycle_to_die: 56
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 52 | (null) 
@@ -1245,8 +1292,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 52 to 53
-cycle_counter: 55
-cycle_counter % cycle_to_die: 55
+cycle_counter: 57
+cycle_counter % cycle_to_die: 57
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 53 | (null) 
@@ -1268,8 +1315,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 53 to 54
-cycle_counter: 56
-cycle_counter % cycle_to_die: 56
+cycle_counter: 58
+cycle_counter % cycle_to_die: 58
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 54 | (null) 
@@ -1291,8 +1338,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 54 to 55
-cycle_counter: 57
-cycle_counter % cycle_to_die: 57
+cycle_counter: 59
+cycle_counter % cycle_to_die: 59
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 55 | (null) 
@@ -1314,8 +1361,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 55 to 56
-cycle_counter: 58
-cycle_counter % cycle_to_die: 58
+cycle_counter: 60
+cycle_counter % cycle_to_die: 60
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 56 | (null) 
@@ -1337,8 +1384,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 56 to 57
-cycle_counter: 59
-cycle_counter % cycle_to_die: 59
+cycle_counter: 61
+cycle_counter % cycle_to_die: 61
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 57 | (null) 
@@ -1360,8 +1407,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 57 to 58
-cycle_counter: 60
-cycle_counter % cycle_to_die: 60
+cycle_counter: 62
+cycle_counter % cycle_to_die: 62
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 58 | (null) 
@@ -1383,8 +1430,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 58 to 59
-cycle_counter: 61
-cycle_counter % cycle_to_die: 61
+cycle_counter: 63
+cycle_counter % cycle_to_die: 63
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 59 | (null) 
@@ -1406,8 +1453,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 59 to 60
-cycle_counter: 62
-cycle_counter % cycle_to_die: 62
+cycle_counter: 64
+cycle_counter % cycle_to_die: 64
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 60 | (null) 
@@ -1429,8 +1476,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 60 to 61
-cycle_counter: 63
-cycle_counter % cycle_to_die: 63
+cycle_counter: 65
+cycle_counter % cycle_to_die: 65
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 61 | (null) 
@@ -1452,8 +1499,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 61 to 62
-cycle_counter: 64
-cycle_counter % cycle_to_die: 64
+cycle_counter: 66
+cycle_counter % cycle_to_die: 66
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 62 | (null) 
@@ -1475,8 +1522,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 62 to 63
-cycle_counter: 65
-cycle_counter % cycle_to_die: 65
+cycle_counter: 67
+cycle_counter % cycle_to_die: 67
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 63 | (null) 
@@ -1498,8 +1545,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 63 to 64
-cycle_counter: 66
-cycle_counter % cycle_to_die: 66
+cycle_counter: 68
+cycle_counter % cycle_to_die: 68
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 64 | (null) 
@@ -1521,8 +1568,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 64 to 65
-cycle_counter: 67
-cycle_counter % cycle_to_die: 67
+cycle_counter: 69
+cycle_counter % cycle_to_die: 69
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 65 | (null) 
@@ -1544,8 +1591,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 65 to 66
-cycle_counter: 68
-cycle_counter % cycle_to_die: 68
+cycle_counter: 70
+cycle_counter % cycle_to_die: 70
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 66 | (null) 
@@ -1567,8 +1614,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 66 to 67
-cycle_counter: 69
-cycle_counter % cycle_to_die: 69
+cycle_counter: 71
+cycle_counter % cycle_to_die: 71
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 67 | (null) 
@@ -1590,8 +1637,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 67 to 68
-cycle_counter: 70
-cycle_counter % cycle_to_die: 70
+cycle_counter: 72
+cycle_counter % cycle_to_die: 72
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 68 | (null) 
@@ -1613,8 +1660,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 68 to 69
-cycle_counter: 71
-cycle_counter % cycle_to_die: 71
+cycle_counter: 73
+cycle_counter % cycle_to_die: 73
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 69 | (null) 
@@ -1636,8 +1683,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 69 to 70
-cycle_counter: 72
-cycle_counter % cycle_to_die: 72
+cycle_counter: 74
+cycle_counter % cycle_to_die: 74
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 70 | (null) 
@@ -1659,8 +1706,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 70 to 71
-cycle_counter: 73
-cycle_counter % cycle_to_die: 73
+cycle_counter: 75
+cycle_counter % cycle_to_die: 75
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 71 | (null) 
@@ -1682,8 +1729,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 71 to 72
-cycle_counter: 74
-cycle_counter % cycle_to_die: 74
+cycle_counter: 76
+cycle_counter % cycle_to_die: 76
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 72 | (null) 
@@ -1705,8 +1752,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 72 to 73
-cycle_counter: 75
-cycle_counter % cycle_to_die: 75
+cycle_counter: 77
+cycle_counter % cycle_to_die: 77
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 73 | (null) 
@@ -1728,8 +1775,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 73 to 74
-cycle_counter: 76
-cycle_counter % cycle_to_die: 76
+cycle_counter: 78
+cycle_counter % cycle_to_die: 78
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 74 | (null) 
@@ -1751,8 +1798,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 74 to 75
-cycle_counter: 77
-cycle_counter % cycle_to_die: 77
+cycle_counter: 79
+cycle_counter % cycle_to_die: 79
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 75 | (null) 
@@ -1774,8 +1821,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 75 to 76
-cycle_counter: 78
-cycle_counter % cycle_to_die: 78
+cycle_counter: 80
+cycle_counter % cycle_to_die: 80
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 76 | (null) 
@@ -1797,8 +1844,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 76 to 77
-cycle_counter: 79
-cycle_counter % cycle_to_die: 79
+cycle_counter: 81
+cycle_counter % cycle_to_die: 81
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 77 | (null) 
@@ -1820,8 +1867,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 77 to 78
-cycle_counter: 80
-cycle_counter % cycle_to_die: 80
+cycle_counter: 82
+cycle_counter % cycle_to_die: 82
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 78 | (null) 
@@ -1843,8 +1890,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 78 to 79
-cycle_counter: 81
-cycle_counter % cycle_to_die: 81
+cycle_counter: 83
+cycle_counter % cycle_to_die: 83
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 79 | (null) 
@@ -1866,8 +1913,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 79 to 80
-cycle_counter: 82
-cycle_counter % cycle_to_die: 82
+cycle_counter: 84
+cycle_counter % cycle_to_die: 84
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 80 | (null) 
@@ -1889,8 +1936,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 80 to 81
-cycle_counter: 83
-cycle_counter % cycle_to_die: 83
+cycle_counter: 85
+cycle_counter % cycle_to_die: 85
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 81 | (null) 
@@ -1912,8 +1959,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 81 to 82
-cycle_counter: 84
-cycle_counter % cycle_to_die: 84
+cycle_counter: 86
+cycle_counter % cycle_to_die: 86
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 82 | (null) 
@@ -1935,8 +1982,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 82 to 83
-cycle_counter: 85
-cycle_counter % cycle_to_die: 85
+cycle_counter: 87
+cycle_counter % cycle_to_die: 87
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 83 | (null) 
@@ -1958,8 +2005,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 83 to 84
-cycle_counter: 86
-cycle_counter % cycle_to_die: 86
+cycle_counter: 88
+cycle_counter % cycle_to_die: 88
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 84 | (null) 
@@ -1981,8 +2028,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 84 to 85
-cycle_counter: 87
-cycle_counter % cycle_to_die: 87
+cycle_counter: 89
+cycle_counter % cycle_to_die: 89
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 85 | (null) 
@@ -2004,8 +2051,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 85 to 86
-cycle_counter: 88
-cycle_counter % cycle_to_die: 88
+cycle_counter: 90
+cycle_counter % cycle_to_die: 90
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 86 | (null) 
@@ -2027,8 +2074,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 86 to 87
-cycle_counter: 89
-cycle_counter % cycle_to_die: 89
+cycle_counter: 91
+cycle_counter % cycle_to_die: 91
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 87 | (null) 
@@ -2050,8 +2097,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 87 to 88
-cycle_counter: 90
-cycle_counter % cycle_to_die: 90
+cycle_counter: 92
+cycle_counter % cycle_to_die: 92
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 88 | (null) 
@@ -2073,8 +2120,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 88 to 89
-cycle_counter: 91
-cycle_counter % cycle_to_die: 91
+cycle_counter: 93
+cycle_counter % cycle_to_die: 93
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 89 | (null) 
@@ -2096,8 +2143,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 89 to 90
-cycle_counter: 92
-cycle_counter % cycle_to_die: 92
+cycle_counter: 94
+cycle_counter % cycle_to_die: 94
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 90 | (null) 
@@ -2119,8 +2166,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 90 to 91
-cycle_counter: 93
-cycle_counter % cycle_to_die: 93
+cycle_counter: 95
+cycle_counter % cycle_to_die: 95
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 91 | (null) 
@@ -2142,8 +2189,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 91 to 92
-cycle_counter: 94
-cycle_counter % cycle_to_die: 94
+cycle_counter: 96
+cycle_counter % cycle_to_die: 96
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 92 | (null) 
@@ -2165,8 +2212,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 92 to 93
-cycle_counter: 95
-cycle_counter % cycle_to_die: 95
+cycle_counter: 97
+cycle_counter % cycle_to_die: 97
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 93 | (null) 
@@ -2188,8 +2235,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 93 to 94
-cycle_counter: 96
-cycle_counter % cycle_to_die: 96
+cycle_counter: 98
+cycle_counter % cycle_to_die: 98
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 94 | (null) 
@@ -2211,8 +2258,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 94 to 95
-cycle_counter: 97
-cycle_counter % cycle_to_die: 97
+cycle_counter: 99
+cycle_counter % cycle_to_die: 99
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 95 | (null) 
@@ -2234,8 +2281,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 95 to 96
-cycle_counter: 98
-cycle_counter % cycle_to_die: 98
+cycle_counter: 100
+cycle_counter % cycle_to_die: 100
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 96 | (null) 
@@ -2257,8 +2304,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 96 to 97
-cycle_counter: 99
-cycle_counter % cycle_to_die: 99
+cycle_counter: 101
+cycle_counter % cycle_to_die: 101
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 97 | (null) 
@@ -2280,8 +2327,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 97 to 98
-cycle_counter: 100
-cycle_counter % cycle_to_die: 100
+cycle_counter: 102
+cycle_counter % cycle_to_die: 102
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 98 | (null) 
@@ -2303,8 +2350,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 98 to 99
-cycle_counter: 101
-cycle_counter % cycle_to_die: 101
+cycle_counter: 103
+cycle_counter % cycle_to_die: 103
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 99 | (null) 
@@ -2326,8 +2373,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 99 to 100
-cycle_counter: 102
-cycle_counter % cycle_to_die: 102
+cycle_counter: 104
+cycle_counter % cycle_to_die: 104
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 100 | (null) 
@@ -2349,8 +2396,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 100 to 101
-cycle_counter: 103
-cycle_counter % cycle_to_die: 103
+cycle_counter: 105
+cycle_counter % cycle_to_die: 105
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 101 | (null) 
@@ -2372,8 +2419,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 101 to 102
-cycle_counter: 104
-cycle_counter % cycle_to_die: 104
+cycle_counter: 106
+cycle_counter % cycle_to_die: 106
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 102 | (null) 
@@ -2395,8 +2442,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 102 to 103
-cycle_counter: 105
-cycle_counter % cycle_to_die: 105
+cycle_counter: 107
+cycle_counter % cycle_to_die: 107
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 103 | (null) 
@@ -2418,8 +2465,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 103 to 104
-cycle_counter: 106
-cycle_counter % cycle_to_die: 106
+cycle_counter: 108
+cycle_counter % cycle_to_die: 108
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 104 | (null) 
@@ -2441,8 +2488,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 104 to 105
-cycle_counter: 107
-cycle_counter % cycle_to_die: 107
+cycle_counter: 109
+cycle_counter % cycle_to_die: 109
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 105 | (null) 
@@ -2464,8 +2511,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 105 to 106
-cycle_counter: 108
-cycle_counter % cycle_to_die: 108
+cycle_counter: 110
+cycle_counter % cycle_to_die: 110
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 106 | (null) 
@@ -2487,8 +2534,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 106 to 107
-cycle_counter: 109
-cycle_counter % cycle_to_die: 109
+cycle_counter: 111
+cycle_counter % cycle_to_die: 111
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 107 | (null) 
@@ -2510,8 +2557,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 107 to 108
-cycle_counter: 110
-cycle_counter % cycle_to_die: 110
+cycle_counter: 112
+cycle_counter % cycle_to_die: 112
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 108 | (null) 
@@ -2533,8 +2580,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 108 to 109
-cycle_counter: 111
-cycle_counter % cycle_to_die: 111
+cycle_counter: 113
+cycle_counter % cycle_to_die: 113
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 109 | (null) 
@@ -2556,8 +2603,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 109 to 110
-cycle_counter: 112
-cycle_counter % cycle_to_die: 112
+cycle_counter: 114
+cycle_counter % cycle_to_die: 114
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 110 | (null) 
@@ -2579,8 +2626,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 110 to 111
-cycle_counter: 113
-cycle_counter % cycle_to_die: 113
+cycle_counter: 115
+cycle_counter % cycle_to_die: 115
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 111 | (null) 
@@ -2602,8 +2649,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 111 to 112
-cycle_counter: 114
-cycle_counter % cycle_to_die: 114
+cycle_counter: 116
+cycle_counter % cycle_to_die: 116
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 112 | (null) 
@@ -2625,8 +2672,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 112 to 113
-cycle_counter: 115
-cycle_counter % cycle_to_die: 115
+cycle_counter: 117
+cycle_counter % cycle_to_die: 117
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 113 | (null) 
@@ -2648,8 +2695,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 113 to 114
-cycle_counter: 116
-cycle_counter % cycle_to_die: 116
+cycle_counter: 118
+cycle_counter % cycle_to_die: 118
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 114 | (null) 
@@ -2671,8 +2718,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 114 to 115
-cycle_counter: 117
-cycle_counter % cycle_to_die: 117
+cycle_counter: 119
+cycle_counter % cycle_to_die: 119
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 115 | (null) 
@@ -2694,8 +2741,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 115 to 116
-cycle_counter: 118
-cycle_counter % cycle_to_die: 118
+cycle_counter: 120
+cycle_counter % cycle_to_die: 120
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 116 | (null) 
@@ -2717,8 +2764,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 116 to 117
-cycle_counter: 119
-cycle_counter % cycle_to_die: 119
+cycle_counter: 121
+cycle_counter % cycle_to_die: 121
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 117 | (null) 
@@ -2740,8 +2787,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 117 to 118
-cycle_counter: 120
-cycle_counter % cycle_to_die: 120
+cycle_counter: 122
+cycle_counter % cycle_to_die: 122
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 118 | (null) 
@@ -2763,8 +2810,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 118 to 119
-cycle_counter: 121
-cycle_counter % cycle_to_die: 121
+cycle_counter: 123
+cycle_counter % cycle_to_die: 123
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 119 | (null) 
@@ -2786,8 +2833,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 119 to 120
-cycle_counter: 122
-cycle_counter % cycle_to_die: 122
+cycle_counter: 124
+cycle_counter % cycle_to_die: 124
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 120 | (null) 
@@ -2809,8 +2856,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 120 to 121
-cycle_counter: 123
-cycle_counter % cycle_to_die: 123
+cycle_counter: 125
+cycle_counter % cycle_to_die: 125
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 121 | (null) 
@@ -2832,8 +2879,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 121 to 122
-cycle_counter: 124
-cycle_counter % cycle_to_die: 124
+cycle_counter: 126
+cycle_counter % cycle_to_die: 126
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 122 | (null) 
@@ -2855,8 +2902,8 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 122 to 123
-cycle_counter: 125
-cycle_counter % cycle_to_die: 125
+cycle_counter: 127
+cycle_counter % cycle_to_die: 127
 cycle_to_die: 1536
 n0 [stayin' alive] : 1
 	N_1 @ 123 | (null) 
@@ -2878,53 +2925,7 @@ n0 [stayin' alive] : 1
 		r[14]:	[00][00][00][00]
 		r[15]:	[00][00][00][00]
 from 123 to 124
-cycle_counter: 126
-cycle_counter % cycle_to_die: 126
-cycle_to_die: 1536
-n0 [stayin' alive] : 1
-	N_1 @ 124 | (null) 
-		pc: [124], carry: [0], delay: [0] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-from 124 to 125
-cycle_counter: 127
-cycle_counter % cycle_to_die: 127
-cycle_to_die: 1536
-n0 [stayin' alive] : 1
-	N_1 @ 125 | (null) 
-		pc: [125], carry: [0], delay: [0] 
-		r[0]:	[00][00][00][01]
-		r[1]:	[01][87][5d][d4]
-		r[2]:	[01][87][5d][d4]
-		r[3]:	[00][00][00][00]
-		r[4]:	[00][00][00][00]
-		r[5]:	[00][00][00][00]
-		r[6]:	[00][00][00][00]
-		r[7]:	[00][00][00][00]
-		r[8]:	[00][00][00][00]
-		r[9]:	[00][00][00][00]
-		r[10]:	[00][00][00][00]
-		r[11]:	[00][00][00][00]
-		r[12]:	[00][00][00][00]
-		r[13]:	[00][00][00][00]
-		r[14]:	[00][00][00][00]
-		r[15]:	[00][00][00][00]
-from 125 to 126
-02 90 01 87 5d d4 03 03 50 03 02 06 94 ff ff ff ed 03 03 06 54 02 03 03 07 94 00 00 00 03 03 03 07 54 02 03 03 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+02 90 01 87 5d d4 03 03 50 03 02 06 54 02 03 03 07 94 00 00 00 03 03 03 07 54 02 03 03 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
