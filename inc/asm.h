@@ -18,6 +18,9 @@
 # include <ft_printf.h>
 
 # define ASM_FILE_EXTENSION ".cor"
+# define REG_ENCODING_SIZE 1
+# define IND_ENCODING_SIZE 2
+# define DIR_ENCODING_SIZE 4
 
 typedef unsigned int	uint;
 

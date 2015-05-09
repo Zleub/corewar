@@ -2,13 +2,45 @@
 #include "op.h"
 #include <limits.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 int		invertoctets(int src)
 {
-	return ((src >> 24) & 0xff) |
-		((src << 8) & 0xff0000) |
-		((src >> 8) & 0xff00) |
-		((src << 24) & 0xff000000);
+	char	*bytes;
+	char	c;
+	int		ret;
+
+	bytes = (char *)&src;
+	c = bytes[3];
+	bytes[3] = bytes[0];
+	bytes[0] = c;
+	c = bytes[1];
+	bytes[1] = bytes[2];
+	bytes[2] = c;
+	ft_memcpy(&ret, bytes, sizeof(int));
+	return (ret);
+}
+
+int				arg_to_big_endian(int arg, size_t arg_size)
+{
+	char	*bytes;
+	char	c;
+	int		ret;
+
+	if (arg_size == 1)
+		return (arg);
+	else if (arg_size == 2)
+	{
+		bytes = (char *)&arg;
+		c = bytes[0];
+		bytes[0] = bytes[1];
+		bytes[1] = c;
+		ft_memcpy(&ret, bytes, sizeof(int));
+		return (ret);
+	}
+	else if (arg_size == 4)
+		return (invertoctets(arg));
+	return (-1);
 }
 
 void			write_header(int fd, const t_champion *champion)
@@ -70,16 +102,16 @@ static void		write_coding_octet(int fd, t_command *command)
 		write(fd, &command->coding_octet, sizeof(char));
 }
 
-static t_arg_type	get_arg_type(unsigned int pos, char coding_octet)
+static t_arg_type	get_arg_type(unsigned int pos, int coding_octet)
 {
 	if (pos == 3)
-		return (coding_octet & (char)3);
+		return (coding_octet & 3);
 	else if (pos == 2)
-		return (coding_octet & (char)12);
+		return ((coding_octet & 12) >> 2);
 	else if (pos == 1)
-		return (coding_octet & (char)48);
+		return ((coding_octet & 48) >> 4);
 	else if (pos == 0)
-		return (coding_octet & (char)192);
+		return ((coding_octet & 192) >> 6);
 	else
 		return (T_DIR);
 }
@@ -87,13 +119,13 @@ static t_arg_type	get_arg_type(unsigned int pos, char coding_octet)
 static size_t	get_arg_size(t_arg_type type, int mysterious_attribute)
 {
 	if (type == T_DIR && mysterious_attribute)
-		return (DIR_SIZE / 2);
+		return (DIR_ENCODING_SIZE / 2);
 	else if (type == T_DIR)
-		return (DIR_SIZE);
+		return (DIR_ENCODING_SIZE);
 	else if (type == T_REG)
-		return (REG_SIZE);
+		return (REG_ENCODING_SIZE);
 	else if (type == T_IND)
-		return (IND_SIZE);
+		return (IND_ENCODING_SIZE);
 	return (0);
 }
 
@@ -127,7 +159,7 @@ static int		extract_dir(const char *arg, uint offset)
 	char		*lab;
 
 	if ((lab = ft_strchr(arg, LABEL_CHAR)))
-		return (extract_lab(offset, lab));
+		return (extract_lab(offset, lab + 1));
 	else
 		return (ft_atoi(ft_strsub(arg, 1, ft_strlen(arg) - 1)));
 }
@@ -159,9 +191,9 @@ static void		write_parameters(int fd, t_command *command)
 	arg = 0;
 	while (i < command->op->arg_number)
 	{
-		arg_type = get_arg_type(i, (char)command->coding_octet);
+		arg_type = get_arg_type(i, command->coding_octet);
 		arg_size = get_arg_size(arg_type, command->op->unknown1);
-		arg = get_arg(arg_type, command->raw_args[i], command->offset);
+		arg = arg_to_big_endian(get_arg(arg_type, command->raw_args[i], command->offset), arg_size);
 		write(fd, &arg, arg_size);
 		++i;
 	}
@@ -177,7 +209,6 @@ void			write_commands(int fd, t_champion *champion)
 		write_opcode(fd, command);
 		write_coding_octet(fd, command);
 		write_parameters(fd, command);
-		ft_putendl("LELELLELELELELELELE");
 		command = command->next;
 	}
 }
