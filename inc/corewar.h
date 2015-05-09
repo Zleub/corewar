@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 20:04:17 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/09 18:59:49 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <libft.h>
 # include <ft_printf.h>
 
+# include <limits.h>
 # include <errno.h>
 # include <fcntl.h>
 # include <op.h>
@@ -67,6 +68,7 @@ t_cell						g_memory[MEM_SIZE];
 
 void						init_memory(int player_nbr);
 void						dump_memory(void);
+void						write_memory(int index, char *str, int len);
 
 /*
 ** Player
@@ -115,6 +117,7 @@ t_process					*new_process(t_process *elem);
 void						print_process(t_process *head);
 void						update_process(t_process *head);
 int							write_registers(int index, t_process *p, char *str, int len);
+int							write_registers_reverse(int index, t_process *p, char *str, int len);
 
 
 /*
