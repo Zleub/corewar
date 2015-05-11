@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 17:44:14 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/11 18:00:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,8 +208,6 @@ void		print_instruction_decimal()
 	dprintf(OUT, "\n");
 }
 
-#include <limits.h>
-
 t_op		get_op(t_process *p)
 {
 	extern t_op		g_op_tab[17];
@@ -230,4 +228,19 @@ t_op		get_op(t_process *p)
 void		print_op(t_op op)
 {
 	dprintf(OUT, "%d: %s\n", op.arg_number, op.name);
+}
+
+void		cpy_value(t_process *p, t_instruction *inst, char str[DIR_SIZE])
+{
+	int		i;
+	int		dir;
+
+	(void)p;
+	dir = GET_(int)(inst);
+	i = 0;
+	while (i < DIR_SIZE)
+	{
+		str[i] = ((char *)(&dir))[DIR_SIZE - i - 1];
+		i += 1;
+	}
 }

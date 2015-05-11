@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 18:00:44 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/11 17:18:28 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,6 @@ int		init_corewar(int player_nbr)
 	g_process = NULL;
 	init_memory(player_nbr);
 	init_instruction(max_size());
+	init_array();
 	return (player_nbr);
 }

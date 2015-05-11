@@ -14,7 +14,14 @@ NAME		= libcorewar.a
 LIB			= corewar
 HEADDIR		= ../../inc
 
-SRC			= op.c corewar.c heros.c memory.c process.c instruction.c ft.c
+SRC			= op.c\
+			corewar.c\
+			heros.c\
+			memory.c\
+			process.c\
+			instruction.c\
+			ft.c\
+			array.c
 
 OBJ			= $(subst .c,.o,$(SRC))
 

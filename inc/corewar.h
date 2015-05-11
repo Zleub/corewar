@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/09 18:59:49 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/11 23:08:00 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ t_cell						g_memory[MEM_SIZE];
 
 void						init_memory(int player_nbr);
 void						dump_memory(void);
-void						write_memory(int index, char *str, int len);
+int							write_memory(int index, char *str, int len);
+
 
 /*
 ** Player
@@ -119,7 +120,6 @@ void						update_process(t_process *head);
 int							write_registers(int index, t_process *p, char *str, int len);
 int							write_registers_reverse(int index, t_process *p, char *str, int len);
 
-
 /*
 ** Intruction
 */
@@ -135,14 +135,7 @@ struct						s_instruct
 
 t_instruction				g_instruction[MAX_ARGS_NUMBER];
 
-typedef union u_type		t_type;
-
-union						u_type
-{
-	char					c;
-	short					s;
-	int						i;
-};
+# define GET_(X) (X)get_int
 
 t_op						get_op(t_process *p);
 void						print_op(t_op op);
@@ -152,7 +145,25 @@ void						print_instruction();
 void						print_instruction_decimal();
 int							get_int(t_instruction *i);
 void						reset_instruction(void);
+char						*get_register(t_process *p, t_instruction *i);
 
-# define GET_(X) (X)get_int
+/**/
+typedef union u_type		t_type;
+
+union						u_type
+{
+	char					c;
+	short					s;
+	int						i;
+};
+/**/
+
+char						*g_array[MAX_ARGS_NUMBER];
+
+void		cpy_register(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void		cpy_memory(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void		cpy_value(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void		init_array(void);
+void		fill_array(t_process *p);
 
 #endif
