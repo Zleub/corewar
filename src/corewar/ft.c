@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 23:55:45 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 00:43:28 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		live(t_process *p)
 	int		nbr;
 
 	nbr = GET_(int)(&g_instruction[0]);
-	if (g_corewar.verb > 0)
+	if (g_corewar.verb >= 0)
 		dprintf(OUT, "\tlive for player : %d\n", nbr);
 	if (nbr <= 0 || nbr > g_corewar.player_nbr)
 		return ;
@@ -32,6 +32,8 @@ static void		ld(t_process *p)
 {
 	int		reg;
 
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tld\n");
 	reg = GET_(int)(&g_instruction[1]);
 	p->carry = write_registers(reg - 1, p, g_array[0], DIR_SIZE);
 }
@@ -40,6 +42,8 @@ static void		st(t_process *p)
 {
 	int			reg;
 
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tst\n");
 	if (g_instruction[1].type == IND_CODE)
 		p->carry = write_memory((p->index + GET_(short)(&g_instruction[1])) % IDX_MOD, g_array[0], DIR_SIZE);
 	else if (g_instruction[1].type == REG_CODE)
@@ -108,7 +112,8 @@ static void		and(t_process *p)
 	int		i;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "and");
+		dprintf(OUT, "\tand\n");
+
 	reg = GET_(int)(&g_instruction[2]);
 	i = 0;
 	while (i < REG_SIZE)
@@ -126,7 +131,8 @@ static void		or(t_process *p)
 	int		i;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "or");
+		dprintf(OUT, "\tor\n");
+
 	reg = GET_(int)(&g_instruction[2]);
 	i = 0;
 	while (i < REG_SIZE)
@@ -144,7 +150,8 @@ static void		xor(t_process *p)
 	int		i;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "xor");
+		dprintf(OUT, "\txor\n");
+
 	reg = GET_(int)(&g_instruction[2]);
 	i = 0;
 	while (i < REG_SIZE)
@@ -186,7 +193,8 @@ static void		ldi(t_process *p)
 	int		address;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "ldi");
+		dprintf(OUT, "\tldi\n");
+
 	i = 0;
 	while (i < DIR_SIZE)
 	{
@@ -211,7 +219,8 @@ static void		sti(t_process *p)
 	int		i;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "sti");
+		dprintf(OUT, "\tsti\n");
+
 	i = 0;
 	while (i < DIR_SIZE)
 	{
@@ -219,7 +228,7 @@ static void		sti(t_process *p)
 		i += 1;
 	}
 	reg = GET_(int)(&g_instruction[0]);
-	dprintf(OUT, "~ %d ~", (p->index + ind) % IDX_MOD);
+	// dprintf(OUT, "~ %d ~", (p->index + ind) % IDX_MOD);
 	write_memory((p->index + ind) % IDX_MOD, p->registers[reg - 1], DIR_SIZE);
 
 }
@@ -231,7 +240,7 @@ static void		_mfork(t_process *p)
 
 	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
+		dprintf(OUT, "\tmfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
 	new = new_process(p);
 	add_process(new);
 	new->index = p->index + dest % IDX_MOD;
@@ -245,6 +254,8 @@ static void		lld(t_process *p)
 	int		address;
 	int		i;
 
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tlld\n");
 	reg = GET_(int)(&g_instruction[1]);
 	if (g_instruction[0].type == DIR_CODE)
 		p->carry = write_registers(reg - 1, p, g_array[0], DIR_SIZE);
@@ -270,6 +281,9 @@ static void		lldi(t_process *p)
 	int		ind;
 	int		reg;
 
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tlldi\n");
+
 	reg = GET_(int)(&g_instruction[2]);
 	if (g_instruction[0].type == IND_CODE)
 	{
@@ -289,11 +303,11 @@ static void		lldi(t_process *p)
 		i = 0;
 		while (i < REG_SIZE)
 		{
-			address = (p->index + ind + i);
-			if (address >= 0 || address < MEM_SIZE)
+			address = (p->index + ind + i) % MEM_SIZE;
+			// if (address >= 0 || address < MEM_SIZE)
 				reg_tmp[i] = g_memory[address].op;
-			else
-				reg_tmp[i] = 0;
+			// else
+			// 	reg_tmp[i] = 0;
 			i += 1;
 		}
 		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);
@@ -310,12 +324,12 @@ static void		lldi(t_process *p)
 		while (i < REG_SIZE)
 		{
 			address = (p->index + (short)ind + i);
-			dprintf(OUT, "++ %d ++", address);
-			if (address >= 0 || address < MEM_SIZE)
+			// dprintf(OUT, "++ %d ++", address) % MEM_SIZE;
+			// if (address >= 0 || address < MEM_SIZE)
 				reg_tmp[i] = g_memory[address].op;
-			else
-				reg_tmp[i] = 0;
-			dprintf(OUT, "-- %d --", reg_tmp[i]);
+			// else
+			// 	reg_tmp[i] = 0;
+			// dprintf(OUT, "-- %d --", reg_tmp[i]);
 			i += 1;
 		}
 		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);

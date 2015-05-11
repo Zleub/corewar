@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 23:08:05 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 01:13:39 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void		init_memory(int player_nbr)
 	offset = MEM_SIZE / player_nbr;
 	while (i < player_nbr)
 	{
-		ft_printf("Introducing %s, n: %d, %db of code\n", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
+		// ft_printf("Introducing %s, n: %d, %db of code\n", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
+		ft_printf("Introducing %s, n: %d, %db of code", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
 		ft_printf("\t\"%s\"\n", g_heros[i].head.comment);
 		write_heros(i * offset, &g_heros[i]);
 		i += 1;
