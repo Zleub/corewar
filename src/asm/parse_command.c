@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "asm.h"
+#include "op.h"
 
 extern t_op		g_op_tab[17];
 
@@ -90,35 +91,46 @@ static int	parse_args_type(t_command *command)
 	return (1);
 }
 
+static t_arg_type	get_arg_type_from_coding_octet(unsigned int pos,
+	int coding_octet)
+{
+	if (pos == 3)
+		return (coding_octet & 3);
+	else if (pos == 2)
+		return ((coding_octet & 12) >> 2);
+	else if (pos == 1)
+		return ((coding_octet & 48) >> 4);
+	else if (pos == 0)
+		return ((coding_octet & 192) >> 6);
+	else
+		return (T_DIR);
+}
+
 static void	set_size(t_command *command)
 {
 	uint	i;
 	uint	ac;
-	int		type;
+	t_arg_type		type;
 
 	command->size = 1;
-
 	if (command->op->coding_octet)
 		command->size += 1;
-
 	ac = command->op->arg_number;
 	i = 0;
 	while (i < ac)
 	{
-		type = command->coding_octet >> (ac - i - 1);
-		type &= 3;
+		type = get_arg_type_from_coding_octet(i, command->coding_octet);
 		if (type == REG_CODE)
-			command->size += REG_SIZE;
+			command->size += REG_ENCODING_SIZE;
 		else if (type == IND_CODE)
-			command->size += IND_SIZE;
+			command->size += IND_ENCODING_SIZE;
 		else if (type == DIR_CODE)
 		{
 			if (command->op->unknown1)
-				command->size += DIR_SIZE / 2;
+				command->size += DIR_ENCODING_SIZE / 2;
 			else
-				command->size += DIR_SIZE;
+				command->size += DIR_ENCODING_SIZE;
 		}
-
 		i++;
 	}
 }
