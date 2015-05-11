@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 20:10:01 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/09 21:35:10 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void		live(t_process *p)
 {
 	int		nbr;
 
-	nbr = get_int(&g_instruction[0]);
+	nbr = GET_(int)(&g_instruction[0]);
 	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive for player : %d\n", nbr);
 	if (nbr <= 0 || nbr > g_corewar.player_nbr)
@@ -30,13 +30,10 @@ int		max_size();
 
 static void		ld(t_process *p)
 {
-	// char	carry;
+	int		reg;
 	t_type	u;
 
-	// carry = 0;
-	// if (g_corewar.verb > 1)
-		// dprintf(OUT, "\tld: load %d -> r%d\n", value, reg);
-
+	u.i = 0;
 	if (g_instruction[0].size == 1)
 		u.c = GET_(char)(&g_instruction[0]);
 	else if (g_instruction[0].size == 2)
@@ -44,53 +41,28 @@ static void		ld(t_process *p)
 	else if (g_instruction[0].size == 4)
 		u.i = GET_(int)(&g_instruction[0]);
 
-	int reg = GET_(int)(&g_instruction[1]);
-
-	dprintf(OUT, "-> %d\n", g_instruction[0].size);
-	write_registers(reg, p, (char *)&(u), g_instruction[0].size);
-
-	// // int i = 0;
-	// // while (i < g_instruction[0].size)
-	// // {
-	// // 	p->registers[reg - 1][i] = g_instruction[0].args[i];
-	// // 	carry = carry | g_instruction[0].args[i];
-	// // 	i += 1;
-	// // }
-	// if (!carry)
-	// 	p->carry = 1;
-	// else
-	// 	p->carry = 0;
+	reg = GET_(int)(&g_instruction[1]);
+	p->carry = write_registers_reverse(reg - 1, p, (char *)&(u), g_instruction[0].size);
 }
 
 static void		st(t_process *p)
 {
-	int		reg0;
-	(void)p;
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "st");
+	int		reg;
+	t_type	u;
 
-	reg0 = get_int(&g_instruction[0]);
-	if (g_instruction[1].type == REG_CODE)
+	u.i = 0;
+	reg = GET_(int)(&g_instruction[0]);
+	if (g_instruction[1].size == 1)
 	{
-		int reg1 = get_int(&g_instruction[1]);
-		int i = 0;
-		while (i < REG_SIZE)
-		{
-			p->registers[reg1 - 1][i] = p->registers[reg0 - 1][i];
-			i += 1;
-		}
+		u.c = GET_(char)(&g_instruction[1]);
+		write_registers(u.c - 1, p, p->registers[reg - 1], REG_SIZE);
+		return ;
 	}
-	else
-	{
-		int address = get_int(&g_instruction[1]);
-		int i = 0;
-		while (i < REG_SIZE)
-		{
-			g_memory[address % IDX_MOD + p->index + i].op =  p->registers[reg0 - 1][i];
-			i += 1;
-		}
-	}
-
+	else if (g_instruction[1].size == 2)
+		u.s = GET_(short)(&g_instruction[1]);
+	else if (g_instruction[1].size == 4)
+		u.i = GET_(int)(&g_instruction[1]);
+	write_memory(u.i + p->index, p->registers[reg - 1], REG_SIZE);
 }
 
 static void		add(t_process *p)
@@ -145,30 +117,50 @@ static void		sub(t_process *p)
 		p->carry = 0;
 }
 
+char			*get_reg(t_process *p, t_instruction *i)
+{
+	int			reg;
+
+	reg = GET_(char)(i);
+	return (p->registers[reg - 1]);
+}
+
 static void		and(t_process *p)
 {
-	char	carry;
-	int		reg[3];
 	int		i;
+	int		reg;
 
-	i = 0;
-	carry = 0;
-	reg[0] = get_int(&g_instruction[0]);
-	reg[1] = get_int(&g_instruction[1]);
-	reg[2] = get_int(&g_instruction[2]);
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tand r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+	char *ptr1;
+	short *ptr4;
+	if (g_instruction[0].size == 1)
+		ptr1 = get_reg(p, &g_instruction[0]);
+	else if (g_instruction[0].size == 2)
+		ptr4 = (short *)(&(get_int(&g_instruction[0])));
+	else if (g_instruction[0].size == 4)
+		ptr1 = GET_(int)(&g_instruction[0]);
 
-	while (i < REG_SIZE)
-	{
-		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] & p->registers[reg[1] - 1][i];
-		carry = carry | p->registers[reg[2] - 1][i];
-		i += 1;
-	}
-	if (!carry)
-		p->carry = 1;
-	else
-		p->carry = 0;
+	char *ptr2;
+	if (g_instruction[1].size == 1)
+		ptr2 = get_reg(p, &g_instruction[1]);
+
+
+	// else if (g_instruction[1].size == 2)
+	// 	u2.s = GET_(short)(&g_instruction[1]);
+	// else if (g_instruction[1].size == 4)
+	// 	u2.i = GET_(int)(&g_instruction[1]);
+
+	// reg = GET_(int)(&g_instruction[2]);
+	// i = 0;
+	// while (i < g_instruction[0].size && i < g_instruction[1].size)
+	// {
+	// 	p->registers[reg - 1][i] = (char*)(&(u1))[i] & (char*)(&(u2))[i];
+	// 	carry = carry | p->registers[reg[2] - 1][i];
+	// 	i += 1;
+	// }
+	// if (!carry)
+	// 	p->carry = 1;
+	// else
+	// 	p->carry = 0;
 }
 
 static void		or(t_process *p)
