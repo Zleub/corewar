@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 23:45:28 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/11 23:55:45 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,8 +289,11 @@ static void		lldi(t_process *p)
 		i = 0;
 		while (i < REG_SIZE)
 		{
-			address = (p->index + ind + i) % MEM_SIZE;
-			reg_tmp[i] = g_memory[address].op;
+			address = (p->index + ind + i);
+			if (address >= 0 || address < MEM_SIZE)
+				reg_tmp[i] = g_memory[address].op;
+			else
+				reg_tmp[i] = 0;
 			i += 1;
 		}
 		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);
@@ -306,9 +309,13 @@ static void		lldi(t_process *p)
 		i = 0;
 		while (i < REG_SIZE)
 		{
-			address = (p->index + (short)ind + i) % MEM_SIZE;
-			dprintf(OUT, "CACA : %d : CACA", (short)address);
-			reg_tmp[i] = g_memory[address].op;
+			address = (p->index + (short)ind + i);
+			dprintf(OUT, "++ %d ++", address);
+			if (address >= 0 || address < MEM_SIZE)
+				reg_tmp[i] = g_memory[address].op;
+			else
+				reg_tmp[i] = 0;
+			dprintf(OUT, "-- %d --", reg_tmp[i]);
 			i += 1;
 		}
 		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);
