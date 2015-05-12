@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/09 18:53:36 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 01:13:39 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void		init_memory(int player_nbr)
 	offset = MEM_SIZE / player_nbr;
 	while (i < player_nbr)
 	{
-		ft_printf("Introducing %s, n: %d, %db of code\n", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
+		// ft_printf("Introducing %s, n: %d, %db of code\n", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
+		ft_printf("Introducing %s, n: %d, %db of code", g_heros[i].head.prog_name, g_heros[i].number, g_heros[i].head.prog_size * 8);
 		ft_printf("\t\"%s\"\n", g_heros[i].head.comment);
 		write_heros(i * offset, &g_heros[i]);
 		i += 1;
@@ -116,16 +117,39 @@ void		dump_memory(void)
 	}
 }
 
-void		write_memory(int index, char *str, int len)
+int			write_memory(int index, char *str, int len)
 {
+	char	carry;
 	int		address;
 	int		i;
 
 	i = 0;
+	carry = 0;
 	while (i < len)
 	{
 		address = (index + i) % MEM_SIZE;
-		g_memory[address].op = str[len - 1 - i];
+		g_memory[address].op = str[i];
+		carry = carry | g_memory[address].op;
+		i += 1;
+	}
+	if (!carry)
+		return (1);
+	else
+		return (0);
+}
+
+void		cpy_memory(t_process *p, t_instruction *inst, char str[DIR_SIZE])
+{
+	int		i;
+	int		address;
+	short	ind;
+
+	ind = GET_(short)(inst);
+	i = 0;
+	while (i < DIR_SIZE)
+	{
+		address = (p->index + ind + i) % IDX_MOD;
+		str[i] = g_memory[address].op;
 		i += 1;
 	}
 }

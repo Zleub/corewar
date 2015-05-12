@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/09 21:35:10 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:46:57 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,38 +31,26 @@ int		max_size();
 static void		ld(t_process *p)
 {
 	int		reg;
-	t_type	u;
 
-	u.i = 0;
-	if (g_instruction[0].size == 1)
-		u.c = GET_(char)(&g_instruction[0]);
-	else if (g_instruction[0].size == 2)
-		u.s = GET_(short)(&g_instruction[0]);
-	else if (g_instruction[0].size == 4)
-		u.i = GET_(int)(&g_instruction[0]);
-
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tld\n");
 	reg = GET_(int)(&g_instruction[1]);
-	p->carry = write_registers_reverse(reg - 1, p, (char *)&(u), g_instruction[0].size);
+	p->carry = write_registers(reg - 1, p, g_array[0], DIR_SIZE);
 }
 
 static void		st(t_process *p)
 {
-	int		reg;
-	t_type	u;
+	int			reg;
 
-	u.i = 0;
-	reg = GET_(int)(&g_instruction[0]);
-	if (g_instruction[1].size == 1)
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tst\n");
+	if (g_instruction[1].type == IND_CODE)
+		p->carry = write_memory((p->index + GET_(short)(&g_instruction[1])) % IDX_MOD, g_array[0], DIR_SIZE);
+	else if (g_instruction[1].type == REG_CODE)
 	{
-		u.c = GET_(char)(&g_instruction[1]);
-		write_registers(u.c - 1, p, p->registers[reg - 1], REG_SIZE);
-		return ;
+		reg = GET_(int)(&g_instruction[1]);
+		p->carry = write_registers(reg - 1, p, g_array[0], REG_SIZE);
 	}
-	else if (g_instruction[1].size == 2)
-		u.s = GET_(short)(&g_instruction[1]);
-	else if (g_instruction[1].size == 4)
-		u.i = GET_(int)(&g_instruction[1]);
-	write_memory(u.i + p->index, p->registers[reg - 1], REG_SIZE);
 }
 
 static void		add(t_process *p)
@@ -117,107 +105,65 @@ static void		sub(t_process *p)
 		p->carry = 0;
 }
 
-char			*get_reg(t_process *p, t_instruction *i)
-{
-	int			reg;
-
-	reg = GET_(char)(i);
-	return (p->registers[reg - 1]);
-}
-
 static void		and(t_process *p)
 {
-	int		i;
+	char	tmp[REG_SIZE];
 	int		reg;
+	int		i;
 
-	char *ptr1;
-	short *ptr4;
-	if (g_instruction[0].size == 1)
-		ptr1 = get_reg(p, &g_instruction[0]);
-	else if (g_instruction[0].size == 2)
-		ptr4 = (short *)(&(get_int(&g_instruction[0])));
-	else if (g_instruction[0].size == 4)
-		ptr1 = GET_(int)(&g_instruction[0]);
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tand\n");
 
-	char *ptr2;
-	if (g_instruction[1].size == 1)
-		ptr2 = get_reg(p, &g_instruction[1]);
-
-
-	// else if (g_instruction[1].size == 2)
-	// 	u2.s = GET_(short)(&g_instruction[1]);
-	// else if (g_instruction[1].size == 4)
-	// 	u2.i = GET_(int)(&g_instruction[1]);
-
-	// reg = GET_(int)(&g_instruction[2]);
-	// i = 0;
-	// while (i < g_instruction[0].size && i < g_instruction[1].size)
-	// {
-	// 	p->registers[reg - 1][i] = (char*)(&(u1))[i] & (char*)(&(u2))[i];
-	// 	carry = carry | p->registers[reg[2] - 1][i];
-	// 	i += 1;
-	// }
-	// if (!carry)
-	// 	p->carry = 1;
-	// else
-	// 	p->carry = 0;
+	reg = GET_(int)(&g_instruction[2]);
+	i = 0;
+	while (i < REG_SIZE)
+	{
+		tmp[i] = g_array[0][i] & g_array[1][i];
+		i += 1;
+	}
+	p->carry = write_registers(reg - 1, p, tmp, REG_SIZE);
 }
 
 static void		or(t_process *p)
 {
-	char	carry;
-	int		reg[3];
+	char	tmp[REG_SIZE];
+	int		reg;
 	int		i;
 
-	i = 0;
-	carry = 0;
-	reg[0] = get_int(&g_instruction[0]);
-	reg[1] = get_int(&g_instruction[1]);
-	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+		dprintf(OUT, "\tor\n");
 
+	reg = GET_(int)(&g_instruction[2]);
+	i = 0;
 	while (i < REG_SIZE)
 	{
-		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] | p->registers[reg[1] - 1][i];
-		carry = carry | p->registers[reg[2] - 1][i];
+		tmp[i] = g_array[0][i] | g_array[1][i];
 		i += 1;
 	}
-	if (!carry)
-		p->carry = 1;
-	else
-		p->carry = 0;
+	p->carry = write_registers(reg - 1, p, tmp, REG_SIZE);
 }
 
 static void		xor(t_process *p)
 {
-	char	carry;
-	int		reg[3];
+	char	tmp[REG_SIZE];
+	int		reg;
 	int		i;
 
-	i = 0;
-	carry = 0;
-	reg[0] = get_int(&g_instruction[0]);
-	reg[1] = get_int(&g_instruction[1]);
-	reg[2] = get_int(&g_instruction[2]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\txor r%d + r%d -> r%d\n", reg[0], reg[1], reg[2]);
+		dprintf(OUT, "\txor\n");
 
+	reg = GET_(int)(&g_instruction[2]);
+	i = 0;
 	while (i < REG_SIZE)
 	{
-		p->registers[reg[2] - 1][i] = p->registers[reg[0] - 1][i] ^ p->registers[reg[1] - 1][i];
-		carry = carry | p->registers[reg[2] - 1][i];
+		tmp[i] = g_array[0][i] ^ g_array[1][i];
 		i += 1;
 	}
-	if (!carry)
-		p->carry = 1;
-	else
-		p->carry = 0;
+	p->carry = write_registers(reg - 1, p, tmp, REG_SIZE);
 }
 
 static void		zjmp(t_process *p)
 {
-	(void)p;
 	short	dest;
 
 	dest = get_int(&g_instruction[0]);
@@ -240,31 +186,51 @@ static void		zjmp(t_process *p)
 
 static void		ldi(t_process *p)
 {
-	(void)p;
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "ldi");
-	print_instruction();
-	// int i;
-	// short s;
+	char	tmp[REG_SIZE];
+	int		ind;
+	int		reg;
+	int		i;
+	int		address;
 
-	// if (g_instruction[0].type == T_REG && g_instruction[1].type == T_REG)
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "\tldi\n");
+
+	i = 0;
+	while (i < DIR_SIZE)
+	{
+		((char *)&ind)[DIR_SIZE - 1 - i] = g_array[0][i] + g_array[1][i];
+		i += 1;
+	}
+	i = 0;
+	while (i < REG_SIZE)
+	{
+		address = (p->index + ind + i) % IDX_MOD;
+		tmp[i] = g_memory[address].op;
+		i += 1;
+	}
+	reg = GET_(int)(&g_instruction[2]);
+	write_registers(reg - 1, p, tmp, REG_SIZE);
 }
 
 static void		sti(t_process *p)
 {
-	int			i;
-	int			address;
+	int		ind;
+	int		reg;
+	int		i;
 
-	address = (get_int(&g_instruction[1]) + get_int(&g_instruction[2]));
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tsti: store r%d to %d + %d: %d (%d)\n",
-			get_int(&g_instruction[0]), get_int(&g_instruction[1]), get_int(&g_instruction[2]), address, address % IDX_MOD + p->index);
+		dprintf(OUT, "\tsti\n");
+
 	i = 0;
-	while (i < REG_SIZE)
+	while (i < DIR_SIZE)
 	{
-		g_memory[address % IDX_MOD + p->index + i].op = p->registers[get_int(&g_instruction[0]) - 1][i];
+		((char *)&ind)[DIR_SIZE - 1 - i] = g_array[1][i] + g_array[2][i];
 		i += 1;
 	}
+	reg = GET_(int)(&g_instruction[0]);
+	// dprintf(OUT, "~ %d ~", (p->index + ind) % IDX_MOD);
+	write_memory((p->index + ind) % IDX_MOD, p->registers[reg - 1], DIR_SIZE);
+
 }
 
 static void		_mfork(t_process *p)
@@ -274,7 +240,7 @@ static void		_mfork(t_process *p)
 
 	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
+		dprintf(OUT, "\tmfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
 	new = new_process(p);
 	add_process(new);
 	new->index = p->index + dest % IDX_MOD;
@@ -283,23 +249,105 @@ static void		_mfork(t_process *p)
 
 static void		lld(t_process *p)
 {
-	(void)p;
+	char	tmp[DIR_SIZE];
+	int		reg;
+	int		address;
+	int		i;
+
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "lld");
+		dprintf(OUT, "\tlld\n");
+	reg = GET_(int)(&g_instruction[1]);
+	if (g_instruction[0].type == DIR_CODE)
+		p->carry = write_registers(reg - 1, p, g_array[0], DIR_SIZE);
+	else if (g_instruction[0].type == IND_CODE)
+	{
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			address = (p->index + GET_(short)(&g_instruction[0])) % MEM_SIZE;
+			tmp[i] = g_memory[address].op;
+			i += 1;
+		}
+		p->carry = write_registers(reg - 1, p, tmp, REG_SIZE);
+	}
 }
 
 static void		lldi(t_process *p)
 {
-	(void)p;
+	char	dir_tmp[DIR_SIZE];
+	char	reg_tmp[REG_SIZE];
+	int		address;
+	int		i;
+	int		ind;
+	int		reg;
+
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "lldi");
+		dprintf(OUT, "\tlldi\n");
+
+	reg = GET_(int)(&g_instruction[2]);
+	if (g_instruction[0].type == IND_CODE)
+	{
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			address = (p->index + GET_(short)(&g_instruction[0])) % MEM_SIZE;
+			dir_tmp[i] = g_memory[p->index + GET_(short)(&g_instruction[0])].op;
+			i += 1;
+		}
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = dir_tmp[i] + g_array[1][i];
+			i += 1;
+		}
+		i = 0;
+		while (i < REG_SIZE)
+		{
+			address = (p->index + ind + i) % MEM_SIZE;
+			// if (address >= 0 || address < MEM_SIZE)
+				reg_tmp[i] = g_memory[address].op;
+			// else
+			// 	reg_tmp[i] = 0;
+			i += 1;
+		}
+		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);
+	}
+	else
+	{
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[0][i] + g_array[1][i];
+			i += 1;
+		}
+		i = 0;
+		while (i < REG_SIZE)
+		{
+			address = (p->index + (short)ind + i);
+			// dprintf(OUT, "++ %d ++", address) % MEM_SIZE;
+			// if (address >= 0 || address < MEM_SIZE)
+				reg_tmp[i] = g_memory[address].op;
+			// else
+			// 	reg_tmp[i] = 0;
+			// dprintf(OUT, "-- %d --", reg_tmp[i]);
+			i += 1;
+		}
+		p->carry = write_registers(reg - 1, p, reg_tmp, REG_SIZE);
+	}
 }
 
 static void		lfork(t_process *p)
 {
-	(void)p;
+	t_process	*new;
+	short		dest;
+
+	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "instr: %s\n", "lfork");
+		dprintf(OUT, "\tlfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % MEM_SIZE);
+	new = new_process(p);
+	add_process(new);
+	new->index = p->index + dest % MEM_SIZE;
+	new->delay = get_op(new).cycles;
 }
 
 static void		aff(t_process *p)

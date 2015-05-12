@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/09 18:59:27 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:58:06 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_process		*new_process(t_process *elem)
 	if (!(new = malloc(sizeof(t_process))))
 		exit(EXIT_FAILURE);
 	nbr += 1;
+	g_corewar.process_nbr += 1;
 	if (elem)
 		ft_memcpy(new, elem, sizeof(t_process));
 	else
@@ -113,6 +114,7 @@ void			execute_process(t_process *head, t_op *op)
 	int size;
 
 	size = fill_instruction(head);
+	fill_array(head);
 	if (g_corewar.verb > 1)
 	{
 		dprintf(OUT, "N_%d @ %d | %s : ", head->number, head->index, op->name);
@@ -168,23 +170,25 @@ int			write_registers(int index, t_process *p, char *str, int len)
 		return (0);
 }
 
-int			write_registers_reverse(int index, t_process *p, char *str, int len)
+char			*get_register(t_process *p, t_instruction *i)
 {
-	char	carry;
-	int		tmp;
+	int			reg;
 
-	tmp = 0;
-	carry = 0;
-	if (index < 0 || index >= REG_NUMBER)
-		return (0);
-	while (tmp < len)
-	{
-		p->registers[index][tmp] = str[len - 1 - tmp];
-		carry = carry | p->registers[index][tmp];
-		tmp += 1;
-	}
-	if (!carry)
-		return (1);
-	else
-		return (0);
+	reg = GET_(char)(i);
+	return (p->registers[reg - 1]);
 }
+
+void			cpy_register(t_process *p, t_instruction *inst, char str[DIR_SIZE])
+{
+	int			reg;
+	int			i;
+
+	reg = GET_(char)(inst);
+	i = 0;
+	while (i < DIR_SIZE)
+	{
+		str[i] = p->registers[reg - 1][i];
+		i += 1;
+	}
+}
+

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 20:59:15 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/08 15:14:23 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:57:23 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		main(int argc, char **argv)
 	g_corewar.verb = 0;
 	g_corewar.cycle_counter = 0;
 	g_corewar.tic_rate = 0;
+	g_corewar.process_nbr = 0;
 
 	if (CYCLE_TO_DIE != 0)
 		g_corewar.cycles_todie = CYCLE_TO_DIE;
