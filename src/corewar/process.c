@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 22:03:32 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:58:06 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_process		*new_process(t_process *elem)
 	if (!(new = malloc(sizeof(t_process))))
 		exit(EXIT_FAILURE);
 	nbr += 1;
+	g_corewar.process_nbr += 1;
 	if (elem)
 		ft_memcpy(new, elem, sizeof(t_process));
 	else

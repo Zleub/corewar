@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 17:18:28 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 04:01:18 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		removedead(t_process *tmp)
 		if (tmp->lives == 0)
 		{
 			p->next = tmp->next;
+			g_corewar.process_nbr -= 1;
 			dprintf(OUT, "removing N_%d\n", tmp->number);
 			free(tmp);
 		}
@@ -78,6 +79,7 @@ int		inspect(void)
 	{
 		tmp = p;
 		p = p->next;
+		g_corewar.process_nbr -= 1;
 		dprintf(OUT, "removing N_%d process\n", tmp->number);
 		free(tmp);
 	}
@@ -101,7 +103,7 @@ void	update(int dt)
 		if (inspect() >= NBR_LIVE || check_nbr >= MAX_CHECKS)
 		{
 			g_corewar.cycles_todie -= CYCLE_DELTA;
-			dprintf(OUT, "g_corewar.cycles_todie: %d\n", g_corewar.cycles_todie);
+			dprintf(OUT, "g_corewar.cycles_todie: %d : %d\n", g_corewar.cycles_todie, g_corewar.process_nbr);
 			check_nbr = 0;
 		}
 		check_nbr += 1;
@@ -111,6 +113,8 @@ void	update(int dt)
 		dump_memory();
 		exit(EXIT_SUCCESS);
 	}
+	else if (g_corewar.cycles_todie < 0)
+		exit(EXIT_SUCCESS);
 }
 
 int		max_size()

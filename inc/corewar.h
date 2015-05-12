@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/11 23:08:00 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:57:15 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ struct						s_corewar
 	unsigned int			*scores;
 	int						player_nbr;
 	int						last_alive;
+	int						process_nbr;
 };
 
 t_corewar					g_corewar;

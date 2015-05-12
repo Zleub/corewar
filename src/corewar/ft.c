@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/12 00:43:28 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/12 03:46:57 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		live(t_process *p)
 	int		nbr;
 
 	nbr = GET_(int)(&g_instruction[0]);
-	if (g_corewar.verb >= 0)
+	if (g_corewar.verb > 0)
 		dprintf(OUT, "\tlive for player : %d\n", nbr);
 	if (nbr <= 0 || nbr > g_corewar.player_nbr)
 		return ;
