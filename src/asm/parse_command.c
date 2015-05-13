@@ -12,6 +12,7 @@
 
 #include "asm.h"
 #include "op.h"
+#include <stdio.h>
 
 extern t_op		g_op_tab[17];
 
@@ -44,11 +45,11 @@ static int	get_arg_type(char const *arg)
 	if (!arg)
 		return (0);
 	if (arg[0] == 'r')
-		return (T_REG);
+		return (REG_CODE);
 	else if (arg[0] == DIRECT_CHAR)
-		return (T_DIR);
+		return (DIR_CODE);
 	else if (is_number(arg) || arg[0] == LABEL_CHAR)
-		return (T_IND);
+		return (IND_CODE);
 	return (0);
 }
 
@@ -82,12 +83,15 @@ static int	parse_args_type(t_command *command)
 			args[ac] = NULL;
 			if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
 				return (0);
+			printf("  %i\n", get_arg_type(args[i]));
 			command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
 		}
 		else
 			command->coding_octet = command->coding_octet << 2;
 		i++;
+		printf("%i\n", command->coding_octet);
 	}
+	printf("----\n");
 	return (1);
 }
 
