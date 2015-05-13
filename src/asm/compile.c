@@ -118,13 +118,13 @@ static t_arg_type	get_arg_type(unsigned int pos, int coding_octet)
 
 static size_t	get_arg_size(t_arg_type type, int mysterious_attribute)
 {
-	if (type == T_DIR && mysterious_attribute)
+	if (type == DIR_CODE && mysterious_attribute)
 		return (DIR_ENCODING_SIZE / 2);
-	else if (type == T_DIR)
+	else if (type == DIR_CODE)
 		return (DIR_ENCODING_SIZE);
-	else if (type == T_REG)
+	else if (type == REG_CODE)
 		return (REG_ENCODING_SIZE);
-	else if (type == T_IND)
+	else if (type == IND_CODE)
 		return (IND_ENCODING_SIZE);
 	return (0);
 }
@@ -137,16 +137,36 @@ static int		extract_reg(const char *arg)
 static int		extract_lab(uint cmd_offset, char *lab)
 {
 	t_label		*lab_cur;
+	static t_label		*praiveuh = NULL;
 	t_command	*target_cmd;
 
 	lab_cur = get_champion(0)->labels;
+	praiveuh = lab_cur;
 	while (lab_cur)
 	{
 		if (!ft_strcmp(lab_cur->name, lab))
 		{
-			target_cmd = lab_cur->target;
-			return (target_cmd->offset - cmd_offset);
+			printf("    %s <-> %p\n", lab_cur->name, lab_cur->target);
+			if (lab_cur->target)
+			{
+				target_cmd = lab_cur->target;
+				return (target_cmd->offset - cmd_offset);
+			}
+			else if (!lab_cur->target)
+			{
+				if (!lab_cur->next)
+				{
+					target_cmd = praiveuh->target;
+					while (target_cmd->next)
+						target_cmd = target_cmd->next;
+					return (target_cmd->offset - cmd_offset + 3);
+				}
+				lab_cur = lab_cur->next;
+				target_cmd = lab_cur->target;
+				return (target_cmd->offset - cmd_offset);
+			}
 		}
+		praiveuh = lab_cur;
 		lab_cur = lab_cur->next;
 	}
 	ft_putstr(lab);
@@ -171,11 +191,11 @@ static int		extract_ind(const char *arg)
 
 static int		get_arg(t_arg_type type, const char *arg, uint offset)
 {
-	if (type == T_REG)
+	if (type == REG_CODE)
 		return (extract_reg(arg));
-	else if (type == T_DIR)
+	else if (type == DIR_CODE)
 		return (extract_dir(arg, offset));
-	else if (type == T_IND)
+	else if (type == IND_CODE)
 		return (extract_ind(arg));
 	return (0);
 }
@@ -217,6 +237,7 @@ void			compile(const char *filename)
 {
 	int			file;
 
+	puts("MEGALEL");
 	file = open_output_file(filename);
 	write_header(file, get_champion(0));
 	write_commands(file, get_champion(0));
