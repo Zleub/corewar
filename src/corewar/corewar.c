@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 03:33:29 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 06:45:35 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void	print_scores(void)
 void	end(void)
 {
 	dprintf(OUT, "no more process alive, exit\n");
-	dprintf(OUT, "Winner is %d, %s\n", g_corewar.last_alive, g_heros[g_corewar.last_alive].head.prog_name);
+	if (g_corewar.last_alive == 0)
+		dprintf(OUT, "No one said live ... dumbass\n");
+	else
+		dprintf(OUT, "Winner is %d, %s\n", g_corewar.last_alive, g_heros[g_corewar.last_alive - 1].head.prog_name);
 	print_scores();
 	exit(EXIT_SUCCESS);
 }

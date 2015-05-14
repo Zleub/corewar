@@ -6,10 +6,8 @@ sti r1, %1, r2
 sti r1, %:_sti, r2
 sti r1, %:1, %:1
 sti r1, %1, %2
-sti r1, %:_sti, 2
 sti r1, %:1, %:1
 sti r1, %1, %2
-sti r1, %:_sti, 2
 sti r1, %:1, %:1
 sti r1, %2, %:_sti
 sti r1, 2, %:_sti

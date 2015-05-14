@@ -25,12 +25,16 @@ function getChampion(nbrChampion)
 	return str
 end
 
+function writeLog(log, cnames)
+	file = io.open("log/"..cnames, "a")
+	file:write(cnames.."\tError: "..log.."\n")
+	file:close()
+end
+
 function catchReturn(line, cnames)
 	if line:find("^%d+$") then
 		if tonumber(line) ~= 0 then
-			file = io.open("log/"..cnames, "a")
-			file:write(cnames.."\tError: "..line.."\n")
-			file:close()
+			writeLog(line, cnames)
 			table.insert(errorTable, cnames.."\tcatchReturn")
 		end
 	end
@@ -41,7 +45,17 @@ function catchWinner(line, cnames)
 	if name then print("get Winner : "..name) end
 end
 
+function catchError(line, cnames)
+	local _, __, err = line:find("error")
+	if err ~= nil then
+		print(line)
+		writeLog(err, cnames)
+		table.insert(errorTable, cnames.."\tcatchError")
+	end
+end
+
 function catch(line, cnames)
+	catchError(line, cnames)
 	catchReturn(line, cnames)
 	catchWinner(line, cnames)
 	-- print(line)
@@ -73,8 +87,8 @@ zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
 championsPath = "../champions/"
 
-
-nbrChampion = 2
+nbrBattle = 100
+nbrChampion = 4
 championsList = listChampions("s")
 
 for i,v in ipairs(championsList) do
@@ -89,9 +103,11 @@ end
 
 championsList = listChampions("cor")
 
-for i,v in ipairs(championsList) do
+for i=1,nbrBattle do
+	local init = math.random(#championsList)
+	v = championsList[init]
 	a,b, name = v:find(".+/(.+).cor")
-	for i=1,nbrChampion - 1 do
+	for i=1,math.random(nbrChampion - 1) do
 		local rand = math.random(#championsList)
 		_,__, name2 = championsList[rand]:find(".+/(.+).cor")
 		name = name2..":"..name
@@ -99,6 +115,7 @@ for i,v in ipairs(championsList) do
 	end
 	-- print(rand, championsList[rand])
 	errorTable = {}
-	exec(corewar.." "..string.gsub(v, " ?("..championsPath..")", " -n %1"), name)
+	exec("valgrind "..corewar.." "..string.gsub(v, " ?("..championsPath..")", " -n %1").." 2>&1 ; echo $?", name)
+	dump()
 end
 
