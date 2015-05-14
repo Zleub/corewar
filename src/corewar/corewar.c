@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 06:45:35 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 07:55:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ void	update(int dt)
 		exit(EXIT_SUCCESS);
 }
 
-int		max_size()
+int		max_size(void)
 {
 	int		max;
 

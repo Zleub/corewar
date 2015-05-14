@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 05:06:41 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 08:02:20 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,18 @@ char		*get_string_for_memory(int size, int offset)
 void		reset_instruction(void)
 {
 	int		i;
+	int		j;
 
 	i = 0;
 	while (i < MAX_ARGS_NUMBER)
 	{
 		g_instruction[i].type = 0;
 		g_instruction[i].size = 0;
-		if (g_instruction[i].args)
+		j = 0;
+		while (j < max_size())
 		{
-			free(g_instruction[i].args);
-			g_instruction[i].args = NULL;
+			g_instruction[i].args[j] = 0;
+			j += 1;
 		}
 		i += 1;
 	}

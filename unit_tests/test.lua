@@ -107,11 +107,14 @@ for i=1,nbrBattle do
 	local init = math.random(#championsList)
 	v = championsList[init]
 	a,b, name = v:find(".+/(.+).cor")
-	for i=1,math.random(nbrChampion - 1) do
-		local rand = math.random(#championsList)
-		_,__, name2 = championsList[rand]:find(".+/(.+).cor")
-		name = name2..":"..name
-		v = v..championsList[rand]
+	max = math.random(nbrChampion - 1)
+	if max ~= 1 then
+		for i=1,max do
+			local rand = math.random(#championsList)
+			_,__, name2 = championsList[rand]:find(".+/(.+).cor")
+			name = name2..":"..name
+			v = v..championsList[rand]
+		end
 	end
 	-- print(rand, championsList[rand])
 	errorTable = {}

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/12 03:57:15 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 07:55:35 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ struct						s_corewar
 
 t_corewar					g_corewar;
 
+int							max_size(void);
 void						die(int end);
 void						draw(void);
 void						update(int dt);
@@ -161,10 +162,10 @@ union						u_type
 
 char						*g_array[MAX_ARGS_NUMBER];
 
-void		cpy_register(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
-void		cpy_memory(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
-void		cpy_value(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
-void		init_array(void);
-void		fill_array(t_process *p);
+void						cpy_register(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void						cpy_memory(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void						cpy_value(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
+void						init_array(void);
+void						fill_array(t_process *p);
 
 #endif
