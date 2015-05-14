@@ -49,31 +49,34 @@ typedef struct			s_champion
 	t_label				*labels;
 }						t_champion;
 
-void		init(int argc, char const **argv);
-int			open_file(char const *pathname);
-t_champion	*get_champion(int new);
-char		*get_current_line(char *line);
+void					init(int argc, char const **argv);
+int						open_file(char const *pathname);
+t_champion				*get_champion(int new);
+char					*get_current_line(char *line);
 
-void		parse_file(int fd);
-int			parse_comment(char const *line, uint row);
-char const	*parse_label(char const *line, uint row);
-int			parse_name(char const *line, uint row);
-int			parse_command(char const *line, uint row);
-void		usage(void);
+void					parse_file(int fd);
+int						parse_comment(char const *line, uint row);
+char const				*parse_label(char const *line, uint row);
+int						parse_name(char const *line, uint row);
+int						parse_command(char const *line, uint row);
+void					usage(void);
 
-t_label		*add_label(char *name);
-t_label		*get_last_label(void);
+t_label					*add_label(char *name);
+t_label					*get_last_label(void);
 
-t_command	*add_command(t_command *new);
-t_command	*get_command_from_label(const char *label);
+t_command				*add_command(t_command *new);
+t_command				*get_command_from_label(const char *label);
 
-void		compile(const char *filename);
+void					compile(const char *filename);
+int						get_arg(t_arg_type type, const char *arg, uint offset);
+void					write_parameters(int fd, t_command *command);
+void					write_commands(int fd, t_champion *champion);
 
-void		die(char const *message);
-void		die2(char *message, uint line, uint col);
-char		*skip_white_spaces(char const *line);
-int			is_number(char const *str);
+void					die(char const *message);
+void					die2(char *message, uint line, uint col);
+char					*skip_white_spaces(char const *line);
+int						is_number(char const *str);
 
-char		**split_command(char const *s, uint *word);
+char					**split_command(char const *s, uint *word);
 
 #endif

@@ -18,7 +18,9 @@ SRC			=	op.c					init.c						parse.c    \
 				get_next_line.c			parse_comment.c				util.c     \
 				parse_label.c			parse_name.c				label.c    \
 				parse_command.c			command.c					champion.c \
-				compile.c
+				compile.c				get_arg.c					write_parameters.c \
+				write_commands.c
+
 
 OBJ			= $(subst .c,.o,$(SRC))
 
