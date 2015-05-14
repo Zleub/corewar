@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/13 21:01:21 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 05:06:41 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int			get_size(int macro, int magic)
 
 char		*get_string_for_memory(int size, int offset)
 {
+	int		address;
 	int		i;
 	char	*tmp;
 
@@ -62,7 +63,8 @@ char		*get_string_for_memory(int size, int offset)
 	i = 0;
 	while (i < size)
 	{
-		tmp[i] = g_memory[offset + i].op;
+		address = (offset + i) % MEM_SIZE;
+		tmp[i] = g_memory[address].op;
 		i += 1;
 	}
 	return (tmp);

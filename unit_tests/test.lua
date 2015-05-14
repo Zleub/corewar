@@ -4,11 +4,11 @@ function fclean() os.execute("make -C .. fclean") end
 function make() os.execute("make -C ..") end
 function re() fclean() make() end
 
-function listChampions()
+function listChampions(ext)
 	local i, t, popen = 0, {}, io.popen
-	for filename in popen('ls -a "'..champions..'" | grep \\.cor'):lines() do
+	for filename in popen('ruby combination.rb | grep \\\\.'..ext):lines() do
 		i = i + 1
-		t[i] = champions..filename
+		t[i] = filename
 	end
 	return t
 end
@@ -28,7 +28,7 @@ end
 function catchReturn(line, cnames)
 	if line:find("^%d+$") then
 		if tonumber(line) ~= 0 then
-			file = io.open("log/"..cnames, "w")
+			file = io.open("log/"..cnames, "a")
 			file:write(cnames.."\tError: "..line.."\n")
 			file:close()
 			table.insert(errorTable, cnames.."\tcatchReturn")
@@ -38,9 +38,7 @@ end
 
 function catchWinner(line, cnames)
 	local a, b, name = line:find("Winner.+, (.+)$")
-	local a, b, err = line:find("Winner.+(%d+), (.+)$")
 	if name then print("get Winner : "..name) end
-	if err then print("get Winner Zero") end
 end
 
 function catch(line, cnames)
@@ -56,6 +54,8 @@ end
 function exec(string, cnames)
 	print(string)
 
+	file = io.open("log/"..cnames, "w");
+	file:close()
 	for line in io.popen(string):lines() do
 		catch(line, cnames)
 	end
@@ -67,17 +67,26 @@ function dump()
 	end
 end
 
-re()
-
+zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
 champions = "../champions/"
 
-championsList = listChampions()
+championsList = listChampions("s")
+
+for i,v in ipairs(championsList) do
+	print(zaz_asm.." "..v)
+	for line in io.popen(zaz_asm.." "..v):lines() do
+		local tmp1, tmp2, match = line:find("(output)")
+		if match then print("Ok")
+		else print(line) end
+	end
+end
+
+championsList = listChampions("cor")
 
 for i,v in ipairs(championsList) do
 	errorTable = {}
 	a,b, name = v:find(".+/(.+).cor")
 	exec(concat(" -n "..v), name)
-	dump()
 end
 

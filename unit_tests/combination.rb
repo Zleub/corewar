@@ -15,16 +15,16 @@ if not ARGV[0].numeric?
 	exit
 end
 
-Dir.foreach("./champions") do |fichier|
+Dir.foreach("../champions") do |fichier|
 	if fichier != "." and fichier != ".."
 		array.push(fichier)
 	end
 end
 
-array = array.combination(ARGV[0].to_i).to_a
+array = array.combination(ARGV[0].to_i).to_a.shuffle()
 
 array.each do |x|
 	mystring = "";
-	x.each { |y| mystring += "-n champions/" + y + " " }
+	x.each { |y| mystring += "../champions/" + y + " " }
 	puts mystring
 end
