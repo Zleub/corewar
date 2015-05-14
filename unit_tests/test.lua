@@ -6,18 +6,18 @@ function re() fclean() make() end
 
 function listChampions(ext)
 	local i, t, popen = 0, {}, io.popen
-	for filename in popen('ruby combination.rb | grep \\\\.'..ext):lines() do
+	for filename in popen('ls '..championsPath..' | grep \\\\.'..ext):lines() do
 		i = i + 1
-		t[i] = filename
+		t[i] = championsPath..filename
 	end
 	return t
 end
 
-function getChampion(nbrChampions)
+function getChampion(nbrChampion)
 	math.randomseed(os.time())
 
 	local str = ""
-	for i=1, nbrChampions do
+	for i=1, nbrChampion do
 		local nbr = math.random(#championsList)
 		str = str.." -n "..championsList[nbr]
 
@@ -48,7 +48,7 @@ function catch(line, cnames)
 end
 
 function concat(champions)
-	return corewar..champions.." 2>&1; echo $?"
+	return corewar..championsPath.." 2>&1; echo $?"
 end
 
 function exec(string, cnames)
@@ -67,13 +67,18 @@ function dump()
 	end
 end
 
+math.randomseed(os.time())
+
 zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
-champions = "../champions/"
+championsPath = "../champions/"
 
+
+nbrChampion = 2
 championsList = listChampions("s")
 
 for i,v in ipairs(championsList) do
+	-- local un, deux, champ = v:find("(.+/champions/.+s)")
 	print(zaz_asm.." "..v)
 	for line in io.popen(zaz_asm.." "..v):lines() do
 		local tmp1, tmp2, match = line:find("(output)")
@@ -85,8 +90,15 @@ end
 championsList = listChampions("cor")
 
 for i,v in ipairs(championsList) do
-	errorTable = {}
 	a,b, name = v:find(".+/(.+).cor")
-	exec(concat(" -n "..v), name)
+	for i=1,nbrChampion - 1 do
+		local rand = math.random(#championsList)
+		_,__, name2 = championsList[rand]:find(".+/(.+).cor")
+		name = name2..":"..name
+		v = v..championsList[rand]
+	end
+	-- print(rand, championsList[rand])
+	errorTable = {}
+	exec(corewar.." "..string.gsub(v, " ?("..championsPath..")", " -n %1"), name)
 end
 
