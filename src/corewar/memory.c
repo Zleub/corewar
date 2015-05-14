@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 06:43:25 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 08:15:06 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		write_heros(int offset, t_heros *heros)
 
 	p = new_process(NULL);
 	p->index = offset;
-	p->delay = get_op(p).cycles;
+	p->delay = get_op(p)->cycles;
 
 	// WHAT IF REG_SIZE > 4
 	p->registers[0][REG_SIZE - 4] = 0;

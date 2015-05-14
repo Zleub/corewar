@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 04:01:38 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 16:40:12 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,9 +196,9 @@ static void		ldi(t_process *p)
 		dprintf(OUT, "\tldi\n");
 
 	i = 0;
-	while (i < DIR_SIZE)
+	while (i < DIR_SIZE / 2)
 	{
-		((char *)&ind)[DIR_SIZE - 1 - i] = g_array[0][i] + g_array[1][i];
+		((char *)&ind)[DIR_SIZE / 2 - 1 - i] = g_array[0][i] + g_array[1][i];
 		i += 1;
 	}
 	i = 0;
@@ -229,7 +229,7 @@ static void		sti(t_process *p)
 	}
 	reg = GET_(int)(&g_instruction[0]);
 	// dprintf(OUT, "~ %d ~", (p->index + ind) % IDX_MOD);
-	write_memory((p->index + ind) % IDX_MOD, p->registers[reg - 1], DIR_SIZE);
+	write_memory((p->index + ind) % IDX_MOD, p->registers[reg - 1], DIR_SIZE / 2);
 
 }
 
@@ -244,7 +244,7 @@ static void		_mfork(t_process *p)
 	new = new_process(p);
 	add_process(new);
 	new->index = p->index + dest % IDX_MOD;
-	new->delay = get_op(new).cycles;
+	new->delay = get_op(new)->cycles;
 }
 
 static void		lld(t_process *p)
@@ -347,7 +347,7 @@ static void		lfork(t_process *p)
 	new = new_process(p);
 	add_process(new);
 	new->index = p->index + dest % MEM_SIZE;
-	new->delay = get_op(new).cycles;
+	new->delay = get_op(new)->cycles;
 }
 
 static void		aff(t_process *p)

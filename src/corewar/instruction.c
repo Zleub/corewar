@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 08:02:20 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 16:16:43 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ void		init_instruction(int max_size)
 {
 	int		i = 0;
 
+	(void)max_size;
 	while (i < MAX_ARGS_NUMBER)
 	{
 		if (!(g_instruction[i].args = (char *)malloc(sizeof(char) * max_size)))
 			exit(EXIT_FAILURE);
+		ft_bzero(g_instruction[i].args, sizeof(char) * max_size);
+		// g_instruction[i].args = NULL;
 		i += 1;
 	}
 }
@@ -53,39 +56,46 @@ int			get_size(int macro, int magic)
 	return (0);
 }
 
-char		*get_string_for_memory(int size, int offset)
+void		get_string_for_memory(int size, int offset, char *tmp)
 {
 	int		address;
 	int		i;
-	char	*tmp;
+	// char	*tmp;
 
-	tmp = ft_memalloc(size);
+	// if (!(tmp = (char *)malloc(sizeof(char) * size)))
+	// 	exit(EXIT_FAILURE);
 	i = 0;
+	// dprintf(OUT, "size : %d\n", size);
 	while (i < size)
 	{
 		address = (offset + i) % MEM_SIZE;
+		// dprintf(OUT, "address : %d\n", address);
 		tmp[i] = g_memory[address].op;
 		i += 1;
 	}
-	return (tmp);
+	// return (tmp);
 }
 
 void		reset_instruction(void)
 {
 	int		i;
-	int		j;
 
 	i = 0;
 	while (i < MAX_ARGS_NUMBER)
 	{
 		g_instruction[i].type = 0;
 		g_instruction[i].size = 0;
-		j = 0;
-		while (j < max_size())
-		{
-			g_instruction[i].args[j] = 0;
-			j += 1;
-		}
+		// if (g_instruction[i].args != NULL)
+		// {
+			// free(g_instruction[i].args);
+			int j = 0;
+			while (j < max_size())
+			{
+				g_instruction[i].args[j] = 0;
+				// dprintf(OUT, "%d [%d][%d] Here i am : %d\n", MAX_ARGS_NUMBER, i, j, g_instruction[i].args[j]);
+				j += 1;
+			}
+		// }
 		i += 1;
 	}
 }
@@ -119,7 +129,7 @@ int			get_multisize(t_process *p, t_op *op)
 		{
 			tmpsize = get_size(i, op->unknown1);
 			g_instruction[count].type = i;
-			g_instruction[count].args = get_string_for_memory(tmpsize, p->index + 2 + size);
+			get_string_for_memory(tmpsize, p->index + 2 + size, g_instruction[count].args);
 			g_instruction[count].size = tmpsize;
 			coding_octet = coding_octet << 2;
 			size += tmpsize;
@@ -131,23 +141,25 @@ int			get_multisize(t_process *p, t_op *op)
 
 int			fill_instruction(t_process *p)
 {
-	t_op	op;
+	t_op	*op;
 	int		size;
 
 	size = 1;
 	op = get_op(p);
+	// dprintf(OUT, "Hello\n");
 	reset_instruction();
-	if (op.coding_octet == 0)
+	// dprintf(OUT, "Hello\n");
+	if (op->coding_octet == 0)
 	{
-		size += get_size(op.args[0], op.unknown1);
-		g_instruction[0].args = get_string_for_memory(size - 1, p->index + 1);
-		g_instruction[0].type = op.args[0];
+		size += get_size(op->args[0], op->unknown1);
+		get_string_for_memory(size - 1, p->index + 1, g_instruction[0].args);
+		g_instruction[0].type = op->args[0];
 		g_instruction[0].size = size - 1;
 	}
 	else
 	{
 		size += 1;
-		size += get_multisize(p, &op);
+		size += get_multisize(p, op);
 	}
 	return (size);
 }
@@ -176,7 +188,6 @@ int			get_int(t_instruction *i)
 {
 	char	*str;
 	int		array[4];
-
 
 	array[3] = 0;
 	array[0] = 0;
@@ -212,7 +223,7 @@ void		print_instruction_decimal()
 	dprintf(OUT, "\n");
 }
 
-t_op		get_op(t_process *p)
+t_op		*get_op(t_process *p)
 {
 	extern t_op		g_op_tab[17];
 	int				op_index;
@@ -221,12 +232,12 @@ t_op		get_op(t_process *p)
 	if (op_index > 15 || op_index < 0)
 	{
 		// dprintf(2, "error op_index: %d\n", op_index);
-		return (g_op_tab[16]);
+		return (&g_op_tab[16]);
 		// exit(0);
 	}
 	else if (op_index == 0)
-		return (g_op_tab[16]);
-	return (g_op_tab[op_index - 1]);
+		return (&g_op_tab[16]);
+	return (&g_op_tab[op_index - 1]);
 }
 
 void		print_op(t_op op)

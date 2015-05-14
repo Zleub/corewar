@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/12 03:58:06 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 08:15:48 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ void			print_registers(t_process * p)
 
 void			print_process(t_process *head)
 {
-	t_op	op;
+	t_op		*op;
 
 	if (head)
 	{
 		op = get_op(head);
 		if (g_corewar.verb > 2)
 		{
-			dprintf(OUT, "\tN_%d @ %d | %s \n", head->number, head->index, op.name);
+			dprintf(OUT, "\tN_%d @ %d | %s \n", head->number, head->index, op->name);
 			dprintf(OUT, "\t\tpc: [%d], carry: [%d], delay: [%d] \n", head->index, head->carry , head->delay);
 		}
 		if (g_corewar.verb > 3)
@@ -125,26 +125,26 @@ void			execute_process(t_process *head, t_op *op)
 	t[op->opcode - 1](head);
 
 	move_process(head, size);
-	head->delay = get_op(head).cycles;
+	head->delay = get_op(head)->cycles;
 }
 
 void			update_process(t_process *head)
 {
-	t_op		op;
+	t_op		*op;
 
 	if (!head)
 		return ;
 	op = get_op(head);
-	if (op.name == 0)
+	if (op->name == 0)
 	{
 		move_process(head, 1);
-		head->delay = get_op(head).cycles;
+		head->delay = get_op(head)->cycles;
 		update_process(head->next);
 		return ;
 	}
 	head->delay -= 1;
 	if (head->delay <= 0) {
-		execute_process(head, &op);
+		execute_process(head, op);
 	}
 	update_process(head->next);
 }

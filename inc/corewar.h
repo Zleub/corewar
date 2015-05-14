@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 07:55:35 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 08:13:34 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ t_instruction				g_instruction[MAX_ARGS_NUMBER];
 
 # define GET_(X) (X)get_int
 
-t_op						get_op(t_process *p);
+t_op						*get_op(t_process *p);
 void						print_op(t_op op);
 void						init_instruction(int max);
 int							fill_instruction(t_process *p);
