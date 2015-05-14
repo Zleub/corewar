@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/17 12:19:46 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 08:13:34 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 21:21:09 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ t_cell						g_memory[MEM_SIZE];
 
 void						init_memory(int player_nbr);
 void						dump_memory(void);
-int							write_memory(int index, char *str, int len);
 
 
 /*
@@ -167,5 +166,6 @@ void						cpy_memory(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
 void						cpy_value(t_process *p, t_instruction *inst, char str[DIR_SIZE]);
 void						init_array(void);
 void						fill_array(t_process *p);
+int							write_memory(int index, t_process *p, char *str, int len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 16:16:43 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/14 21:38:03 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,9 @@ void		reset_instruction(void)
 			int j = 0;
 			while (j < max_size())
 			{
-				g_instruction[i].args[j] = 0;
+				// dprintf(OUT, "------ %p\n", g_instruction[i].args);
 				// dprintf(OUT, "%d [%d][%d] Here i am : %d\n", MAX_ARGS_NUMBER, i, j, g_instruction[i].args[j]);
+				g_instruction[i].args[j] = 0;
 				j += 1;
 			}
 		// }
@@ -146,9 +147,7 @@ int			fill_instruction(t_process *p)
 
 	size = 1;
 	op = get_op(p);
-	// dprintf(OUT, "Hello\n");
 	reset_instruction();
-	// dprintf(OUT, "Hello\n");
 	if (op->coding_octet == 0)
 	{
 		size += get_size(op->args[0], op->unknown1);

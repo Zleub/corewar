@@ -54,10 +54,17 @@ function catchError(line, cnames)
 	end
 end
 
+function catchScore(line, cnames)
+	if line:find("n%d") then
+		print(line)
+	end
+end
+
 function catch(line, cnames)
 	catchError(line, cnames)
 	catchReturn(line, cnames)
 	catchWinner(line, cnames)
+	catchScore(line, cnames)
 	-- print(line)
 end
 
@@ -83,11 +90,13 @@ end
 
 math.randomseed(os.time())
 
+re()
+
 zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
 championsPath = "../champions/"
 
-nbrBattle = 100
+nbrBattle = 1000
 nbrChampion = 4
 championsList = listChampions("s")
 
@@ -118,7 +127,7 @@ for i=1,nbrBattle do
 	end
 	-- print(rand, championsList[rand])
 	errorTable = {}
-	exec("valgrind "..corewar.." "..string.gsub(v, " ?("..championsPath..")", " -n %1").." 2>&1 ; echo $?", name)
+	exec(corewar.." "..string.gsub(v, " ?("..championsPath..")", " -n %1").." 2>&1 ; echo $?", name)
 	dump()
 end
 
