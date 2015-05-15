@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 18:00:15 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 22:45:31 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void		st(t_process *p)
 	int			reg;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "r%d %d\n", GET_(short)(&g_instruction[0]), GET_(short)(&g_instruction[1]));
+		dprintf(OUT, "r%d %d (%d)\n", GET_(short)(&g_instruction[0]), GET_(short)(&g_instruction[1]), GET_(short)(&g_instruction[1]) % IDX_MOD);
 	if (g_instruction[1].type == IND_CODE)
 		p->carry = write_memory(GET_(short)(&g_instruction[1]) % IDX_MOD, p, g_array[0], DIR_SIZE);
 	else if (g_instruction[1].type == REG_CODE)
@@ -215,6 +215,7 @@ static void		ldi(t_process *p)
 
 static void		sti(t_process *p)
 {
+	dprintf(OUT, "Test\n");
 	int		ind;
 	int		reg;
 	int		i;
@@ -227,7 +228,7 @@ static void		sti(t_process *p)
 	}
 	reg = GET_(int)(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "r%d, %d + %d\n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]), GET_(int)(&g_instruction[2]));
+		dprintf(OUT, "r%d, %d + %d (%d)\n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]), GET_(int)(&g_instruction[2]), ind % IDX_MOD);
 	write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
 }
 

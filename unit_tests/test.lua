@@ -96,8 +96,8 @@ zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
 championsPath = "../champions/"
 
-nbrBattle = 10000
-nbrChampion = 4
+nbrBattle = 100
+nbrChampion = 1
 championsList = listChampions("s")
 
 for i,v in ipairs(championsList) do
@@ -116,9 +116,9 @@ for i=1,nbrBattle do
 	local init = math.random(#championsList)
 	v = championsList[init]
 	a,b, name = v:find(".+/(.+).cor")
-	max = math.random(nbrChampion - 1)
+	max = math.random(nbrChampion)
 	if max ~= 1 then
-		for i=1,max do
+		for i=1,max - 1 do
 			local rand = math.random(#championsList)
 			_,__, name2 = championsList[rand]:find(".+/(.+).cor")
 			name = name2..":"..name

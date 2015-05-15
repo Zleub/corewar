@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 13:23:17 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 17:42:52 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 23:44:56 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,16 +128,20 @@ int			write_memory(int index, t_process *p, char *str, int len)
 	i = 0;
 	carry = 0;
 	offset = max_size() - len;
-	// dprintf(OUT, "index: %d, p->index: %d\n", index, p->index);
+	dprintf(OUT, "index: %d, p->index: %d\n", index, p->index);
 	while (i < len)
 	{
 		if (p->index + index < 0)
-			address = (p->index + p->index + index + i) % MEM_SIZE;
+			address = (p->index + p->index + index + i);
 		else
 			address = (p->index + index + i) % MEM_SIZE;
-		// dprintf(OUT, "write_memory @ %d\n", address);
-		g_memory[address].op = str[i + offset];
-		carry = carry | g_memory[address].op;
+
+		if (address < 0)
+			address = MEM_SIZE - address;
+
+		dprintf(OUT, "write_memory @ %d\n", address % MEM_SIZE);
+		g_memory[address % MEM_SIZE].op = str[i + offset];
+		carry = carry | g_memory[address ].op;
 		i += 1;
 	}
 	if (!carry)

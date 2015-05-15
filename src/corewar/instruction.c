@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 21:38:03 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 23:39:46 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,6 +227,7 @@ t_op		*get_op(t_process *p)
 	extern t_op		g_op_tab[17];
 	int				op_index;
 
+	// dprintf(OUT, "TEST 2 : %p\n", p);
 	op_index = (int)g_memory[p->index].op;
 	if (op_index > 15 || op_index < 0)
 	{

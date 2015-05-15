@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 17:44:10 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 23:35:54 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,7 @@ int			write_registers(int index, t_process *p, char *str, int len)
 		return (0);
 	while (tmp < len)
 	{
+		// dprintf(OUT, "TESTREG : %d | %d\n", index, tmp);
 		p->registers[index][tmp] = str[tmp];
 		carry = carry | p->registers[index][tmp];
 		tmp += 1;
