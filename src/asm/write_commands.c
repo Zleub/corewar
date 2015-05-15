@@ -23,16 +23,21 @@ static void		write_opcode(int fd, t_command *command)
 	write(fd, &command->op->opcode, sizeof(char));
 }
 
-void			write_commands(int fd, t_champion *champion)
+uint			write_commands(int fd, t_champion *champion)
 {
 	t_command	*command;
+	uint		ret;
 
 	command = champion->commands;
+	ret = 0;
 	while (command)
 	{
 		write_opcode(fd, command);
 		write_coding_octet(fd, command);
 		write_parameters(fd, command);
+		if (!command->next)
+			ret = command->offset + command->size;
 		command = command->next;
 	}
+	return (ret);
 }

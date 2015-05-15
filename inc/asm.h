@@ -70,7 +70,7 @@ t_command				*get_command_from_label(const char *label);
 void					compile(const char *filename);
 int						get_arg(t_arg_type type, const char *arg, uint offset);
 void					write_parameters(int fd, t_command *command);
-void					write_commands(int fd, t_champion *champion);
+uint					write_commands(int fd, t_champion *champion);
 
 void					die(char const *message);
 void					die2(char *message, uint line, uint col);

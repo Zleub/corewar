@@ -14,7 +14,8 @@
 #include "op.h"
 #include <limits.h>
 #include <fcntl.h>
-#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 static int		invertoctets(int src)
 {
@@ -72,24 +73,29 @@ static int		open_output_file(const char *original_filename)
 	return (fd);
 }
 
-static void		write_header(int fd, const t_champion *champion)
+static void		write_header(int fd, const t_champion *champion, uint prog_size)
 {
 	header_t	champ_header;
 
+	lseek(fd, 0, SEEK_SET);
 	ft_bzero(&champ_header, sizeof(header_t));
 	ft_strcat(champ_header.prog_name, champion->name);
 	ft_strcat(champ_header.comment, champion->comment);
 	champ_header.magic = invertoctets(COREWAR_EXEC_MAGIC);
+	champ_header.prog_size = invertoctets(prog_size);
 	write(fd, &champ_header, sizeof(header_t));
 }
 
 void			compile(const char *filename)
 {
 	int			file;
+	header_t	tmp;
+	uint		size;
 
-	puts("MEGALEL");
 	file = open_output_file(filename);
-	write_header(file, get_champion(0));
-	write_commands(file, get_champion(0));
+	ft_bzero(&tmp, sizeof(header_t));
+	write(file, &tmp, sizeof(header_t));
+	size = write_commands(file, get_champion(0));
+	write_header(file, get_champion(0), size);
 	close(file);
 }
