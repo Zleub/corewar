@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 17:08:09 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 20:44:58 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 17:44:10 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ void			execute_process(t_process *head, t_op *op)
 	fill_array(head);
 	if (g_corewar.verb > 1)
 	{
-		dprintf(OUT, "N_%d @ %d | %s : ", head->number, head->index, op->name);
-		print_instruction_decimal();
+		dprintf(OUT, "N_%d @ %d \t| %s : ", head->number, head->index, op->name);
+		// print_instruction_decimal();
 	}
 	if (g_corewar.verb > 2)
 		print_instruction();

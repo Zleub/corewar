@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/14 23:07:39 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/15 18:00:15 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static void		live(t_process *p)
 
 	nbr = GET_(int)(&g_instruction[0]);
 	if (g_corewar.verb > 0)
-		dprintf(OUT, "\tlive for player : %d\n", nbr);
-	if (nbr <= 0 || nbr > g_corewar.player_nbr - 1)
+		dprintf(OUT, "%d\n", nbr);
+	if (nbr <= 0 || nbr > g_corewar.player_nbr)
 		return ;
 	p->lives += 1;
 	g_corewar.scores[nbr - 1] += 1;
@@ -32,9 +32,9 @@ static void		ld(t_process *p)
 {
 	int		reg;
 
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tld\n");
 	reg = GET_(int)(&g_instruction[1]);
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "%d, r%d \n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]));
 	p->carry = write_registers(reg - 1, p, g_array[0], DIR_SIZE);
 }
 
@@ -43,7 +43,7 @@ static void		st(t_process *p)
 	int			reg;
 
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tst%d\n", GET_(short)(&g_instruction[1]));
+		dprintf(OUT, "r%d %d\n", GET_(short)(&g_instruction[0]), GET_(short)(&g_instruction[1]));
 	if (g_instruction[1].type == IND_CODE)
 		p->carry = write_memory(GET_(short)(&g_instruction[1]) % IDX_MOD, p, g_array[0], DIR_SIZE);
 	else if (g_instruction[1].type == REG_CODE)
@@ -168,14 +168,14 @@ static void		zjmp(t_process *p)
 
 	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tzjmp: %d @ %d -> ", p->number, dest);
+		dprintf(OUT, "@ %d -> ", dest);
 	if (p->carry == 1)
 	{
 		if (g_corewar.verb > 1)
 			dprintf(OUT, "SUCCESS\n");
 		p->index += dest - 3;
-		if (g_corewar.verb > 1)
-			dprintf(OUT, "new index: %d\n", p->index);
+		// if (g_corewar.verb > 1)
+		// 	dprintf(OUT, "new index: %d\n", p->index);
 	}
 	else
 	{
@@ -219,9 +219,6 @@ static void		sti(t_process *p)
 	int		reg;
 	int		i;
 
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tsti\n");
-
 	i = 0;
 	while (i < DIR_SIZE)
 	{
@@ -229,9 +226,9 @@ static void		sti(t_process *p)
 		i += 1;
 	}
 	reg = GET_(int)(&g_instruction[0]);
-	// dprintf(OUT, "~ %d ~", (p->index + ind % IDX_MOD));
+	if (g_corewar.verb > 1)
+		dprintf(OUT, "r%d, %d + %d\n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]), GET_(int)(&g_instruction[2]));
 	write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
-
 }
 
 static void		_mfork(t_process *p)
@@ -241,7 +238,7 @@ static void		_mfork(t_process *p)
 
 	dest = get_int(&g_instruction[0]);
 	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tmfork: %d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
+		dprintf(OUT, "%d @ %d (%d)\n", p->number, dest, p->index + dest % IDX_MOD);
 	new = new_process(p);
 	add_process(new);
 	new->index = p->index + dest % IDX_MOD;
