@@ -12,6 +12,21 @@
 
 #include "asm.h"
 #include "libft.h"
+#include <stdio.h>
+
+static int		bullshit_case(uint cmd_offset)
+{
+	t_command	*cursor;
+
+	cursor = get_champion(0)->commands;
+	while (cursor)
+	{
+		if (!cursor->next)
+			return ((cursor->offset + cursor->size) - cmd_offset);
+		cursor = cursor->next;
+	}
+	return (0);
+}
 
 static int		extract_lab2(uint cmd_offset, t_label *lab_cur, t_label *prev)
 {
@@ -19,6 +34,8 @@ static int		extract_lab2(uint cmd_offset, t_label *lab_cur, t_label *prev)
 
 	if (lab_cur->target && (target_cmd = lab_cur->target))
 		return (target_cmd->offset - cmd_offset);
+	else if (lab_cur == prev)
+		return (bullshit_case(cmd_offset));
 	else if (!lab_cur->target)
 	{
 		if (!lab_cur->next && (target_cmd = prev->target))
