@@ -74,10 +74,12 @@ static int		extract_dir(const char *arg, uint offset)
 {
 	char		*lab;
 
-	if ((lab = ft_strchr(arg, LABEL_CHAR)))
-		return (extract_lab(offset, lab + 1));
-	else
+	lab = ft_strchr(arg, LABEL_CHAR);
+
+	if (ft_isdigit(arg[1]))
 		return (ft_atoi(ft_strsub(arg, 1, ft_strlen(arg) - 1)));
+	else
+		return (extract_lab(offset, lab + 1));
 }
 
 int				get_arg(t_arg_type type, const char *arg, uint offset)
