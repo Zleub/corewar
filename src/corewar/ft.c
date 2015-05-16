@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 15:35:30 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 22:45:31 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/16 19:55:01 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,10 +172,13 @@ static void		zjmp(t_process *p)
 	if (p->carry == 1)
 	{
 		if (g_corewar.verb > 1)
-			dprintf(OUT, "SUCCESS\n");
-		p->index += dest - 3;
-		// if (g_corewar.verb > 1)
-		// 	dprintf(OUT, "new index: %d\n", p->index);
+			dprintf(OUT, "SUCCESS ");
+		if (p->index + dest - 3 < 0)
+			p->index = (MEM_SIZE - p->index + dest - 3) % MEM_SIZE;
+		else
+			p->index = (p->index + dest - 3) % MEM_SIZE;
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "%d\n", p->index);
 	}
 	else
 	{
@@ -184,52 +187,154 @@ static void		zjmp(t_process *p)
 	}
 }
 
+// static void		ldi(t_process *p)
+// {
+// 	char	tmp[REG_SIZE];
+// 	int		ind;
+// 	int		reg;
+// 	int		i;
+// 	int		address;
+
+// 	if (g_corewar.verb > 1)
+// 		dprintf(OUT, "\tldi: %d, %d, r%d\n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]), GET_(int)(&g_instruction[2]));
+
+// 	i = 0;
+// 	while (i < DIR_SIZE / 2)
+// 	{
+// 		((char *)&ind)[DIR_SIZE / 2 - 1 - i] = g_array[0][i] + g_array[1][i];
+// 		i += 1;
+// 	}
+// 	i = 0;
+// 	while (i < REG_SIZE)
+// 	{
+// 		address = (p->index + ind + i) % IDX_MOD;
+// 		dprintf(OUT, "AIDJWOI  %d\n", address);
+// 		tmp[i] = g_memory[address].op;
+// 		i += 1;
+// 	}
+// 	reg = GET_(int)(&g_instruction[2]);
+// 	write_registers(reg - 1, p, tmp, REG_SIZE);
+// }
+
+
 static void		ldi(t_process *p)
 {
-	char	tmp[REG_SIZE];
 	int		ind;
 	int		reg;
 	int		i;
-	int		address;
 
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "\tldi\n");
+	if (g_instruction[0].type == REG_CODE && g_instruction[1].type == REG_CODE)
+	{
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[0][i] + g_array[1][i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[2]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "ldi : r%d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+	}
+	else if (g_instruction[0].type == REG_CODE && g_instruction[1].type != REG_CODE)
+	{
+		int tmp = GET_(int)(&g_instruction[1]);
 
-	i = 0;
-	while (i < DIR_SIZE / 2)
-	{
-		((char *)&ind)[DIR_SIZE / 2 - 1 - i] = g_array[0][i] + g_array[1][i];
-		i += 1;
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[0][i] + ((char *)(&tmp))[DIR_SIZE - 1 - i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[2]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "ldi : r%d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
 	}
-	i = 0;
-	while (i < REG_SIZE)
+	else if (g_instruction[0].type != REG_CODE && g_instruction[1].type == REG_CODE)
 	{
-		address = (p->index + ind + i) % IDX_MOD;
-		dprintf(OUT, "AIDJWOI  %d\n", address);
-		tmp[i] = g_memory[address].op;
-		i += 1;
+		int tmp = GET_(int)(&g_instruction[0]);
+
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[1][i] + ((char *)(&tmp))[DIR_SIZE - 1 - i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[2]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "ldi : r%d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
 	}
-	reg = GET_(int)(&g_instruction[2]);
-	write_registers(reg - 1, p, tmp, REG_SIZE);
+	else
+	{
+		reg = GET_(int)(&g_instruction[2]);
+
+		if (g_corewar.verb > 1)
+		dprintf(OUT, "ldi: r%d, %d + %d (%d)\n", GET_(int)(&g_instruction[0]), GET_(short)(&g_instruction[1]), GET_(short)(&g_instruction[2]), (GET_(short)(&g_instruction[1]) + GET_(short)(&g_instruction[2])) % IDX_MOD + p->index);
+		write_memory((GET_(short)(&g_instruction[1]) + GET_(short)(&g_instruction[2])) % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+
+	}
 }
 
 static void		sti(t_process *p)
 {
-	dprintf(OUT, "Test\n");
 	int		ind;
 	int		reg;
 	int		i;
 
-	i = 0;
-	while (i < DIR_SIZE)
+	if (g_instruction[1].type == REG_CODE && g_instruction[2].type == REG_CODE)
 	{
-		((char *)&ind)[DIR_SIZE - 1 - i] = g_array[1][i] + g_array[2][i];
-		i += 1;
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[1][i] + g_array[2][i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[0]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "sti : %d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
 	}
-	reg = GET_(int)(&g_instruction[0]);
-	if (g_corewar.verb > 1)
-		dprintf(OUT, "r%d, %d + %d (%d)\n", GET_(int)(&g_instruction[0]), GET_(int)(&g_instruction[1]), GET_(int)(&g_instruction[2]), ind % IDX_MOD);
-	write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+	else if (g_instruction[1].type == REG_CODE && g_instruction[2].type != REG_CODE)
+	{
+		int tmp = GET_(int)(&g_instruction[2]);
+
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[1][i] + ((char *)(&tmp))[DIR_SIZE - 1 - i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[0]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "sti : %d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+	}
+	else if (g_instruction[1].type != REG_CODE && g_instruction[2].type == REG_CODE)
+	{
+		int tmp = GET_(int)(&g_instruction[1]);
+
+		i = 0;
+		while (i < DIR_SIZE)
+		{
+			((char *)&ind)[DIR_SIZE - 1 - i] = g_array[2][i] + ((char *)(&tmp))[DIR_SIZE - 1 - i];
+			i += 1;
+		}
+		reg = GET_(int)(&g_instruction[0]);
+		if (g_corewar.verb > 1)
+			dprintf(OUT, "sti : %d, %d\n", reg, ind);
+		write_memory(ind % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+	}
+	else
+	{
+		reg = GET_(int)(&g_instruction[0]);
+
+		if (g_corewar.verb > 1)
+		dprintf(OUT, "sti: r%d, %d + %d (%d)\n", GET_(int)(&g_instruction[0]), GET_(short)(&g_instruction[1]), GET_(short)(&g_instruction[2]), (GET_(short)(&g_instruction[1]) + GET_(short)(&g_instruction[2])) % IDX_MOD + p->index);
+		write_memory((GET_(short)(&g_instruction[1]) + GET_(short)(&g_instruction[2])) % IDX_MOD, p, p->registers[reg - 1], DIR_SIZE);
+
+	}
 }
 
 static void		_mfork(t_process *p)

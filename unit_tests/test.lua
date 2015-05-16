@@ -96,8 +96,8 @@ zaz_asm = "~/Desktop/corewar/asm"
 corewar = "../corewar"
 championsPath = "../champions/"
 
-nbrBattle = 100
-nbrChampion = 1
+nbrBattle = 100000
+nbrChampion = 4
 championsList = listChampions("s")
 
 for i,v in ipairs(championsList) do

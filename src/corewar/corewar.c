@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 18:36:41 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 18:01:45 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/16 16:58:13 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,10 @@ void	update(int dt)
 		exit(EXIT_SUCCESS);
 	}
 	else if (g_corewar.cycles_todie < 0)
+	{
+		end();
 		exit(EXIT_SUCCESS);
+	}
 }
 
 int		max_size(void)

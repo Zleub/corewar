@@ -1,0 +1,3831 @@
+Introducing Underscore, n: 1, 5432b of code	"__UNDERSCORE_S__"
+player_nbr = 1
+N_1 @ 0 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_1 @ 7 	| zjmp : @ 499 -> SUCCESS 503
+N_1 @ 506 	| ld : 16777216, r16 
+TESTREG : 15 | 0
+TESTREG : 15 | 1
+TESTREG : 15 | 2
+TESTREG : 15 | 3
+N_1 @ 513 	| sti : Test
+r16, 65023 + 6 (261)
+index: 261, p->index: 513
+write_memory @ 774
+write_memory @ 775
+write_memory @ 776
+write_memory @ 777
+N_1 @ 520 	| st : r1 117 (117)
+index: 117, p->index: 520
+write_memory @ 637
+write_memory @ 638
+write_memory @ 639
+write_memory @ 640
+N_1 @ 525 	| sti : Test
+r1, 68 + 1 (69)
+index: 69, p->index: 525
+write_memory @ 594
+write_memory @ 595
+write_memory @ 596
+write_memory @ 597
+N_1 @ 532 	| ld : 507, r4 
+TESTREG : 3 | 0
+TESTREG : 3 | 1
+TESTREG : 3 | 2
+TESTREG : 3 | 3
+N_1 @ 539 	| ld : 507, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_1 @ 546 	| st : r1 6 (6)
+index: 6, p->index: 546
+write_memory @ 552
+write_memory @ 553
+write_memory @ 554
+write_memory @ 555
+N_1 @ 551 	| live : 1
+N_1 @ 556 	| ld : 190055170, r8 
+TESTREG : 7 | 0
+TESTREG : 7 | 1
+TESTREG : 7 | 2
+TESTREG : 7 | 3
+N_1 @ 563 	| ld : 67699190, r9 
+TESTREG : 8 | 0
+TESTREG : 8 | 1
+TESTREG : 8 | 2
+TESTREG : 8 | 3
+N_1 @ 570 	| st : r8 511 (511)
+index: 511, p->index: 570
+write_memory @ 1081
+write_memory @ 1082
+write_memory @ 1083
+write_memory @ 1084
+N_1 @ 575 	| st : r9 510 (510)
+index: 510, p->index: 575
+write_memory @ 1085
+write_memory @ 1086
+write_memory @ 1087
+write_memory @ 1088
+N_1 @ 580 	| ld : 24, r8 
+TESTREG : 7 | 0
+TESTREG : 7 | 1
+TESTREG : 7 | 2
+TESTREG : 7 | 3
+N_1 @ 587 	| fork : 1 @ -378 (209)
+N_2 @ 209 	| sti : Test
+r1, 56 + 1 (57)
+index: 57, p->index: 209
+write_memory @ 266
+write_memory @ 267
+write_memory @ 268
+write_memory @ 269
+N_2 @ 216 	| sti : Test
+r1, 91 + 1 (92)
+index: 92, p->index: 216
+write_memory @ 308
+write_memory @ 309
+write_memory @ 310
+write_memory @ 311
+N_1 @ 590 	| fork : 1 @ 46 (636)
+N_3 @ 636 	| live : 1
+N_1 @ 593 	| live : 1
+N_3 @ 641 	| ld : 4, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_1 @ 598 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_3 @ 648 	| ld : 101253622, r3 
+TESTREG : 2 | 0
+TESTREG : 2 | 1
+TESTREG : 2 | 2
+TESTREG : 2 | 3
+N_1 @ 605 	| ld : 190055682, r3 
+TESTREG : 2 | 0
+TESTREG : 2 | 1
+TESTREG : 2 | 2
+TESTREG : 2 | 3
+N_3 @ 655 	| ld : 134807571, r5 
+TESTREG : 4 | 0
+TESTREG : 4 | 1
+TESTREG : 4 | 2
+TESTREG : 4 | 3
+N_1 @ 612 	| ld : 190056194, r5 
+TESTREG : 4 | 0
+TESTREG : 4 | 1
+TESTREG : 4 | 2
+TESTREG : 4 | 3
+N_3 @ 662 	| ld : 134807571, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_1 @ 619 	| ld : 190056194, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_3 @ 669 	| ld : 0, r16 
+TESTREG : 15 | 0
+TESTREG : 15 | 1
+TESTREG : 15 | 2
+TESTREG : 15 | 3
+N_1 @ 626 	| ld : 0, r16 
+TESTREG : 15 | 0
+TESTREG : 15 | 1
+TESTREG : 15 | 2
+TESTREG : 15 | 3
+N_2 @ 223 	| fork : 2 @ -77 (146)
+N_3 @ 676 	| zjmp : @ 405 -> SUCCESS 1078
+N_2 @ 226 	| st : r1 6 (6)
+index: 6, p->index: 226
+write_memory @ 232
+write_memory @ 233
+write_memory @ 234
+write_memory @ 235
+N_1 @ 633 	| zjmp : @ 448 -> SUCCESS 1078
+N_4 @ 146 	| live : -42
+N_2 @ 231 	| live : 1
+N_2 @ 236 	| or : 	or
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_2 @ 241 	| ld : 1880161814, r9 
+TESTREG : 8 | 0
+TESTREG : 8 | 1
+TESTREG : 8 | 2
+TESTREG : 8 | 3
+N_3 @ 1081 	| sti : Test
+r3, 2 + 4 (511)
+index: 511, p->index: 1081
+write_memory @ 1592
+write_memory @ 1593
+write_memory @ 1594
+write_memory @ 1595
+N_1 @ 1081 	| sti : Test
+r3, 2 + 4 (507)
+index: 507, p->index: 1081
+write_memory @ 1588
+write_memory @ 1589
+write_memory @ 1590
+write_memory @ 1591
+N_2 @ 248 	| ld : 1879571989, r10 
+TESTREG : 9 | 0
+TESTREG : 9 | 1
+TESTREG : 9 | 2
+TESTREG : 9 | 3
+N_4 @ 151 	| sti : Test
+r1, 65398 + 1 (375)
+index: 375, p->index: 151
+write_memory @ 526
+write_memory @ 527
+write_memory @ 528
+write_memory @ 529
+N_2 @ 255 	| ld : 34209281, r11 
+TESTREG : 10 | 0
+TESTREG : 10 | 1
+TESTREG : 10 | 2
+TESTREG : 10 | 3
+N_4 @ 158 	| ld : 57672959, r10 
+TESTREG : 9 | 0
+TESTREG : 9 | 1
+TESTREG : 9 | 2
+TESTREG : 9 | 3
+N_4 @ 165 	| ld : -30, r11 
+TESTREG : 10 | 0
+TESTREG : 10 | 1
+TESTREG : 10 | 2
+TESTREG : 10 | 3
+N_4 @ 172 	| ld : -5, r12 
+TESTREG : 11 | 0
+TESTREG : 11 | 1
+TESTREG : 11 | 2
+TESTREG : 11 | 3
+N_3 @ 1086 	| zjmp : @ 502 -> SUCCESS 1585
+N_1 @ 1086 	| zjmp : @ 502 -> SUCCESS 1585
+N_4 @ 179 	| st : r1 6 (6)
+index: 6, p->index: 179
+write_memory @ 185
+write_memory @ 186
+write_memory @ 187
+write_memory @ 188
+N_4 @ 184 	| live : 1
+N_3 @ 1588 	| sti : Test
+r5, 2 + 6 (511)
+index: 511, p->index: 1588
+write_memory @ 2099
+write_memory @ 2100
+write_memory @ 2101
+write_memory @ 2102
+N_1 @ 1588 	| sti : Test
+r5, 2 + 6 (507)
+index: 507, p->index: 1588
+write_memory @ 2095
+write_memory @ 2096
+write_memory @ 2097
+write_memory @ 2098
+N_3 @ 1593 	| zjmp : @ 502 -> SUCCESS 2092
+N_1 @ 1593 	| zjmp : @ 502 -> SUCCESS 2092
+N_3 @ 2095 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2095
+write_memory @ 2123
+write_memory @ 2124
+write_memory @ 2125
+write_memory @ 2126
+N_1 @ 2095 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2095
+write_memory @ 2119
+write_memory @ 2120
+write_memory @ 2121
+write_memory @ 2122
+N_3 @ 2100 	| zjmp : @ 19 -> SUCCESS 2116
+N_1 @ 2100 	| zjmp : @ 19 -> SUCCESS 2116
+N_3 @ 2119 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2119
+write_memory @ 2147
+write_memory @ 2148
+write_memory @ 2149
+write_memory @ 2150
+N_1 @ 2119 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2119
+write_memory @ 2143
+write_memory @ 2144
+write_memory @ 2145
+write_memory @ 2146
+N_3 @ 2124 	| zjmp : @ 19 -> SUCCESS 2140
+N_1 @ 2124 	| zjmp : @ 19 -> SUCCESS 2140
+N_3 @ 2143 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2143
+write_memory @ 2171
+write_memory @ 2172
+write_memory @ 2173
+write_memory @ 2174
+N_1 @ 2143 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2143
+write_memory @ 2167
+write_memory @ 2168
+write_memory @ 2169
+write_memory @ 2170
+N_3 @ 2148 	| zjmp : @ 19 -> SUCCESS 2164
+N_1 @ 2148 	| zjmp : @ 19 -> SUCCESS 2164
+N_3 @ 2167 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2167
+write_memory @ 2195
+write_memory @ 2196
+write_memory @ 2197
+write_memory @ 2198
+N_1 @ 2167 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2167
+write_memory @ 2191
+write_memory @ 2192
+write_memory @ 2193
+write_memory @ 2194
+N_3 @ 2172 	| zjmp : @ 19 -> SUCCESS 2188
+N_1 @ 2172 	| zjmp : @ 19 -> SUCCESS 2188
+N_3 @ 2191 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2191
+write_memory @ 2219
+write_memory @ 2220
+write_memory @ 2221
+write_memory @ 2222
+N_1 @ 2191 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2191
+write_memory @ 2215
+write_memory @ 2216
+write_memory @ 2217
+write_memory @ 2218
+N_3 @ 2196 	| zjmp : @ 19 -> SUCCESS 2212
+N_1 @ 2196 	| zjmp : @ 19 -> SUCCESS 2212
+N_3 @ 2215 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2215
+write_memory @ 2243
+write_memory @ 2244
+write_memory @ 2245
+write_memory @ 2246
+N_1 @ 2215 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2215
+write_memory @ 2239
+write_memory @ 2240
+write_memory @ 2241
+write_memory @ 2242
+N_3 @ 2220 	| zjmp : @ 19 -> SUCCESS 2236
+N_1 @ 2220 	| zjmp : @ 19 -> SUCCESS 2236
+N_3 @ 2239 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2239
+write_memory @ 2267
+write_memory @ 2268
+write_memory @ 2269
+write_memory @ 2270
+N_1 @ 2239 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2239
+write_memory @ 2263
+write_memory @ 2264
+write_memory @ 2265
+write_memory @ 2266
+N_3 @ 2244 	| zjmp : @ 19 -> SUCCESS 2260
+N_1 @ 2244 	| zjmp : @ 19 -> SUCCESS 2260
+N_3 @ 2263 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2263
+write_memory @ 2291
+write_memory @ 2292
+write_memory @ 2293
+write_memory @ 2294
+N_1 @ 2263 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2263
+write_memory @ 2287
+write_memory @ 2288
+write_memory @ 2289
+write_memory @ 2290
+N_3 @ 2268 	| zjmp : @ 19 -> SUCCESS 2284
+N_1 @ 2268 	| zjmp : @ 19 -> SUCCESS 2284
+N_3 @ 2287 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2287
+write_memory @ 2315
+write_memory @ 2316
+write_memory @ 2317
+write_memory @ 2318
+N_1 @ 2287 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2287
+write_memory @ 2311
+write_memory @ 2312
+write_memory @ 2313
+write_memory @ 2314
+N_3 @ 2292 	| zjmp : @ 19 -> SUCCESS 2308
+N_1 @ 2292 	| zjmp : @ 19 -> SUCCESS 2308
+N_3 @ 2311 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2311
+write_memory @ 2339
+write_memory @ 2340
+write_memory @ 2341
+write_memory @ 2342
+N_1 @ 2311 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2311
+write_memory @ 2335
+write_memory @ 2336
+write_memory @ 2337
+write_memory @ 2338
+N_3 @ 2316 	| zjmp : @ 19 -> SUCCESS 2332
+N_1 @ 2316 	| zjmp : @ 19 -> SUCCESS 2332
+N_3 @ 2335 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2335
+write_memory @ 2363
+write_memory @ 2364
+write_memory @ 2365
+write_memory @ 2366
+N_1 @ 2335 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2335
+write_memory @ 2359
+write_memory @ 2360
+write_memory @ 2361
+write_memory @ 2362
+N_3 @ 2340 	| zjmp : @ 19 -> SUCCESS 2356
+N_1 @ 2340 	| zjmp : @ 19 -> SUCCESS 2356
+N_3 @ 2359 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2359
+write_memory @ 2387
+write_memory @ 2388
+write_memory @ 2389
+write_memory @ 2390
+N_1 @ 2359 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2359
+write_memory @ 2383
+write_memory @ 2384
+write_memory @ 2385
+write_memory @ 2386
+N_3 @ 2364 	| zjmp : @ 19 -> SUCCESS 2380
+N_1 @ 2364 	| zjmp : @ 19 -> SUCCESS 2380
+N_3 @ 2383 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2383
+write_memory @ 2411
+write_memory @ 2412
+write_memory @ 2413
+write_memory @ 2414
+N_1 @ 2383 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2383
+write_memory @ 2407
+write_memory @ 2408
+write_memory @ 2409
+write_memory @ 2410
+N_3 @ 2388 	| zjmp : @ 19 -> SUCCESS 2404
+N_1 @ 2388 	| zjmp : @ 19 -> SUCCESS 2404
+N_3 @ 2407 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2407
+write_memory @ 2435
+write_memory @ 2436
+write_memory @ 2437
+write_memory @ 2438
+N_1 @ 2407 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2407
+write_memory @ 2431
+write_memory @ 2432
+write_memory @ 2433
+write_memory @ 2434
+N_3 @ 2412 	| zjmp : @ 19 -> SUCCESS 2428
+N_1 @ 2412 	| zjmp : @ 19 -> SUCCESS 2428
+N_3 @ 2431 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2431
+write_memory @ 2459
+write_memory @ 2460
+write_memory @ 2461
+write_memory @ 2462
+N_1 @ 2431 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2431
+write_memory @ 2455
+write_memory @ 2456
+write_memory @ 2457
+write_memory @ 2458
+N_3 @ 2436 	| zjmp : @ 19 -> SUCCESS 2452
+N_1 @ 2436 	| zjmp : @ 19 -> SUCCESS 2452
+N_3 @ 2455 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2455
+write_memory @ 2483
+write_memory @ 2484
+write_memory @ 2485
+write_memory @ 2486
+N_1 @ 2455 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2455
+write_memory @ 2479
+write_memory @ 2480
+write_memory @ 2481
+write_memory @ 2482
+N_3 @ 2460 	| zjmp : @ 19 -> SUCCESS 2476
+N_1 @ 2460 	| zjmp : @ 19 -> SUCCESS 2476
+N_2 @ 262 	| fork : 2 @ 45 (307)
+N_3 @ 2479 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2479
+write_memory @ 2507
+write_memory @ 2508
+write_memory @ 2509
+write_memory @ 2510
+N_1 @ 2479 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2479
+write_memory @ 2503
+write_memory @ 2504
+write_memory @ 2505
+write_memory @ 2506
+N_5 @ 307 	| live : 1
+N_2 @ 265 	| live : 1
+N_3 @ 2484 	| zjmp : @ 19 -> SUCCESS 2500
+N_1 @ 2484 	| zjmp : @ 19 -> SUCCESS 2500
+N_4 @ 189 	| fork : 4 @ -176 (13)
+N_4 @ 192 	| ld : -165, r13 
+TESTREG : 12 | 0
+TESTREG : 12 | 1
+TESTREG : 12 | 2
+TESTREG : 12 | 3
+N_6 @ 13 	| live : -42
+N_4 @ 199 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_3 @ 2503 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2503
+write_memory @ 2531
+write_memory @ 2532
+write_memory @ 2533
+write_memory @ 2534
+N_1 @ 2503 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2503
+write_memory @ 2527
+write_memory @ 2528
+write_memory @ 2529
+write_memory @ 2530
+N_4 @ 206 	| zjmp : @ -22 -> SUCCESS 181
+N_6 @ 18 	| sti : Test
+r10, 11 + 13 (-30)
+index: -30, p->index: 18
+write_memory @ 6
+write_memory @ 7
+write_memory @ 8
+write_memory @ 9
+N_4 @ 184 	| live : 1
+N_3 @ 2508 	| zjmp : @ 19 -> SUCCESS 2524
+N_1 @ 2508 	| zjmp : @ 19 -> SUCCESS 2524
+N_6 @ 23 	| add : 	add r12 + r13 -> r13
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2527 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2527
+write_memory @ 2555
+write_memory @ 2556
+write_memory @ 2557
+write_memory @ 2558
+N_1 @ 2527 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2527
+write_memory @ 2551
+write_memory @ 2552
+write_memory @ 2553
+write_memory @ 2554
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2532 	| zjmp : @ 19 -> SUCCESS 2548
+N_1 @ 2532 	| zjmp : @ 19 -> SUCCESS 2548
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_6 @ 13 	| live : -42
+N_3 @ 2551 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2551
+write_memory @ 2579
+write_memory @ 2580
+write_memory @ 2581
+write_memory @ 2582
+N_1 @ 2551 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2551
+write_memory @ 2575
+write_memory @ 2576
+write_memory @ 2577
+write_memory @ 2578
+N_3 @ 2556 	| zjmp : @ 19 -> SUCCESS 2572
+N_1 @ 2556 	| zjmp : @ 19 -> SUCCESS 2572
+N_6 @ 18 	| sti : Test
+r10, 11 + 13 (-291)
+index: -291, p->index: 18
+write_memory @ 255
+write_memory @ 254
+write_memory @ 253
+write_memory @ 252
+N_6 @ 23 	| add : 	add r12 + r13 -> r13
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2575 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2575
+write_memory @ 2603
+write_memory @ 2604
+write_memory @ 2605
+write_memory @ 2606
+N_1 @ 2575 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2575
+write_memory @ 2599
+write_memory @ 2600
+write_memory @ 2601
+write_memory @ 2602
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2580 	| zjmp : @ 19 -> SUCCESS 2596
+N_1 @ 2580 	| zjmp : @ 19 -> SUCCESS 2596
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_3 @ 2599 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2599
+write_memory @ 2627
+write_memory @ 2628
+write_memory @ 2629
+write_memory @ 2630
+N_1 @ 2599 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2599
+write_memory @ 2623
+write_memory @ 2624
+write_memory @ 2625
+write_memory @ 2626
+N_6 @ 13 	| live : -42
+N_3 @ 2604 	| zjmp : @ 19 -> SUCCESS 2620
+N_1 @ 2604 	| zjmp : @ 19 -> SUCCESS 2620
+N_6 @ 18 	| sti : Test
+r10, 11 + 13 (-40)
+index: -40, p->index: 18
+write_memory @ 4
+write_memory @ 3
+write_memory @ 2
+write_memory @ 1
+N_6 @ 23 	| add : 	add r12 + r13 -> r13
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2623 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2623
+write_memory @ 2651
+write_memory @ 2652
+write_memory @ 2653
+write_memory @ 2654
+N_1 @ 2623 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2623
+write_memory @ 2647
+write_memory @ 2648
+write_memory @ 2649
+write_memory @ 2650
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_3 @ 2628 	| zjmp : @ 19 -> SUCCESS 2644
+N_1 @ 2628 	| zjmp : @ 19 -> SUCCESS 2644
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_3 @ 2647 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2647
+write_memory @ 2675
+write_memory @ 2676
+write_memory @ 2677
+write_memory @ 2678
+N_1 @ 2647 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2647
+write_memory @ 2671
+write_memory @ 2672
+write_memory @ 2673
+write_memory @ 2674
+N_6 @ 13 	| live : -42
+N_3 @ 2652 	| zjmp : @ 19 -> SUCCESS 2668
+N_1 @ 2652 	| zjmp : @ 19 -> SUCCESS 2668
+N_6 @ 18 	| sti : Test
+r10, 11 + 13 (-301)
+index: -301, p->index: 18
+write_memory @ 265
+write_memory @ 264
+write_memory @ 263
+write_memory @ 262
+N_6 @ 23 	| add : 	add r12 + r13 -> r13
+N_3 @ 2671 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2671
+write_memory @ 2699
+write_memory @ 2700
+write_memory @ 2701
+write_memory @ 2702
+N_1 @ 2671 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2671
+write_memory @ 2695
+write_memory @ 2696
+write_memory @ 2697
+write_memory @ 2698
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2676 	| zjmp : @ 19 -> SUCCESS 2692
+N_1 @ 2676 	| zjmp : @ 19 -> SUCCESS 2692
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2695 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2695
+write_memory @ 2723
+write_memory @ 2724
+write_memory @ 2725
+write_memory @ 2726
+N_1 @ 2695 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2695
+write_memory @ 2719
+write_memory @ 2720
+write_memory @ 2721
+write_memory @ 2722
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_6 @ 13 	| live : -42
+N_3 @ 2700 	| zjmp : @ 19 -> SUCCESS 2716
+N_1 @ 2700 	| zjmp : @ 19 -> SUCCESS 2716
+N_6 @ 18 	| sti : Test
+r10, 11 + 13 (-50)
+index: -50, p->index: 18
+write_memory @ 14
+write_memory @ 13
+write_memory @ 12
+write_memory @ 11
+N_3 @ 2719 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2719
+write_memory @ 2747
+write_memory @ 2748
+write_memory @ 2749
+write_memory @ 2750
+N_1 @ 2719 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2719
+write_memory @ 2743
+write_memory @ 2744
+write_memory @ 2745
+write_memory @ 2746
+N_6 @ 23 	| add : 	add r12 + r13 -> r13
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2724 	| zjmp : @ 19 -> SUCCESS 2740
+N_1 @ 2724 	| zjmp : @ 19 -> SUCCESS 2740
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_3 @ 2743 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2743
+write_memory @ 2771
+write_memory @ 2772
+write_memory @ 2773
+write_memory @ 2774
+N_1 @ 2743 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2743
+write_memory @ 2767
+write_memory @ 2768
+write_memory @ 2769
+write_memory @ 2770
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_6 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_3 @ 2748 	| zjmp : @ 19 -> SUCCESS 2764
+N_1 @ 2748 	| zjmp : @ 19 -> SUCCESS 2764
+N_6 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_3 @ 2767 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2767
+write_memory @ 2795
+write_memory @ 2796
+write_memory @ 2797
+write_memory @ 2798
+N_1 @ 2767 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2767
+write_memory @ 2791
+write_memory @ 2792
+write_memory @ 2793
+write_memory @ 2794
+N_6 @ 22 	| lld : 	lld
+N_3 @ 2772 	| zjmp : @ 19 -> SUCCESS 2788
+N_1 @ 2772 	| zjmp : @ 19 -> SUCCESS 2788
+N_3 @ 2791 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2791
+write_memory @ 2819
+write_memory @ 2820
+write_memory @ 2821
+write_memory @ 2822
+N_1 @ 2791 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2791
+write_memory @ 2815
+write_memory @ 2816
+write_memory @ 2817
+write_memory @ 2818
+N_3 @ 2796 	| zjmp : @ 19 -> SUCCESS 2812
+N_1 @ 2796 	| zjmp : @ 19 -> SUCCESS 2812
+N_3 @ 2815 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2815
+write_memory @ 2843
+write_memory @ 2844
+write_memory @ 2845
+write_memory @ 2846
+N_1 @ 2815 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2815
+write_memory @ 2839
+write_memory @ 2840
+write_memory @ 2841
+write_memory @ 2842
+N_3 @ 2820 	| zjmp : @ 19 -> SUCCESS 2836
+N_1 @ 2820 	| zjmp : @ 19 -> SUCCESS 2836
+N_3 @ 2839 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2839
+write_memory @ 2867
+write_memory @ 2868
+write_memory @ 2869
+write_memory @ 2870
+N_1 @ 2839 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2839
+write_memory @ 2863
+write_memory @ 2864
+write_memory @ 2865
+write_memory @ 2866
+N_3 @ 2844 	| zjmp : @ 19 -> SUCCESS 2860
+N_1 @ 2844 	| zjmp : @ 19 -> SUCCESS 2860
+N_3 @ 2863 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2863
+write_memory @ 2891
+write_memory @ 2892
+write_memory @ 2893
+write_memory @ 2894
+N_1 @ 2863 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2863
+write_memory @ 2887
+write_memory @ 2888
+write_memory @ 2889
+write_memory @ 2890
+N_3 @ 2868 	| zjmp : @ 19 -> SUCCESS 2884
+N_1 @ 2868 	| zjmp : @ 19 -> SUCCESS 2884
+N_3 @ 2887 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2887
+write_memory @ 2915
+write_memory @ 2916
+write_memory @ 2917
+write_memory @ 2918
+N_1 @ 2887 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2887
+write_memory @ 2911
+write_memory @ 2912
+write_memory @ 2913
+write_memory @ 2914
+N_3 @ 2892 	| zjmp : @ 19 -> SUCCESS 2908
+N_1 @ 2892 	| zjmp : @ 19 -> SUCCESS 2908
+N_5 @ 312 	| fork : 5 @ 27 (339)
+N_2 @ 270 	| fork : 2 @ 13 (283)
+N_3 @ 2911 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2911
+write_memory @ 2939
+write_memory @ 2940
+write_memory @ 2941
+write_memory @ 2942
+N_1 @ 2911 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2911
+write_memory @ 2935
+write_memory @ 2936
+write_memory @ 2937
+write_memory @ 2938
+N_8 @ 283 	| ld : 191104768, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_7 @ 339 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_5 @ 315 	| ld : 101056768, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_2 @ 273 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_8 @ 290 	| ld : 5, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_7 @ 346 	| ld : 12, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_5 @ 322 	| ld : 9, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_8 @ 297 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_7 @ 353 	| ld : 0, r0 
+N_5 @ 329 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_7 @ 359 	| ld : 0, r0 
+N_3 @ 2916 	| zjmp : @ 19 -> SUCCESS 2932
+N_1 @ 2916 	| zjmp : @ 19 -> SUCCESS 2932
+N_2 @ 280 	| zjmp : @ 153 -> SUCCESS 430
+N_7 @ 362 	| st : r0 0 (0)
+N_2 @ 433 	| ld : 16, r12 
+TESTREG : 11 | 0
+TESTREG : 11 | 1
+TESTREG : 11 | 2
+TESTREG : 11 | 3
+N_8 @ 304 	| zjmp : @ 59 -> SUCCESS 360
+N_5 @ 336 	| zjmp : @ 27 -> SUCCESS 360
+N_8 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_5 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_2 @ 440 	| add : 	add r12 + r9 -> r9
+N_7 @ 365 	| live : 393472
+N_3 @ 2935 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2935
+write_memory @ 2963
+write_memory @ 2964
+write_memory @ 2965
+write_memory @ 2966
+N_1 @ 2935 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2935
+write_memory @ 2959
+write_memory @ 2960
+write_memory @ 2961
+write_memory @ 2962
+N_8 @ 368 	| live : 1
+N_5 @ 368 	| live : 1
+N_2 @ 445 	| add : 	add r12 + r10 -> r10
+N_7 @ 372 	| live : 190318342
+N_4 @ 189 	| fork : 4 @ -176 (13)
+N_2 @ 450 	| add : 	add r12 + r11 -> r11
+N_7 @ 377 	| live : 1023578112
+N_4 @ 192 	| ld : -165, r13 
+TESTREG : 12 | 0
+TESTREG : 12 | 1
+TESTREG : 12 | 2
+TESTREG : 12 | 3
+N_9 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_2 @ 455 	| st : r1 6 (6)
+index: 6, p->index: 455
+write_memory @ 461
+write_memory @ 462
+write_memory @ 463
+write_memory @ 464
+N_4 @ 199 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_3 @ 2940 	| zjmp : @ 19 -> SUCCESS 2956
+N_1 @ 2940 	| zjmp : @ 19 -> SUCCESS 2956
+N_7 @ 385 	| ld : 0, r0 
+N_8 @ 373 	| sti : Test
+r7, 6 + 317 (322)
+index: 322, p->index: 373
+write_memory @ 695
+write_memory @ 696
+write_memory @ 697
+write_memory @ 698
+N_5 @ 373 	| sti : Test
+r7, 6 + 317 (326)
+index: 326, p->index: 373
+write_memory @ 699
+write_memory @ 700
+write_memory @ 701
+write_memory @ 702
+N_2 @ 460 	| live : 1
+N_8 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_5 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_2 @ 465 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_7 @ 387 	| live : 889939984
+N_4 @ 206 	| zjmp : @ -22 -> SUCCESS 181
+N_9 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_7 @ 395 	| live : 201367554
+N_3 @ 2959 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2959
+write_memory @ 2987
+write_memory @ 2988
+write_memory @ 2989
+write_memory @ 2990
+N_1 @ 2959 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2959
+write_memory @ 2983
+write_memory @ 2984
+write_memory @ 2985
+write_memory @ 2986
+N_4 @ 184 	| live : 1
+N_9 @ 22 	| lld : 	lld
+N_8 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_5 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_2 @ 472 	| sti : Test
+r1, 65123 + 1 (100)
+index: 100, p->index: 472
+write_memory @ 572
+write_memory @ 573
+write_memory @ 574
+write_memory @ 575
+N_3 @ 2964 	| zjmp : @ 19 -> SUCCESS 2980
+N_1 @ 2964 	| zjmp : @ 19 -> SUCCESS 2980
+N_8 @ 695 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 695
+write_memory @ 706
+write_memory @ 707
+write_memory @ 708
+write_memory @ 709
+N_7 @ 406 	| sti : Test
+r16, 174 + 1 (175)
+index: 175, p->index: 406
+write_memory @ 581
+write_memory @ 582
+write_memory @ 583
+write_memory @ 584
+N_5 @ 695 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 695
+write_memory @ 710
+write_memory @ 711
+write_memory @ 712
+write_memory @ 713
+N_7 @ 413 	| st : r1 6 (6)
+index: 6, p->index: 413
+write_memory @ 419
+write_memory @ 420
+write_memory @ 421
+write_memory @ 422
+N_2 @ 479 	| sti : Test
+r9, 65176 + 1 (153)
+index: 153, p->index: 479
+write_memory @ 632
+write_memory @ 633
+write_memory @ 634
+write_memory @ 635
+N_8 @ 701 	| live : 0
+N_5 @ 701 	| live : 0
+N_3 @ 2983 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 2983
+write_memory @ 3011
+write_memory @ 3012
+write_memory @ 3013
+write_memory @ 3014
+N_1 @ 2983 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2983
+write_memory @ 3007
+write_memory @ 3008
+write_memory @ 3009
+write_memory @ 3010
+N_7 @ 418 	| live : 1
+N_7 @ 423 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_2 @ 486 	| sti : Test
+r10, 65174 + 1 (151)
+index: 151, p->index: 486
+write_memory @ 637
+write_memory @ 638
+write_memory @ 639
+write_memory @ 640
+N_3 @ 2988 	| zjmp : @ 19 -> SUCCESS 3004
+N_1 @ 2988 	| zjmp : @ 19 -> SUCCESS 3004
+N_8 @ 706 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 706
+write_memory @ 717
+write_memory @ 718
+write_memory @ 719
+write_memory @ 720
+N_5 @ 706 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 706
+write_memory @ 721
+write_memory @ 722
+write_memory @ 723
+write_memory @ 724
+N_7 @ 430 	| zjmp : @ 511 -> SUCCESS 938
+N_8 @ 712 	| live : 0
+N_5 @ 712 	| live : 0
+N_2 @ 493 	| sti : Test
+r11, 65172 + 6 (154)
+index: 154, p->index: 493
+write_memory @ 647
+write_memory @ 648
+write_memory @ 649
+write_memory @ 650
+N_3 @ 3007 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3007
+write_memory @ 3035
+write_memory @ 3036
+write_memory @ 3037
+write_memory @ 3038
+N_1 @ 3007 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3007
+write_memory @ 3031
+write_memory @ 3032
+write_memory @ 3033
+write_memory @ 3034
+N_8 @ 717 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 717
+write_memory @ 728
+write_memory @ 729
+write_memory @ 730
+write_memory @ 731
+N_5 @ 717 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 717
+write_memory @ 732
+write_memory @ 733
+write_memory @ 734
+write_memory @ 735
+N_3 @ 3012 	| zjmp : @ 19 -> SUCCESS 3028
+N_1 @ 3012 	| zjmp : @ 19 -> SUCCESS 3028
+N_8 @ 723 	| live : 0
+N_5 @ 723 	| live : 0
+N_3 @ 3031 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3031
+write_memory @ 3059
+write_memory @ 3060
+write_memory @ 3061
+write_memory @ 3062
+N_1 @ 3031 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3031
+write_memory @ 3055
+write_memory @ 3056
+write_memory @ 3057
+write_memory @ 3058
+N_8 @ 728 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 728
+write_memory @ 739
+write_memory @ 740
+write_memory @ 741
+write_memory @ 742
+N_5 @ 728 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 728
+write_memory @ 743
+write_memory @ 744
+write_memory @ 745
+write_memory @ 746
+N_8 @ 734 	| live : 0
+N_5 @ 734 	| live : 0
+N_3 @ 3036 	| zjmp : @ 19 -> SUCCESS 3052
+N_1 @ 3036 	| zjmp : @ 19 -> SUCCESS 3052
+N_8 @ 739 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 739
+write_memory @ 750
+write_memory @ 751
+write_memory @ 752
+write_memory @ 753
+N_5 @ 739 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 739
+write_memory @ 754
+write_memory @ 755
+write_memory @ 756
+write_memory @ 757
+N_3 @ 3055 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3055
+write_memory @ 3083
+write_memory @ 3084
+write_memory @ 3085
+write_memory @ 3086
+N_1 @ 3055 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3055
+write_memory @ 3079
+write_memory @ 3080
+write_memory @ 3081
+write_memory @ 3082
+N_8 @ 745 	| live : 0
+N_5 @ 745 	| live : 0
+N_3 @ 3060 	| zjmp : @ 19 -> SUCCESS 3076
+N_1 @ 3060 	| zjmp : @ 19 -> SUCCESS 3076
+N_8 @ 750 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 750
+write_memory @ 761
+write_memory @ 762
+write_memory @ 763
+write_memory @ 764
+N_5 @ 750 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 750
+write_memory @ 765
+write_memory @ 766
+write_memory @ 767
+write_memory @ 768
+N_8 @ 756 	| live : 0
+N_5 @ 756 	| live : 0
+N_3 @ 3079 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3079
+write_memory @ 3107
+write_memory @ 3108
+write_memory @ 3109
+write_memory @ 3110
+N_1 @ 3079 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3079
+write_memory @ 3103
+write_memory @ 3104
+write_memory @ 3105
+write_memory @ 3106
+N_7 @ 1081 	| sti : Test
+r3, 2 + 4 (507)
+index: 507, p->index: 1081
+write_memory @ 1588
+write_memory @ 1589
+write_memory @ 1590
+write_memory @ 1591
+N_8 @ 761 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 761
+write_memory @ 772
+write_memory @ 773
+write_memory @ 774
+write_memory @ 775
+N_5 @ 761 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 761
+write_memory @ 776
+write_memory @ 777
+write_memory @ 778
+write_memory @ 779
+N_3 @ 3084 	| zjmp : @ 19 -> SUCCESS 3100
+N_1 @ 3084 	| zjmp : @ 19 -> SUCCESS 3100
+N_8 @ 767 	| live : 0
+N_5 @ 767 	| live : 0
+N_7 @ 1086 	| zjmp : @ 502 -> SUCCESS 1585
+N_7 @ 1592 	| and : 	and
+N_3 @ 3103 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3103
+write_memory @ 3131
+write_memory @ 3132
+write_memory @ 3133
+write_memory @ 3134
+N_1 @ 3103 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3103
+write_memory @ 3127
+write_memory @ 3128
+write_memory @ 3129
+write_memory @ 3130
+N_8 @ 772 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 772
+write_memory @ 783
+write_memory @ 784
+write_memory @ 785
+write_memory @ 786
+N_7 @ 1594 	| live : -167772160
+N_5 @ 772 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 772
+write_memory @ 787
+write_memory @ 788
+write_memory @ 789
+write_memory @ 790
+N_8 @ 778 	| live : 0
+N_5 @ 778 	| live : 0
+N_3 @ 3108 	| zjmp : @ 19 -> SUCCESS 3124
+N_1 @ 3108 	| zjmp : @ 19 -> SUCCESS 3124
+N_8 @ 783 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 783
+write_memory @ 794
+write_memory @ 795
+write_memory @ 796
+write_memory @ 797
+N_5 @ 783 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 783
+write_memory @ 798
+write_memory @ 799
+write_memory @ 800
+write_memory @ 801
+N_3 @ 3127 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3127
+write_memory @ 3155
+write_memory @ 3156
+write_memory @ 3157
+write_memory @ 3158
+N_1 @ 3127 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3127
+write_memory @ 3151
+write_memory @ 3152
+write_memory @ 3153
+write_memory @ 3154
+N_8 @ 789 	| live : 0
+N_5 @ 789 	| live : 0
+N_3 @ 3132 	| zjmp : @ 19 -> SUCCESS 3148
+N_1 @ 3132 	| zjmp : @ 19 -> SUCCESS 3148
+N_8 @ 794 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 794
+write_memory @ 805
+write_memory @ 806
+write_memory @ 807
+write_memory @ 808
+N_5 @ 794 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 794
+write_memory @ 809
+write_memory @ 810
+write_memory @ 811
+write_memory @ 812
+N_8 @ 800 	| live : 0
+N_5 @ 800 	| live : 0
+N_3 @ 3151 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3151
+write_memory @ 3179
+write_memory @ 3180
+write_memory @ 3181
+write_memory @ 3182
+N_1 @ 3151 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3151
+write_memory @ 3175
+write_memory @ 3176
+write_memory @ 3177
+write_memory @ 3178
+N_3 @ 3156 	| zjmp : @ 19 -> SUCCESS 3172
+N_1 @ 3156 	| zjmp : @ 19 -> SUCCESS 3172
+N_8 @ 805 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 805
+write_memory @ 816
+write_memory @ 817
+write_memory @ 818
+write_memory @ 819
+N_5 @ 805 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 805
+write_memory @ 820
+write_memory @ 821
+write_memory @ 822
+write_memory @ 823
+N_8 @ 811 	| live : 0
+N_5 @ 811 	| live : 0
+N_3 @ 3175 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3175
+write_memory @ 3203
+write_memory @ 3204
+write_memory @ 3205
+write_memory @ 3206
+N_1 @ 3175 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3175
+write_memory @ 3199
+write_memory @ 3200
+write_memory @ 3201
+write_memory @ 3202
+N_8 @ 816 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 816
+write_memory @ 827
+write_memory @ 828
+write_memory @ 829
+write_memory @ 830
+N_5 @ 816 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 816
+write_memory @ 831
+write_memory @ 832
+write_memory @ 833
+write_memory @ 834
+N_3 @ 3180 	| zjmp : @ 19 -> SUCCESS 3196
+N_1 @ 3180 	| zjmp : @ 19 -> SUCCESS 3196
+N_8 @ 822 	| live : 0
+N_5 @ 822 	| live : 0
+N_6 @ 25 	| fork : 6 @ 3341 (294)
+N_3 @ 3199 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3199
+write_memory @ 3227
+write_memory @ 3228
+write_memory @ 3229
+write_memory @ 3230
+N_1 @ 3199 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3199
+write_memory @ 3223
+write_memory @ 3224
+write_memory @ 3225
+write_memory @ 3226
+N_8 @ 827 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 827
+write_memory @ 838
+write_memory @ 839
+write_memory @ 840
+write_memory @ 841
+N_5 @ 827 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 827
+write_memory @ 842
+write_memory @ 843
+write_memory @ 844
+write_memory @ 845
+N_6 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_10 @ 295 	| sub : 	sub r0 + r0 -> r0
+N_8 @ 833 	| live : 0
+N_5 @ 833 	| live : 0
+N_10 @ 297 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_3 @ 3204 	| zjmp : @ 19 -> SUCCESS 3220
+N_1 @ 3204 	| zjmp : @ 19 -> SUCCESS 3220
+N_6 @ 36 	| zjmp : @ 13 -> FAILED
+N_6 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_10 @ 304 	| zjmp : @ 59 -> SUCCESS 360
+N_8 @ 838 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 838
+write_memory @ 849
+write_memory @ 850
+write_memory @ 851
+write_memory @ 852
+N_5 @ 838 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 838
+write_memory @ 853
+write_memory @ 854
+write_memory @ 855
+write_memory @ 856
+N_10 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_3 @ 3223 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3223
+write_memory @ 3251
+write_memory @ 3252
+write_memory @ 3253
+write_memory @ 3254
+N_1 @ 3223 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3223
+write_memory @ 3247
+write_memory @ 3248
+write_memory @ 3249
+write_memory @ 3250
+N_8 @ 844 	| live : 0
+N_5 @ 844 	| live : 0
+N_10 @ 368 	| live : 1
+N_6 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_6 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_3 @ 3228 	| zjmp : @ 19 -> SUCCESS 3244
+N_1 @ 3228 	| zjmp : @ 19 -> SUCCESS 3244
+N_8 @ 849 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 849
+write_memory @ 860
+write_memory @ 861
+write_memory @ 862
+write_memory @ 863
+N_5 @ 849 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 849
+write_memory @ 864
+write_memory @ 865
+write_memory @ 866
+write_memory @ 867
+N_10 @ 373 	| sti : Test
+r7, 6 + 317 (56)
+index: 56, p->index: 373
+write_memory @ 429
+write_memory @ 430
+write_memory @ 431
+write_memory @ 432
+N_10 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_6 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_8 @ 855 	| live : 0
+N_5 @ 855 	| live : 0
+N_6 @ 22 	| lld : 	lld
+N_3 @ 3247 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3247
+write_memory @ 3275
+write_memory @ 3276
+write_memory @ 3277
+write_memory @ 3278
+N_1 @ 3247 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3247
+write_memory @ 3271
+write_memory @ 3272
+write_memory @ 3273
+write_memory @ 3274
+N_10 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_8 @ 860 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 860
+write_memory @ 871
+write_memory @ 872
+write_memory @ 873
+write_memory @ 874
+N_5 @ 860 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 860
+write_memory @ 875
+write_memory @ 876
+write_memory @ 877
+write_memory @ 878
+N_3 @ 3252 	| zjmp : @ 19 -> SUCCESS 3268
+N_1 @ 3252 	| zjmp : @ 19 -> SUCCESS 3268
+N_8 @ 866 	| live : 0
+N_5 @ 866 	| live : 0
+N_10 @ 695 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 695
+write_memory @ 952
+write_memory @ 953
+write_memory @ 954
+write_memory @ 955
+N_10 @ 701 	| live : 0
+N_3 @ 3271 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3271
+write_memory @ 3299
+write_memory @ 3300
+write_memory @ 3301
+write_memory @ 3302
+N_1 @ 3271 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3271
+write_memory @ 3295
+write_memory @ 3296
+write_memory @ 3297
+write_memory @ 3298
+N_8 @ 871 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 871
+write_memory @ 882
+write_memory @ 883
+write_memory @ 884
+write_memory @ 885
+N_5 @ 871 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 871
+write_memory @ 886
+write_memory @ 887
+write_memory @ 888
+write_memory @ 889
+N_8 @ 877 	| live : 0
+N_5 @ 877 	| live : 0
+N_3 @ 3276 	| zjmp : @ 19 -> SUCCESS 3292
+N_1 @ 3276 	| zjmp : @ 19 -> SUCCESS 3292
+N_10 @ 706 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 706
+write_memory @ 963
+write_memory @ 964
+write_memory @ 965
+write_memory @ 966
+N_10 @ 712 	| live : 0
+N_8 @ 882 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 882
+write_memory @ 893
+write_memory @ 894
+write_memory @ 895
+write_memory @ 896
+N_5 @ 882 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 882
+write_memory @ 897
+write_memory @ 898
+write_memory @ 899
+write_memory @ 900
+N_3 @ 3295 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3295
+write_memory @ 3323
+write_memory @ 3324
+write_memory @ 3325
+write_memory @ 3326
+N_1 @ 3295 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3295
+write_memory @ 3319
+write_memory @ 3320
+write_memory @ 3321
+write_memory @ 3322
+N_8 @ 888 	| live : 0
+N_5 @ 888 	| live : 0
+N_10 @ 717 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 717
+write_memory @ 974
+write_memory @ 975
+write_memory @ 976
+write_memory @ 977
+N_3 @ 3300 	| zjmp : @ 19 -> SUCCESS 3316
+N_1 @ 3300 	| zjmp : @ 19 -> SUCCESS 3316
+N_10 @ 723 	| live : 0
+N_8 @ 893 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 893
+write_memory @ 904
+write_memory @ 905
+write_memory @ 906
+write_memory @ 907
+N_5 @ 893 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 893
+write_memory @ 908
+write_memory @ 909
+write_memory @ 910
+write_memory @ 911
+N_8 @ 899 	| live : 0
+N_5 @ 899 	| live : 0
+N_3 @ 3319 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3319
+write_memory @ 3347
+write_memory @ 3348
+write_memory @ 3349
+write_memory @ 3350
+N_1 @ 3319 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3319
+write_memory @ 3343
+write_memory @ 3344
+write_memory @ 3345
+write_memory @ 3346
+N_10 @ 728 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 728
+write_memory @ 985
+write_memory @ 986
+write_memory @ 987
+write_memory @ 988
+N_10 @ 734 	| live : 0
+N_3 @ 3324 	| zjmp : @ 19 -> SUCCESS 3340
+N_1 @ 3324 	| zjmp : @ 19 -> SUCCESS 3340
+N_8 @ 904 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 904
+write_memory @ 915
+write_memory @ 916
+write_memory @ 917
+write_memory @ 918
+N_5 @ 904 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 904
+write_memory @ 919
+write_memory @ 920
+write_memory @ 921
+write_memory @ 922
+N_8 @ 910 	| live : 0
+N_5 @ 910 	| live : 0
+N_10 @ 739 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 739
+write_memory @ 996
+write_memory @ 997
+write_memory @ 998
+write_memory @ 999
+N_3 @ 3343 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3343
+write_memory @ 3371
+write_memory @ 3372
+write_memory @ 3373
+write_memory @ 3374
+N_1 @ 3343 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3343
+write_memory @ 3367
+write_memory @ 3368
+write_memory @ 3369
+write_memory @ 3370
+N_10 @ 745 	| live : 0
+N_8 @ 915 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 915
+write_memory @ 926
+write_memory @ 927
+write_memory @ 928
+write_memory @ 929
+N_5 @ 915 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 915
+write_memory @ 930
+write_memory @ 931
+write_memory @ 932
+write_memory @ 933
+N_3 @ 3348 	| zjmp : @ 19 -> SUCCESS 3364
+N_1 @ 3348 	| zjmp : @ 19 -> SUCCESS 3364
+N_8 @ 921 	| live : 0
+N_5 @ 921 	| live : 0
+N_10 @ 750 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 750
+write_memory @ 1007
+write_memory @ 1008
+write_memory @ 1009
+write_memory @ 1010
+N_10 @ 756 	| live : 0
+N_3 @ 3367 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3367
+write_memory @ 3395
+write_memory @ 3396
+write_memory @ 3397
+write_memory @ 3398
+N_1 @ 3367 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3367
+write_memory @ 3391
+write_memory @ 3392
+write_memory @ 3393
+write_memory @ 3394
+N_8 @ 926 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 926
+write_memory @ 937
+write_memory @ 938
+write_memory @ 939
+write_memory @ 940
+N_5 @ 926 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 926
+write_memory @ 941
+write_memory @ 942
+write_memory @ 943
+write_memory @ 944
+N_8 @ 932 	| live : 0
+N_5 @ 932 	| live : 0
+N_10 @ 761 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 761
+write_memory @ 1018
+write_memory @ 1019
+write_memory @ 1020
+write_memory @ 1021
+N_3 @ 3372 	| zjmp : @ 19 -> SUCCESS 3388
+N_1 @ 3372 	| zjmp : @ 19 -> SUCCESS 3388
+N_10 @ 767 	| live : 0
+N_7 @ 2095 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2095
+write_memory @ 2119
+write_memory @ 2120
+write_memory @ 2121
+write_memory @ 2122
+N_8 @ 937 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 937
+write_memory @ 948
+write_memory @ 949
+write_memory @ 950
+write_memory @ 951
+N_5 @ 937 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 937
+write_memory @ 952
+write_memory @ 953
+write_memory @ 954
+write_memory @ 955
+N_4 @ 189 	| fork : 4 @ -176 (13)
+N_9 @ 25 	| fork : 9 @ 3341 (294)
+N_4 @ 192 	| ld : -165, r13 
+TESTREG : 12 | 0
+TESTREG : 12 | 1
+TESTREG : 12 | 2
+TESTREG : 12 | 3
+N_3 @ 3391 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3391
+write_memory @ 3419
+write_memory @ 3420
+write_memory @ 3421
+write_memory @ 3422
+N_1 @ 3391 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3391
+write_memory @ 3415
+write_memory @ 3416
+write_memory @ 3417
+write_memory @ 3418
+N_11 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_8 @ 943 	| live : 0
+N_5 @ 943 	| live : 0
+N_9 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_4 @ 199 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_7 @ 2100 	| zjmp : @ 19 -> FAILED
+N_12 @ 295 	| sub : 	sub r0 + r0 -> r0
+N_10 @ 772 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 772
+write_memory @ 1029
+write_memory @ 1030
+write_memory @ 1031
+write_memory @ 1032
+N_12 @ 297 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_10 @ 778 	| live : 0
+N_3 @ 3396 	| zjmp : @ 19 -> SUCCESS 3412
+N_1 @ 3396 	| zjmp : @ 19 -> SUCCESS 3412
+N_9 @ 36 	| zjmp : @ 13 -> FAILED
+N_4 @ 206 	| zjmp : @ -22 -> SUCCESS 181
+N_11 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_8 @ 948 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 948
+write_memory @ 959
+write_memory @ 960
+write_memory @ 961
+write_memory @ 962
+N_5 @ 948 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 948
+write_memory @ 963
+write_memory @ 964
+write_memory @ 965
+write_memory @ 966
+N_9 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_12 @ 304 	| zjmp : @ 59 -> SUCCESS 360
+N_4 @ 184 	| live : 1
+N_11 @ 22 	| lld : 	lld
+N_8 @ 954 	| live : 0
+N_7 @ 2122 	| live : 134807571
+N_5 @ 954 	| live : 0
+N_12 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_10 @ 783 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 783
+write_memory @ 1040
+write_memory @ 1041
+write_memory @ 1042
+write_memory @ 1043
+N_3 @ 3415 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3415
+write_memory @ 3443
+write_memory @ 3444
+write_memory @ 3445
+write_memory @ 3446
+N_1 @ 3415 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3415
+write_memory @ 3439
+write_memory @ 3440
+write_memory @ 3441
+write_memory @ 3442
+N_12 @ 368 	| live : 1
+N_9 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_10 @ 789 	| live : 0
+N_9 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_8 @ 959 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 959
+write_memory @ 970
+write_memory @ 971
+write_memory @ 972
+write_memory @ 973
+N_5 @ 959 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 959
+write_memory @ 974
+write_memory @ 975
+write_memory @ 976
+write_memory @ 977
+N_3 @ 3420 	| zjmp : @ 19 -> SUCCESS 3436
+N_1 @ 3420 	| zjmp : @ 19 -> SUCCESS 3436
+N_8 @ 965 	| live : 0
+N_5 @ 965 	| live : 0
+N_12 @ 373 	| sti : Test
+r7, 6 + 317 (56)
+index: 56, p->index: 373
+write_memory @ 429
+write_memory @ 430
+write_memory @ 431
+write_memory @ 432
+N_2 @ 500 	| fork : 2 @ -441 (59)
+N_7 @ 2143 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2143
+write_memory @ 2167
+write_memory @ 2168
+write_memory @ 2169
+write_memory @ 2170
+N_12 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_10 @ 794 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 794
+write_memory @ 1051
+write_memory @ 1052
+write_memory @ 1053
+write_memory @ 1054
+N_9 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_13 @ 59 	| live : -42
+N_10 @ 800 	| live : 0
+N_9 @ 22 	| lld : 	lld
+N_3 @ 3439 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3439
+write_memory @ 3467
+write_memory @ 3468
+write_memory @ 3469
+write_memory @ 3470
+N_1 @ 3439 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3439
+write_memory @ 3463
+write_memory @ 3464
+write_memory @ 3465
+write_memory @ 3466
+N_13 @ 64 	| ld : -128, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_8 @ 970 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 970
+write_memory @ 981
+write_memory @ 982
+write_memory @ 983
+write_memory @ 984
+N_5 @ 970 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 970
+write_memory @ 985
+write_memory @ 986
+write_memory @ 987
+write_memory @ 988
+N_2 @ 503 	| zjmp : @ -241 -> SUCCESS 259
+N_7 @ 2148 	| zjmp : @ 19 -> FAILED
+N_12 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_8 @ 976 	| live : 0
+N_5 @ 976 	| live : 0
+N_2 @ 263 	| add : 	add r3 + r0 -> r0
+N_3 @ 3444 	| zjmp : @ 19 -> SUCCESS 3460
+N_1 @ 3444 	| zjmp : @ 19 -> SUCCESS 3460
+N_10 @ 805 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 805
+write_memory @ 1062
+write_memory @ 1063
+write_memory @ 1064
+write_memory @ 1065
+N_2 @ 269 	| live : 201329922
+N_12 @ 695 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 695
+write_memory @ 952
+write_memory @ 953
+write_memory @ 954
+write_memory @ 955
+N_10 @ 811 	| live : 0
+N_7 @ 2170 	| live : 134807571
+N_2 @ 279 	| ld : 0, r0 
+N_8 @ 981 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 981
+write_memory @ 992
+write_memory @ 993
+write_memory @ 994
+write_memory @ 995
+N_5 @ 981 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 981
+write_memory @ 996
+write_memory @ 997
+write_memory @ 998
+write_memory @ 999
+N_12 @ 701 	| live : 0
+N_3 @ 3463 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3463
+write_memory @ 3491
+write_memory @ 3492
+write_memory @ 3493
+write_memory @ 3494
+N_2 @ 283 	| ld : 191104768, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_1 @ 3463 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3463
+write_memory @ 3487
+write_memory @ 3488
+write_memory @ 3489
+write_memory @ 3490
+N_2 @ 290 	| ld : 5, r6 
+TESTREG : 5 | 0
+TESTREG : 5 | 1
+TESTREG : 5 | 2
+TESTREG : 5 | 3
+N_8 @ 987 	| live : 0
+N_5 @ 987 	| live : 0
+N_2 @ 297 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_10 @ 816 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 816
+write_memory @ 1073
+write_memory @ 1074
+write_memory @ 1075
+write_memory @ 1076
+N_3 @ 3468 	| zjmp : @ 19 -> SUCCESS 3484
+N_1 @ 3468 	| zjmp : @ 19 -> SUCCESS 3484
+N_12 @ 706 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 706
+write_memory @ 963
+write_memory @ 964
+write_memory @ 965
+write_memory @ 966
+N_10 @ 822 	| live : 0
+N_2 @ 304 	| zjmp : @ 59 -> SUCCESS 360
+N_8 @ 992 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 992
+write_memory @ 1003
+write_memory @ 1004
+write_memory @ 1005
+write_memory @ 1006
+N_5 @ 992 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 992
+write_memory @ 1007
+write_memory @ 1008
+write_memory @ 1009
+write_memory @ 1010
+N_7 @ 2191 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2191
+write_memory @ 2215
+write_memory @ 2216
+write_memory @ 2217
+write_memory @ 2218
+N_12 @ 712 	| live : 0
+N_2 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_8 @ 998 	| live : 0
+N_5 @ 998 	| live : 0
+N_3 @ 3487 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3487
+write_memory @ 3515
+write_memory @ 3516
+write_memory @ 3517
+write_memory @ 3518
+N_2 @ 368 	| live : 1
+N_1 @ 3487 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3487
+write_memory @ 3511
+write_memory @ 3512
+write_memory @ 3513
+write_memory @ 3514
+N_10 @ 827 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 827
+write_memory @ 1084
+write_memory @ 1085
+write_memory @ 1086
+write_memory @ 1087
+N_7 @ 2196 	| zjmp : @ 19 -> FAILED
+N_12 @ 717 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 717
+write_memory @ 974
+write_memory @ 975
+write_memory @ 976
+write_memory @ 977
+N_10 @ 833 	| live : 0
+N_3 @ 3492 	| zjmp : @ 19 -> SUCCESS 3508
+N_1 @ 3492 	| zjmp : @ 19 -> SUCCESS 3508
+N_8 @ 1003 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1003
+write_memory @ 1014
+write_memory @ 1015
+write_memory @ 1016
+write_memory @ 1017
+N_5 @ 1003 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1003
+write_memory @ 1018
+write_memory @ 1019
+write_memory @ 1020
+write_memory @ 1021
+N_12 @ 723 	| live : 0
+N_2 @ 373 	| sti : Test
+r7, 6 + 317 (322)
+index: 322, p->index: 373
+write_memory @ 695
+write_memory @ 696
+write_memory @ 697
+write_memory @ 698
+N_2 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_8 @ 1009 	| live : 0
+N_5 @ 1009 	| live : 0
+N_7 @ 2218 	| live : 134807571
+N_10 @ 838 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 838
+write_memory @ 1095
+write_memory @ 1096
+write_memory @ 1097
+write_memory @ 1098
+N_3 @ 3511 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3511
+write_memory @ 3539
+write_memory @ 3540
+write_memory @ 3541
+write_memory @ 3542
+N_1 @ 3511 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3511
+write_memory @ 3535
+write_memory @ 3536
+write_memory @ 3537
+write_memory @ 3538
+N_12 @ 728 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 728
+write_memory @ 985
+write_memory @ 986
+write_memory @ 987
+write_memory @ 988
+N_10 @ 844 	| live : 0
+N_2 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_8 @ 1014 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1014
+write_memory @ 1025
+write_memory @ 1026
+write_memory @ 1027
+write_memory @ 1028
+N_5 @ 1014 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1014
+write_memory @ 1029
+write_memory @ 1030
+write_memory @ 1031
+write_memory @ 1032
+N_12 @ 734 	| live : 0
+N_3 @ 3516 	| zjmp : @ 19 -> SUCCESS 3532
+N_1 @ 3516 	| zjmp : @ 19 -> SUCCESS 3532
+N_8 @ 1020 	| live : 0
+N_5 @ 1020 	| live : 0
+N_10 @ 849 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 849
+write_memory @ 1106
+write_memory @ 1107
+write_memory @ 1108
+write_memory @ 1109
+N_2 @ 695 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 695
+write_memory @ 706
+write_memory @ 707
+write_memory @ 708
+write_memory @ 709
+N_7 @ 2239 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2239
+write_memory @ 2263
+write_memory @ 2264
+write_memory @ 2265
+write_memory @ 2266
+N_12 @ 739 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 739
+write_memory @ 996
+write_memory @ 997
+write_memory @ 998
+write_memory @ 999
+N_10 @ 855 	| live : 0
+N_2 @ 701 	| live : 0
+N_3 @ 3535 	| sti : Test
+r7, 2 + 8 (28)
+index: 28, p->index: 3535
+write_memory @ 3563
+write_memory @ 3564
+write_memory @ 3565
+write_memory @ 3566
+N_1 @ 3535 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3535
+write_memory @ 3559
+write_memory @ 3560
+write_memory @ 3561
+write_memory @ 3562
+N_8 @ 1025 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1025
+write_memory @ 1036
+write_memory @ 1037
+write_memory @ 1038
+write_memory @ 1039
+N_5 @ 1025 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1025
+write_memory @ 1040
+write_memory @ 1041
+write_memory @ 1042
+write_memory @ 1043
+N_12 @ 745 	| live : 0
+removing N_9
+removing N_6
+removing N_3
+N_7 @ 2244 	| zjmp : @ 19 -> FAILED
+N_8 @ 1031 	| live : 0
+N_5 @ 1031 	| live : 0
+N_10 @ 860 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 860
+write_memory @ 1117
+write_memory @ 1118
+write_memory @ 1119
+write_memory @ 1120
+N_2 @ 706 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 706
+write_memory @ 717
+write_memory @ 718
+write_memory @ 719
+write_memory @ 720
+N_1 @ 3540 	| zjmp : @ 19 -> SUCCESS 3556
+N_12 @ 750 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 750
+write_memory @ 1007
+write_memory @ 1008
+write_memory @ 1009
+write_memory @ 1010
+N_10 @ 866 	| live : 0
+N_2 @ 712 	| live : 0
+N_8 @ 1036 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1036
+write_memory @ 1047
+write_memory @ 1048
+write_memory @ 1049
+write_memory @ 1050
+N_7 @ 2266 	| live : 134807571
+N_5 @ 1036 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1036
+write_memory @ 1051
+write_memory @ 1052
+write_memory @ 1053
+write_memory @ 1054
+N_12 @ 756 	| live : 0
+N_1 @ 3559 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 3559
+write_memory @ 3583
+write_memory @ 3584
+write_memory @ 3585
+write_memory @ 3586
+N_8 @ 1042 	| live : 0
+N_5 @ 1042 	| live : 0
+N_10 @ 871 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 871
+write_memory @ 1128
+write_memory @ 1129
+write_memory @ 1130
+write_memory @ 1131
+N_2 @ 717 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 717
+write_memory @ 728
+write_memory @ 729
+write_memory @ 730
+write_memory @ 731
+N_12 @ 761 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 761
+write_memory @ 1018
+write_memory @ 1019
+write_memory @ 1020
+write_memory @ 1021
+N_10 @ 877 	| live : 0
+N_2 @ 723 	| live : 0
+N_1 @ 3564 	| zjmp : @ 19 -> SUCCESS 3580
+N_8 @ 1047 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1047
+write_memory @ 1058
+write_memory @ 1059
+write_memory @ 1060
+write_memory @ 1061
+N_5 @ 1047 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1047
+write_memory @ 1062
+write_memory @ 1063
+write_memory @ 1064
+write_memory @ 1065
+N_12 @ 767 	| live : 0
+N_7 @ 2287 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2287
+write_memory @ 2311
+write_memory @ 2312
+write_memory @ 2313
+write_memory @ 2314
+N_8 @ 1053 	| live : 0
+N_5 @ 1053 	| live : 0
+N_10 @ 882 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 882
+write_memory @ 1139
+write_memory @ 1140
+write_memory @ 1141
+write_memory @ 1142
+N_2 @ 728 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 728
+write_memory @ 739
+write_memory @ 740
+write_memory @ 741
+write_memory @ 742
+N_1 @ 3583 	| sti : Test
+r7, 2 + 0 (0)
+index: 0, p->index: 3583
+write_memory @ 3583
+write_memory @ 3584
+write_memory @ 3585
+write_memory @ 3586
+N_7 @ 2292 	| zjmp : @ 19 -> FAILED
+N_12 @ 772 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 772
+write_memory @ 1029
+write_memory @ 1030
+write_memory @ 1031
+write_memory @ 1032
+N_10 @ 888 	| live : 0
+N_2 @ 734 	| live : 0
+N_8 @ 1058 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1058
+write_memory @ 1069
+write_memory @ 1070
+write_memory @ 1071
+write_memory @ 1072
+N_5 @ 1058 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1058
+write_memory @ 1073
+write_memory @ 1074
+write_memory @ 1075
+write_memory @ 1076
+N_12 @ 778 	| live : 0
+N_8 @ 1064 	| live : 0
+N_5 @ 1064 	| live : 0
+N_10 @ 893 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 893
+write_memory @ 1150
+write_memory @ 1151
+write_memory @ 1152
+write_memory @ 1153
+N_2 @ 739 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 739
+write_memory @ 750
+write_memory @ 751
+write_memory @ 752
+write_memory @ 753
+N_7 @ 2314 	| live : 134807571
+N_12 @ 783 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 783
+write_memory @ 1040
+write_memory @ 1041
+write_memory @ 1042
+write_memory @ 1043
+N_10 @ 899 	| live : 0
+N_2 @ 745 	| live : 0
+N_8 @ 1069 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1069
+write_memory @ 1080
+write_memory @ 1081
+write_memory @ 1082
+write_memory @ 1083
+N_5 @ 1069 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1069
+write_memory @ 1084
+write_memory @ 1085
+write_memory @ 1086
+write_memory @ 1087
+N_12 @ 789 	| live : 0
+N_8 @ 1075 	| live : 0
+N_5 @ 1075 	| live : 0
+N_10 @ 904 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 904
+write_memory @ 1161
+write_memory @ 1162
+write_memory @ 1163
+write_memory @ 1164
+N_2 @ 750 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 750
+write_memory @ 761
+write_memory @ 762
+write_memory @ 763
+write_memory @ 764
+N_7 @ 2335 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2335
+write_memory @ 2359
+write_memory @ 2360
+write_memory @ 2361
+write_memory @ 2362
+N_12 @ 794 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 794
+write_memory @ 1051
+write_memory @ 1052
+write_memory @ 1053
+write_memory @ 1054
+N_10 @ 910 	| live : 0
+N_2 @ 756 	| live : 0
+N_8 @ 1080 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1080
+write_memory @ 1091
+write_memory @ 1092
+write_memory @ 1093
+write_memory @ 1094
+N_5 @ 1080 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1080
+write_memory @ 1095
+write_memory @ 1096
+write_memory @ 1097
+write_memory @ 1098
+N_12 @ 800 	| live : 0
+N_8 @ 1086 	| live : 16121856
+N_5 @ 1086 	| live : 16121856
+N_7 @ 2340 	| zjmp : @ 19 -> FAILED
+N_10 @ 915 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 915
+write_memory @ 1172
+write_memory @ 1173
+write_memory @ 1174
+write_memory @ 1175
+N_2 @ 761 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 761
+write_memory @ 772
+write_memory @ 773
+write_memory @ 774
+write_memory @ 775
+N_12 @ 805 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 805
+write_memory @ 1062
+write_memory @ 1063
+write_memory @ 1064
+write_memory @ 1065
+N_10 @ 921 	| live : 0
+N_2 @ 767 	| live : 0
+N_8 @ 1091 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1091
+write_memory @ 1102
+write_memory @ 1103
+write_memory @ 1104
+write_memory @ 1105
+N_5 @ 1091 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1091
+write_memory @ 1106
+write_memory @ 1107
+write_memory @ 1108
+write_memory @ 1109
+N_12 @ 811 	| live : 0
+N_7 @ 2362 	| live : 134807571
+N_8 @ 1097 	| live : 0
+N_5 @ 1097 	| live : 0
+N_10 @ 926 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 926
+write_memory @ 1183
+write_memory @ 1184
+write_memory @ 1185
+write_memory @ 1186
+N_2 @ 772 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 772
+write_memory @ 783
+write_memory @ 784
+write_memory @ 785
+write_memory @ 786
+N_12 @ 816 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 816
+write_memory @ 1073
+write_memory @ 1074
+write_memory @ 1075
+write_memory @ 1076
+N_10 @ 932 	| live : 0
+N_2 @ 778 	| live : 0
+N_8 @ 1102 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1102
+write_memory @ 1113
+write_memory @ 1114
+write_memory @ 1115
+write_memory @ 1116
+N_5 @ 1102 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1102
+write_memory @ 1117
+write_memory @ 1118
+write_memory @ 1119
+write_memory @ 1120
+N_12 @ 822 	| live : 0
+N_8 @ 1108 	| live : 0
+N_5 @ 1108 	| live : 0
+N_7 @ 2383 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2383
+write_memory @ 2407
+write_memory @ 2408
+write_memory @ 2409
+write_memory @ 2410
+N_10 @ 937 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 937
+write_memory @ 1194
+write_memory @ 1195
+write_memory @ 1196
+write_memory @ 1197
+N_2 @ 783 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 783
+write_memory @ 794
+write_memory @ 795
+write_memory @ 796
+write_memory @ 797
+N_12 @ 827 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 827
+write_memory @ 1084
+write_memory @ 1085
+write_memory @ 1086
+write_memory @ 1087
+N_10 @ 943 	| live : 0
+N_2 @ 789 	| live : 0
+N_7 @ 2388 	| zjmp : @ 19 -> FAILED
+N_8 @ 1113 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1113
+write_memory @ 1124
+write_memory @ 1125
+write_memory @ 1126
+write_memory @ 1127
+N_5 @ 1113 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1113
+write_memory @ 1128
+write_memory @ 1129
+write_memory @ 1130
+write_memory @ 1131
+N_12 @ 833 	| live : 0
+N_8 @ 1119 	| live : 0
+N_5 @ 1119 	| live : 0
+N_10 @ 948 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 948
+write_memory @ 948
+write_memory @ 949
+write_memory @ 950
+write_memory @ 951
+N_2 @ 794 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 794
+write_memory @ 805
+write_memory @ 806
+write_memory @ 807
+write_memory @ 808
+N_7 @ 2410 	| live : 134807571
+N_12 @ 838 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 838
+write_memory @ 1095
+write_memory @ 1096
+write_memory @ 1097
+write_memory @ 1098
+N_2 @ 800 	| live : 0
+N_8 @ 1124 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1124
+write_memory @ 1135
+write_memory @ 1136
+write_memory @ 1137
+write_memory @ 1138
+N_5 @ 1124 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1124
+write_memory @ 1139
+write_memory @ 1140
+write_memory @ 1141
+write_memory @ 1142
+N_12 @ 844 	| live : 0
+N_8 @ 1130 	| live : 0
+N_5 @ 1130 	| live : 0
+N_10 @ 959 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 959
+write_memory @ 959
+write_memory @ 960
+write_memory @ 961
+write_memory @ 962
+N_2 @ 805 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 805
+write_memory @ 816
+write_memory @ 817
+write_memory @ 818
+write_memory @ 819
+N_12 @ 849 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 849
+write_memory @ 1106
+write_memory @ 1107
+write_memory @ 1108
+write_memory @ 1109
+N_2 @ 811 	| live : 0
+N_7 @ 2431 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2431
+write_memory @ 2455
+write_memory @ 2456
+write_memory @ 2457
+write_memory @ 2458
+N_8 @ 1135 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1135
+write_memory @ 1146
+write_memory @ 1147
+write_memory @ 1148
+write_memory @ 1149
+N_5 @ 1135 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1135
+write_memory @ 1150
+write_memory @ 1151
+write_memory @ 1152
+write_memory @ 1153
+N_12 @ 855 	| live : 0
+N_10 @ 970 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 970
+write_memory @ 970
+write_memory @ 971
+write_memory @ 972
+write_memory @ 973
+N_8 @ 1141 	| live : 0
+N_5 @ 1141 	| live : 0
+N_7 @ 2436 	| zjmp : @ 19 -> FAILED
+N_2 @ 816 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 816
+write_memory @ 827
+write_memory @ 828
+write_memory @ 829
+write_memory @ 830
+N_12 @ 860 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 860
+write_memory @ 1117
+write_memory @ 1118
+write_memory @ 1119
+write_memory @ 1120
+N_2 @ 822 	| live : 0
+N_8 @ 1146 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1146
+write_memory @ 1157
+write_memory @ 1158
+write_memory @ 1159
+write_memory @ 1160
+N_5 @ 1146 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1146
+write_memory @ 1161
+write_memory @ 1162
+write_memory @ 1163
+write_memory @ 1164
+N_12 @ 866 	| live : 0
+N_10 @ 981 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 981
+write_memory @ 981
+write_memory @ 982
+write_memory @ 983
+write_memory @ 984
+N_8 @ 1152 	| live : 0
+N_7 @ 2458 	| live : 134807571
+N_5 @ 1152 	| live : 0
+N_2 @ 827 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 827
+write_memory @ 838
+write_memory @ 839
+write_memory @ 840
+write_memory @ 841
+N_12 @ 871 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 871
+write_memory @ 1128
+write_memory @ 1129
+write_memory @ 1130
+write_memory @ 1131
+N_2 @ 833 	| live : 0
+N_10 @ 992 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 992
+write_memory @ 992
+write_memory @ 993
+write_memory @ 994
+write_memory @ 995
+N_8 @ 1157 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1157
+write_memory @ 1168
+write_memory @ 1169
+write_memory @ 1170
+write_memory @ 1171
+N_5 @ 1157 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1157
+write_memory @ 1172
+write_memory @ 1173
+write_memory @ 1174
+write_memory @ 1175
+N_12 @ 877 	| live : 0
+N_8 @ 1163 	| live : 0
+N_5 @ 1163 	| live : 0
+N_7 @ 2479 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2479
+write_memory @ 2503
+write_memory @ 2504
+write_memory @ 2505
+write_memory @ 2506
+N_2 @ 838 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 838
+write_memory @ 849
+write_memory @ 850
+write_memory @ 851
+write_memory @ 852
+N_12 @ 882 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 882
+write_memory @ 1139
+write_memory @ 1140
+write_memory @ 1141
+write_memory @ 1142
+N_10 @ 1003 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1003
+write_memory @ 1003
+write_memory @ 1004
+write_memory @ 1005
+write_memory @ 1006
+N_2 @ 844 	| live : 0
+N_8 @ 1168 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1168
+write_memory @ 1179
+write_memory @ 1180
+write_memory @ 1181
+write_memory @ 1182
+N_5 @ 1168 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1168
+write_memory @ 1183
+write_memory @ 1184
+write_memory @ 1185
+write_memory @ 1186
+N_7 @ 2484 	| zjmp : @ 19 -> FAILED
+N_12 @ 888 	| live : 0
+N_8 @ 1174 	| live : 0
+N_5 @ 1174 	| live : 0
+N_2 @ 849 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 849
+write_memory @ 860
+write_memory @ 861
+write_memory @ 862
+write_memory @ 863
+N_10 @ 1014 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1014
+write_memory @ 1014
+write_memory @ 1015
+write_memory @ 1016
+write_memory @ 1017
+N_12 @ 893 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 893
+write_memory @ 1150
+write_memory @ 1151
+write_memory @ 1152
+write_memory @ 1153
+N_2 @ 855 	| live : 0
+N_7 @ 2506 	| live : 134807571
+N_8 @ 1179 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1179
+write_memory @ 1190
+write_memory @ 1191
+write_memory @ 1192
+write_memory @ 1193
+N_5 @ 1179 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1179
+write_memory @ 1194
+write_memory @ 1195
+write_memory @ 1196
+write_memory @ 1197
+N_12 @ 899 	| live : 0
+N_8 @ 1185 	| live : 0
+N_5 @ 1185 	| live : 0
+N_10 @ 1025 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1025
+write_memory @ 1025
+write_memory @ 1026
+write_memory @ 1027
+write_memory @ 1028
+N_2 @ 860 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 860
+write_memory @ 871
+write_memory @ 872
+write_memory @ 873
+write_memory @ 874
+N_12 @ 904 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 904
+write_memory @ 1161
+write_memory @ 1162
+write_memory @ 1163
+write_memory @ 1164
+N_2 @ 866 	| live : 0
+N_8 @ 1190 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1190
+write_memory @ 1201
+write_memory @ 1202
+write_memory @ 1203
+write_memory @ 1204
+N_5 @ 1190 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1190
+write_memory @ 1205
+write_memory @ 1206
+write_memory @ 1207
+write_memory @ 1208
+N_7 @ 2527 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2527
+write_memory @ 2551
+write_memory @ 2552
+write_memory @ 2553
+write_memory @ 2554
+N_12 @ 910 	| live : 0
+N_8 @ 1196 	| live : 0
+N_5 @ 1196 	| live : 0
+N_10 @ 1036 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1036
+write_memory @ 1036
+write_memory @ 1037
+write_memory @ 1038
+write_memory @ 1039
+N_2 @ 871 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 871
+write_memory @ 882
+write_memory @ 883
+write_memory @ 884
+write_memory @ 885
+N_7 @ 2532 	| zjmp : @ 19 -> FAILED
+N_12 @ 915 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 915
+write_memory @ 1172
+write_memory @ 1173
+write_memory @ 1174
+write_memory @ 1175
+N_2 @ 877 	| live : 0
+N_8 @ 1201 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1201
+write_memory @ 1212
+write_memory @ 1213
+write_memory @ 1214
+write_memory @ 1215
+N_5 @ 1201 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1201
+write_memory @ 1216
+write_memory @ 1217
+write_memory @ 1218
+write_memory @ 1219
+N_12 @ 921 	| live : 0
+N_4 @ 189 	| fork : 4 @ -176 (13)
+N_11 @ 25 	| fork : 11 @ 3341 (294)
+N_10 @ 1047 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1047
+write_memory @ 1047
+write_memory @ 1048
+write_memory @ 1049
+write_memory @ 1050
+N_4 @ 192 	| ld : -165, r13 
+TESTREG : 12 | 0
+TESTREG : 12 | 1
+TESTREG : 12 | 2
+TESTREG : 12 | 3
+N_14 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_8 @ 1207 	| live : 0
+N_5 @ 1207 	| live : 0
+N_11 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_4 @ 199 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_7 @ 2554 	| live : 134807571
+N_15 @ 295 	| sub : 	sub r0 + r0 -> r0
+N_2 @ 882 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 882
+write_memory @ 893
+write_memory @ 894
+write_memory @ 895
+write_memory @ 896
+N_15 @ 297 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_12 @ 926 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 926
+write_memory @ 1183
+write_memory @ 1184
+write_memory @ 1185
+write_memory @ 1186
+N_2 @ 888 	| live : 0
+N_11 @ 36 	| zjmp : @ 13 -> FAILED
+N_4 @ 206 	| zjmp : @ -22 -> SUCCESS 181
+N_14 @ 20 	| ldi : 	ldi
+AIDJWOI  20
+AIDJWOI  21
+AIDJWOI  22
+AIDJWOI  23
+N_8 @ 1212 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1212
+write_memory @ 1223
+write_memory @ 1224
+write_memory @ 1225
+write_memory @ 1226
+N_5 @ 1212 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1212
+write_memory @ 1227
+write_memory @ 1228
+write_memory @ 1229
+write_memory @ 1230
+N_12 @ 932 	| live : 0
+N_11 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_10 @ 1058 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1058
+write_memory @ 1058
+write_memory @ 1059
+write_memory @ 1060
+write_memory @ 1061
+N_15 @ 304 	| zjmp : @ 59 -> SUCCESS 360
+N_1 @ 0 	| ld : 1136, r768 
+N_4 @ 184 	| live : 1
+N_14 @ 22 	| lld : 	lld
+N_8 @ 1218 	| live : 0
+N_5 @ 1218 	| live : 0
+N_15 @ 363 	| st : r1 6 (6)
+index: 6, p->index: 363
+write_memory @ 369
+write_memory @ 370
+write_memory @ 371
+write_memory @ 372
+N_1 @ 6 	| st : r4 -247 (-247)
+index: -247, p->index: 6
+write_memory @ 235
+write_memory @ 234
+write_memory @ 233
+write_memory @ 232
+N_2 @ 893 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 893
+write_memory @ 904
+write_memory @ 905
+write_memory @ 906
+write_memory @ 907
+N_7 @ 2575 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2575
+write_memory @ 2599
+write_memory @ 2600
+write_memory @ 2601
+write_memory @ 2602
+N_15 @ 368 	| live : 1
+N_11 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_1 @ 12 	| add : 	add r3 + r65535 -> r0
+N_13 @ 71 	| fork : 13 @ 27 (98)
+N_12 @ 937 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 937
+write_memory @ 1194
+write_memory @ 1195
+write_memory @ 1196
+write_memory @ 1197
+N_11 @ 14 	| st : r-42 2900 (340)
+index: 340, p->index: 14
+write_memory @ 354
+write_memory @ 355
+write_memory @ 356
+write_memory @ 357
+N_2 @ 899 	| live : 0
+N_16 @ 98 	| ld : 84541307, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_13 @ 74 	| ld : 190056198, r7 
+TESTREG : 6 | 0
+TESTREG : 6 | 1
+TESTREG : 6 | 2
+TESTREG : 6 | 3
+N_10 @ 1069 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1069
+write_memory @ 1069
+write_memory @ 1070
+write_memory @ 1071
+write_memory @ 1072
+N_16 @ 105 	| ld : 4, r5 
+TESTREG : 4 | 0
+TESTREG : 4 | 1
+TESTREG : 4 | 2
+TESTREG : 4 | 3
+N_13 @ 81 	| ld : 0, r5 
+TESTREG : 4 | 0
+TESTREG : 4 | 1
+TESTREG : 4 | 2
+TESTREG : 4 | 3
+N_8 @ 1223 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1223
+write_memory @ 1234
+write_memory @ 1235
+write_memory @ 1236
+write_memory @ 1237
+N_5 @ 1223 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1223
+write_memory @ 1238
+write_memory @ 1239
+write_memory @ 1240
+write_memory @ 1241
+N_12 @ 943 	| live : 0
+N_16 @ 112 	| ld : 190056198, r16 
+TESTREG : 15 | 0
+TESTREG : 15 | 1
+TESTREG : 15 | 2
+TESTREG : 15 | 3
+N_13 @ 88 	| ld : 0, r16 
+TESTREG : 15 | 0
+TESTREG : 15 | 1
+TESTREG : 15 | 2
+TESTREG : 15 | 3
+N_7 @ 2580 	| zjmp : @ 19 -> FAILED
+N_16 @ 119 	| st : r16 -490 (-490)
+index: -490, p->index: 119
+write_memory @ 252
+write_memory @ 251
+write_memory @ 250
+write_memory @ 249
+N_8 @ 1229 	| live : 0
+N_5 @ 1229 	| live : 0
+N_15 @ 373 	| sti : Test
+r7, 6 + 317 (56)
+index: 56, p->index: 373
+write_memory @ 429
+write_memory @ 430
+write_memory @ 431
+write_memory @ 432
+N_1 @ 18 	| sti : Test
+r10, 11 + 13 (0)
+index: 0, p->index: 18
+write_memory @ 18
+write_memory @ 19
+write_memory @ 20
+write_memory @ 21
+N_16 @ 124 	| st : r7 -491 (-491)
+index: -491, p->index: 124
+write_memory @ 243
+write_memory @ 242
+write_memory @ 241
+write_memory @ 240
+N_15 @ 379 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_2 @ 904 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 904
+write_memory @ 915
+write_memory @ 916
+write_memory @ 917
+write_memory @ 918
+N_16 @ 129 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_1 @ 23 	| add : 	add r12 + r13 -> r13
+N_13 @ 95 	| zjmp : @ 34 -> SUCCESS 126
+N_11 @ 22 	| lld : 	lld
+N_10 @ 1080 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1080
+write_memory @ 1080
+write_memory @ 1081
+write_memory @ 1082
+write_memory @ 1083
+N_2 @ 910 	| live : 0
+N_13 @ 129 	| ld : 0, r2 
+TESTREG : 1 | 0
+TESTREG : 1 | 1
+TESTREG : 1 | 2
+TESTREG : 1 | 3
+N_1 @ 28 	| xor : 	xor
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_8 @ 1234 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1234
+write_memory @ 1245
+write_memory @ 1246
+write_memory @ 1247
+write_memory @ 1248
+N_7 @ 2602 	| live : 134807571
+N_5 @ 1234 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1234
+write_memory @ 1249
+write_memory @ 1250
+write_memory @ 1251
+write_memory @ 1252
+N_15 @ 386 	| zjmp : @ 309 -> SUCCESS 692
+N_16 @ 136 	| zjmp : @ -511 -> SUCCESS -378
+N_8 @ 1240 	| live : 0
+N_5 @ 1240 	| live : 0
+N_13 @ 136 	| zjmp : @ -511 -> SUCCESS -378
+N_1 @ 36 	| zjmp : @ 13 -> FAILED
+N_2 @ 915 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 915
+write_memory @ 926
+write_memory @ 927
+write_memory @ 928
+write_memory @ 929
+N_1 @ 39 	| ld : 0, r14 
+TESTREG : 13 | 0
+TESTREG : 13 | 1
+TESTREG : 13 | 2
+TESTREG : 13 | 3
+N_10 @ 1091 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1091
+write_memory @ 1091
+write_memory @ 1092
+write_memory @ 1093
+write_memory @ 1094
+N_15 @ 695 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 695
+write_memory @ 952
+write_memory @ 953
+write_memory @ 954
+write_memory @ 955
+N_2 @ 921 	| live : 0
+N_8 @ 1245 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1245
+write_memory @ 1256
+write_memory @ 1257
+write_memory @ 1258
+write_memory @ 1259
+N_5 @ 1245 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1245
+write_memory @ 1260
+write_memory @ 1261
+write_memory @ 1262
+write_memory @ 1263
+N_15 @ 701 	| live : 0
+N_1 @ 46 	| zjmp : @ -33 -> SUCCESS 10
+N_7 @ 2623 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2623
+write_memory @ 2647
+write_memory @ 2648
+write_memory @ 2649
+write_memory @ 2650
+N_8 @ 1251 	| live : 0
+N_5 @ 1251 	| live : 0
+N_1 @ 14 	| st : r-42 0 (0)
+index: 0, p->index: 14
+write_memory @ 14
+write_memory @ 15
+write_memory @ 16
+write_memory @ 17
+N_10 @ 1102 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1102
+write_memory @ 1102
+write_memory @ 1103
+write_memory @ 1104
+write_memory @ 1105
+N_2 @ 926 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 926
+write_memory @ 937
+write_memory @ 938
+write_memory @ 939
+write_memory @ 940
+N_1 @ 22 	| lld : 	lld
+N_7 @ 2628 	| zjmp : @ 19 -> FAILED
+N_15 @ 706 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 706
+write_memory @ 963
+write_memory @ 964
+write_memory @ 965
+write_memory @ 966
+N_2 @ 932 	| live : 0
+N_8 @ 1256 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1256
+write_memory @ 1267
+write_memory @ 1268
+write_memory @ 1269
+write_memory @ 1270
+N_5 @ 1256 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1256
+write_memory @ 1271
+write_memory @ 1272
+write_memory @ 1273
+write_memory @ 1274
+N_15 @ 712 	| live : 0
+N_8 @ 1262 	| live : 0
+N_5 @ 1262 	| live : 0
+N_10 @ 1113 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1113
+write_memory @ 1113
+write_memory @ 1114
+write_memory @ 1115
+write_memory @ 1116
+N_2 @ 937 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 937
+write_memory @ 948
+write_memory @ 949
+write_memory @ 950
+write_memory @ 951
+N_7 @ 2650 	| live : 134807571
+N_15 @ 717 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 717
+write_memory @ 974
+write_memory @ 975
+write_memory @ 976
+write_memory @ 977
+N_2 @ 943 	| live : 0
+N_8 @ 1267 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1267
+write_memory @ 1278
+write_memory @ 1279
+write_memory @ 1280
+write_memory @ 1281
+N_5 @ 1267 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1267
+write_memory @ 1282
+write_memory @ 1283
+write_memory @ 1284
+write_memory @ 1285
+N_15 @ 723 	| live : 0
+N_10 @ 1124 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1124
+write_memory @ 1124
+write_memory @ 1125
+write_memory @ 1126
+write_memory @ 1127
+N_8 @ 1273 	| live : 0
+N_5 @ 1273 	| live : 0
+N_2 @ 948 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 948
+write_memory @ 948
+write_memory @ 949
+write_memory @ 950
+write_memory @ 951
+N_7 @ 2671 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2671
+write_memory @ 2695
+write_memory @ 2696
+write_memory @ 2697
+write_memory @ 2698
+N_15 @ 728 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 728
+write_memory @ 985
+write_memory @ 986
+write_memory @ 987
+write_memory @ 988
+N_8 @ 1278 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1278
+write_memory @ 1289
+write_memory @ 1290
+write_memory @ 1291
+write_memory @ 1292
+N_5 @ 1278 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1278
+write_memory @ 1293
+write_memory @ 1294
+write_memory @ 1295
+write_memory @ 1296
+N_15 @ 734 	| live : 0
+N_10 @ 1135 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1135
+write_memory @ 1135
+write_memory @ 1136
+write_memory @ 1137
+write_memory @ 1138
+N_8 @ 1284 	| live : 0
+N_5 @ 1284 	| live : 0
+N_7 @ 2676 	| zjmp : @ 19 -> FAILED
+N_15 @ 739 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 739
+write_memory @ 996
+write_memory @ 997
+write_memory @ 998
+write_memory @ 999
+N_10 @ 1146 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1146
+write_memory @ 1146
+write_memory @ 1147
+write_memory @ 1148
+write_memory @ 1149
+N_8 @ 1289 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1289
+write_memory @ 1300
+write_memory @ 1301
+write_memory @ 1302
+write_memory @ 1303
+N_5 @ 1289 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1289
+write_memory @ 1304
+write_memory @ 1305
+write_memory @ 1306
+write_memory @ 1307
+N_15 @ 745 	| live : 0
+N_7 @ 2698 	| live : 134807571
+N_8 @ 1295 	| live : 0
+N_5 @ 1295 	| live : 0
+N_15 @ 750 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 750
+write_memory @ 1007
+write_memory @ 1008
+write_memory @ 1009
+write_memory @ 1010
+N_10 @ 1157 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1157
+write_memory @ 1157
+write_memory @ 1158
+write_memory @ 1159
+write_memory @ 1160
+N_8 @ 1300 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1300
+write_memory @ 1311
+write_memory @ 1312
+write_memory @ 1313
+write_memory @ 1314
+N_5 @ 1300 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1300
+write_memory @ 1315
+write_memory @ 1316
+write_memory @ 1317
+write_memory @ 1318
+N_15 @ 756 	| live : 0
+N_8 @ 1306 	| live : 0
+N_5 @ 1306 	| live : 0
+N_7 @ 2719 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2719
+write_memory @ 2743
+write_memory @ 2744
+write_memory @ 2745
+write_memory @ 2746
+N_10 @ 1168 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1168
+write_memory @ 1168
+write_memory @ 1169
+write_memory @ 1170
+write_memory @ 1171
+N_15 @ 761 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 761
+write_memory @ 1018
+write_memory @ 1019
+write_memory @ 1020
+write_memory @ 1021
+N_7 @ 2724 	| zjmp : @ 19 -> FAILED
+N_8 @ 1311 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1311
+write_memory @ 1322
+write_memory @ 1323
+write_memory @ 1324
+write_memory @ 1325
+N_5 @ 1311 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1311
+write_memory @ 1326
+write_memory @ 1327
+write_memory @ 1328
+write_memory @ 1329
+N_15 @ 767 	| live : 0
+N_8 @ 1317 	| live : 0
+N_5 @ 1317 	| live : 0
+N_10 @ 1179 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1179
+write_memory @ 1179
+write_memory @ 1180
+write_memory @ 1181
+write_memory @ 1182
+N_7 @ 2746 	| live : 134807571
+N_15 @ 772 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 772
+write_memory @ 1029
+write_memory @ 1030
+write_memory @ 1031
+write_memory @ 1032
+N_8 @ 1322 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1322
+write_memory @ 1333
+write_memory @ 1334
+write_memory @ 1335
+write_memory @ 1336
+N_5 @ 1322 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1322
+write_memory @ 1337
+write_memory @ 1338
+write_memory @ 1339
+write_memory @ 1340
+N_15 @ 778 	| live : 0
+N_8 @ 1328 	| live : 0
+N_5 @ 1328 	| live : 0
+N_10 @ 1190 	| sti : Test
+r7, 0 + 0 (0)
+index: 0, p->index: 1190
+write_memory @ 1190
+write_memory @ 1191
+write_memory @ 1192
+write_memory @ 1193
+N_15 @ 783 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 783
+write_memory @ 1040
+write_memory @ 1041
+write_memory @ 1042
+write_memory @ 1043
+N_7 @ 2767 	| sti : Test
+r7, 2 + 8 (24)
+index: 24, p->index: 2767
+write_memory @ 2791
+write_memory @ 2792
+write_memory @ 2793
+write_memory @ 2794
+N_8 @ 1333 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1333
+write_memory @ 1344
+write_memory @ 1345
+write_memory @ 1346
+write_memory @ 1347
+N_5 @ 1333 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1333
+write_memory @ 1348
+write_memory @ 1349
+write_memory @ 1350
+write_memory @ 1351
+N_15 @ 789 	| live : 0
+N_10 @ 1201 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 1201
+write_memory @ 1458
+write_memory @ 1459
+write_memory @ 1460
+write_memory @ 1461
+N_8 @ 1339 	| live : 0
+N_5 @ 1339 	| live : 0
+N_12 @ 1201 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 1201
+write_memory @ 1458
+write_memory @ 1459
+write_memory @ 1460
+write_memory @ 1461
+N_7 @ 2772 	| zjmp : @ 19 -> FAILED
+N_10 @ 1207 	| live : 0
+N_12 @ 1207 	| live : 0
+N_15 @ 794 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 794
+write_memory @ 1051
+write_memory @ 1052
+write_memory @ 1053
+write_memory @ 1054
+N_8 @ 1344 	| sti : Test
+r7, 6 + 6 (11)
+index: 11, p->index: 1344
+write_memory @ 1355
+write_memory @ 1356
+write_memory @ 1357
+write_memory @ 1358
+N_5 @ 1344 	| sti : Test
+r7, 6 + 6 (15)
+index: 15, p->index: 1344
+write_memory @ 1359
+write_memory @ 1360
+write_memory @ 1361
+write_memory @ 1362
+N_15 @ 800 	| live : 0
+N_10 @ 1212 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 1212
+write_memory @ 1469
+write_memory @ 1470
+write_memory @ 1471
+write_memory @ 1472
+N_8 @ 1350 	| live : 0
+N_7 @ 2794 	| live : 134807571
+N_5 @ 1350 	| live : 0
+N_12 @ 1212 	| sti : Test
+r7, 6 + 6 (257)
+index: 257, p->index: 1212
+write_memory @ 1469
+write_memory @ 1470
+write_memory @ 1471
+write_memory @ 1472
+N_10 @ 1218 	| live : 0
+N_16 @ -20 	| add : 	add r0 + r0 -> r0

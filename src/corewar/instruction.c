@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 21:46:58 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/15 23:39:46 by adebray          ###   ########.fr       */
+/*   Updated: 2015/05/16 17:09:29 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void		reset_instruction(void)
 			while (j < max_size())
 			{
 				// dprintf(OUT, "------ %p\n", g_instruction[i].args);
-				// dprintf(OUT, "%d [%d][%d] Here i am : %d\n", MAX_ARGS_NUMBER, i, j, g_instruction[i].args[j]);
+				// dprintf(OUT, "%d [%d][%d] Here i am \n", MAX_ARGS_NUMBER, i, j);
 				g_instruction[i].args[j] = 0;
 				j += 1;
 			}
