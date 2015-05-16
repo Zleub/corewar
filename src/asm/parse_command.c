@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/16 02:28:05 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 02:34:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ static int	parse_args_type(t_command *command)
 			args[i] = ft_strtrim(args[i]);
 			free(args[ac]);
 			args[ac] = NULL;
-			printf("%i\n", get_arg_type(args[i]));
 			if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
 				return (0);
 			command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
