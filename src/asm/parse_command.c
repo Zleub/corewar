@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 07:08:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/01 19:02:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 02:28:05 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	get_arg_type(char const *arg)
 		return (0);
 	if (arg[0] == 'r')
 		return (REG_CODE);
-	else if (arg[0] == DIRECT_CHAR)
+	else if (arg[0] == DIRECT_CHAR && (is_number(arg + 1) || arg[1] == LABEL_CHAR))
 		return (DIR_CODE);
 	else if (is_number(arg) || arg[0] == LABEL_CHAR)
 		return (IND_CODE);
@@ -81,17 +81,15 @@ static int	parse_args_type(t_command *command)
 			args[i] = ft_strtrim(args[i]);
 			free(args[ac]);
 			args[ac] = NULL;
+			printf("%i\n", get_arg_type(args[i]));
 			if ((get_arg_type(args[i]) & command->op->args[i]) == 0)
 				return (0);
-			printf("  %i\n", get_arg_type(args[i]));
 			command->coding_octet |= get_arg_type(args[i]) << ((ac - i - 1) * 2);
 		}
 		else
 			command->coding_octet = command->coding_octet << 2;
 		i++;
-		printf("%i\n", command->coding_octet);
 	}
-	printf("----\n");
 	return (1);
 }
 
@@ -153,9 +151,9 @@ int			parse_command(char const *line, uint row)
 		die2("Unknown command", row, skip_white_spaces(line) - line);
 	command->raw_args = ft_strsplit(line + ft_strlen(name), SEPARATOR_CHAR);
 	if (!check_arg_count(command))
-		die2("Bad argument count", row, skip_white_spaces(line) - line);
+		die2("Bad argument count", row, -1);
 	if (!parse_args_type(command))
-		die2("Bad argument type", row, 0);
+		die2("Bad argument type", row, -1);
 	command->next = NULL;
 	add_command(command);
 	label = get_last_label();

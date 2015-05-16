@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/04/29 20:56:02 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 01:49:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include <ft_printf.h>
 #include "asm.h"
 #include "get_next_line.h"
+
+static void	check_champion_validity(t_champion *champion)
+{
+	if (champion->name == NULL)
+		die("The champion must have a name.");
+	if (champion->comment == NULL)
+		die("The champion must have a comment.");
+}
 
 int		parse_line(char const *line, uint row)
 {
@@ -34,9 +42,7 @@ int		parse_line(char const *line, uint row)
 			{
 				current = parse_label(line, row);
 				if (current)
-				{
 					return parse_line(current, row);
-				}
 				return (0);
 			}
 			else
@@ -65,6 +71,7 @@ void	parse_file(int fd)
 		i++;
 		free(trimmed);
 	}
+	check_champion_validity(get_champion(0));
 }
 
 char	*get_current_line(char *line)
