@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 23:47:01 by adebray           #+#    #+#             */
-/*   Updated: 2015/05/01 19:02:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 01:59:36 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void					write_parameters(int fd, t_command *command);
 uint					write_commands(int fd, t_champion *champion);
 
 void					die(char const *message);
-void					die2(char *message, uint line, uint col);
+void					die2(char *message, uint line, int col);
 char					*skip_white_spaces(char const *line);
 int						is_number(char const *str);
 

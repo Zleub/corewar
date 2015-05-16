@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 18:49:09 by amaurer           #+#    #+#             */
-/*   Updated: 2014/01/17 14:15:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 00:40:57 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,27 @@ static int	get_next_line_return(char **mem, char **line, int ret)
 
 int			get_next_line(int fd, char **line)
 {
-	char		buf[BUFF_SIZE + 1] = {0};
+	char		buf[BUFF_SIZE + 1];
 	int			ret;
 	static char	*mem;
-	char		*nl;
-	char		*tmp;
+	char		*l[2];
 
-	if (!line || (mem && (nl = ft_strchr(mem, '\n')) && (tmp = mem)))
+	bzero(buf, BUFF_SIZE + 1);
+	if (!line || (mem && (l[0] = ft_strchr(mem, '\n'))
+		&& (l[1] = mem)))
 	{
-		if (!line || (*line = ft_strsub(mem, 0, nl - mem)) == NULL
-			|| (mem = ft_strsub(mem, nl - mem + 1, ft_strlen(nl))) == NULL)
+		if (!line || (*line = ft_strsub(mem, 0, l[0] - mem)) == NULL
+			|| (mem = ft_strsub(mem, l[0] - mem + 1, ft_strlen(l[0]))) == NULL)
 			return (-1);
-		ft_strdel(&tmp);
+		ft_strdel(&l[1]);
 		return (1);
 	}
 	else if ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		if (mem || (mem = ft_strnew(0)))
 		{
-			tmp = mem;
-			mem = ft_strjoin(mem, buf);
-			ft_strdel(&tmp);
+			l[1] = mem;
+			mem = ft_strjoin(mem, buf), ft_strdel(&l[1]);
 			return (get_next_line(fd, line));
 		}
 	}

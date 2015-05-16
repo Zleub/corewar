@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 01:54:46 by amaurer           #+#    #+#             */
-/*   Updated: 2015/01/25 16:17:48 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/16 02:01:26 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,30 @@ void	die(char const *message)
 	exit(EXIT_SUCCESS);
 }
 
-void	die2(char *message, uint line, uint col)
+void	die2(char *message, uint line, int col)
 {
-	uint	i;
+	int		i;
 	char	*l;
 
-	ft_printf("Error at line %u, column %u : %s.\n", line, col, message);
+	if (col >= 0)
+		ft_printf("Error at line %u, column %u: %s.\n", line, col, message);
+	else
+		ft_printf("Error at line %u: %s.\n", line, message);
 	l = get_current_line(0);
 	ft_putendl(l);
-	i = 0;
-	while (i < col)
+	if (col >= 0)
 	{
-		if (l[i] == '\t')
-			ft_putstr("\t");
-		else
-			ft_putchar('.');
-		i++;
+		i = 0;
+		while (i < col)
+		{
+			if (l[i] == '\t')
+				ft_putstr("\t");
+			else
+				ft_putchar('.');
+			i++;
+		}
+		ft_putendl("^\n");
 	}
-	ft_putendl("^\n");
 	exit(EXIT_SUCCESS);
 }
 
